@@ -1,0 +1,64 @@
+title: Contribuir DjangoQuilla web
+---
+author: Sergio C. Orozco Torres
+---
+excerpt:
+
+Editar el sitio web de django quilla puede realizarse en un panel gráfico, ofrecido por lektor.
+
+
+
+---
+pub_date: 2017-10-31
+---
+twitter_handle: scot3004
+---
+body:
+
+Editar el sitio web de django quilla puede realizarse en un panel gráfico, para ejecutarlo es requerido [clonar el proyecto e instalarlo localmente](https://github.com/PyBAQ/django-quilla-web/blob/master/README.md) usando
+
+```bash
+git clone https://github.com/PyBAQ/django-quilla-web.git
+lektor server
+```
+![Clonar repositorio consola](./ejecutar.png)
+
+Para editar una entrada ingresamos a la URL [http://localhost:5000](http://localhost:5000)
+
+![Página de inicio](./home.png)
+
+Se navega hacia la página que se quiere editar, en el caso del blog, se navega hacia blog y se presiona el botón editar
+
+![Página del blog](./pagina_blog.png)
+
+Una vez cargada la página nos dirigimos hacia la parte superior derecha y presionamos un botón con forma de lápiz
+
+![Botón editar](./boton_editar.png)
+
+Se cargara el panel administrativo para editar la página del blog
+
+![Editar blog](./editar_blog.png)
+
+Para proceder con la creación de la entrada se ingresa el título y el slug
+
+![Crear entrada](./crear_entrada.png)
+
+Luego se completa el resto de la información
+
+![Editar entrada](./editar_entrada.png)
+
+**Title:** Se refiere al título de la entrada.
+
+**Author:** Nombre legible de la persona que escribe el artículo.
+
+**Twitter_Handle:** Nickname usado en la red social twitter.
+
+**Publication_date:** Fecha en formato YYYY-MM-DD con la fecha actual.
+
+**Excerpt:** Resumen corto que se visualiza en el listado del blog.
+
+**Body:** Contenido central del artículo.
+
+Una vez finalizado se puede visualizar el artículo
+
+![Resultado final](./resultado_final.png)
