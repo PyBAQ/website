@@ -1,0 +1,28 @@
+title: Crear Pull Request en Github Contribuir PyBaq Web parte 2
+---
+author: Sergio C. Orozco Torres
+---
+excerpt:
+
+Antes de iniciar a programar es recomendable crear un nuevo branch sobre el que se va a trabajar
+
+![Crear Branch](./crear_branch.png)
+
+Para aceptar los cambios que los miembros de la comunidad realizan se efectuá un control de los diferentes commits.
+Para poder realizar un commit es necesario que la persona este acostumbrada a las diferentes operaciones de git como lo son add y commit.
+
+![Commit](./commit.png)
+
+Como ultimo paso en el terminal, hacemos un envió de los elementos a subir, verificando la rama en la que se encuentra git en el momento, ademas de corroborar la rama remota en la que se subirá
+
+![Push](./push.png)
+
+Y en la interfaz de git se procede a hacer el Pull Request final, para pasar los cambios a aprobación
+
+![Pull Request](pull_request.png)
+
+
+---
+pub_date: 2017-10-31
+---
+twitter_handle: scot3004
