@@ -11,10 +11,10 @@ body:
 	<br>
 	<table class="table table-hover table-bordered table-responsive">
 	  <tr>
-	    <th>#</th>
-	    <th>Fecha</th>
-	    <th>Título</th>
-	    <th>Archivos</th>
+	    <th width="2%">#</th>
+	    <th width="20%">Fecha</th>
+	    <th width="50%">Título</th>
+	    <th width="28%">Archivos</th>
 	  </tr>
 	  <tr>
 	    <td>1</td>
@@ -133,10 +133,10 @@ body:
 	<br>
 	<table class="table table-hover table-bordered table-responsive">
 	  <tr>
-	    <th>#</th>
-	    <th>Fecha</th>
-	    <th>Título</th>
-	    <th>Archivos</th>
+	    <th width="2%">#</th>
+	    <th width="20%">Fecha</th>
+	    <th width="50%">Título</th>
+	    <th width="28%">Archivos</th>
 	  </tr>
 	  <tr>
 	    <td>19</td>
@@ -224,10 +224,10 @@ body:
 
 	<table class="table table-hover table-bordered table-responsive">
 	  <tr>
-	    <th>#</th>
-	    <th>Fecha</th>
-	    <th>Título</th>
-	    <th>Archivos</th>
+	    <th width="2%">#</th>
+	    <th width="20%">Fecha</th>
+	    <th width="50%">Título</th>
+	    <th width="28%">Archivos</th>
 	  </tr>
 	  <tr>
 	    <td>32</td>
