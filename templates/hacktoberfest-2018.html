@@ -223,21 +223,21 @@
   <h2 class="whatis--headline">Que necesitas saber</h2>
   <div class="whatis--details">
     <span class="whatis--detail-item">
-      <img alt="" src="assets/icon-who-df656b71ff28fed039a356122040ff7e4aa18e72c381c078869a7841d549d99f.png" />
+      <img alt="" src="{{ '/hacktoberfest2018_assets/icon-who-df656b71ff28fed039a356122040ff7e4aa18e72c381c078869a7841d549d99f.png'|asseturl }}" />
       <h3 class="whatis--sub-headline">Quien</h3>
       <p>
         Hacktoberfest esta <strong>abierto a todos</strong> en nuestra comunidad global!
       </p>
     </span>
     <span class="whatis--detail-item">
-      <img alt="" src="assets/icon-how-37d68a79d5ebafd3b615a392905e7a57a71907fd8218893153875107bea57d1f.png" />
+      <img alt="" src="{{ '/hacktoberfest2018_assets/icon-how-37d68a79d5ebafd3b615a392905e7a57a71907fd8218893153875107bea57d1f.png'|asseturl }}" />
       <h3 class="whatis--sub-headline">Como</h3>
       <p>
         Los pull requests (contribuciones) pueden hacerse en <strong>cualquier repositorio/proyecto alojado en GitHub</strong>.
       </p>
     </span>
     <span class="whatis--detail-item">
-      <img alt="" src="assets/icon-when-4664f060b21ba54358e262f294ca2968e4ad859c733feb5bc0f468c1be351f19.png" />
+      <img alt="" src="{{ '/hacktoberfest2018_assets/icon-when-4664f060b21ba54358e262f294ca2968e4ad859c733feb5bc0f468c1be351f19.png'|asseturl }}" />
       <h3 class="whatis--sub-headline">Cuando</h3>
       <p>
           Puedes ingresar en cualquier momento del mes de Octubre, desde el 1 hasta el 31.
@@ -268,6 +268,7 @@
 <section id="description" class="baq description">
   <div class="container baq--description">
     <h2 class="baq--headline">Meetup Hacktoberfest BAQ</h2>
+    <p>Es una iniciativa de las comunidades de Python Barranquilla, BarranquillaJS, Pioneras Dev BAQ, FullStack Barranquilla, Barranquilla Analítica R y aliados por promover el uso y colaboración de código abierto en la ciudad.</p>
     <p>Nos reuniremos toda una tarde a programar, escuchar charlas, tomar cerveza, comer pizza y hablar de lo que nos gusta.</p>
     <a class="Button Button--primary hero--cta" href="https://goo.gl/forms/puFemBaOd3jXRtrB3">Apartar Cupo</a>
   </div>
@@ -282,7 +283,9 @@
         <li><strong>Fecha:</strong> Sábado 20 de octubre de 2018 desde las 12:30 PM hasta las 07:00 PM.</li>
       </ul>
     </div>
-    <div id="map"></div>
+    <div>
+      <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.81686896644534%2C11.000922603769578%2C-74.80957335792482%2C11.007610147323005&amp;layer=mapnik&amp;marker=11.004266394519705%2C-74.81322116218507" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=11.00427&amp;mlon=-74.81322#map=17/11.00427/-74.81322">Ver mapa más grande</a></small>
+    </div>
   </div>
 </section>
 
@@ -295,7 +298,7 @@
     <img src="{{ '/hacktoberfest2018_assets/pioneras.png'|asseturl }}" alt="Logo Pioneras Dev" />
     <img src="{{ '/hacktoberfest2018_assets/pybaq.png'|asseturl }}" alt="Logo PyBAQ" />
     <img src="{{ '/hacktoberfest2018_assets/fullstack.png'|asseturl }}" alt="Logo FullStack Labs" />
-    <img src="{{ '/hacktoberfest2018_assets/pybaq.png'|asseturl }}" alt="Logo Barranquilla Analitica" />
+    <img src="{{ '/hacktoberfest2018_assets/r-language.png'|asseturl }}" alt="Logo Barranquilla Analitica R" />
   </div>
 </section>
 
@@ -306,6 +309,7 @@
   <div class="sponsors--logos">
     <img src="{{ '/hacktoberfest2018_assets/fullstack.png'|asseturl }}" alt="Logo FullStack Labs" style="width: 300px;" />
     <img src="{{ '/hacktoberfest2018_assets/ideaware.png'|asseturl }}" alt="Logo Ideaware" style="width: 100px;" />
+    <img src="{{ '/hacktoberfest2018_assets/finsocial.png'|asseturl }}" alt="Logo Finsocial" style="width: 20%;" />
   </div>
 </section>
   
@@ -315,9 +319,9 @@
       <ul class="schedule--details">
         <li>12:30 - 01:00 <span>Registro</span></li>
         <li>01:00 - 01:15 <span>Charla - Iniciacion al open source</span></li>
-        <li>01:15 - 01:30 <span>Charla 2 - ¿Por que del open source?</span></li>
-        <li>01:30 - 01:45 <span>Charla 3 - Cómo pase de financiero a cientifico de datos</span></li>
-        <li>01:45 - 02:00 <span>Charla apertura - CEO Andrés Max</span></li>
+        <li>01:15 - 01:30 <span>Charla - ¿Por que del open source?</span></li>
+        <li>01:30 - 01:45 <span>Charla - Cómo pase de financiero a cientifico de datos</span></li>
+        <li>01:45 - 02:00 <span>Charla - CEO Andrés Max</span></li>
         <li>02:00 - 02:10 <span>Orientación</span></li>
         <li>02:10 - 06:30 <span>Evento - ¡Vamos a programar!</span></li>
         <li>06:30 - 07:00 <span>Comida</span></li>
@@ -589,7 +593,7 @@
 </section>
 
 <section id="sharing" class="sharing">
-  <img alt="" class="sharing--header" src="assets/logo-hacktoberfest-658b5aa2bd34e782d29c40bf6afbdff00f20fe1328efa6da17743878ba8db66f.png" />
+  <img alt="" class="sharing--header" src="{{ '/hacktoberfest2018_assets/logo-hacktoberfest-658b5aa2bd34e782d29c40bf6afbdff00f20fe1328efa6da17743878ba8db66f.png'|asseturl }}" />
   <a class="sharing--cta-link" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fhacktoberfest.digitalocean.com%2F">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px" height="18px" viewBox="0 0 10 18" version="1.1" role="img" aria-labelledby="fv43m6i6920cug3pretbpzlqrjarc8r l1bc0610ek2gqye5ebsbttyeav9mn9q" class="sharing--cta-icon">
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
@@ -714,33 +718,6 @@
     &copy; 2018 <a href="https://pybaq.co/" target="_blank" style="color:#cccccc;">PyBAQ</a> Todos los derechos reservados. Orgullosamente hecho en Colombia
   </p>
 </footer>
-
-
-    <script src="https://go.digitalocean.com/js/forms2/js/forms2.min.js"></script>
-    <script src="assets/application-0ce2f88c8d89eff88cd35adc56769bef990280738e03856d5c5b31b7b629fac4.js"></script>
-    <script>
-      function initMap() {
-        var myLatLng = {lat: 11.004278, lng: -74.8153921};
-
-        // Create a map object and specify the DOM element
-        // for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
-          zoom: 16
-        });
-
-        // Create a marker and set its position.
-        var marker = new google.maps.Marker({
-          map: map,
-          position: myLatLng,
-          title: 'HacktoberFest BAQ 2018!'
-        });
-      }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrpUPhpbPzRI4hYC7xE02WKsrxQv0HClI&callback=initMap"
-        async defer></script>
-    <!-- Analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
