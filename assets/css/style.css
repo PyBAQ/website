@@ -73,7 +73,7 @@ a:focus {
 	background:#2B2E31;
 }
 ::selection {
-	color: #fff;
+	color: #ffff;
 	text-shadow:none;
 	background:#2B2E31;
 }
