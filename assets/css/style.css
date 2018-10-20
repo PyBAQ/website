@@ -68,12 +68,12 @@ a:focus {
 }
 
 ::-moz-selection  {
-	color: #fff;
+	color: #ffffff;
 	text-shadow:none;
 	background:#2B2E31;
 }
 ::selection {
-	color: #fff;
+	color: #ffffff;
 	text-shadow:none;
 	background:#2B2E31;
 }
@@ -131,7 +131,7 @@ a:focus {
 }
 
 .btn-theme {
-  color: #fff;
+  color: #ffffff;
   background-color: #384452;
   border-color: #384452;
   margin: 4px;
@@ -141,7 +141,7 @@ a:focus {
 .btn-theme:active,
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
-  color: #fff;
+  color: #ffffff;
   background-color: #01D099;
   border-color: #01D099;
 }
