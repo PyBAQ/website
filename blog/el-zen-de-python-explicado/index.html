@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../../ico/favicon.png">
+  <title>El Zen de Python Explicado </title>
+  <link rel="stylesheet" href="../../static/gen/styles.css?h=e4b7899c">
+  <link rel="stylesheet" href="../../css/screen.css?h=da39a3ee">
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@pybaq" />
+  <meta name="twitter:creator" content="@@javidazac" />
+  <meta name="description" content="En este artículo haré unos breves comentarios sobre cada uno de los principios escritos dentro del Zen de Python.">
+  <meta name="author" content="Python Barranquilla">
+  <meta property="og:title" content="El Zen de Python Explicado" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="En este artículo haré unos breves comentarios sobre cada uno de los principios escritos dentro del Zen de Python" />
+  
+  <meta property="og:image" content="https://pybaq.co/blog/el-zen-de-python-explicado/el-zen-de-python-explicado.png" />
+  <meta property="og:image:width" content="850" />
+  <meta property="og:image:height" content="400" />
+  
+  <meta property="og:url" content="https://pybaq.co/blog/el-zen-de-python-explicado/" />
+  <meta property="og:site_name" content="https://pybaq.co/" />
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../">
+          <img class="navbar-logo" src="../../img/pybaq-logo.png" alt="Python Barranquilla">
+        </a>
+      </div>
+      <div class="navbar-collapse collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="../../">INICIO</a></li>
+          
+            <li><a href="../../about/">NOSOTROS</a></li>
+          
+            <li class="active"><a href="../../blog/">BLOG</a></li>
+          
+            <li><a href="../../eventos/">EVENTOS</a></li>
+          
+            <li><a href="../../contact/">CONTACTO</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 70px"></div>
+  
+<div id="blue">
+    <div class="container">
+      <div class="row">
+        <h3>Artículo</h3>
+      </div>
+    </div>
+</div>
+<div class="container mtb">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="post-meta blog_post-post_meta">
+        
+            <p><img class="img-responsive" src="../../blog/el-zen-de-python-explicado/el-zen-de-python-explicado.png"></p>
+          
+        <h1 class="ctitle">El Zen de Python Explicado</h1>
+        <csmall>Escrito: 2020-03-28.</csmall> | <csmall2>
+        por: 
+          <a href="https://twitter.com/@javidazac" target="_blank">
+            Javier Daza
+          </a>
+        </csmall2>
+      </div>
+      <div id="body-content" class="blog_post-body">
+          <p>Si alguna vez abren la consola de python y escriben <code>import this</code> verán que les aparecerán las líneas con el famoso Zen de Python:</p>
+<ol>
+<li>Beautiful is better than ugly.</li>
+<li>Explicit is better than implicit.</li>
+<li>Simple is better than complex.</li>
+<li>Complex is better than complicated.</li>
+<li>Flat is better than nested.</li>
+<li>Sparse is better than dense.</li>
+<li>Readability counts.</li>
+<li>Special cases aren't special enough to break the rules.</li>
+<li>Although practicality beats purity.</li>
+<li>Errors should never pass silently.</li>
+<li>Unless explicitly silenced.</li>
+<li>In the face of ambiguity, refuse the temptation to guess.</li>
+<li>There should be one-- and preferably only one --obvious way to do it.</li>
+<li>Although that way may not be obvious at first unless you're Dutch.</li>
+<li>Now is better than never.</li>
+<li>Although never is often better than <em>right</em> now.</li>
+<li>If the implementation is hard to explain, it's a bad idea.</li>
+<li>If the implementation is easy to explain, it may be a good idea.</li>
+<li>Namespaces are one honking great idea -- let's do more of those!</li>
+</ol>
+<p>Tim Peters, un pythonista por mucho tiempo redacto los principios guía de Python en estos 20 aforismos, de los cuales solo 19 han sido escritos. Ahora, como ejercicio práctico trataré de deglosar cada uno de los principios de la filosofía del lenguaje. Acompañenme y sientanse libres de comentar en cualquier momento su punto de vista.</p>
+<h2>1. Bello es mejor que feo.</h2>
+<p>En vez de usar &amp;&amp; o || como operadores logicos, considera usar and, or. Aunque es subjetivo, el código parece más legible y hermoso de esta manera.</p>
+<pre><code>if (is_valid(a) &amp;&amp; b == 0 || s == 'yes') {
+</code></pre>
+<p>vs</p>
+<pre><code>if is_valid(a) and b == 0 or s == 'yes':
+</code></pre>
+<h2>Explícito es mejor que implícito.</h2>
+<p>Esto puede referirse a "nombrar explícitamente módulos al invocarlos en funciones".</p>
+<pre><code>import os
+print os.getcwd()
+</code></pre>
+<p>en vez de</p>
+<pre><code>from os import *
+print getcwd()
+</code></pre>
+<p>Deje que su código sea legible por un desconocido que no sabe nada sobre usted o su programa.</p>
+<h2>2. Simple es mejor que complejo.</h2>
+<p>No escriba código complejo. Tu código debe ser legible. Considera que tu código será utilizado por un asesino psicópata que sabe dónde vives. El código simple puede ser más largo, pero recuerde que debe escribir una vez pero leer / mantener el código siempre.</p>
+<p>Según el desarrollador brasileño de software Vitor Freitas, <em>"Steve Jobs declaró una vez que "simple puede ser más difícil que complejo". Y eso es verdad. Requiere mucho trabajo arduo para que su forma de pensar esté limpia, para llegar a una solución simple. Pero una solución simple siempre es mejor que una solución compleja. Simple se comunica mejor. Simple crea una conexión instantánea. La simplicidad es algo que puedes aplicar a todo en tu vida, no solo a la programación.".</em></p>
+<h2>3. Complejo es mejor que complicado.</h2>
+<p>Voy a intentarlo en este. Digamos que mi novia imaginaria me pide que le haga una comida de tres platos para su cumpleaños (: complejo). A continuación, digamos que me pide que la lleve a un restaurante del que disfrutará (: complicado). Piensa en la diferencia principal entre Data Analytics y Data Science: en x tienes las preguntas pero no las respuestas, mientras que en y no tienes las preguntas ni las respuestas.</p>
+<h2>4. Plano es mejor que anidado.</h2>
+<p>El anidamiento es muchas veces sinónimo de complejidad extra, de dependencias que a veces incomodan, de tener que mirar con cuidado. Lo plano es más directo, más claro. Y así debe ser tu decisión, directo al grano, sin vueltas.</p>
+<p>Lo plano es <em>"... por lo general, más fácil y más rápido de parsear, y debería preferirse ... donde se necesitan estructuras de datos anidados, se prefiere poco profundo en lugar de profundamente anidado."</em></p>
+<h2>5. Disperso es mejor que denso.</h2>
+<p>No intentes pegar demasiado código en una línea:</p>
+<pre><code>if i&gt;0: return sqrt(i) 
+elif i==0: return 0 
+else: return 1j * sqrt(-i)
+</code></pre>
+<p>versus</p>
+<pre><code>if i &gt; 0:
+    return sqrt(i) 
+elif i == 0:
+    return 0
+else: 
+    return 1j * sqrt(-i)
+</code></pre>
+<h2>6. La legibilidad cuenta.</h2>
+<p>Esta es fácil: D. Compare C y Python:</p>
+<pre><code>#include &lt;stdio.h&gt; 
+int main(void) 
+{ 
+    printf("Hello, world!\n"); 
+    return(0); 
+}
+</code></pre>
+<p>vs</p>
+<pre><code>print "Hello world!"
+</code></pre>
+<p>¿Y qué hay de la sangría? El código bien sangrado es más legible. Por lo tanto, en Python es obligatorio.</p>
+<h2>7. Los casos especiales no son tan especiales como para quebrantar las reglas.</h2>
+<p>Los idiomas y las bibliotecas deberían aspirar a la coherencia y deberían apoyar el caso general.</p>
+<h2>8. Aunque lo práctico gana a la pureza.</h2>
+<p>Con respecto a la Regla 8, siempre puede haber una excepción a la regla.</p>
+<h2>9. Los errores nunca deberían dejarse pasar silenciosamente.</h2>
+<p>Nunca permita que los errores, que pueden ocurrir, confundan al lector. Esto se puede resolver fácilmente imprimiendo una cadena cuando ocurre un error.</p>
+<pre><code>try: 
+    import this 
+except ImportError: 
+    print 'this is not available'
+</code></pre>
+<h2>10. A menos que hayan sido silenciados explícitamente.</h2>
+<pre><code>try: 
+    v = d[k] 
+except KeyError: 
+    v = d[k] = default
+</code></pre>
+<h2>11. Frente a la ambigüedad, rechaza la tentación de adivinar.</h2>
+<p>De nuevo, esto vuelve al tema de hacer que tu código sea específico, claro y hermoso.</p>
+<p>Considere
+    if not a and b:
+        do something</p>
+<p>¿Qué une más estrechamente 'no' o 'y'? La sintaxis no es ambigua, pero mi memoria no.
+¿Podría ser? (no):</p>
+<pre><code>if not (a and b):
+    do something
+</code></pre>
+<p>y que tal
+    if b and not a:
+        do something</p>
+<p>Tal vez un poco mas feo pero sirve:
+    if (not a) and b:
+        do something</p>
+<p>Esto es subjetivo porque alguien puede argumentar que debe esperar que el lector de su código conozca Python y, por lo tanto, las prioridades para 'not' y 'and', y no es lo suficientemente oscuro como para justificar paréntesis.</p>
+<h2>12. Debería haber una -y preferiblemente sólo una- manera obvia de hacerlo.</h2>
+<p>Exactamente lo contrario del lema del lenguaje de programación de Perl. "En otras palabras, piense por qué sería que Python se describe como un lenguaje de programación fácil de aprender. ¿No sería más difícil si tuvieras que aprender múltiples formas de hacer cada cosa?</p>
+<p>El ejemplo más claro es al iterar sobre una lista. En Python solo debes aprender:</p>
+<pre><code>for element in sequence:
+</code></pre>
+<h2>13. Aunque esa manera puede no ser obvia al principio a menos que usted sea holandés.</h2>
+<p>Esta es una referencia al creador de Python, Guido van Rossum. Al ver que Guido creó el lenguaje Python, tendría sentido que aprender o recordar una regla en Python sería más fácil para él de lo que lo haría cualquier otra persona, en promedio.</p>
+<h2>14. Ahora es mejor que nunca.</h2>
+<p>No dedique demasiado tiempo a planificar y preoptimizar; obtenga algo que haga el trabajo y mejorelo con el tiempo.</p>
+<h2>15. Aunque nunca es a menudo mejor que ya mismo.</h2>
+<p>Pero piensa un poco en eso, para que no te desvíes por un camino que luego significa que no hay un camino elegante hacia atrás.</p>
+<h2>16. Si la implementación es difícil de explicar, es una mala idea.</h2>
+<p>Si la implementación es complicada, definitivamente no es simple, lo que significa que no está cerca de un borrador final, lo que significa que no es bueno publicarlo como tal.</p>
+<h2>17. Si la implementación es fácil de explicar, puede que sea una buena idea.</h2>
+<p>Algunas ideas son simplemente malas, independientemente de si son fáciles de implementar o no.</p>
+<h2>18. Los 'namespaces' son una gran idea ¡Hagamos más de esas cosas!</h2>
+<p>Google define un 'namespace' como "un conjunto de símbolos que se utilizan para organizar objetos de varios tipos, de modo que estos objetos pueden ser referidos por su nombre." Esto todavía me confunde, así que veamos lo que tenemos aquí: Conjuntos de símbolos, y varios objetos a los que se hace referencia por nombre. Supongo que en lenguaje general, una palabra se define con otras palabras. Una vez aprendido, solo necesitamos una palabra, ¿o namespace? - para dar sentido a algo, simplificando la vida en el proceso.</p>
+<p>Comparte mi artículo si te gusto. Déjame un comentario si crees que hizo falta mencionar algo que pueda mejorar el artículo para los demás.</p>
+<h4>Fuentes:</h4>
+<ul>
+<li><a href="http://www.itsmycodeblog.com/the-zen-of-python/">http://www.itsmycodeblog.com/the-zen-of-python/</a></li>
+<li><a href="http://thepythondjango.com/meaning-different-aphorism-zen-python/">http://thepythondjango.com/meaning-different-aphorism-zen-python/</a></li>
+<li><a href="http://pyconar.blogspot.com.co/2011/09/el-zen-de-pycon-plano-es-mejor-que.html">http://pyconar.blogspot.com.co/2011/09/el-zen-de-pycon-plano-es-mejor-que.html</a></li>
+<li><a href="https://www.pythoniza.me/el-zen-de-python/">https://www.pythoniza.me/el-zen-de-python/</a></li>
+<li><a href="https://medium.com/@Pythonidaer/a-brief-analysis-of-the-zen-of-python-2bfd3b76edbf">https://medium.com/@Pythonidaer/a-brief-analysis-of-the-zen-of-python-2bfd3b76edbf</a></li>
+<li><a href="https://www.quora.com/What-do-different-aphorisms-in-The-Zen-of-Python-mean">https://www.quora.com/What-do-different-aphorisms-in-The-Zen-of-Python-mean</a></li>
+<li><a href="https://es.slideshare.net/doughellmann/an-introduction-to-the-zen-of-python">https://es.slideshare.net/doughellmann/an-introduction-to-the-zen-of-python</a></li>
+<li><a href="https://legacy.python.org/dev/peps/pep-0020/">https://legacy.python.org/dev/peps/pep-0020/</a></li>
+</ul>
+
+          <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/el-zen-de-python-explicado"; this.page.url = "https://pybaq.co/blog/el-zen-de-python-explicado/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//python-barranquilla.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <footer class="dq-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>Sobre Nosotros</h4>
+          <div class="hline-w"></div>
+          <p>Python Barranquilla es una comunidad para todos los interesados en desarrollar aplicaciones en Python dentro de la ciudad de Barranquilla. </p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Redes sociales</h4>
+          <div class="hline-w"></div>
+          <p>
+            <a href="https://github.com/PyBAQ"><i class="fa fa-github"></i></a> 
+            <a href="https://www.facebook.com/pybaq/"><i class="fa fa-facebook"></i></a>
+            <a href="http://twitter.com/pybaq"><i class="fa fa-twitter"></i></a>
+            <a href="https://django-python-quilla.slack.com/signup"><i class="fa fa-slack"></i></a>
+            <a href="https://www.instagram.com/pybaq"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.meetup.com/pythonbaq/"><img src="/img/meetup.png" class="meetup-icon" alt="meetup"></a>
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Nuestra Ubicación</h4>
+          <div class="hline-w"></div>
+          <p>
+            Barranquilla, Atlántico, Colombia.<br/>
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Código de conducta</h4>
+          <div class="hline-w"></div>
+          <p>
+            El siguiente es nuestro
+            <a href="/codigo-de-conducta/"style="color: #FFFFFF"><u>Código de conducta.</u></a>
+          </p>
+        </div>        
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/retina-1.1.0.js"></script>
+  <script src="../../js/jquery.hoverdir.js"></script>
+  <script src="../../js/jquery.hoverex.min.js"></script>
+  <script src="../../js/jquery.prettyPhoto.js"></script>
+  <script src="../../js/jquery.isotope.min.js"></script>
+  <script src="../../js/custom.js"></script>
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
+
+  <script>
+    window.onload = function() {
+      twemoji.parse(document.body);
+    }
+    // Portfolio
+    (function($) {
+      "use strict";
+      var $container = $('.portfolio'),
+        $items = $container.find('.portfolio-item'),
+        portfolioLayout = 'fitRows';
+        
+        if( $container.hasClass('portfolio-centered') ) {
+          portfolioLayout = 'masonry';
+        }
+            
+        $container.isotope({
+          filter: '*',
+          animationEngine: 'best-available',
+          layoutMode: portfolioLayout,
+          animationOptions: {
+          duration: 750,
+          easing: 'linear',
+          queue: false
+        },
+        masonry: {
+        }
+        }, refreshWaypoints());
+        
+        function refreshWaypoints() {
+          setTimeout(function() {
+          }, 1000);   
+        }
+            
+        $('nav.portfolio-filter ul a').on('click', function() {
+            var selector = $(this).attr('data-filter');
+            $container.isotope({ filter: selector }, refreshWaypoints());
+            $('nav.portfolio-filter ul a').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+        
+        function getColumnNumber() { 
+          var winWidth = $(window).width(), 
+          columnNumber = 1;
+        
+          if (winWidth > 1200) {
+            columnNumber = 5;
+          } else if (winWidth > 950) {
+            columnNumber = 4;
+          } else if (winWidth > 600) {
+            columnNumber = 3;
+          } else if (winWidth > 400) {
+            columnNumber = 2;
+          } else if (winWidth > 250) {
+            columnNumber = 1;
+          }
+            return columnNumber;
+          }       
+          
+          function setColumns() {
+            var winWidth = $(window).width(), 
+            columnNumber = getColumnNumber(), 
+            itemWidth = Math.floor(winWidth / columnNumber);
+            
+            $container.find('.portfolio-item').each(function() { 
+              $(this).css( { 
+              width : itemWidth + 'px' 
+            });
+          });
+        }
+        
+        function setPortfolio() { 
+          setColumns();
+          $container.isotope('reLayout');
+        }
+          
+        $container.imagesLoaded(function () { 
+          setPortfolio();
+        });
+        
+        $(window).on('resize', function () { 
+          setPortfolio();          
+        });
+
+        $('#body-content').children().children().each(function(index, tag) {
+          var url = ($(tag).attr('href') != undefined) ? $(tag).attr('href').toLowerCase() : "";
+          if (url.indexOf("pybaq.co") >= 0) {
+            if (tag.tagName == 'A') { $(tag).attr('target', '_blank'); }
+          }
+        });
+    })(jQuery);
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102964527-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+</body>
+</html>
+ 
