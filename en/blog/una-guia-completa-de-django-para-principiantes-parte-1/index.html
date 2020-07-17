@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="../../ico/favicon.png">
+  <link rel="shortcut icon" href="../../../ico/favicon.png">
   <title>Una guía completa de Django para principiantes- Parte 1 </title>
-  <link rel="stylesheet" href="../../static/gen/styles.css?h=f5681133">
-  <link rel="stylesheet" href="../../css/screen.css?h=da39a3ee">
+  <link rel="stylesheet" href="../../../static/gen/styles.css?h=f5681133">
+  <link rel="stylesheet" href="../../../css/screen.css?h=da39a3ee">
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -28,8 +28,8 @@
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
   
-  <meta property="og:url" content="https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/" />
-  <meta property="og:site_name" content="https://pybaq.co/" />
+  <meta property="og:url" content="https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/" />
+  <meta property="og:site_name" content="https://pybaq.co/en/" />
 
   <script src="https://cmp.osano.com/16BZ1oRxDcinM3Poo/3ac8836f-cc6e-4294-a589-749716e8a383/osano.js"></script>
 </head>
@@ -39,40 +39,40 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Alternar navegación</span>
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../../">
-        <img class="navbar-logo" src="../../img/pybaq-logo.png" alt="Python Barranquilla">
+      <a class="navbar-brand" href="../../../en/">
+        <img class="navbar-logo" src="../../../img/pybaq-logo.png" alt="Python Barranquilla">
       </a>
     </div>
     <div class="navbar-collapse collapse navbar-right">
       <ul class="nav navbar-nav">
         
           <li>
-            <a href="../../">INICIO</a>
+            <a href="../../../en/">HOME</a>
           </li>
         
           <li>
-            <a href="../../nosotros/">NOSOTROS</a>
+            <a href="../../../en/nosotros/">ABOUT US</a>
           </li>
         
           <li class="active">
-            <a href="../../blog/">BLOG</a>
+            <a href="../../../en/blog/">BLOG</a>
           </li>
         
           <li>
-            <a href="../../eventos/">EVENTOS</a>
+            <a href="../../../en/eventos/">EVENTS</a>
           </li>
         
           <li>
-            <a href="../../contacto/">CONTACTO</a>
+            <a href="../../../en/contact/">CONTACT</a>
           </li>
         
         <li>
-          <a href="../../en/blog/una-guia-completa-de-django-para-principiantes-parte-1/">EN</a>
+          <a href="../../../blog/una-guia-completa-de-django-para-principiantes-parte-1/">ES</a>
         </li>
       </ul>
     </div>
@@ -92,7 +92,7 @@
     <div class="col-lg-12">
       <div class="post-meta blog_post-post_meta">
         
-            <p><img class="center-block img-responsive" src="../../blog/una-guia-completa-de-django-para-principiantes-parte-1/guia-django-principiantes-parte-1.png" alt=""></p>
+            <p><img class="center-block img-responsive" src="../../../blog/una-guia-completa-de-django-para-principiantes-parte-1/guia-django-principiantes-parte-1.png" alt=""></p>
           
         <h1 class="ctitle">Una guía completa de Django para principiantes- Parte 1</h1>
         <span class="csmall">Escrito: 2017-12-15.</span> | 
@@ -103,12 +103,12 @@
       </div>
       <div id="body-content" class="blog_post-body">
           <h2>Introducción</h2>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/introduccion-guia-django.png" alt="Introducción Django"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/introduccion-guia-django.png" alt="Introducción Django"></p>
 <p>Hoy estoy comenzando una nueva serie de tutoriales sobre los fundamentos de Django. Es una guía completa para comenzar a aprender Django. El material esta dividido en 7 partes. Vamos a explorar todos los conceptos básicos con mucho detalle, desde la instalación, preparación de entorno de desarrollo, modelos, vistas, plantillas, URLS y más temas avanzados como migraciones, pruebas y despliegues.
 Quería hacer algo diferente. Un tutorial que fuese fácil de seguir, informativo y divertido de leer. Ahí fue cuando surgió esta idea de crear algunas viñetas a los algo del texto para ilustrar algunos conceptos y escenarios. ¡Espero que disfruten la lectura!</p>
 <p>Pero antes de comenzar…</p>
 <p>Antes cuando trabajaba como profesor substituto en una universidad, yo solía enseñar una introducción a la disciplina de desarrollo web para los nuevos estudiantes del curso de Ciencias de la computación, y siempre comenzaba una clase nueva con esta frase de Confucio:</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/entender-django.png" alt="Entender primero"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/entender-django.png" alt="Entender primero"></p>
 <p>¡Así que manos a la obra! No solo leas los tutoriales. ¡Vamos a hacerlo juntos! Aprenderás mucho más haciendo y practicando.</p>
 <h2>¿Por qué Django?</h2>
 <p>Django es un framework web escrito en Python. Un framework web es un software que soporta el desarrollo dinámico de sitios web, aplicaciones y servicios. Provee una serie de herramientas y funcionalidades que resuelven muchos problemas comunes asociados con el desarrollo web, tales como características de seguridad, acceso a bases de datos, sesiones, procesamiento de plantillas, ruteo de URLS, internacionalización, ubicación y mucho más.</p>
@@ -121,7 +121,7 @@ Django es uno de los frameworks web escritos en Python más populares. Es defini
 <p>Para más ejemplo puedes ver la base de datos Django Sites, donde  se ofrece una lista de más de 5K sitios web realizados con Django.</p>
 <p>Por cierto, el años pasado, en la conferencia Django Under The Hood 2016, Carl Meyer, un desarrollador del core de Django, y empleado de Instagram, dio una charla sobre Como Instagram usa Django en escala y como soporta su crecimiento, Es una charla de una hora, pero si estas interesado en aprender más, fue una muy entretenida.</p>
 <h2>Instalación</h2>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/configuracion-basica-django.png" alt="Configuración básica Django"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/configuracion-basica-django.png" alt="Configuración básica Django"></p>
 <p>Lo primero que debemos hacer es instalar algunos programas en nuestra máquina para empezar a jugar con Django. La configuración básica consiste en instalar Python, Virtualenv y Django.</p>
 <p>Usar entornos virtuales no es obligatorio, pero es muy recomendado. Si apenas estas comenzando, es mejor comenzar con el pie derecho.
 Cuando se desarrollan sitios web o proyectos con Django, es uy común tener que instalar librerías externas para apoyar el desarrollo. Usando entornos virtuales, cada proyecto que desarrolles tiene su ambiente aislado., así que las dependencias no harán conflictos, y te permite mantener en tu ambiente local proyectos que se ejecutan con distintas versiones de Django.
@@ -130,28 +130,28 @@ Es muy fácil de usar, ¡ya lo veras!</p>
 <p>Lo primero que queremos hacer es instalar la última distribución de Python, la cual es Python 3.6.2 al momento de escribir este tutorial. Si existe una nueva versión descárgala, los siguientes pasos deberían mantenerse más o menos iguales.
 Vamos a usar Python 3 porque las librerías más importantes han sido migradas a este y porque la siguiente versión de Django 2.x no soportará Python 2.</p>
 <p>Ve a [www.python.org], haz clic en la página de descarga de Pyhton 3.6.3, baja hasta que veas los archivos de descarga listados abajo:</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/files.png" alt="Archivos"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/files.png" alt="Archivos"></p>
 <p>Escoge el correcto de acuerdo a tu distribución de Windows. Si no estás seguro de cual escoger, lo más probable es que debas descargar la versión Windows x86-64 executable installer.</p>
 <p>Ve a tu carpeta de Descargas, haz clic derecho y selecciona Ejecutar como Adminstrador.</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/documentos1.png" alt="Carpeta descargas"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/documentos1.png" alt="Carpeta descargas"></p>
 <p>Asegúrate de que escoger la opción Agregar Python 3.6 al Path y haz clic en la opción Instalar Ahora.</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/install-python-setup.png" alt="instalar python"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/install-python-setup.png" alt="instalar python"></p>
 <p>Cuando se termina la instalación, deberías ver la siguiente pantalla:</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/python-setup-exitoso.png" alt="instalación exitosa python"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/python-setup-exitoso.png" alt="instalación exitosa python"></p>
 <p>Ahora busca por la Ventana de Comandos y ábrelo:</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/abrir-consola.png" alt="Abrir consola"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/abrir-consola.png" alt="Abrir consola"></p>
 <p>Para probar si todo está bien, escribe el siguiente comando: python –-version
 Como respuesta deberías ver:</p>
 <div class="hll"><pre><span></span><span class="n">Python</span> <span class="mf">3.6</span><span class="o">.</span><span class="mi">3</span>
 </pre></div>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/consola.png" alt="consola"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/consola.png" alt="consola"></p>
 <p>Genial, Python está instalado y ejecutándose. Siguiente paso: ¡Entornos Virtuales!</p>
 <h2>Instalando Virtualenv</h2>
 <p>Para el siguiente paso, vamos a usar pip, una herramienta que administra e instala paquetes de Python, para instalar virtualenv.</p>
 <p>En la ventana de comandos, ejecuta el siguiente comando:</p>
 <div class="hll"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
 </pre></div>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/virtualenv.png" alt="virtualenv"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/virtualenv.png" alt="virtualenv"></p>
 <p>Hasta el momento, la instalación que hemos hecho es en todo el sistema. Desde ahora, todo lo que instalemos, incluyendo Django, será instalado en un entorno virtual.</p>
 <p>Piénsalo de esta forma: Para cada proyecto Django que inicies, primero crearas un entorno virtual, que es como tener una caja de arena para cada proyecto con la que puedes jugar, instalar y desinstalar paquetes sin dañar nada.</p>
 <p>A mí me gusta crear una carpeta llamada Desarrollo en mi computador personal. Luego, la uso para organizar todos mis proyectos y sitios web, pero puedes seguir los siguientes pasos y crear los directorios como te parezca mejor.</p>
@@ -159,16 +159,16 @@ Como respuesta deberías ver:</p>
 <div class="hll"><pre><span></span><span class="n">mkdir</span> <span class="n">myproject</span>
 <span class="n">cd</span> <span class="n">myproject</span>
 </pre></div>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/creando-carpetas.png" alt="Creando carpetas desde consola"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/creando-carpetas.png" alt="Creando carpetas desde consola"></p>
 <p>La carpeta es el directorio de nivel más alto que almacena todos los archivos relacionados con nuestro proyecto Django, incluyendo el entorno virtual.</p>
 <p>Así que comencemos por crear nuestro primer entorno virtual e instalar Django
 Dentro de la carpeta myproject:</p>
 <div class="hll"><pre><span></span><span class="n">virtualenv</span> <span class="n">venv</span>
 </pre></div>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/creando-virtualenv.png" alt="Creando virtualenv"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/creando-virtualenv.png" alt="Creando virtualenv"></p>
 <p>Nuestro ambiente virtual fue creado, ahora antes de empezar a usarlo debemos activar: venv\Scripts\activate
 Sabrás que funcionó si puedes ver <em>(venv)</em> al inicio de la línea de comandos, así:</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/activar-virtualenv.png" alt="Activar virtualenv"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/activar-virtualenv.png" alt="Activar virtualenv"></p>
 <p>Comencemos a entender que pasó: Creamos una carpeta especial llamada venv, esta contiene una copia de Python. Luego activamos el entorno venv y ejecutamos el comando Python, este usará</p>
 <p>Otra cosa muy importante es que el programa pip ya está instalado también, y cuando lo usemos para instalar un paquete de Python, como Django, este será instalado dentro del entorno</p>
 <p>Por cierto, para desactivar la ejecución de venv, ejecuta el siguiente comando:</p>
@@ -179,9 +179,9 @@ Sabrás que funcionó si puedes ver <em>(venv)</em> al inicio de la línea de co
 <p>Ahora que tenemos venv activado, ejecuta el siguiente comando para instalar Django:</p>
 <div class="hll"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span>
 </pre></div>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/pip-install-django.png" alt="Instalando django"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/pip-install-django.png" alt="Instalando django"></p>
 <p><strong>_¡Estamos listos!</strong>_</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/estamos-listos.png" alt="Estamos listos!"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/estamos-listos.png" alt="Estamos listos!"></p>
 <h2>Comenzando un nuevo proyecto</h2>
 <p>Para comenzar un nuevo proyecto Django, ejecuta el siguiente comando: django-admin startproject myproject</p>
 <p>La utilidad de la línea de comandos django-admin se instala automáticamente con Django.</p>
@@ -208,7 +208,7 @@ Ahora mismo, nuestro directorio myproject se ve así:</p>
 <p>Django viene con un servidor web simple instalado, lo que es muy conveniente durante el desarrollo porque no debemos instalar nada más para ejecutar el proyecto localmente. Podemos probarlo ejecutando el comando: python manage.py runserver</p>
 <p>Por ahora, puedes ignorar los errores de migración, llegaremos a eso luego.</p>
 <p>Ahora ve a la siguiente URL en un navegador Web: <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> y deberías ver la siguiente página:</p>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/django-instalado.png" alt="img16"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/django-instalado.png" alt="img16"></p>
 <p>Presiona <strong>CTRL + C</strong> para detener el servidor de desarrollo.</p>
 <h2>Django Apps</h2>
 <p>En la filosofía Django tenemos dos conceptos importantes:</p>
@@ -217,7 +217,7 @@ Ahora mismo, nuestro directorio myproject se ve así:</p>
 <li><strong>Proyecto:</strong> es una colección de configuraciones y aplicaciones. Un proyecto puede estar compuesto por una o múltiples aplicaciones.
 Es importante resaltar que no puedes ejecutar una aplicación Django sin un proyecto. Sitios web simples como un blog pueden ser escritos en su totalidad dentro de una sola aplicación, que podría llamarse blog o weblog por ejemplo.</li>
 </ul>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/que-son-aplicaciones-django.png" alt="Django Apps"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/que-son-aplicaciones-django.png" alt="Django Apps"></p>
 <p>Es una forma de organizar el código fuente, ya que al principio no es muy sencillo identificar que es una aplicación y que no lo es.</p>
 <p>¡Pero no te preocupes por eso ahora! Primero pongámonos cómodos con las API de Django y sus fundamentos.</p>
 <p>¡Listo! Entonces, para ilustrar vamos a crear un foro web simple o un tablero de discusión. Para crear nuestra primera aplicación, vamos al directorio donde está el archivo manage.py y ejecuta el siguiente comando: django-admin startapp boards
@@ -306,7 +306,7 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
 <p>Veamos que pasa:</p>
 <div class="hll"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
-<p><img src="../../img/posts/2017/guia-django-principiantes-1/hola-mundo.png" alt="Django Apps"></p>
+<p><img src="../../../img/posts/2017/guia-django-principiantes-1/hola-mundo.png" alt="Django Apps"></p>
 <p>¡Eso es! Has creado tu primera vista.</p>
 <h2>Conclusiones</h2>
 <p>Esa fue la primera parte de esta serie de tutoriales, En este aprendimos como instalar la última versión de Python y como configurar el ambiente de desarrollo. También tuvimos una introducción a entornos virtuales y empezamos nuestro primer proyecto Django y ya creamos nuestra aplicación inicial.</p>
@@ -316,7 +316,7 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
           <div class="comments">
 <div id="disqus_thread"></div>
 <script>
-  var disqus_config = function() { this.page.identifier = "/blog/una-guia-completa-de-django-para-principiantes-parte-1"; this.page.url = "https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/"; };
+  var disqus_config = function() { this.page.identifier = "/blog/una-guia-completa-de-django-para-principiantes-parte-1"; this.page.url = "https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/"; };
   (function() {
     var d = document, s = d.createElement('script');
     s.src = '//python-barranquilla.disqus.com/embed.js';
@@ -337,24 +337,24 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
   <div class="share-buttons">
     
     
-      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/"
+      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/"
         class="facebook"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-        title="Compartir en facebook" >
+        title="Share in facebook" >
         <i class="fa fa-facebook-official share-button"></i>
       </a>
     
-      <a  href="https://twitter.com/intent/tweet?text=Una%20guía%20completa%20de%20Django%20para%20principiantes-%20Parte%201&amp;url=https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/"
+      <a  href="https://twitter.com/intent/tweet?text=Una%20guía%20completa%20de%20Django%20para%20principiantes-%20Parte%201&amp;url=https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/"
         class="twitter"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-        title="Compartir en twitter" >
+        title="Share in twitter" >
         <i class="fa fa-twitter share-button"></i>
       </a>
     
-      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/&amp;title=Una%20guía%20completa%20de%20Django%20para%20principiantes-%20Parte%201"
+      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/&amp;title=Una%20guía%20completa%20de%20Django%20para%20principiantes-%20Parte%201"
         class="linkedin"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-        title="Compartir en linkedin" >
+        title="Share in linkedin" >
         <i class="fa fa-linkedin share-button"></i>
       </a>
     
@@ -366,15 +366,15 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
-        <h4>Sobre Nosotros</h4>
+        <h4>About Us</h4>
         <div class="hline-w"></div>
-        <p>Python Barranquilla es una comunidad para todos los interesados en desarrollar aplicaciones en Python dentro de la ciudad de Barranquilla.</p>
+        <p>Python Barranquilla is a community for all those interested in developing Python applications within the city of Barranquilla.</p>
         <p>
-          <a href="../../cookies/" style="color: #FFFFFF">Política de cookies</a>
+          <a href="../../../en/cookies/" style="color: #FFFFFF">Cookies Policy</a>
         </p>
       </div>
       <div class="col-lg-4">
-        <h4>Redes sociales</h4>
+        <h4>Social Networks</h4>
         <div class="hline-w"></div>
         <p>
           <a href="https://github.com/PyBAQ"><i class="fa fa-github"></i></a> 
@@ -386,18 +386,18 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
         </p>
       </div>
       <div class="col-lg-4">
-        <h4>Nuestra Ubicación</h4>
+        <h4>Our Location</h4>
         <div class="hline-w"></div>
         <p> 
           Barranquilla, Atlántico, Colombia.<br/>
         </p>
       </div>
       <div class="col-lg-4">
-        <h4>Código de conducta</h4>
+        <h4>Code of conduct</h4>
         <div class="hline-w"></div>
         <p>
-          El siguiente es nuestro
-          <a href="../../codigo-de-conducta/" style="color: #FFFFFF"><u>Código de conducta</u></a>
+          Ours is the next
+          <a href="../../../en/codigo-de-conducta/" style="color: #FFFFFF"><u>Code of conduct</u></a>
         </p>
       </div>        
     </div>
@@ -408,13 +408,13 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-  <script src="../../js/bootstrap.min.js"></script>
-  <script src="../../js/retina-1.1.0.js"></script>
-  <script src="../../js/jquery.hoverdir.js"></script>
-  <script src="../../js/jquery.hoverex.min.js"></script>
-  <script src="../../js/jquery.prettyPhoto.js"></script>
-  <script src="../../js/jquery.isotope.min.js"></script>
-  <script src="../../js/custom.js"></script>
+  <script src="../../../js/bootstrap.min.js"></script>
+  <script src="../../../js/retina-1.1.0.js"></script>
+  <script src="../../../js/jquery.hoverdir.js"></script>
+  <script src="../../../js/jquery.hoverex.min.js"></script>
+  <script src="../../../js/jquery.prettyPhoto.js"></script>
+  <script src="../../../js/jquery.isotope.min.js"></script>
+  <script src="../../../js/custom.js"></script>
   <script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
 
   <script>
