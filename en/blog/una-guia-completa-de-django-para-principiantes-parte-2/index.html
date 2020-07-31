@@ -113,22 +113,22 @@
 <p>Así que antes de llegar a la parte divertida, jugar con modelos, vistas y demás nos tomaremos un momento para discutir brevemente acerca del proyecto que vamos a desarrollar.</p>
 <p>Si ya tienes experiencia en desarrollo Web y sientes que es muy detallado, puedes simplemente pasar rápidamente por las imágenes para que tengas una idea de que vamos a construir y luego saltar a la sección Modelos de este tutorial.</p>
 <p>Pero si eres novato en el desarrollo web, te recomiendo que continúes leyendo. Te daré unas buenas ideas acerca del modelamiento y diseño de aplicaciones Web. El desarrollo web, y el desarrollo de software en general, no son solo escribir código.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva2.JPG" alt="Viñeta"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva2.jpg" alt=""></p>
 <p><strong><em>Diagrama de casos de uso</em></strong></p>
 <p>Nuestro proyecto es un tablero de discusión (un foro). La idea es mantener varios tableros, los cuales se comportarán como categorías.</p>
 <p>Luego, dentro de un tablero específico, un usuario puede empezar una nueva discusión creando un nuevo tema. En este tema, otros usuarios pueden participar en la discusión publicando respuestas.</p>
 <p>Necesitaremos una forma de diferenciar un usuario regular de un usuario administrador porque solo estos últimos podrán crear nuevos tableros. Debajo, un vistazo de nuestros principales casos de uso y el rol de cada tipo de usuario:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva3.JPG" alt="Figura 1: Casos de uso"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva3.jpg" alt="Figura 1: Casos de uso"></p>
 <p><strong><em>Diagrama de clases</em></strong></p>
 <p>Desde el diagrama de casos de uso, podemos empezar a pensar acerca de las entidades de nuestro proyecto. Las entidades son los modelos que crearemos, y están muy relacionados con la información que nuestra aplicación Django procesará.</p>
 <p>Para que podamos implementar los casos de uso descritos en la sección anterior, necesitaremos implementar al menos los siguientes modelos: Board (Tablero), Topic (Tema), Entrada (Post), User(Usuario).</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva4.JPG" alt="Figura 2: Borrado diagrama de casos de uso"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva4.jpg" alt="Figura 2: Borrado diagrama de casos de uso"></p>
 <p>También es importante tomar tiempo para pensar en cómo los modelos se relacionarán entre sí. Lo que nos dicen las líneas sólidas en que, en un Tema, necesitaremos tener un campo para identificar a qué Tablero pertenece.</p>
 <p>Similarmente, la Entrada necesitará un campo para representar a qué Tema pertenece y poder listar en las discusiones solamente Entradas creados en un Tema específico. Finamente, necesitaremos campos en el Tema para identificar quién empezó la discusión y en Entrada para identificar quien publicó la respuesta.</p>
 <p>Podemos también tener una asociación del Tablero con el modelo Usuario, para identificar quien creó un Tablero dado. Pero esta información no es relevante en la aplicación. Hay otras formas de obtener esta información, que verás luego.
 Ahora que ya tenemos la representación básica de las clases, tenemos que pensar en qué tipo de información tendrán cada uno de esos modelos. Este tipo de cosas se pueden complicar fácilmente. Así que intenta enfocarte en las partes importantes. La información que necesitas para desarrollar. Luego, podemos mejorar el modelo utilizando migraciones, las cuales verás en gran detalle en el siguiente tutorial.</p>
 <p>Por ahora, esta sería una representación básica de los campos de nuestros modelos:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva5.JPG" alt="Figura 3: Diagrama de casos de uso enfatizando las relaciones entre clases"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva5.jpg" alt="Figura 3: Diagrama de casos de uso enfatizando las relaciones entre clases"></p>
 <p>Este diagrama de clases hace énfasis en la relación entre los modelos. Esas líneas y flechas serán traducidas a campos eventualmente.</p>
 <p>Para el modelo Board (Tablero), empezaremos con dos campos: nombre y descripción. El campo nombre debe ser único, para evitar nombre de tableros duplicados. La descripción es solo para dar una idea sobre el propósito del tablero.</p>
 <p>El modelo Topic(Tema) estará compuesto de cuatro campos: asunto, fecha de última actualización que será usada para definir el ordenamiento de los temas, creador del tema para definir qué Usuario inició el Tema, y un campo llamado tablero para definir a qué Tablero pertenece.</p>
@@ -136,33 +136,33 @@ Ahora que ya tenemos la representación básica de las clases, tenemos que pensa
 <p>Finalmente, el modelo Usuario. En el diagrama de clases, solo mencioné lo campos nombre de usuario, contraseña, email y la bandera esSuperUsuario porque es básicamente lo que usaremos por ahora. Es importante tener en cuento que no es necesario crear el modelo Usuario porque Django ya trae uno dentro del paquete contrib. Ese será el que usaremos.</p>
 <p>Respecto a la multiplicidad en el diagrama de clases (los números 1, 0..<em>, etc.), es así como se leen:
 Un Tema debe estar asociado a exactamente un Tablero (que no puede ser nulo), y un Tablero puede estar asociado con muchos Temas o con ninguno (0..</em>). Lo que significa que un Tablero puede existir sin tener ni un Tema.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva6.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva6.jpg" alt=""></p>
 <p>Un Tema debe tener al menos una Entrada (Entrada Inicial), y puede tener también muchas Entradas (1..*). Una Entrada debe estar asociada con un y solo un Tema (1).</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva7.JPG" alt="Viñeta"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva7.jpg" alt=""></p>
 <p>Un Tema solo debe tener un Usuario asociado: el usuario autor (1). Un usuario puede tener muchos o ningún Tema (0..*).</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva8.JPG" alt="Viñeta"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva8.jpg" alt=""></p>
 <p>Una Entrada debe tener uno, y solo un Usuario asociado: autor (1). Un Usuario puede tener muchos o ninguna Entrada (0..*). La segunda asociación entre Entrada y Usuario es una asociación directa (ver la flecha al final de la línea), lo que significa que estamos interesados en solo un lado de la relación la cual es que el Usuario ha editado una Entrada dada. Esto será traducido en el campo actualizado_por. La multiplicidad dice 0..1, lo que significa que el campo actalizado_por puede ser nulo (la Entrada no fue editada) y debe estar asociada solo con un Usuario.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva9.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva9.jpg" alt=""></p>
 <p>Otra forma de dibujar este diagrama de clases es haciendo énfasis en los campos más que en las relaciones entre los modelos:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva10.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva10.jpg" alt=""></p>
 <p>La representación de arriba es equivalente a la mostrada previamente, y es también más cercana a lo que vamos a diseñar usando el API de modelos de Django. En esta representación, podemos ver más claramente que en el modelo Entrada, la asociación tema, creado por y actualizado por se convierten en campos del modelo.</p>
 <p>Otra cosa interesante es que en el modelo Tema tenemos ahora una operación (un método de clase) llamado posts(). Lograremos esto implementando una relación reversa, donde Django automáticamente ejecutará una consulta en la base de datos para devolver una lista de todos las Entradas que pertenecen a un Tema específico.</p>
 <p>¡Suficiente UML por ahora! Para dibujar los diagramas presentes en esta sección utilicé la herramienta StarUML.</p>
 <p><strong><em>Wireframes</em></strong></p>
 <p>Despues de invertir tiempo diseñando los modelos de la aplicación, me gusta crear algunos wireframes para definir qué se debe hacer y también tener una vista clara de hacia dónde vamos.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva11.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva11.jpg" alt=""></p>
 <p>Entonces basado en los wireframes podemos entender mejor las entidades existentes en la aplicación.
 Lo primero que necesitamos es mostrar todos los tableros en la página principal:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva12.JPG" alt="Figura 5: Wireframe de página principal con listado de tableros"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva12.jpg" alt="Figura 5: Wireframe de página principal con listado de tableros"></p>
 <p>Si el usuario hace click en un link, digamos Django, debería mostrar toda la lista de temas:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva13.JPG" alt="Figura 6: Wireframe de listado de temas en tablero Django"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva13.jpg" alt="Figura 6: Wireframe de listado de temas en tablero Django"></p>
 <p>Aquí tenemos dos flujos principales: Ya sea que el usuario haga click en el botón “Nuevo tema” o haga click en un tema y participe en una discusión.</p>
 <p>La pantalla de “Nuevo tema”:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva14.JPG" alt="Figura 7: Pantalla de nuevo tema"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva14.jpg" alt="Figura 7: Pantalla de nuevo tema"></p>
 <p>Ahora la pantalla de tema, mostrando las entradas y las discusiones:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva15.JPG" alt="Figura 8: Listado de temas"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva15.jpg" alt="Figura 8: Listado de temas"></p>
 <p>Si el usuario hace click en botón de Responder, verán la siguiente pantalla, con un resumen de las entradas de la más antigua a la más reciente:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva16.JPG" alt="Figura 9: Responder tema"></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva16.jpg" alt="Figura 9: Responder tema"></p>
 <p>Para dibujar tus wireframes puedes usar la herramienta draw.io, es gratis.</p>
 <p><strong><em>Modelos</em></strong></p>
 <p>Los modelos son básicamente una representación de la base de datos de tu aplicación. Lo que vamos a hacer en esta sección es crear la representación en Django de las clases que modelamos en la sección anterior: Tablero, Tema y Entrada. El modelo Usuario ya está definido en la aplicación incorporada llamada auth, la cual es listada en nuestra configuración INSTALLED_APPS bajo el nombre de django.contrib.auth.</p>
@@ -199,7 +199,7 @@ Lo primero que necesitamos es mostrar todos los tableros en la página principal
 Django automáticamente crea esta relación inversa – related_name es opcional. Pero si no le colocamos un nombre, Django le asignará: (nombre_de_la_clase_set). Por ejemplo, en el modelo Tablero, la instancia de Tema estaría disponible bajo el nombre tema_set. En cambio, si la renombramos a temas, sería mucho más natural.</p>
 <p>En el modelo Post, el campo updated_by field establece related_name=’+’. Esto le indica a Django que no necesitamos esta relación inversa para que la ignore.</p>
 <p>Debajo puedes ver la comparación entre el diagrama de clases y el código fuente para generar los modelos con Django. Las líneas verdes representan como estamos tratando las relaciones inversas.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva17.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva17.jpg" alt=""></p>
 <p>A este punto, puede que te estés preguntando: “¿Qué pasa con las llaves primarias/IDs?”, si no especificamos una llave primaria para un modelo. Django lo creará automáticamente. En las próximas secciones, se explicará mejor cómo funciona.</p>
 <p><strong><em>Migración de modelos</em></strong></p>
 <p>El siguiente paso es decirle a Django que cree la base de datos para empezar a usarla.</p>
@@ -245,7 +245,7 @@ Running migrations:
 <p>Como es la primera vez que migramos la base de datos, comando migrate también aplicó los archivos de migración existentes de las aplicaciones Django contribs, listados en el INSTALLED_APPS. Esto es lo que se espera.</p>
 <p>La línea <code>Applying boards.0001_initial... OK</code> es la migración que generamos en el paso anterior.
 Eso es todo! Nuestra base de datos está lista para usar.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva18.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva18.jpg" alt=""></p>
 <p><strong><em>Experimentando con API de Modelos</em></strong></p>
 <p>Una de las grandes ventajas de desarrollar con Python es la consola interactiva. La uso todo el tiempo. Es una forma rápida de probar cosas y experimentar con bibliotecas y APIs.</p>
 <pre><code>python manage.py shell
@@ -412,7 +412,7 @@ General discussion about Python.
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">response_html</span><span class="p">)</span>
 </pre></div>
 <p>Y el resultado sería esta sencilla página HTML:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva19.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva19.jpg" alt=""></p>
 <p>Pero hagamos una pausa aquí. No vamos a ir muy lejos renderizando el HTML de esta manera. Para esta simple vista, todo lo que necesitamos es una lista de tableros; luego la parte de renderizado es un trabajo para el Motor de Plantillas Django.</p>
 <p><strong><em>Configuración del motor de plantillas de Django</em></strong></p>
 <p>Crea una nueva carpeta llamada templates (plantillas) al mismo nivel que las carpetas boards y mysite:</p>
@@ -443,8 +443,7 @@ General discussion about Python.
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 <p>En este ejemplo, estamos mezclando HTML puro con algunas etiquetas especiales <code>{% for ... in ... %}</code> y <code>{{ variable }}</code>. Estas son parte del lenguaje de plantillas de Django. También se muestra cómo iterar sobre una lista de objetos utilizando un ciclo for. <code>{{ board.name }}</code> muestra el nombre del tablero en la plantilla HTML, generando un documento HTML dinámico.</p>
-<p>Antes de poder usar esta página HTML, tenemos que decirle a Django dónde encontrar las plantillas de nuestra aplicación.
-Abre el archivo setting.py dentro de la carpeta myproject, busca por la variable TEMPLATES y cambia el valor de DIRS a <code>os.path.join(BASE_DIR, 'templates')</code>:</p>
+<p>Antes de poder usar esta página HTML, tenemos que decirle a Django dónde encontrar las plantillas de nuestra aplicación. Abre el archivo setting.py dentro de la carpeta myproject, busca por la variable TEMPLATES y cambia el valor de DIRS a <code>os.path.join(BASE_DIR, 'templates')</code>:</p>
 <div class="hll"><pre><span></span><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
         <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
@@ -481,7 +480,7 @@ Ahora podemos actualizar nuestra vista Home.</p>
 <span class="s1">&#39;/Users/vitorfs/Development/myproject/templates&#39;</span>
 </pre></div>
 <p>El HTML resultante es:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva20.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva20.jpg" alt=""></p>
 <p>Podemos mejorar la plantilla HTML usando una tabla:</p>
 <p><strong>templates/home.html</strong></p>
 <div class="hll"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -492,7 +491,6 @@ Ahora podemos actualizar nuestra vista Home.</p>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Boards<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-
     <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
@@ -519,10 +517,10 @@ Ahora podemos actualizar nuestra vista Home.</p>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva21.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva21.jpg" alt=""></p>
 <p><strong><em>Probando la pantalla principal</em></strong></p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva22.JPG" alt="Viñeta"></p>
-<p>Este va a ser un tema recurrente, y vamos a explorar juntos diferentes conceptos y estrategias a lo largo de toda la serie de tutoriales.</p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva22.jpg" alt="">
+Este va a ser un tema recurrente, y vamos a explorar juntos diferentes conceptos y estrategias a lo largo de toda la serie de tutoriales.</p>
 <p>Vamos a escribir nuestro primer test. Por ahora, trabajaremos en el archivo tests.py dentro de la aplicación de tableros:</p>
 <p><strong>boards/tests.py</strong></p>
 <div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
@@ -536,7 +534,7 @@ Ahora podemos actualizar nuestra vista Home.</p>
 </pre></div>
 <p>Este es un caso de prueba muy simple pero extremadamente útil. Estamos probando el código de estado de la respuesta. El código de estado 200 significa éxito.</p>
 <p>Podemos comprobar el código de estado de la respuesta en la consola:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva23.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva23.jpg" alt=""></p>
 <p>Si hubiera una excepción no capturada, un error de sintaxis o algo así, Django devolvería en su lugar un código de estado 500, que significa Internal Server Error. Ahora, imagina que nuestra aplicación tiene 100 vistas. Si escribiéramos esta simple prueba para todas nuestras vistas, con un solo comando, podríamos comprobar si todas las vistas devuelven un código de éxito, de modo que el usuario no vea ningún mensaje de error en ninguna parte. Sin pruebas automatizadas, necesitaríamos comprobar cada página, una por una.</p>
 <p>Para ejecutar el conjunto de pruebas de Django:</p>
 <pre><code>python manage.py test
@@ -633,7 +631,7 @@ Destroying test database for alias 'default' ('file:memorydb_default?mode=memory
  +-- venv/
 </code></pre>
 <p>Ve a getbootstrap.com y descarga la versión más reciente:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva24.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva24.jpg" alt=""></p>
 <p>Descarga la versión compilada de CSS y JS.</p>
 <p>En tu ordenador, extrae el archivo bootstrap-4.0.0-beta-dist.zip que has descargado de la web de Bootstrap, copia el archivo css/bootstrap.min.css en la carpeta css de nuestro proyecto:</p>
 <pre><code>myproject/
@@ -643,7 +641,7 @@ Destroying test database for alias 'default' ('file:memorydb_default?mode=memory
  |    |-- templates/
  |    |-- static/
  |    |    +-- css/
- |    |         +-- bootstrap.min.css    &lt;-- here
+ |    |         +-- bootstrap.min.css    &lt;-- aquí
  |    +-- manage.py
  +-- venv/
 </code></pre>
@@ -657,7 +655,8 @@ Destroying test database for alias 'default' ('file:memorydb_default?mode=memory
 <p>Lo mismo que el directorio de templates, ¿recuerdas?
 Ahora tenemos que cargar los archivos estáticos (el archivo CSS de Bootstrap) en nuestra plantilla:</p>
 <p><strong>templates/home.html</strong></p>
-<div class="hll"><pre><span></span>{% load static %}<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="hll"><pre><span></span>{% load static %}
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
@@ -674,9 +673,10 @@ Ahora tenemos que cargar los archivos estáticos (el archivo CSS de Bootstrap) e
 <p>La etiqueta de la plantilla <code>{% static %}</code> utiliza la configuración STATIC_URL en el settings.py para componer la URL final. Por ejemplo, si alojara sus archivos estáticos en un subdominio como <a href="https://static.example.com/">https://static.example.com/</a>, estableceríamos <code>STATIC_URL=https://static.example.com/</code> y entonces el <code>{% static 'css/bootstrap.min.css' %}</code> devolvería <a href="https://static.example.com/css/bootstrap.min.css">https://static.example.com/css/bootstrap.min.css</a>.</p>
 <p>Si nada de esto tiene sentido para ti en este momento, no te preocupes. Sólo recuerda usar el <code>{% static %}</code> siempre que necesites referirte a un archivo CSS, JavaScript o de imagen. Más tarde, cuando empecemos a trabajar con el Despliegue, discutiremos más sobre ello. Por ahora, estamos listos.</p>
 <p>Actualizando la página 127.0.0.1:8000 podemos ver que funcionó:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva25.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva25.jpg" alt=""></p>
 <p>Ahora podemos editar la plantilla para aprovechar el CSS de Bootstrap:</p>
-<div class="hll"><pre><span></span>{% load static %}<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="hll"><pre><span></span>{% load static %}
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
@@ -716,11 +716,11 @@ Ahora tenemos que cargar los archivos estáticos (el archivo CSS de Bootstrap) e
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 <p>El resultado ahora:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva26.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva26.jpg" alt=""></p>
 <p>Hasta ahora estamos agregando nuevos tableros usando la consola interactiva (python manage.py shell). Pero necesitamos una mejor manera de hacerlo. En la siguiente sección, vamos a implementar una interfaz de administración para que el administrador del sitio web los gestione.</p>
 <p><strong><em>Introducción a Django Admin</em></strong></p>
 <p>Cuando empezamos un nuevo proyecto, Django viene configurado con Django Admin en la lista de INSTALLED_APPS.</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva34.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva34.jpg" alt=""></p>
 <p>Un buen caso de uso de Django Admin es por ejemplo en un blog; puede ser usado por los autores para escribir y publicar artículos. Otro ejemplo es un sitio de e-commerce, donde los miembros pueden crear, editar y eliminar productos.</p>
 <p>Por ahora configuraremos Django Admin para hacer mantenimiento los tableros de la aplicación.</p>
 <p>Empecemos creando la cuenta de administrador:</p>
@@ -734,9 +734,9 @@ Password (again):
 Superuser created successfully.
 </code></pre>
 <p>Ahora abre la url en un navegador <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a></p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva28.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva28.jpg" alt=""></p>
 <p>Ingresa el usuario y la contraseña para entrar en la interfaz de administración:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva29.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva29.jpg" alt=""></p>
 <p>Ya viene con algunas funciones configuradas. Aquí podemos agregar Usuarios y Grupos para gestionar permisos. Exploraremos esos conceptos luego.</p>
 <p>Para añadir el modelo Tablero es muy sencillo. Abre el archivo Admin.py en la dirección tableros, y agrega el siguiente código:</p>
 <p>boards/Admin.py</p>
@@ -746,13 +746,13 @@ Superuser created successfully.
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Board</span><span class="p">)</span>
 </pre></div>
 <p>Guarda el archivo Admin.py, y refresca la página en tu navegador:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva30.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva30.jpg" alt=""></p>
 <p>¡Eso es todo! Está listo para ser usado. Haz click en el botón Tableros para ver la lista de tableros existentes:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva31.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva31.jpg" alt=""></p>
 <p>Podemos agregar un nuevo tablero haciendo click en el botón Agregar Tablero</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva32.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva32.jpg" alt=""></p>
 <p>Click en el botón Guardar:</p>
-<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva33.JPG" alt=""></p>
+<p><img src="../../../img/posts/2020/guia-django-principiantes-2/Diapositiva33.jpg" alt=""></p>
 <p>Podemos comprobar si todo funciona abriendo la url <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p>
 <p><strong><em>Conclusiones</em></strong></p>
 <p>En este tutorial, exploramos muchos conceptos. Definimos algunos requerimientos de nuestro proyecto, creamos los primeros modelos, migramos la base de datos, comenzamos a jugar con Models API. Creamos nuestra primera vista y escribimos algunas pruebas unitarias. También configuramos el motor de plantillas de Django, archivos estáticos, agregamos la librería de Bootstrap 4 al proyecto. Finalmente, tuvimos una breve introducción a la interfaz de Django Admin.</p>
