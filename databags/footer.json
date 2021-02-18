@@ -8,7 +8,8 @@
         "location_title": "Nuestra Ubicación",
         "location_value": "Barranquilla, Atlántico, Colombia.",
         "code_of_conduct": "Código de conducta",
-        "code_of_conduct_intro": "El siguiente es nuestro"
+        "code_of_conduct_intro": "El siguiente es nuestro",
+        "channels": "Canales"
     },
     "en": {
         "about_us": "About Us",
@@ -19,6 +20,7 @@
         "location_title": "Our Location",
         "location_value": "Barranquilla, Atlántico, Colombia.",
         "code_of_conduct": "Code of conduct",
-        "code_of_conduct_intro": "This is our"
+        "code_of_conduct_intro": "This is our",
+        "channels": "Channels"
     }
 }
