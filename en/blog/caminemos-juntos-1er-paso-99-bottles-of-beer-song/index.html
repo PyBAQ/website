@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../../../ico/favicon.png">
+  <title>Caminemos Juntos: Primer Paso &#34;99 Bottles of Beer song&#34; </title>
+  <link rel="stylesheet" href="../../../static/gen/styles.css?h=f5681133">
+  <link rel="stylesheet" href="../../../css/screen.css?h=da39a3ee">
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@pybaq" />
+  <meta name="twitter:creator" content="@andresperezcera" />
+  <meta name="description" content="Esta es una continuación del post &#34;Primeros pasos en Python&#34; y revisamos el primero de los ejercicios listados en el ese post..">
+  <meta name="author" content="Python Barranquilla">
+  <meta property="og:title" content="Caminemos Juntos: Primer Paso &#34;99 Bottles of Beer song&#34;" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Esta es una continuación del post &#34;Primeros pasos en Python&#34; y revisamos el primero de los ejercicios listados en el ese post." />
+  
+  <meta property="og:image" content="https://pybaq.co/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/primer-paso.png" />
+  <meta property="og:image:width" content="850" />
+  <meta property="og:image:height" content="400" />
+  
+  <meta property="og:url" content="https://pybaq.co/en/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/" />
+  <meta property="og:site_name" content="https://pybaq.co/en/" />
+
+  <script src="https://cmp.osano.com/16BZ1oRxDcinM3Poo/3ac8836f-cc6e-4294-a589-749716e8a383/osano.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">
+        <img class="navbar-logo" src="../../../img/pybaq-logo.png" alt="Python Barranquilla">
+      </a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        
+          <li>
+            <a href="../../">HOME</a>
+          </li>
+        
+          <li>
+            <a href="../../nosotros/">ABOUT US</a>
+          </li>
+        
+          <li class="active">
+            <a href="../">BLOG</a>
+          </li>
+        
+          <li>
+            <a href="../../eventos/">EVENTS</a>
+          </li>
+        
+          <li>
+            <a href="../../contact/">CONTACT</a>
+          </li>
+        
+        <li>
+          <a href="../../../blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/">ES</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div style="height: 70px"></div>
+  
+<div id="blue">
+    <div class="container">
+      <div class="row">
+        <h3>Artículo</h3>
+      </div>
+    </div>
+</div>
+<div class="container mtb">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="post-meta blog_post-post_meta">
+        
+            <p><img class="center-block img-responsive" src="../../../blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/primer-paso.png" alt=""></p>
+          
+        <h1 class="ctitle">Caminemos Juntos: Primer Paso &#34;99 Bottles of Beer song&#34;</h1>
+        <span class="csmall">Posted: 2021-07-25.</span> | 
+        <span class="csmall2">
+          By: 
+          <a href="https://twitter.com/andresperezcera" target="_blank">
+            Andres Perez
+          </a>
+        </span>
+      </div>
+      <div id="body-content" class="blog_post-body">
+          <p>Esta es la continuación del articulo <a href="https://pybaq.co/blog/primeros-pasos-en-python/">Primeros pasos en Python</a>.</p>
+<p>Yo sé que somos muchos los que estamos muy interesados en programar. Pero es posible que también hagamos parte de aquellos a los que nos da una pereza inconcebible tener que ver una tonelada de teoría antes de ir a la practica. Y en ninguna manera condono la apatía a la teoría, pero a veces toca ensuciarse las manos un poco antes de descubrir un nuevo hobby.</p>
+<p>Esta serie de artículos van un poco en el espíritu del libro <a href="http://www.jmgaguilera.com/libro/python/traducci%C3%B3n/latex/2016/08/19/inmersion-python.html">Inmersión en Python3</a> (Originalmente <a href="https://diveintopython3.net/">Dive Into Python 3</a> por Mark Pilgrim). Este libro entra en materia sin mucha explicación y espera que los lectores tomen lo que ven como base e investiguen lo necesario para entender. Entonces esta serie de artículos pueden contener cosas que desconozcas, pero espero que estés dispuesto(a/x) a investigar.</p>
+<h3>El Problema a Resolver</h3>
+<p>Bien , empecemos declarando el problema a resolver; lo podemos encontrar en este <a href="https://www.reddit.com/r/beginnerprojects/comments/19kxre/project_99_bottles_of_beer_on_the_wall_lyrics/">link</a>. En español quedaría así:</p>
+<h4>Objetivo</h4>
+<p>Crea un programa que imprime cada lineal de la canción "99 Bottles of Beer on the Wall". Esto debería ser un programa sencillo, entonces, para hacerlo un poco mas difícil, aquí siguen algunas reglas a seguir:</p>
+<h5>Reglas</h5>
+<ol>
+<li>Si vas a usar una lista de todos los números, no los escribas manualmente todos. En cambio, usa una función estándar de Python.</li>
+<li>Aparte de la frase "take one down", no tienes permitido escribir ningun numero/nombre de numero directo en la letra.</li>
+<li>Recuerda, cuando llegues a 1 botella, la palabra "bottles" se vuelve singular.</li>
+<li>Pon una linea en blanco entre cada verso de la canción.</li>
+</ol>
+<h3>Analisis y Programación</h3>
+<p>Vamos entonces a ver donde encontramos la letra completa de la canción y la analizamos. Una pequeña búsqueda en Google me ha provisto del siguiente enlace donde encontrar la <a href="https://lyricsplayground.com/alpha/songs/numbers/99bottlesofbeeronthewall.html">letra de la canción</a>.</p>
+<p>En definitiva no la voy a escribir entera aquí porque no tiene sentido desperdiciar ese espacio cuando puedes abrirla en otra pestaña ; ); pero si vamos a escribir 3 estrofas:</p>
+<pre><code>One-hundred bottles of beer on the wall, 
+One-hundred bottles of beer!
+Take one down,
+Pass it around,
+Ninety-nine bottles of beer on the wall!
+
+Ninety-nine bottles of beer on the wall,
+Ninety-nine bottles of beer!
+Take one down,
+Pass it around,
+Ninety-eight bottles of beer on the wall!
+</code></pre>
+<iframe src="https://vlipsy.com/embed/gyck95iN" width="640" height="360" frameborder="0"></iframe><pre><code>One bottle of beer on the wall,
+One bottle of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+</code></pre>
+<h4>Primero: Intentar resolver el problema principal</h4>
+<p>Veamos que se repite y reescribamos la canción, lo que se repite lo pongo entre corchetes "[]" y lo que varía en "{}":</p>
+<div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas</span><span class="cp">}}</span><span class="x">[ bottles of beer on the wall,]</span>
+<span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas</span><span class="cp">}}</span><span class="x">[ bottles of beer!]</span>
+<span class="x">[Take one down,</span>
+<span class="x">Pass it around,]</span>
+<span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas-1</span><span class="cp">}}</span><span class="x">[ bottles of beer on the wall!]</span>
+</pre></div>
+<p>Y todo estaría perfecto si no fuera porque la ultima estrofa es diferente, por lo tanto...</p>
+<h4>Segundo: Las miles de excepciones</h4>
+<p>Una excepción nos dañaría el caminado, denoto la condicional con dobles corchetes "{{}}":</p>
+<div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Cuando</span> <span class="nv">quede</span> <span class="nv">una</span> <span class="nv">botella</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{{</span><span class="m">1</span><span class="cp">}}</span><span class="x">[bottle of beer on the wall,]</span>
+<span class="x">    </span><span class="cp">{{</span><span class="m">1</span><span class="cp">}}</span><span class="x">[bottle of beer!]</span>
+<span class="x">    [Take it down,</span>
+<span class="x">    Pass it around,</span>
+<span class="x">    No more bottles of beer on the wall!]</span>
+</pre></div>
+<p>Con esto tenemos la estructura de lo que queremos lograr, ahora necesitamos conocer que herramientas tenemos...</p>
+<h4>Tercero: Herramientas disponibles</h4>
+<p>Las herramientas serían varias, lo que creo necesitar es lo siguiente:</p>
+<ul>
+<li>La herramienta <code>for</code> nos ayuda a recorrer elementos iterables, pero no necesariamente esos son números. </li>
+<li>Podemos generar un iterable de numeros usando la herramienta <code>range</code>.</li>
+<li>También necesitamos algún tipo de condicional y la herramienta <code>if</code> será la opción escogida.</li>
+</ul>
+<p>Estas herramientas las encontramos en la <a href="https://docs.python.org/es/3/tutorial/controlflow.html#index-0">documentación oficial de python</a>; están en la sección de herramientas para control de flujo.</p>
+<p>Procedamos entonces a construir con estas herramientas el esqueleto de nuestro programa. Ten presente que para esto creo un archivo llamado <code>tercero.py</code> en una carpeta llamada <code>01_primer_paso</code>.</p>
+<div class="hll"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lo que va cuando sea una botella &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lo que va cuando son varias botellas &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+<blockquote><p>Podrías buscar por tu cuenta que función cumple <code>str()</code>.</p>
+</blockquote>
+<p>Veamos que produce esto:</p>
+<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$ python3 tercero.py
+Lo que va cuando son varias botellas <span class="m">100</span>
+Lo que va cuando son varias botellas <span class="m">99</span>
+...
+Lo que va cuando son varias botellas <span class="m">2</span>
+Lo que va cuando sea una botella <span class="m">1</span>
+Lo que va cuando son varias botellas <span class="m">0</span>
+</pre></div>
+<p>Ahora necesitamos resolver lo del texto, básteme decir que existe algo en python llamado f-string, <a href="https://docs.python.org/es/3/tutorial/inputoutput.html">lee al respecto aquí</a> y <a href="https://realpython.com/python-f-strings/">aqui</a>. Creo 2 f-trings; una por cada condición. En una primera variable bottles_sing (botellas cantan) asigno una f-string multi-linea para los casos plurales, luego a una segunda variable bottle_sings (botella canta) otra f-tring para la condición en singular de una botella:</p>
+<div class="hll"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">bottle_num</span><span class="o">=</span><span class="n">x</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">bottle_sings</span><span class="o">=</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottle of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottle of beer! </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bottle_sings</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bottles_sing</span><span class="o">=</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bottles_sing</span><span class="p">)</span>
+</pre></div>
+<p>El resultado de la ejecución es el siguiente:</p>
+<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$ python3 tercero_b.py
+<span class="m">100</span> bottles of beer on the wall,
+<span class="m">100</span> bottles of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+<span class="m">99</span> bottles of beer on the wall!
+
+<span class="m">99</span> bottles of beer on the wall,
+<span class="m">99</span> bottles of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+<span class="m">98</span> bottles of beer on the wall!
+
+...
+
+<span class="m">1</span> bottle of beer on the wall,
+<span class="m">1</span> bottle of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+</pre></div>
+<p>El articulo oficialmente debería terminar aquí. Pero algunos podrían no quedar satisfechos, por lo que voy a hablar de algo un poco mas complicado, puedes investigar por tu cuenta acerca de PyPI y la herramienta <code>pip</code>; pero no te enredes la vida sin necesidad, veremos mas de eso después.</p>
+<h4>Bonus: Exageremos un poco</h4>
+<p>En Python tenemos un gestor de librerias llamada pip, con el podemos instalar librerías adicionales de un repositorio central llamado PyPI. Allí encontré algunas librerías que podrían ser utiles para imprimir texto en vez de numeros.</p>
+<ul>
+<li><a href="https://pypi.org/project/inflect/">inflect · PyPI</a> (muy complicada).</li>
+<li><a href="https://pypi.org/project/num2words/">num2words · PyPI</a> (me enamoró con el manejo de múltiples idiomas).</li>
+<li><a href="https://sourceforge.net/p/pynum2word/wiki/Home/">pynum2words</a> (técnicamente funciona, pero su página no me dice nada de como hacerlo).</li>
+</ul>
+<p>Tras escoger num2words e instalarlo en mi PC (usando el comando <code>pip install num2words</code>), puedo modificar el código de la siguiente manera:</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">num2words</span> <span class="kn">import</span> <span class="n">num2words</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">bottle_num</span><span class="o">=</span> <span class="n">num2words</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+    <span class="n">bottle_num_minusone</span><span class="o">=</span> <span class="n">num2words</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">bottle_sings</span><span class="o">=</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottle of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottle of beer! </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bottle_sings</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bottles_sing</span><span class="o">=</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num_minusone</span><span class="si">}</span><span class="s2"> bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bottles_sing</span><span class="p">)</span>
+</pre></div>
+<p>El resultado habla por sí mismo:</p>
+<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$ python3 bonus.py
+...
+Three bottles of beer on the wall,
+Three bottles of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+Two bottles of beer on the wall!
+
+Two bottles of beer on the wall,
+Two bottles of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+One bottles of beer on the wall!
+
+One bottle of beer on the wall,
+One bottle of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+</pre></div>
+<h3>¿He comprendido algo maestro?</h3>
+<blockquote><p>El que quiera hacer la voluntad de Dios, conocerá si la doctrina es de Dios, o si yo hablo por mi propia cuenta</p>
+<p>Juan 7:17</p>
+</blockquote>
+<p>Fuera de lo pretensioso de tratar de compararme con Jesucristo (aún si lo consideras una fábula), la idea es que solo tratando de replicar lo que aprendemos podemos interiorizar el tema aprendido. Entonces, evalúa tu conocimiento o entendimiento con las siguientes tareas:</p>
+<ul>
+<li>Traduce la canción a español. Si no hablas inglés un traductor se encarga de esa parte y tu de editar código.</li>
+<li>Automatiza la canción <a href="https://arbolabc.com/canciones-infantiles/un-elefante-se-balanceaba">"Un elefante se balanceaba"</a> hasta 100 elefantes.</li>
+<li>Crea el "me quiere, no me quiere" de una flor de 18 pétalos.</li>
+</ul>
+<p>También puedes consultar algo de teoría:</p>
+<ul>
+<li>¿Que son las estructuras de control en un lenguaje de programación?</li>
+<li>¿Que es un iterable en Python?</li>
+<li>¿Que otros tipos de cadenas de texto existen y como se usan?</li>
+</ul>
+<p>¿Tienes preguntas? Escríbeme en Twitter. Podemos conectarnos y resolver dudas juntos.</p>
+
+          <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song"; this.page.url = "https://pybaq.co/en/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//python-barranquilla.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="share-buttons">
+    
+    
+      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://pybaq.co/en/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/"
+        class="facebook"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share in facebook" >
+        <i class="fa fa-facebook-official share-button"></i>
+      </a>
+    
+      <a  href="https://twitter.com/intent/tweet?text=Caminemos%20Juntos:%20Primer%20Paso%20&#34;99%20Bottles%20of%20Beer%20song&#34;&amp;url=https://pybaq.co/en/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/"
+        class="twitter"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share in twitter" >
+        <i class="fa fa-twitter share-button"></i>
+      </a>
+    
+      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/en/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/&amp;title=Caminemos%20Juntos:%20Primer%20Paso%20&#34;99%20Bottles%20of%20Beer%20song&#34;"
+        class="linkedin"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share in linkedin" >
+        <i class="fa fa-linkedin share-button"></i>
+      </a>
+    
+  </div>
+
+
+
+  <footer class="dq-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>About Us</h4>
+        <div class="hline-w"></div>
+        <p>Python Barranquilla is a community for all those interested in developing Python applications within the city of Barranquilla.</p>
+        <p>
+          <a href="../../cookies/" style="color: #FFFFFF">Cookies Policy</a>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Social Networks</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://github.com/PyBAQ" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="https://facebook.com/pybaq" target="_blank""><i class="fa fa-facebook"></i></a>
+          <a href="http://twitter.com/pybaq" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://pybaq.slack.com/" target="_blank"><i class="fa fa-slack"></i></a>
+          <a href="https://instagram.com/pybaq" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="https://meetup.com/pythonbaq/" target="_blank"><i class="fa fa-meetup"></i></a>
+        </p>
+        <h4>Channels</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://bit.ly/pyBAQ-whatsapp" target="_blank"><i class="fa fa-whatsapp"></i></a>
+          <a href="https://bit.ly/pyBAQ-telegram" target="_blank"><i class="fa fa-telegram"></i></a>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Our Location</h4>
+        <div class="hline-w"></div>
+        <p>
+          Barranquilla, Atlántico, Colombia.<br/>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Code of conduct</h4>
+        <div class="hline-w"></div>
+        <p>
+          This is our
+          <a href="../../codigo-de-conducta/" style="color: #FFFFFF"><u>Code of conduct</u></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="../../../js/bootstrap.min.js"></script>
+  <script src="../../../js/retina-1.1.0.js"></script>
+  <script src="../../../js/jquery.hoverdir.js"></script>
+  <script src="../../../js/jquery.hoverex.min.js"></script>
+  <script src="../../../js/jquery.prettyPhoto.js"></script>
+  <script src="../../../js/jquery.isotope.min.js"></script>
+  <script src="../../../js/custom.js"></script>
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      twemoji.parse(document.body);
+    });
+    // Portfolio
+    (function($) {
+      "use strict";
+      var $container = $('.portfolio'),
+        $items = $container.find('.portfolio-item'),
+        portfolioLayout = 'fitRows';
+        
+        if( $container.hasClass('portfolio-centered') ) {
+          portfolioLayout = 'masonry';
+        }
+            
+        $container.isotope({
+          filter: '*',
+          animationEngine: 'best-available',
+          layoutMode: portfolioLayout,
+          animationOptions: {
+          duration: 750,
+          easing: 'linear',
+          queue: false
+        },
+        masonry: {
+        }
+        }, refreshWaypoints());
+        
+        function refreshWaypoints() {
+          setTimeout(function() {
+          }, 1000);   
+        }
+            
+        $('nav.portfolio-filter ul a').on('click', function() {
+            var selector = $(this).attr('data-filter');
+            $container.isotope({ filter: selector }, refreshWaypoints());
+            $('nav.portfolio-filter ul a').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+        
+        function getColumnNumber() { 
+          var winWidth = $(window).width(), 
+          columnNumber = 1;
+        
+          if (winWidth > 1200) {
+            columnNumber = 5;
+          } else if (winWidth > 950) {
+            columnNumber = 4;
+          } else if (winWidth > 600) {
+            columnNumber = 3;
+          } else if (winWidth > 400) {
+            columnNumber = 2;
+          } else if (winWidth > 250) {
+            columnNumber = 1;
+          }
+            return columnNumber;
+          }       
+          
+          function setColumns() {
+            var winWidth = $(window).width(), 
+            columnNumber = getColumnNumber(), 
+            itemWidth = Math.floor(winWidth / columnNumber);
+            
+            $container.find('.portfolio-item').each(function() { 
+              $(this).css( { 
+              width : itemWidth + 'px' 
+            });
+          });
+        }
+        
+        function setPortfolio() { 
+          setColumns();
+          $container.isotope('reLayout');
+        }
+          
+        $container.imagesLoaded(function () { 
+          setPortfolio();
+        });
+        
+        $(window).on('resize', function () { 
+          setPortfolio();          
+        });
+
+        $('#body-content').children().children().each(function(index, tag) {
+          var url = ($(tag).attr('href') != undefined) ? $(tag).attr('href').toLowerCase() : "";
+          if (url.indexOf("pybaq.co") >= 0) {
+            if (tag.tagName == 'A') { $(tag).attr('target', '_blank'); }
+          }
+        });
+    });
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102964527-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+</body>
+</html>
+ 
