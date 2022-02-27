@@ -1,7 +1,7 @@
 {
     "share": [
         {
-            "icon": "fa fa-facebook-official",
+            "icon": "fab fa-facebook",
             "base_link": "https://www.facebook.com/sharer/sharer.php?u={0}",
             "class": "facebook",
             "title": {
@@ -9,7 +9,7 @@
                 "en": "Share in facebook" 
             }
         }, {
-            "icon": "fa fa-twitter",
+            "icon": "fab fa-twitter",
             "base_link": "https://twitter.com/intent/tweet?text={1}&url={0}",
             "class": "twitter",
             "title": {
@@ -17,7 +17,7 @@
                 "en":"Share in twitter"
             }
         }, {
-            "icon": "fa fa-linkedin",
+            "icon": "fab fa-linkedin",
             "class": "linkedin",
             "base_link": "https://www.linkedin.com/shareArticle?mini=true&url={0}&title={1}",
             "title": {
