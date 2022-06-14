@@ -145,10 +145,16 @@ No more bottles of beer on the wall!
 <span class="x">Pass it around,]</span>
 <span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas-1</span><span class="cp">}}</span><span class="x">[ bottles of beer on the wall!]</span>
 </pre></div>
-<p>Y todo estaría perfecto si no fuera porque la ultima estrofa es diferente, por lo tanto...</p>
+<p>Y todo estaría perfecto si no fuera porque las últimas dos estrofas son diferentes, por lo tanto...</p>
 <h4>Segundo: Las miles de excepciones</h4>
-<p>Una excepción nos dañaría el caminado, denoto la condicional con dobles corchetes "{{}}":</p>
-<div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Cuando</span> <span class="nv">quede</span> <span class="nv">una</span> <span class="nv">botella</span><span class="cp">}}</span><span class="x"></span>
+<p>Dos excepciones nos dañarían el caminado, denoto las condicionales con dobles corchetes "{{}}":</p>
+<div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Cuande</span> <span class="nv">queden</span> <span class="nv">dos</span> <span class="nv">botellas</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{{</span><span class="m">2</span><span class="cp">}}</span><span class="x">[bottles of beer on the wall,]</span>
+<span class="x">    </span><span class="cp">{{</span><span class="m">2</span><span class="cp">}}</span><span class="x">[bottles of beer!]</span>
+<span class="x">    [Take it down,</span>
+<span class="x">    Pass it around,</span>
+<span class="x">    1 bottle of beer on the wall!]</span>
+<span class="cp">{{</span><span class="nv">Cuando</span> <span class="nv">quede</span> <span class="nv">una</span> <span class="nv">botella</span><span class="cp">}}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">1</span><span class="cp">}}</span><span class="x">[bottle of beer on the wall,]</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">1</span><span class="cp">}}</span><span class="x">[bottle of beer!]</span>
 <span class="x">    [Take it down,</span>
@@ -168,6 +174,8 @@ No more bottles of beer on the wall!
 <div class="hll"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lo que va cuando sea una botella &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lo que va cuando sean dos botellas&#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lo que va cuando son varias botellas &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
@@ -192,6 +200,14 @@ Lo que va cuando son varias botellas <span class="m">0</span>
         <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">bottle_sings</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">bottles_sing</span><span class="o">=</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer! </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> bottle of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bottles_sing</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">bottles_sing</span><span class="o">=</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -218,6 +234,13 @@ No more bottles of beer on the wall!
 <span class="m">98</span> bottles of beer on the wall!
 
 ...
+
+<span class="m">2</span> bottles of beer on the wall,
+<span class="m">2</span> bottles of beer!
+Take it down,
+Pass it around,
+No more bottles of beer on the wall!
+<span class="m">1</span> bottle of beer on the wall!
 
 <span class="m">1</span> bottle of beer on the wall,
 <span class="m">1</span> bottle of beer!
@@ -246,6 +269,14 @@ No more bottles of beer on the wall!
         <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">bottle_sings</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">two_bottles_sing</span><span class="o">=</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer! </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Take it down,</span><span class="se">\n</span><span class="s2">Pass it around,</span><span class="se">\n</span><span class="s2">No more bottles of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num_minusone</span><span class="si">}</span><span class="s2"> bottle of beer on the wall!</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">two_bottles_sing</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">bottles_sing</span><span class="o">=</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bottle_num</span><span class="si">}</span><span class="s2"> bottles of beer on the wall,</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -270,7 +301,7 @@ Two bottles of beer!
 Take it down,
 Pass it around,
 No more bottles of beer on the wall!
-One bottles of beer on the wall!
+One bottle of beer on the wall!
 
 One bottle of beer on the wall,
 One bottle of beer!
