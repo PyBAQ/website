@@ -54,7 +54,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .hll .nt { color: #E06C75 } /* Name.Tag */
 .hll .nv { color: #E06C75 } /* Name.Variable */
 .hll .ow { color: #56B6C2 } /* Operator.Word */
-.hll .p-Marker { color: #ABB2BF } /* Punctuation.Marker */
+.hll .pm { color: #ABB2BF } /* Punctuation.Marker */
 .hll .w { color: #ABB2BF } /* Text.Whitespace */
 .hll .mb { color: #D19A66 } /* Literal.Number.Bin */
 .hll .mf { color: #D19A66 } /* Literal.Number.Float */
