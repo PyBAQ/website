@@ -97,7 +97,7 @@
       <span class="post-date">Escrito: 2021-07-25.</span> | 
       <span class="post-author">
         Por: 
-        <a href="https://twitter.com/andresperezcera" target="_blank">
+        <a href="https://twitter.com/andresperezcera" target="_blank" rel="noopener">
           Andres Perez
         </a>
       </span>
@@ -149,13 +149,13 @@ No more bottles of beer on the wall!
 <p>Y todo estaría perfecto si no fuera porque las últimas dos estrofas son diferentes, por lo tanto...</p>
 <h4>Segundo: Las miles de excepciones</h4>
 <p>Dos excepciones nos dañarían el caminado, denoto las condicionales con dobles corchetes "{{}}":</p>
-<div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Cuande</span> <span class="nv">queden</span> <span class="nv">dos</span> <span class="nv">botellas</span><span class="cp">}}</span><span class="x"></span>
+<div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Cuande</span> <span class="nv">queden</span> <span class="nv">dos</span> <span class="nv">botellas</span><span class="cp">}}</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">2</span><span class="cp">}}</span><span class="x">[bottles of beer on the wall,]</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">2</span><span class="cp">}}</span><span class="x">[bottles of beer!]</span>
 <span class="x">    [Take it down,</span>
 <span class="x">    Pass it around,</span>
 <span class="x">    1 bottle of beer on the wall!]</span>
-<span class="cp">{{</span><span class="nv">Cuando</span> <span class="nv">quede</span> <span class="nv">una</span> <span class="nv">botella</span><span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span><span class="nv">Cuando</span> <span class="nv">quede</span> <span class="nv">una</span> <span class="nv">botella</span><span class="cp">}}</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">1</span><span class="cp">}}</span><span class="x">[bottle of beer on the wall,]</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">1</span><span class="cp">}}</span><span class="x">[bottle of beer!]</span>
 <span class="x">    [Take it down,</span>
@@ -183,13 +183,13 @@ No more bottles of beer on the wall!
 <blockquote><p>Podrías buscar por tu cuenta que función cumple <code>str()</code>.</p>
 </blockquote>
 <p>Veamos que produce esto:</p>
-<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$ python3 tercero.py
-Lo que va cuando son varias botellas <span class="m">100</span>
-Lo que va cuando son varias botellas <span class="m">99</span>
+<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$<span class="w"> </span>python3<span class="w"> </span>tercero.py
+Lo<span class="w"> </span>que<span class="w"> </span>va<span class="w"> </span>cuando<span class="w"> </span>son<span class="w"> </span>varias<span class="w"> </span>botellas<span class="w"> </span><span class="m">100</span>
+Lo<span class="w"> </span>que<span class="w"> </span>va<span class="w"> </span>cuando<span class="w"> </span>son<span class="w"> </span>varias<span class="w"> </span>botellas<span class="w"> </span><span class="m">99</span>
 ...
-Lo que va cuando son varias botellas <span class="m">2</span>
-Lo que va cuando sea una botella <span class="m">1</span>
-Lo que va cuando son varias botellas <span class="m">0</span>
+Lo<span class="w"> </span>que<span class="w"> </span>va<span class="w"> </span>cuando<span class="w"> </span>son<span class="w"> </span>varias<span class="w"> </span>botellas<span class="w"> </span><span class="m">2</span>
+Lo<span class="w"> </span>que<span class="w"> </span>va<span class="w"> </span>cuando<span class="w"> </span>sea<span class="w"> </span>una<span class="w"> </span>botella<span class="w"> </span><span class="m">1</span>
+Lo<span class="w"> </span>que<span class="w"> </span>va<span class="w"> </span>cuando<span class="w"> </span>son<span class="w"> </span>varias<span class="w"> </span>botellas<span class="w"> </span><span class="m">0</span>
 </pre></div>
 <p>Ahora necesitamos resolver lo del texto, básteme decir que existe algo en python llamado f-string, <a href="https://docs.python.org/es/3/tutorial/inputoutput.html">lee al respecto aquí</a> y <a href="https://realpython.com/python-f-strings/">aqui</a>. Creo 2 f-trings; una por cada condición. En una primera variable bottles_sing (botellas cantan) asigno una f-string multi-linea para los casos plurales, luego a una segunda variable bottle_sings (botella canta) otra f-tring para la condición en singular de una botella:</p>
 <div class="hll"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -219,35 +219,35 @@ Lo que va cuando son varias botellas <span class="m">0</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">bottles_sing</span><span class="p">)</span>
 </pre></div>
 <p>El resultado de la ejecución es el siguiente:</p>
-<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$ python3 tercero_b.py
-<span class="m">100</span> bottles of beer on the wall,
-<span class="m">100</span> bottles of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
-<span class="m">99</span> bottles of beer on the wall!
+<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$<span class="w"> </span>python3<span class="w"> </span>tercero_b.py
+<span class="m">100</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+<span class="m">100</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
+<span class="m">99</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 
-<span class="m">99</span> bottles of beer on the wall,
-<span class="m">99</span> bottles of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
-<span class="m">98</span> bottles of beer on the wall!
+<span class="m">99</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+<span class="m">99</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
+<span class="m">98</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 
 ...
 
-<span class="m">2</span> bottles of beer on the wall,
-<span class="m">2</span> bottles of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
-<span class="m">1</span> bottle of beer on the wall!
+<span class="m">2</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+<span class="m">2</span><span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
+<span class="m">1</span><span class="w"> </span>bottle<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 
-<span class="m">1</span> bottle of beer on the wall,
-<span class="m">1</span> bottle of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
+<span class="m">1</span><span class="w"> </span>bottle<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+<span class="m">1</span><span class="w"> </span>bottle<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 </pre></div>
 <p>El articulo oficialmente debería terminar aquí. Pero algunos podrían no quedar satisfechos, por lo que voy a hablar de algo un poco mas complicado, puedes investigar por tu cuenta acerca de PyPI y la herramienta <code>pip</code>; pero no te enredes la vida sin necesidad, veremos mas de eso después.</p>
 <h4>Bonus: Exageremos un poco</h4>
@@ -288,27 +288,27 @@ No more bottles of beer on the wall!
         <span class="nb">print</span><span class="p">(</span><span class="n">bottles_sing</span><span class="p">)</span>
 </pre></div>
 <p>El resultado habla por sí mismo:</p>
-<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$ python3 bonus.py
+<div class="hll"><pre><span></span>usuario@nombre_pc:~/pybaq_caminemos_juntos/01_primer_paso$<span class="w"> </span>python3<span class="w"> </span>bonus.py
 ...
-Three bottles of beer on the wall,
-Three bottles of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
-Two bottles of beer on the wall!
+Three<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+Three<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
+Two<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 
-Two bottles of beer on the wall,
-Two bottles of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
-One bottle of beer on the wall!
+Two<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+Two<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
+One<span class="w"> </span>bottle<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 
-One bottle of beer on the wall,
-One bottle of beer!
-Take it down,
-Pass it around,
-No more bottles of beer on the wall!
+One<span class="w"> </span>bottle<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall,
+One<span class="w"> </span>bottle<span class="w"> </span>of<span class="w"> </span>beer!
+Take<span class="w"> </span>it<span class="w"> </span>down,
+Pass<span class="w"> </span>it<span class="w"> </span>around,
+No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 </pre></div>
 <h3>¿He comprendido algo maestro?</h3>
 <blockquote><p>El que quiera hacer la voluntad de Dios, conocerá si la doctrina es de Dios, o si yo hablo por mi propia cuenta</p>
@@ -388,20 +388,20 @@ No more bottles of beer on the wall!
         <h4>Canales</h4>
         <div class="hline-w"></div>
         <p>
-          <a href="https://discord.gg/46N5dPm9Zk" target="_blank"><i class="fa-brands fa-discord"></i></a>
-          <a href="https://youtube.com/playlist?list=PL1GXDqy0kMh_FC2DnDnWb4MBlHAvdLn0T" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://t.me/+yH4gst5h7DBjODYx" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-          <a href="https://bit.ly/pyBAQ-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://discord.gg/46N5dPm9Zk" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://youtube.com/playlist?list=PL1GXDqy0kMh_FC2DnDnWb4MBlHAvdLn0T" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://t.me/+yH4gst5h7DBjODYx" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://bit.ly/pyBAQ-whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
         </p>
         <h4>Redes sociales</h4>
         <div class="hline-w"></div>
         <p>
-          <a href="https://meetup.com/pythonbaq/" target="_blank"><i class="fa-brands fa-meetup"></i></a>
-          <a href="http://twitter.com/pybaq" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/python-barranquilla/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://facebook.com/pybaq" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://instagram.com/pybaq" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://github.com/PyBAQ" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://meetup.com/pythonbaq/" target="_blank" rel="noopener"><i class="fa-brands fa-meetup"></i></a>
+          <a href="http://twitter.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/python-barranquilla/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://facebook.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://instagram.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/PyBAQ" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
         </p>
       </div>
       <div class="col-lg-4">
