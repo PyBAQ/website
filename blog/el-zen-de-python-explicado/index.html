@@ -13,13 +13,16 @@
   href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;700;900&display=swap"
   rel="stylesheet"
 />
-<link rel="stylesheet" href="../../static/gen/styles.css?h=d77772d5" />
+<link rel="stylesheet" href="../../static/gen/styles.css?h=b543329e" />
 <link rel="stylesheet" href="../../css/screen.css?h=da39a3ee" />
   
   
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@pybaq" />
-  <meta name="twitter:creator" content="@@pyjavo" />
+  
+    
+    <meta name="twitter:creator" content="@pyjavo" />
+  
   <meta name="description" content="En este artículo haré unos breves comentarios sobre cada uno de los principios escritos dentro del Zen de Python.">
   <meta name="author" content="Python Barranquilla">
   <meta property="og:title" content="El Zen de Python Explicado" />
@@ -96,10 +99,12 @@
       <h1 class="ctitle">El Zen de Python Explicado</h1>
       <span class="post-date">Escrito: 2020-03-28.</span> |
       <span class="post-author">
-        Por: 
-        <a href="https://twitter.com/@pyjavo" target="_blank" rel="noopener">
-          Javier Daza
-        </a>
+        
+  
+    
+    <a href="../../nosotros/javier-daza/">Javier Daza</a>
+  
+
       </span>
     </div>
     <div id="body-content" class="blog-post-body">
@@ -153,25 +158,25 @@ print getcwd()
 <p>Lo plano es <em>"... por lo general, más fácil y más rápido de parsear, y debería preferirse ... donde se necesitan estructuras de datos anidados, se prefiere poco profundo en lugar de profundamente anidado."</em></p>
 <h2>5. Disperso es mejor que denso.</h2>
 <p>No intentes pegar demasiado código en una línea:</p>
-<pre><code>if i&gt;0: return sqrt(i) 
-elif i==0: return 0 
+<pre><code>if i&gt;0: return sqrt(i)
+elif i==0: return 0
 else: return 1j * sqrt(-i)
 </code></pre>
 <p>versus</p>
 <pre><code>if i &gt; 0:
-    return sqrt(i) 
+    return sqrt(i)
 elif i == 0:
     return 0
-else: 
+else:
     return 1j * sqrt(-i)
 </code></pre>
 <h2>6. La legibilidad cuenta.</h2>
 <p>Esta es fácil: D. Compare C y Python:</p>
-<pre><code>#include &lt;stdio.h&gt; 
-int main(void) 
-{ 
-    printf("Hello, world!\n"); 
-    return(0); 
+<pre><code>#include &lt;stdio.h&gt;
+int main(void)
+{
+    printf("Hello, world!\n");
+    return(0);
 }
 </code></pre>
 <p>vs</p>
@@ -184,15 +189,15 @@ int main(void)
 <p>Con respecto a la Regla 8, siempre puede haber una excepción a la regla.</p>
 <h2>9. Los errores nunca deberían dejarse pasar silenciosamente.</h2>
 <p>Nunca permita que los errores, que pueden ocurrir, confundan al lector. Esto se puede resolver fácilmente imprimiendo una cadena cuando ocurre un error.</p>
-<pre><code>try: 
-    import this 
-except ImportError: 
+<pre><code>try:
+    import this
+except ImportError:
     print 'this is not available'
 </code></pre>
 <h2>10. A menos que hayan sido silenciados explícitamente.</h2>
-<pre><code>try: 
-    v = d[k] 
-except KeyError: 
+<pre><code>try:
+    v = d[k]
+except KeyError:
     v = d[k] = default
 </code></pre>
 <h2>11. Frente a la ambigüedad, rechaza la tentación de adivinar.</h2>
