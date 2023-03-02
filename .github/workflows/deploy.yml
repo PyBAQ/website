@@ -43,6 +43,9 @@ jobs:
       - name: Construir pagina pybaq
         run: lektor build -O '${{ env.OUTPUT }}'
 
+      - name: Pruebas e2e
+        run: npm run test
+
       - name: Desplegar pagina pybaq
         if: env.DEPLOY == 'true'
         run: lektor deploy -O '${{ env.OUTPUT }}' ghpages-https

@@ -20,9 +20,8 @@
   },
   "homepage": "https://pybaq.co",
   "dependencies": {
-    "bootstrap": "^5.1.3",
     "@fortawesome/fontawesome-free": "^6.1.0",
-    "nodemon": "^2.0.20",
+    "bootstrap": "^5.1.3",
     "sass": "^1.26.5"
   },
   "scripts": {
@@ -30,6 +29,12 @@
     "build:css": "sass scss/main.scss assets/static/gen/styles.css --style compressed",
     "copy:bootstrap:js": "cp node_modules/bootstrap/dist/js/bootstrap.min.js node_modules/bootstrap/dist/js/bootstrap.min.js.map assets/js/",
     "build": "npm run clean && npm run build:css",
-    "watch": "nodemon -e scss -x \"npm run build\""
+    "watch": "nodemon -e scss -x \"npm run build\"",
+    "server": "lektor server",
+    "test": "start-server-and-test server http://localhost:5000 pytest"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "start-server-and-test": "^2.0.0"
   }
 }
