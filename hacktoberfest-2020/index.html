@@ -23,7 +23,7 @@
     <meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://hacktoberfest.digitalocean.com/hacktoberfest2020_assets/og-hf20-cf92d1a3bfc78883ea79dbac1518f1a4f1585e23eb69337ea730447cb70fa777.png">
 
     <script type="text/javascript">
-    
+
     // before turbolinks renders remove or add class dark - this is needed to prevent a flash of previous styles
     document.addEventListener("turbolinks:before-render", (event)=> {
       if (localStorage.getItem('mode') === 'light') event.data.newBody.classList.remove('dark')
@@ -35,12 +35,13 @@
       ((localStorage.getItem('mode') || 'light') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark');
     });
     </script>
-    
+
     <link rel="shortcut icon" type="image/x-icon" href="hacktoberfest2020_assets/favicon-79cf6800e5106ab81f2e1d8b0d8aec638a803ced6d8d61539841b9754573e0f0.png" />
     <meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="2TWK4nFoHTx+MWgqef7NJuIOlDryB1+MelppkPN+Ywo2G7yLnPVy09tvyJAt0EeaX1TbBk7EWu5ybccuja2KbQ==" />
-    
+
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="stylesheet" media="all"  href="../hacktoberfest2020_assets/application-c3bd233543d5f0b6890e2fbfcc143dc8f7b6f8bd990a23c344b259d73d5be6a9.css?h=1666fe1d" data-turbolinks-track="reload">
     <link rel="stylesheet" href="https://assets.digitalocean.com/cookieConsent/cookieConsent.css">
     <script src="../hacktoberfest2020_assets/application-3f7c426070860c1c6947f72a83e66fd5ad01bd11f45eee08030cd0178fc1706a.js?h=2f5ac1e3"></script>
@@ -60,7 +61,7 @@
   </head>
   <body>
   <div>
-    <header>  
+    <header>
     <nav class="navbar" id="navbar">
     <div class="navbar-primary">
       <a href="index.html" class="logo">

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /404
+Sitemap: https://pybaq.co/sitemap.xml
