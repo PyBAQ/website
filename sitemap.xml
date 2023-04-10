@@ -32,6 +32,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/contribuir-modo-facil/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/contribuir-modo-facil/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/el-zen-de-python-explicado/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/el-zen-de-python-explicado/"/>
       <priority>0.64</priority>
