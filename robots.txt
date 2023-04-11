@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /404
+Disallow: /img/posts/2020/guia-django-principiantes-2/Diapositiva26.jpg
 Sitemap: https://pybaq.co/sitemap.xml
+
