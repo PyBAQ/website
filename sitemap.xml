@@ -12,6 +12,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/8-anos-en-retrospectiva-python-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/8-anos-en-retrospectiva-python-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/beneficios-tributarios-para-el-sector-tic/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/beneficios-tributarios-para-el-sector-tic/"/>
       <priority>0.64</priority>
