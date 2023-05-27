@@ -14,16 +14,19 @@
     <url>
       <loc>https://pybaq.co/blog/8-anos-en-retrospectiva-python-barranquilla/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/8-anos-en-retrospectiva-python-barranquilla/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/8-anos-en-retrospectiva-python-barranquilla/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/beneficios-tributarios-para-el-sector-tic/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/beneficios-tributarios-para-el-sector-tic/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/beneficios-tributarios-para-el-sector-tic/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/caminemos-juntos-1er-paso-99-bottles-of-beer-song/"/>
       <priority>0.64</priority>
     </url>
     <url>
@@ -35,81 +38,97 @@
     <url>
       <loc>https://pybaq.co/blog/contribuir-blog-python-barranquilla/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/contribuir-blog-python-barranquilla/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/contribuir-blog-python-barranquilla/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/contribuir-modo-facil/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/contribuir-modo-facil/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/contribuir-modo-facil/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/el-zen-de-python-explicado/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/el-zen-de-python-explicado/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/el-zen-de-python-explicado/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/eventos-de-python-barranquilla-en-el-2022/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/eventos-de-python-barranquilla-en-el-2022/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/eventos-de-python-barranquilla-en-el-2022/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/experiencia-pycon-colombia-2018/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/experiencia-pycon-colombia-2018/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/experiencia-pycon-colombia-2018/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/experiencia-tallerbaq-2019/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/experiencia-tallerbaq-2019/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/blog/experiencia-tallerbaq-2019/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/first-post/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/first-post/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/first-post/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/liga-python/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/liga-python/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/liga-python/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/liga-python-habilidades-blandas-y-experiencias/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/liga-python-habilidades-blandas-y-experiencias/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/liga-python-habilidades-blandas-y-experiencias/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/lightning-talks-2020/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/lightning-talks-2020/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/lightning-talks-2020/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/primeros-pasos-en-python/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/primeros-pasos-en-python/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/primeros-pasos-en-python/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/reconocimiento-de-rostros-en-una-microcomputadora/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/reconocimiento-de-rostros-en-una-microcomputadora/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/blog/reconocimiento-de-rostros-en-una-microcomputadora/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/resultados-semifinales-liga-python/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/resultados-semifinales-liga-python/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/resultados-semifinales-liga-python/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/roadmap-de-seguridad-informatica/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/roadmap-de-seguridad-informatica/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/blog/roadmap-de-seguridad-informatica/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-2/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-2/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-2/"/>
       <priority>0.64</priority>
     </url>
     <url>
