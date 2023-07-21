@@ -78,6 +78,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/generalidades-ingenieria-datos/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/generalidades-ingenieria-datos/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/liga-python/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/liga-python/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/liga-python/"/>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="shortcut icon" href="../../ico/favicon.png">
+  <link rel="stylesheet" href="../../static/pygments.css">
+  <title>Generalidades de Ingenieria de Datos </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;700;900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="../../static/gen/styles.css?h=b543329e" />
+<link rel="stylesheet" href="" />
+
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@pybaq" />
+    <meta name="twitter:creator" content="@pybaq" />
+    <meta name="author" content="Python Barranquilla">
+    
+      <meta property="og:image" content="https://pybaq.co/blog/generalidades-ingenieria-datos/tuberia-datos.png" />
+      <meta property="og:image:width" content="800" />
+      <meta property="og:image:height" content="400" />
+    
+    <meta property="og:url" content="https://pybaq.co/blog/generalidades-ingenieria-datos/" />
+    <meta property="og:site_name" content="https://pybaq.co/" />
+  
+  
+  <meta property="og:title" content="Generalidades de Ingenieria de Datos" />
+  
+    
+    <meta name="twitter:creator" content="@" />
+  
+  <meta name="description" content="El mundo de la ciencia de datos es enorme e imposible de aprender en su totalidad, pero todo empieza por nociones. Espero que este artículo te funcione como una breve referencia a todos esos conceptos base. Si funciona como una vista general y básica de la ciencia de datos, ha cumplido su cometido. Pronto tendremos la charla Modelado de una DataWarehouse con DBT en PyBAQ que tratará un tema muy específico de este mundo..">
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="El mundo de la ciencia de datos es enorme e imposible de aprender en su totalidad, pero todo empieza por nociones. Espero que este artículo te funcione como una breve referencia a todos esos conceptos base. Si funciona como una vista general y básica de la ciencia de datos, ha cumplido su cometido. Pronto tendremos la charla Modelado de una DataWarehouse con DBT en PyBAQ que tratará un tema muy específico de este mundo." />
+
+  <script src="https://cmp.osano.com/16BZ1oRxDcinM3Poo/3ac8836f-cc6e-4294-a589-749716e8a383/osano.js"></script>
+</head>
+
+<body>
+  </div><nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../../">
+      <img src="../../img/pybaq-logo.png" alt="Python Barranquilla" width="175" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../">INICIO</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../nosotros/">NOSOTROS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  active" href="../">BLOG</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../eventos/">EVENTOS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../contacto/">CONTACTO</a>
+          </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../en/blog/generalidades-ingenieria-datos/">EN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div style="height: 75px"></div>
+  
+
+  <div class="d-flex justify-content-center">
+    <p><img class="center-block img-fluid" src="tuberia-datos.png" alt=""></p>
+  </div>
+
+<div class="d-flex justify-content-center">
+  <div class="blog-post">
+    <div class="post-meta blog_post-post_meta">
+
+      <h1 class="ctitle">Generalidades de Ingenieria de Datos</h1>
+      <span class="post-date">Escrito: 2023-07-21.</span> |
+      <span class="post-author">
+        
+  
+    
+    <a href="../../nosotros/andres-perez/">Andres Pérez</a>
+  
+
+      </span>
+    </div>
+    <div id="body-content" class="blog-post-body">
+        <p>El mundo de la ciencia de datos es enorme e imposible de aprender en su totalidad, pero todo empieza por nociones. Espero que este artículo te funcione como una breve referencia a todos esos conceptos base. Si funciona como una vista general y básica de la ciencia de datos, ha cumplido su cometido. Pronto tendremos la charla <a href="https://www.meetup.com/pythonbaq/events/294769421/">Modelado de una DataWarehouse con DBT</a> en PyBAQ que tratará un tema muy específico de este mundo.</p>
+<h3>Estadística en Ciencia de Datos</h3>
+<p>Si tienes interés en Python en estos días escucharás muchísimo de Análisis, Ciencia, Ingeniería o Arquitectura de Datos (entre otros términos o disciplinas). Cada uno de los anteriores términos representa o describe diferentes trayectorias profesionales que podemos tomar en el mundo de los datos. Pero el inicio de la ciencia de datos es más sencillo que todos estos términos; todo empieza con estadísticas<sup class="footnote-ref" id="fnref-1"><a href="#fn-1">1</a></sup>.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/KorrRes.png/302px-KorrRes.png" alt="Pequeña ilustración de Estadística: Regresión Lineal" title="Pequeña ilustración de Estadística: Regresión Lineal"></p>
+<p>La estadística no solo es el inicio sino también la columna vertebral de la ciencia de datos. Como tal, incorpora habilidades de ciencias de computación, estadística, ciencias de información, matemáticas, visualización de datos, visualización de información, sonificación de datos, integración de datos, diseño grafico, sistemas complejos, comunicación y negocios. Nos sirve pensar esto porque la estadística exige o requiere un mínimo de los datos que estudia<sup class="footnote-ref" id="fnref-2"><a href="#fn-2">2</a></sup>: que los datos estén completos, que sean consistentes, que sean preferentemente precisos y también homogéneos con respecto a lo que describen o miden. Se requiere un esfuerzo significativo para establecer sistemas que de manera consistente produzcan datos de tal calidad.</p>
+<p><img src="/img/posts/2023/generalidades-ingenieria-datos/image1.png" alt="Las estadisticas maquilladas son Ciencia de Datos" title="Las estadisticas maquilladas son Ciencia de Datos" style="zoom:100%;" /></p>
+<h3>Origen de Datos, Tipos de Datos y Lagos</h3>
+<p>La información no se genera según un cronograma en la vida real. Las entregas se retrasan, también lo hacen los procesos de fabricación, sean automatizados o no. La vida sucede cuando no la esperamos y a veces no sucede cuando estamos acostumbrados; dejemos esa idea en remojo, solo retengamos que el flujo de datos no siempre es predecible. Por ese motivo se creó la noción de Lagos de Datos. Los lagos de datos ayudan a almacenar la información que se ha considerado necesario analizar, en ellos no se procesan datos salvo para catalogar entre los tipos de datos y asegurar que la información del origen no se pierda o altere antes de ser analizada. El lago de datos idealmente retiene información del origen de datos y el tipo de dato almacenado, sean estructurados, semi-estructurados o no estructurados.</p>
+<p>Los datos estructurados son datos que tienen un formato estandarizado para acceso eficiente tanto por software como por humanos<sup class="footnote-ref" id="fnref-3"><a href="#fn-3">3</a></sup>. Típicamente el formato es tabular con filas y columnas que claramente definen atributos de datos. Las computadoras pueden procesar efectivamente datos estructurados. El documento que garantiza o documenta la estructura de datos se llama “schema” (que traduce esquema, o esquema de datos en este contexto). En SQL (por sus siglas en inglés Structured Query Language; en español lenguaje de consulta estructurada) existen una serie de comandos orientados al modelado de datos. Las databases resultado del modelo de datos que se cree a través de SQL garantizará que los datos que se inserten cumplan los requerimientos del modelo. Lo importante a retener: Existen datos estructurados y los schemas garantizan/salvaguardan su estructura.</p>
+<p>Los datos semi-estructurados no se adhieren a un modelo de datos específico, pero tienen elementos estructurados bien sea en el formato o que algunos atributos correspondan a un modelo mientras otros no<sup class="footnote-ref" id="fnref-4"><a href="#fn-4">4</a></sup>. XML y JSON son los ejemplos clásicos de este tipo de datos porque tienen una estructura estandarizada que, sin embargo, no garantiza una la estructura de los datos que almacena. Por su flexibilidad estos formatos han sido usados en aplicaciones de escritorio y web por décadas; por eso existen herramientas para forzar/verificar que estos mantengan una estructura definida. Para XML podemos mostrar los XSD y para JSON existe json-schema. Este tipo de schemas permiten estructurar parcialmente los datos guardados en estos formatos por lo que la noción de datos semi-estructurados se mantiene aunque exista un schema.</p>
+<p>Los datos no estructurados superan a todos los anteriores en volumen y su estructura es impredecible<sup class="footnote-ref" id="fnref-5"><a href="#fn-5">5</a></sup>. Un ejemplo cercano a los datos semi-estructurados son las páginas web. Estas contienen texto, imágenes, videos, formularios y funcionalidades que son datos no estructurados; son no estructurados porque la estructura no captura el significado del contenido. Otro ejemplo importante de datos no estructurados son los registros médicos: tanto los registros escritos como aquellos derivados de la lectura de imágenes diagnósticas contienen muchísima información basada en el contexto de la relación médico-paciente y los síntomas siendo analizados en el momento. Una gran cantidad del desarrollo de inteligencias artificiales tiene como meta lograr interpretar estos datos con el fin de facilitar su análisis.</p>
+<p>¿Que es importante retener de esta sección? Existen varios tipos de datos y se puede usar un lago de datos para almacenar muchos tipos de datos. Agreguemos una noción: el lago de datos puede ser algo que cree y mantenga una organización o puede ser contratado como un servicio de terceros.</p>
+<h3>Una breve alegoría de Ingeniería de Datos</h3>
+<p>Empezamos con el concepto de lago de datos (Data Lake) y debemos seguir con el Almacén de datos (Data Warehouse) pero a veces el lenguaje simbólico se puede mantener a fin de crear una alegoría. Entonces pensemos en el almacén de datos como un tanque elevado. El lago (de datos) es de donde sacamos el agua (datos) que llegará al tanque elevado (data warehouse). Para potabilizar el agua hay que extraerla del lago, procesarla y luego transmitirla al lugar de almacenamiento, este proceso se llama ETL (“Extraction, Transformation and Loading” de sus siglas en inglés, traduce Extracción, Transformación y Carga). El agua se mueve a través de tubería y de allí se obtuvo la simbología de “Tubería de Datos” (Data Pipelines). La alegoría se rompe en el aspecto de tubería de datos, ya que a diferencia del proceso de tratamiento de aguas, los datos se procesan de manera diferente según su tipo y características. Se mantiene en el sentido que al final del proceso todos estos datos deben terminar en una estructura pensada para facilitar su uso y análisis, lo que es equivalente al consumo de agua potable.</p>
+<p><img src="/img/posts/2023/generalidades-ingenieria-datos/image2.png" alt="Alegoría de Ingenieria de Datos como Tratamiento de Agua Potable" title="Alegoría de Ingeniería de Datos como Tratamiento de Agua Potable" /></p>
+<h3>Modelos de datos y sus tipos</h3>
+<p>Los modelos de datos de aplicaciones por lo general están creadas usando databases relacionales, esto es, tablas con filas y columnas que representan instancias y atributos respectivamente. A fin de tener datos correctos y fáciles de mantener, en general se normalizan hasta la 3ra forma normal. Estos modelos son conocidos como OLTP porque, por su naturaleza se implementan para procesos transaccionales en línea (por ejemplo, cuando compras un jeans en una tienda de retail o cuando pagas en el super con tu TC). Una database modelada y configurada de esta manera se considera óptima para OLTP (Online Transaction Processing de sus siglas en inglés, Procesamiento de Transacciones en Línea). Las databases OLTP son óptimas para las operaciones UPDATE, INSERT, DELETE. Si quisiéramos hacer reportes basados en una database optimizada para OLTP de seguro tendríamos que usar consultas de SQL que muchas operaciones de unión, lo que penaliza la operación de la database y hace las consultas difíciles de mantener en el tiempo.</p>
+<p>La contraparte de un modelo de datos OLTP sería crear un modelo de datos que no esté normalizado hasta su tercera forma normal y que facilite la consulta. Este sería un modelo optimizado para el análisis de datos y se llama OLAP (Online Analytical Processing de sus siglas en inglés, Procesamiento Analítico en Línea)<sup class="footnote-ref" id="fnref-6"><a href="#fn-6">6</a></sup>. En este aspecto el modelo de estrella (Star Schema) y el de copo de nieve (Snowflake Schema) son los más utilizados. Para migrar datos de un modelo OLTP a otro correspondiente OLAP se debe entender el modelo de origen y entender cómo crear el modelo de destino. Acerca de un modelo de datos de estrella debemos saber que hay 2 tipos de tablas: tablas de hechos y tablas dimensionales<sup class="footnote-ref" id="fnref-7"><a href="#fn-7">7</a></sup>. Las tablas de hechos describen un hecho concreto: la venta de un ítem, la llegada de un producto o la terminación de un proceso. Las tablas dimensionales representan datos extras o dimensiones acerca de ese hecho; una dimensión de fecha registra en qué fecha sucedió el hecho, por ejemplo. En un modelo de copo de nieve (snowflake) las dimensiones pueden subdividirse en subdimensiones; fecha y hora son un ejemplo de posibles subdimensiones de una dimensión de tiempo.</p>
+<table>
+<thead><tr>
+<th style="text-align:center"><img src="/img/posts/2023/generalidades-ingenieria-datos/image3.png" alt="alt_text" title="image_tooltip" style="zoom:50%;" /></th>
+<th style="text-align:center"><img src="/img/posts/2023/generalidades-ingenieria-datos/image4.png" alt="alt_text" title="image_tooltip" style="zoom:50%;" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>Desde una perspectiva de gestión de proyectos, estos procesos pueden implementarse de múltiples maneras. En la historia de arquitectura de datos se consideran los métodos Kimball e Inmon<sup class="footnote-ref" id="fnref-8"><a href="#fn-8">8</a></sup> como las bases teóricas más conocidas. Estos se mencionan para que puedan expandir en el tema por su parte.</p>
+<p>A manera de resumen, un almacén de datos es un repositorio planeado y estructurado. Se usa un esquema OLAP, por lo general un modelo de estrella o de copo de nieve. Usando ese modelo se almacenan datos desnormalizados y estos a su vez están disponibles para ser analizados, formar parte de reportes, ser transformados aún más o todas las anteriores.</p>
+<h3>Resultados y visualización</h3>
+<p>Al final de todo este proceso y sin importar cuantas disciplinas diferentes hayan estado involucradas, lo único visible de todo este esfuerzo es lo que los usuarios finales puedan usar. En este respecto existen los reportes y los tableros de control (dashboards). En este respecto no hay mucho que decir salvo que no deben ser subestimados. Existen cientos de herramientas diseñadas para facilitar la creación de reportes y tableros<sup class="footnote-ref" id="fnref-9"><a href="#fn-9">9</a></sup>.</p>
+<p>Los tableros sólo pueden reflejar la calidad de datos generados en los procesos anteriores y son la razón detrás de la necesidad de revisitar y modificar los procesos de transformación una y otra vez. Bien sea el usuario final o los analistas de datos necesitan poder hacer inferencias de los datos y presentar las conclusiones alcanzadas de una manera efectiva. Existen gráficos diseñados y perfeccionados en el tiempo para representar muchas características estadísticas de los datos. Existen otros gráficos necesarios para contextualizar rápidamente la información, siendo un ejemplo claro la utilización de mapas en datos geolocalizados. Abajo se muestra un ejemplo de tablero generado usando Apache Superset.</p>
+<p><img src="../../img/posts/2023/generalidades-ingenieria-datos/image5.png" alt="Dashboard con Apache Superset" title="Dashboard con Apache Superset"></p>
+<h3>Por Aprender</h3>
+<p>Como ven el mundo de la ciencia de datos e ingeniería de datos no empezó ayer ni se terminará mañana. Para tener una visión general de todos los frameworks pagos y no pagos relacionados en estas disciplinas les recomiendo ir al siguiente link: <a href="https://mad.firstmark.com/">Interactive MAD Landscape by Matt Turck</a>. Quien nos deja un tweet que muy elegantemente refleja la complejidad de la tarea que tienen los ingenieros de datos hoy:</p>
+<p><blockquote class="twitter-tweet"><p lang="en" dir="ltr">It’s easy to succeed in data/AI. All you need is to put data into a DWH for OLAP using ETL, or ELT with DBT. Spot any issues on your DAG, run SQL for some BI, reverse ETL into SaaS or use a CDP, then leverage for ML/AI with CNNs, RNNs, RLs, GANs, and maybe LLMs or LDMs for GenAI.</p>&mdash; Matt Turck (@mattturck) <a href="https://twitter.com/mattturck/status/1610765711529414660?ref_src=twsrc%5Etfw">January 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>Por favor inscríbanse al meetup la próxima semana (encuentran el vincula en el primer párrafo) y estudien. Seguramente si hay interesados pueda hacerse un grupo de estudio de ingeniería de datos. También, este post es interesante como punto de partida en el futuro para aquellos interesados en empezar esta carrera profesional, siéntanse en libertad de sugerir fuentes o cambios el repositorio de <a href="https://github.com/PyBAQ/website">github de PyBAQ</a>.</p>
+<p>Incluyo algunas librerias relevantes en el tema de ingenieria de datos:</p>
+<ul>
+<li><a href="https://github.com/petl-developers/petl">PETL</a></li>
+<li><a href="https://github.com/airbytehq/airbyte">Airbyte</a></li>
+<li><a href="https://www.getdbt.com/">dbt Labs</a></li>
+<li><a href="https://airflow.apache.org/">Apache Airflow</a></li>
+<li><a href="https://github.com/spotify/luigi">Spotify Luigi </a></li>
+<li><a href="https://superset.apache.org/">Apache Superset</a></li>
+<li><a href="https://plotly.com/python/">Plotly Python Graphing Library</a></li>
+</ul>
+<p>Un agradecimiento especial a Javier Daza, Marcelo Herrera con sus comentarios acerca del artículo y sobre todo a Jorge Aguilar por el contexto inicial brindado en referencia a su próxima <a href="https://www.meetup.com/pythonbaq/events/294769421/">charla</a> en PyBAQ.</p>
+<div class="footnotes">
+<hr>
+<ol><li id="fn-1"><p><a href="https://en.wikipedia.org/wiki/Data_science#cite_note-:7-20">Data science - Wikipedia</a>, <a href="http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf">50YearsDataScience.pdf (mit.edu)</a><a href="#fnref-1" class="footnote">&#8617;</a></p></li>
+<li id="fn-2"><p><a href="https://en.wikipedia.org/wiki/Reliability_(statistics">Reliability (statistics) - Wikipedia</a>)<a href="#fnref-2" class="footnote">&#8617;</a></p></li>
+<li id="fn-3"><p><a href="https://aws.amazon.com/what-is/structured-data/#:~:text=Structured%20data%20is%20data%20that,due%20to%20its%20quantitative%20nature.">What is Structured Data? - Structured Data Explained - AWS (amazon.com)</a><a href="#fnref-3" class="footnote">&#8617;</a></p></li>
+<li id="fn-4"><p><a href="https://www.geeksforgeeks.org/what-is-semi-structured-data/">What is Semi-structured data? - GeeksforGeeks</a><a href="#fnref-4" class="footnote">&#8617;</a></p></li>
+<li id="fn-5"><p><a href="https://treehousetechgroup.com/structured-data-vs-unstructured-data-whats-the-difference/">Structured Data vs. Unstructured Data - What's The Difference? - Treehouse Tech Group</a>, <a href="https://treehousetechgroup.com/8-examples-of-unstructured-data/">8 Examples of Unstructured Data - Treehouse Tech Group</a><a href="#fnref-5" class="footnote">&#8617;</a></p></li>
+<li id="fn-6"><p><a href="https://www.ibm.com/cloud/blog/olap-vs-oltp">OLAP vs. OLTP: What’s the Difference? | IBM</a><a href="#fnref-6" class="footnote">&#8617;</a></p></li>
+<li id="fn-7"><p><a href="https://www.simplilearn.com/fact-table-vs-dimension-table-article#:~:text=Fact%20tables%20have%20more%20records,table%20has%20a%20concatenated%20key.">Differences Between Fact Table and Dimension Table | Simplilearn</a><a href="#fnref-7" class="footnote">&#8617;</a></p></li>
+<li id="fn-8"><p><a href="https://medium.com/cloudzone/inmon-vs-kimball-the-great-data-warehousing-debate-78c57f0b5e0e">Inmon vs Kimball - the great data warehousing debate | by INDRAJITH EKANAYAKE | CloudZone | Medium</a>, <a href="https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dw-bi-lifecycle-method/">Kimball DW/BI Lifecycle Methodology - Kimball Group</a><a href="#fnref-8" class="footnote">&#8617;</a></p></li>
+<li id="fn-9"><p><a href="https://medium.com/vortechsa/choosing-an-analytics-tool-metabase-vs-superset-vs-redash-afd88e028ba9">Choosing an Analytics Tool. Metabase Vs Superset Vs Redash | by Stefan Mihaylov | VorTECHsa | Medium</a><a href="#fnref-9" class="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+        <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/generalidades-ingenieria-datos"; this.page.url = "https://pybaq.co/blog/generalidades-ingenieria-datos/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//python-barranquilla.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="share-buttons">
+    
+    
+      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://pybaq.co/blog/generalidades-ingenieria-datos/"
+        class="facebook"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Compartir en facebook" >
+        <i class="fa fa-facebook-official share-button"></i>
+      </a>
+    
+      <a  href="https://twitter.com/intent/tweet?text=Generalidades%20de%20Ingenieria%20de%20Datos&amp;url=https://pybaq.co/blog/generalidades-ingenieria-datos/"
+        class="twitter"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Compartir en twitter" >
+        <i class="fa fa-twitter share-button"></i>
+      </a>
+    
+      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/blog/generalidades-ingenieria-datos/&amp;title=Generalidades%20de%20Ingenieria%20de%20Datos"
+        class="linkedin"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Compartir en linkedin" >
+        <i class="fa fa-linkedin share-button"></i>
+      </a>
+    
+  </div>
+
+
+
+  <footer class="dq-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>Sobre Nosotros</h4>
+        <p>Python Barranquilla es una comunidad para todos los interesados en desarrollar aplicaciones en Python dentro de la ciudad de Barranquilla (Atlántico).</p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Canales</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://discord.gg/46N5dPm9Zk" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://youtube.com/playlist?list=PL1GXDqy0kMh_FC2DnDnWb4MBlHAvdLn0T" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://t.me/+yH4gst5h7DBjODYx" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://bit.ly/pyBAQ-whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+        </p>
+        <h4>Redes sociales</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://meetup.com/pythonbaq/" target="_blank" rel="noopener"><i class="fa-brands fa-meetup"></i></a>
+          <a href="http://twitter.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/python-barranquilla/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://facebook.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://instagram.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/PyBAQ" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Nuestros lineamientos</h4>
+        <p>
+          La recolección de datos del presente sitio web se rige por la
+          <a href="../../cookies/">Política de cookies</a>
+
+        </p>
+        <p>
+          En nuestra comunidad seguimos este
+          <a href="../../codigo-de-conducta/">Código de conducta</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="../../js/bootstrap.min.js"></script>
+<script
+  src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+  crossorigin="anonymous"
+></script>
+<script src="../../js/custom.js"></script>
+
+<!--[if lt IE 9
+  ]><script src="../../assets/js/ie8-responsive-file-warning.js"></script
+><![endif]-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>
