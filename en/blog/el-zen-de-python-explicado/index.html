@@ -132,15 +132,13 @@
 <li>Namespaces are one honking great idea -- let's do more of those!</li>
 </ol>
 <p>Tim Peters, un pythonista por mucho tiempo redacto los principios guía de Python en estos 20 aforismos, de los cuales solo 19 han sido escritos. Ahora, como ejercicio práctico trataré de deglosar cada uno de los principios de la filosofía del lenguaje. Acompañenme y sientanse libres de comentar en cualquier momento su punto de vista.</p>
-<h2>1. Bello es mejor que feo.</h2>
-<p>En vez de usar &amp;&amp; o || como operadores logicos, considera usar and, or. Aunque es subjetivo, el código parece más legible y hermoso de esta manera.</p>
+<h2 id="1-bello-es-mejor-que-feo">1. Bello es mejor que feo.</h2><p>En vez de usar &amp;&amp; o || como operadores logicos, considera usar and, or. Aunque es subjetivo, el código parece más legible y hermoso de esta manera.</p>
 <pre><code>if (is_valid(a) &amp;&amp; b == 0 || s == 'yes') {
 </code></pre>
 <p>vs</p>
 <pre><code>if is_valid(a) and b == 0 or s == 'yes':
 </code></pre>
-<h2>Explícito es mejor que implícito.</h2>
-<p>Esto puede referirse a "nombrar explícitamente módulos al invocarlos en funciones".</p>
+<h2 id="explicito-es-mejor-que-implicito">Explícito es mejor que implícito.</h2><p>Esto puede referirse a "nombrar explícitamente módulos al invocarlos en funciones".</p>
 <pre><code>import os
 print os.getcwd()
 </code></pre>
@@ -149,16 +147,12 @@ print os.getcwd()
 print getcwd()
 </code></pre>
 <p>Deje que su código sea legible por un desconocido que no sabe nada sobre usted o su programa.</p>
-<h2>2. Simple es mejor que complejo.</h2>
-<p>No escriba código complejo. Tu código debe ser legible. Considera que tu código será utilizado por un asesino psicópata que sabe dónde vives. El código simple puede ser más largo, pero recuerde que debe escribir una vez pero leer / mantener el código siempre.</p>
+<h2 id="2-simple-es-mejor-que-complejo">2. Simple es mejor que complejo.</h2><p>No escriba código complejo. Tu código debe ser legible. Considera que tu código será utilizado por un asesino psicópata que sabe dónde vives. El código simple puede ser más largo, pero recuerde que debe escribir una vez pero leer / mantener el código siempre.</p>
 <p>Según el desarrollador brasileño de software Vitor Freitas, <em>"Steve Jobs declaró una vez que "simple puede ser más difícil que complejo". Y eso es verdad. Requiere mucho trabajo arduo para que su forma de pensar esté limpia, para llegar a una solución simple. Pero una solución simple siempre es mejor que una solución compleja. Simple se comunica mejor. Simple crea una conexión instantánea. La simplicidad es algo que puedes aplicar a todo en tu vida, no solo a la programación.".</em></p>
-<h2>3. Complejo es mejor que complicado.</h2>
-<p>Voy a intentarlo en este. Digamos que mi novia imaginaria me pide que le haga una comida de tres platos para su cumpleaños (: complejo). A continuación, digamos que me pide que la lleve a un restaurante del que disfrutará (: complicado). Piensa en la diferencia principal entre Data Analytics y Data Science: en x tienes las preguntas pero no las respuestas, mientras que en y no tienes las preguntas ni las respuestas.</p>
-<h2>4. Plano es mejor que anidado.</h2>
-<p>El anidamiento es muchas veces sinónimo de complejidad extra, de dependencias que a veces incomodan, de tener que mirar con cuidado. Lo plano es más directo, más claro. Y así debe ser tu decisión, directo al grano, sin vueltas.</p>
+<h2 id="3-complejo-es-mejor-que-complicado">3. Complejo es mejor que complicado.</h2><p>Voy a intentarlo en este. Digamos que mi novia imaginaria me pide que le haga una comida de tres platos para su cumpleaños (: complejo). A continuación, digamos que me pide que la lleve a un restaurante del que disfrutará (: complicado). Piensa en la diferencia principal entre Data Analytics y Data Science: en x tienes las preguntas pero no las respuestas, mientras que en y no tienes las preguntas ni las respuestas.</p>
+<h2 id="4-plano-es-mejor-que-anidado">4. Plano es mejor que anidado.</h2><p>El anidamiento es muchas veces sinónimo de complejidad extra, de dependencias que a veces incomodan, de tener que mirar con cuidado. Lo plano es más directo, más claro. Y así debe ser tu decisión, directo al grano, sin vueltas.</p>
 <p>Lo plano es <em>"... por lo general, más fácil y más rápido de parsear, y debería preferirse ... donde se necesitan estructuras de datos anidados, se prefiere poco profundo en lugar de profundamente anidado."</em></p>
-<h2>5. Disperso es mejor que denso.</h2>
-<p>No intentes pegar demasiado código en una línea:</p>
+<h2 id="5-disperso-es-mejor-que-denso">5. Disperso es mejor que denso.</h2><p>No intentes pegar demasiado código en una línea:</p>
 <pre><code>if i&gt;0: return sqrt(i)
 elif i==0: return 0
 else: return 1j * sqrt(-i)
@@ -171,8 +165,7 @@ elif i == 0:
 else:
     return 1j * sqrt(-i)
 </code></pre>
-<h2>6. La legibilidad cuenta.</h2>
-<p>Esta es fácil: D. Compare C y Python:</p>
+<h2 id="6-la-legibilidad-cuenta">6. La legibilidad cuenta.</h2><p>Esta es fácil: D. Compare C y Python:</p>
 <pre><code>#include &lt;stdio.h&gt;
 int main(void)
 {
@@ -184,25 +177,20 @@ int main(void)
 <pre><code>print "Hello world!"
 </code></pre>
 <p>¿Y qué hay de la sangría? El código bien sangrado es más legible. Por lo tanto, en Python es obligatorio.</p>
-<h2>7. Los casos especiales no son tan especiales como para quebrantar las reglas.</h2>
-<p>Los idiomas y las bibliotecas deberían aspirar a la coherencia y deberían apoyar el caso general.</p>
-<h2>8. Aunque lo práctico gana a la pureza.</h2>
-<p>Con respecto a la Regla 8, siempre puede haber una excepción a la regla.</p>
-<h2>9. Los errores nunca deberían dejarse pasar silenciosamente.</h2>
-<p>Nunca permita que los errores, que pueden ocurrir, confundan al lector. Esto se puede resolver fácilmente imprimiendo una cadena cuando ocurre un error.</p>
+<h2 id="7-los-casos-especiales-no-son-tan-especiales-como-para-quebrantar-las-reglas">7. Los casos especiales no son tan especiales como para quebrantar las reglas.</h2><p>Los idiomas y las bibliotecas deberían aspirar a la coherencia y deberían apoyar el caso general.</p>
+<h2 id="8-aunque-lo-practico-gana-a-la-pureza">8. Aunque lo práctico gana a la pureza.</h2><p>Con respecto a la Regla 8, siempre puede haber una excepción a la regla.</p>
+<h2 id="9-los-errores-nunca-deberian-dejarse-pasar-silenciosamente">9. Los errores nunca deberían dejarse pasar silenciosamente.</h2><p>Nunca permita que los errores, que pueden ocurrir, confundan al lector. Esto se puede resolver fácilmente imprimiendo una cadena cuando ocurre un error.</p>
 <pre><code>try:
     import this
 except ImportError:
     print 'this is not available'
 </code></pre>
-<h2>10. A menos que hayan sido silenciados explícitamente.</h2>
-<pre><code>try:
+<h2 id="10-a-menos-que-hayan-sido-silenciados-explicitamente">10. A menos que hayan sido silenciados explícitamente.</h2><pre><code>try:
     v = d[k]
 except KeyError:
     v = d[k] = default
 </code></pre>
-<h2>11. Frente a la ambigüedad, rechaza la tentación de adivinar.</h2>
-<p>De nuevo, esto vuelve al tema de hacer que tu código sea específico, claro y hermoso.</p>
+<h2 id="11-frente-a-la-ambiguedad-rechaza-la-tentacion-de-adivinar">11. Frente a la ambigüedad, rechaza la tentación de adivinar.</h2><p>De nuevo, esto vuelve al tema de hacer que tu código sea específico, claro y hermoso.</p>
 <p>Considere
     if not a and b:
         do something</p>
@@ -218,26 +206,18 @@ except KeyError:
     if (not a) and b:
         do something</p>
 <p>Esto es subjetivo porque alguien puede argumentar que debe esperar que el lector de su código conozca Python y, por lo tanto, las prioridades para 'not' y 'and', y no es lo suficientemente oscuro como para justificar paréntesis.</p>
-<h2>12. Debería haber una -y preferiblemente sólo una- manera obvia de hacerlo.</h2>
-<p>Exactamente lo contrario del lema del lenguaje de programación de Perl. "En otras palabras, piense por qué sería que Python se describe como un lenguaje de programación fácil de aprender. ¿No sería más difícil si tuvieras que aprender múltiples formas de hacer cada cosa?</p>
+<h2 id="12-deberia-haber-una-y-preferiblemente-solo-una-manera-obvia-de-hacerlo">12. Debería haber una -y preferiblemente sólo una- manera obvia de hacerlo.</h2><p>Exactamente lo contrario del lema del lenguaje de programación de Perl. "En otras palabras, piense por qué sería que Python se describe como un lenguaje de programación fácil de aprender. ¿No sería más difícil si tuvieras que aprender múltiples formas de hacer cada cosa?</p>
 <p>El ejemplo más claro es al iterar sobre una lista. En Python solo debes aprender:</p>
 <pre><code>for element in sequence:
 </code></pre>
-<h2>13. Aunque esa manera puede no ser obvia al principio a menos que usted sea holandés.</h2>
-<p>Esta es una referencia al creador de Python, Guido van Rossum. Al ver que Guido creó el lenguaje Python, tendría sentido que aprender o recordar una regla en Python sería más fácil para él de lo que lo haría cualquier otra persona, en promedio.</p>
-<h2>14. Ahora es mejor que nunca.</h2>
-<p>No dedique demasiado tiempo a planificar y preoptimizar; obtenga algo que haga el trabajo y mejorelo con el tiempo.</p>
-<h2>15. Aunque nunca es a menudo mejor que ya mismo.</h2>
-<p>Pero piensa un poco en eso, para que no te desvíes por un camino que luego significa que no hay un camino elegante hacia atrás.</p>
-<h2>16. Si la implementación es difícil de explicar, es una mala idea.</h2>
-<p>Si la implementación es complicada, definitivamente no es simple, lo que significa que no está cerca de un borrador final, lo que significa que no es bueno publicarlo como tal.</p>
-<h2>17. Si la implementación es fácil de explicar, puede que sea una buena idea.</h2>
-<p>Algunas ideas son simplemente malas, independientemente de si son fáciles de implementar o no.</p>
-<h2>18. Los 'namespaces' son una gran idea ¡Hagamos más de esas cosas!</h2>
-<p>Google define un 'namespace' como "un conjunto de símbolos que se utilizan para organizar objetos de varios tipos, de modo que estos objetos pueden ser referidos por su nombre." Esto todavía me confunde, así que veamos lo que tenemos aquí: Conjuntos de símbolos, y varios objetos a los que se hace referencia por nombre. Supongo que en lenguaje general, una palabra se define con otras palabras. Una vez aprendido, solo necesitamos una palabra, ¿o namespace? - para dar sentido a algo, simplificando la vida en el proceso.</p>
+<h2 id="13-aunque-esa-manera-puede-no-ser-obvia-al-principio-a-menos-que-usted-sea-holandes">13. Aunque esa manera puede no ser obvia al principio a menos que usted sea holandés.</h2><p>Esta es una referencia al creador de Python, Guido van Rossum. Al ver que Guido creó el lenguaje Python, tendría sentido que aprender o recordar una regla en Python sería más fácil para él de lo que lo haría cualquier otra persona, en promedio.</p>
+<h2 id="14-ahora-es-mejor-que-nunca">14. Ahora es mejor que nunca.</h2><p>No dedique demasiado tiempo a planificar y preoptimizar; obtenga algo que haga el trabajo y mejorelo con el tiempo.</p>
+<h2 id="15-aunque-nunca-es-a-menudo-mejor-que-ya-mismo">15. Aunque nunca es a menudo mejor que ya mismo.</h2><p>Pero piensa un poco en eso, para que no te desvíes por un camino que luego significa que no hay un camino elegante hacia atrás.</p>
+<h2 id="16-si-la-implementacion-es-dificil-de-explicar-es-una-mala-idea">16. Si la implementación es difícil de explicar, es una mala idea.</h2><p>Si la implementación es complicada, definitivamente no es simple, lo que significa que no está cerca de un borrador final, lo que significa que no es bueno publicarlo como tal.</p>
+<h2 id="17-si-la-implementacion-es-facil-de-explicar-puede-que-sea-una-buena-idea">17. Si la implementación es fácil de explicar, puede que sea una buena idea.</h2><p>Algunas ideas son simplemente malas, independientemente de si son fáciles de implementar o no.</p>
+<h2 id="18-los-namespaces-son-una-gran-idea-hagamos-mas-de-esas-cosas">18. Los 'namespaces' son una gran idea ¡Hagamos más de esas cosas!</h2><p>Google define un 'namespace' como "un conjunto de símbolos que se utilizan para organizar objetos de varios tipos, de modo que estos objetos pueden ser referidos por su nombre." Esto todavía me confunde, así que veamos lo que tenemos aquí: Conjuntos de símbolos, y varios objetos a los que se hace referencia por nombre. Supongo que en lenguaje general, una palabra se define con otras palabras. Una vez aprendido, solo necesitamos una palabra, ¿o namespace? - para dar sentido a algo, simplificando la vida en el proceso.</p>
 <p>Comparte mi artículo si te gusto. Déjame un comentario si crees que hizo falta mencionar algo que pueda mejorar el artículo para los demás.</p>
-<h4>Fuentes:</h4>
-<ul>
+<h4 id="fuentes">Fuentes:</h4><ul>
 <li><a href="http://www.itsmycodeblog.com/the-zen-of-python/">http://www.itsmycodeblog.com/the-zen-of-python/</a></li>
 <li><a href="http://thepythondjango.com/meaning-different-aphorism-zen-python/">http://thepythondjango.com/meaning-different-aphorism-zen-python/</a></li>
 <li><a href="http://pyconar.blogspot.com.co/2011/09/el-zen-de-pycon-plano-es-mejor-que.html">http://pyconar.blogspot.com.co/2011/09/el-zen-de-pycon-plano-es-mejor-que.html</a></li>

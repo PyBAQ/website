@@ -112,19 +112,15 @@
         <p>Esta es la continuación del articulo <a href="https://pybaq.co/blog/primeros-pasos-en-python/">Primeros pasos en Python</a>.</p>
 <p>Yo sé que somos muchos los que estamos muy interesados en programar. Pero es posible que también hagamos parte de aquellos a los que nos da una pereza inconcebible tener que ver una tonelada de teoría antes de ir a la practica. Y en ninguna manera condono la apatía a la teoría, pero a veces toca ensuciarse las manos un poco antes de descubrir un nuevo hobby.</p>
 <p>Esta serie de artículos van un poco en el espíritu del libro <a href="http://www.jmgaguilera.com/libro/python/traducci%C3%B3n/latex/2016/08/19/inmersion-python.html">Inmersión en Python3</a> (Originalmente <a href="https://diveintopython3.net/">Dive Into Python 3</a> por Mark Pilgrim). Este libro entra en materia sin mucha explicación y espera que los lectores tomen lo que ven como base e investiguen lo necesario para entender. Entonces esta serie de artículos pueden contener cosas que desconozcas, pero espero que estés dispuesto(a/x) a investigar.</p>
-<h3>El Problema a Resolver</h3>
-<p>Bien , empecemos declarando el problema a resolver; lo podemos encontrar en este <a href="https://www.reddit.com/r/beginnerprojects/comments/19kxre/project_99_bottles_of_beer_on_the_wall_lyrics/">link</a>. En español quedaría así:</p>
-<h4>Objetivo</h4>
-<p>Crea un programa que imprime cada lineal de la canción "99 Bottles of Beer on the Wall". Esto debería ser un programa sencillo, entonces, para hacerlo un poco mas difícil, aquí siguen algunas reglas a seguir:</p>
-<h5>Reglas</h5>
-<ol>
+<h3 id="el-problema-a-resolver">El Problema a Resolver</h3><p>Bien , empecemos declarando el problema a resolver; lo podemos encontrar en este <a href="https://www.reddit.com/r/beginnerprojects/comments/19kxre/project_99_bottles_of_beer_on_the_wall_lyrics/">link</a>. En español quedaría así:</p>
+<h4 id="objetivo">Objetivo</h4><p>Crea un programa que imprime cada lineal de la canción "99 Bottles of Beer on the Wall". Esto debería ser un programa sencillo, entonces, para hacerlo un poco mas difícil, aquí siguen algunas reglas a seguir:</p>
+<h5 id="reglas">Reglas</h5><ol>
 <li>Si vas a usar una lista de todos los números, no los escribas manualmente todos. En cambio, usa una función estándar de Python.</li>
 <li>Aparte de la frase "take one down", no tienes permitido escribir ningun numero/nombre de numero directo en la letra.</li>
 <li>Recuerda, cuando llegues a 1 botella, la palabra "bottles" se vuelve singular.</li>
 <li>Pon una linea en blanco entre cada verso de la canción.</li>
 </ol>
-<h3>Analisis y Programación</h3>
-<p>Vamos entonces a ver donde encontramos la letra completa de la canción y la analizamos. Una pequeña búsqueda en Google me ha provisto del siguiente enlace donde encontrar la <a href="https://lyricsplayground.com/alpha/songs/numbers/99bottlesofbeeronthewall.html">letra de la canción</a>.</p>
+<h3 id="analisis-y-programacion">Analisis y Programación</h3><p>Vamos entonces a ver donde encontramos la letra completa de la canción y la analizamos. Una pequeña búsqueda en Google me ha provisto del siguiente enlace donde encontrar la <a href="https://lyricsplayground.com/alpha/songs/numbers/99bottlesofbeeronthewall.html">letra de la canción</a>.</p>
 <p>En definitiva no la voy a escribir entera aquí porque no tiene sentido desperdiciar ese espacio cuando puedes abrirla en otra pestaña ; ); pero si vamos a escribir 3 estrofas:</p>
 <pre><code>One-hundred bottles of beer on the wall,
 One-hundred bottles of beer!
@@ -144,8 +140,7 @@ Take it down,
 Pass it around,
 No more bottles of beer on the wall!
 </code></pre>
-<h4>Primero: Intentar resolver el problema principal</h4>
-<p>Veamos que se repite y reescribamos la canción, lo que se repite lo pongo entre corchetes "[]" y lo que varía en "{}":</p>
+<h4 id="primero-intentar-resolver-el-problema-principal">Primero: Intentar resolver el problema principal</h4><p>Veamos que se repite y reescribamos la canción, lo que se repite lo pongo entre corchetes "[]" y lo que varía en "{}":</p>
 <div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas</span><span class="cp">}}</span><span class="x">[ bottles of beer on the wall,]</span>
 <span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas</span><span class="cp">}}</span><span class="x">[ bottles of beer!]</span>
 <span class="x">[Take one down,</span>
@@ -153,8 +148,7 @@ No more bottles of beer on the wall!
 <span class="cp">{{</span><span class="nv">Numero</span> <span class="nv">de</span> <span class="nv">botellas-1</span><span class="cp">}}</span><span class="x">[ bottles of beer on the wall!]</span>
 </pre></div>
 <p>Y todo estaría perfecto si no fuera porque las últimas dos estrofas son diferentes, por lo tanto...</p>
-<h4>Segundo: Las miles de excepciones</h4>
-<p>Dos excepciones nos dañarían el caminado, denoto las condicionales con dobles corchetes "{{}}":</p>
+<h4 id="segundo-las-miles-de-excepciones">Segundo: Las miles de excepciones</h4><p>Dos excepciones nos dañarían el caminado, denoto las condicionales con dobles corchetes "{{}}":</p>
 <div class="hll"><pre><span></span><span class="cp">{{</span><span class="nv">Cuande</span> <span class="nv">queden</span> <span class="nv">dos</span> <span class="nv">botellas</span><span class="cp">}}</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">2</span><span class="cp">}}</span><span class="x">[bottles of beer on the wall,]</span>
 <span class="x">    </span><span class="cp">{{</span><span class="m">2</span><span class="cp">}}</span><span class="x">[bottles of beer!]</span>
@@ -169,8 +163,7 @@ No more bottles of beer on the wall!
 <span class="x">    No more bottles of beer on the wall!]</span>
 </pre></div>
 <p>Con esto tenemos la estructura de lo que queremos lograr, ahora necesitamos conocer que herramientas tenemos...</p>
-<h4>Tercero: Herramientas disponibles</h4>
-<p>Las herramientas serían varias, lo que creo necesitar es lo siguiente:</p>
+<h4 id="tercero-herramientas-disponibles">Tercero: Herramientas disponibles</h4><p>Las herramientas serían varias, lo que creo necesitar es lo siguiente:</p>
 <ul>
 <li>La herramienta <code>for</code> nos ayuda a recorrer elementos iterables, pero no necesariamente esos son números.</li>
 <li>Podemos generar un iterable de numeros usando la herramienta <code>range</code>.</li>
@@ -256,8 +249,7 @@ Pass<span class="w"> </span>it<span class="w"> </span>around,
 No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 </pre></div>
 <p>El articulo oficialmente debería terminar aquí. Pero algunos podrían no quedar satisfechos, por lo que voy a hablar de algo un poco mas complicado, puedes investigar por tu cuenta acerca de PyPI y la herramienta <code>pip</code>; pero no te enredes la vida sin necesidad, veremos mas de eso después.</p>
-<h4>Bonus: Exageremos un poco</h4>
-<p>En Python tenemos un gestor de librerias llamada pip, con el podemos instalar librerías adicionales de un repositorio central llamado PyPI. Allí encontré algunas librerías que podrían ser utiles para imprimir texto en vez de numeros.</p>
+<h4 id="bonus-exageremos-un-poco">Bonus: Exageremos un poco</h4><p>En Python tenemos un gestor de librerias llamada pip, con el podemos instalar librerías adicionales de un repositorio central llamado PyPI. Allí encontré algunas librerías que podrían ser utiles para imprimir texto en vez de numeros.</p>
 <ul>
 <li><a href="https://pypi.org/project/inflect/">inflect · PyPI</a> (muy complicada).</li>
 <li><a href="https://pypi.org/project/num2words/">num2words · PyPI</a> (me enamoró con el manejo de múltiples idiomas).</li>
@@ -316,8 +308,7 @@ Take<span class="w"> </span>it<span class="w"> </span>down,
 Pass<span class="w"> </span>it<span class="w"> </span>around,
 No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </span>of<span class="w"> </span>beer<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>wall!
 </pre></div>
-<h3>¿He comprendido algo maestro?</h3>
-<blockquote><p>El que quiera hacer la voluntad de Dios, conocerá si la doctrina es de Dios, o si yo hablo por mi propia cuenta</p>
+<h3 id="he-comprendido-algo-maestro">¿He comprendido algo maestro?</h3><blockquote><p>El que quiera hacer la voluntad de Dios, conocerá si la doctrina es de Dios, o si yo hablo por mi propia cuenta</p>
 <p>Juan 7:17</p>
 </blockquote>
 <p>Fuera de lo pretensioso de tratar de compararme con Jesucristo (aún si lo consideras una fábula), la idea es que solo tratando de replicar lo que aprendemos podemos interiorizar el tema aprendido. Entonces, evalúa tu conocimiento o entendimiento con las siguientes tareas:</p>
