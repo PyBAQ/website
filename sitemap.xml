@@ -283,4 +283,39 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/yuliana-martinez/"/>
       <priority>0.64</priority>
     </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/django-girls-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/django-girls-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/formacion-emprendedora/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/formacion-emprendedora/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/katsu/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/katsu/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/mercadeo-digital/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/mercadeo-digital/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/pagina-web/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/pagina-web/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/temii/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/temii/"/>
+      <priority>0.64</priority>
+    </url>
 </urlset>
