@@ -22,6 +22,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .hll .cs { color: #7F848E } /* Comment.Special */
 .hll .gd { color: #ABB2BF } /* Generic.Deleted */
 .hll .ge { color: #ABB2BF } /* Generic.Emph */
+.hll .ges { color: #ABB2BF } /* Generic.EmphStrong */
 .hll .gr { color: #ABB2BF } /* Generic.Error */
 .hll .gh { color: #ABB2BF } /* Generic.Heading */
 .hll .gi { color: #ABB2BF } /* Generic.Inserted */
