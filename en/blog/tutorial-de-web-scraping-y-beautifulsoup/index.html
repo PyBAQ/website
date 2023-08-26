@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="shortcut icon" href="../../../ico/favicon.png">
+  <link rel="stylesheet" href="../../../static/pygments.css">
+  <title>Tutorial: Web Scraping y BeautifulSoup </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;700;900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="../../../static/gen/styles.css?h=1c7ce8be" />
+<link rel="stylesheet" href="" />
+
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@pybaq" />
+    <meta name="twitter:creator" content="@pybaq" />
+    <meta name="author" content="Python Barranquilla">
+    
+      <meta property="og:image" content="https://pybaq.co/blog/tutorial-de-web-scraping-y-beautifulsoup/tutorial-web-scraping-beautifulsoup.png" />
+      <meta property="og:image:width" content="850" />
+      <meta property="og:image:height" content="400" />
+    
+    <meta property="og:url" content="https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/" />
+    <meta property="og:site_name" content="https://pybaq.co/en/" />
+  
+  
+  <meta property="og:title" content="Tutorial: Web Scraping y BeautifulSoup" />
+  
+    
+    <meta name="twitter:creator" content="@pyjavo" />
+  
+  <meta name="description" content="Un breve tutorial sobre web scraping usando beautiful soup. Es una traducción de un artículo de dataquest que ya no se encuentra disponible.">
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Un breve tutorial sobre web scraping usando beautiful soup. Es una traducción de un artículo de dataquest que ya no se encuentra disponible" />
+
+  <script src="https://cmp.osano.com/16BZ1oRxDcinM3Poo/3ac8836f-cc6e-4294-a589-749716e8a383/osano.js"></script>
+</head>
+
+<body>
+  </div><nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../../">
+      <img src="../../../img/pybaq-logo.png" alt="Python Barranquilla" width="175" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../">HOME</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../nosotros/">ABOUT US</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  active" href="../">BLOG</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../eventos/">EVENTS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../proyectos/">PROJECTS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../contact/">CONTACT</a>
+          </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../../blog/tutorial-de-web-scraping-y-beautifulsoup/">ES</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div style="height: 75px"></div>
+  
+
+  <div class="d-flex justify-content-center">
+    <p><img class="center-block img-fluid" src="../../../blog/tutorial-de-web-scraping-y-beautifulsoup/tutorial-web-scraping-beautifulsoup.png" alt=""></p>
+  </div>
+
+<div class="d-flex justify-content-center">
+  <div class="blog-post">
+    <div class="post-meta blog_post-post_meta">
+
+      <h1 class="ctitle">Tutorial: Web Scraping y BeautifulSoup</h1>
+      <span class="post-date">Posted: 2023-08-15.</span> |
+      <span class="post-author">
+        
+  
+    
+    <a href="../../nosotros/javier-daza/">Javier Daza</a>
+  
+
+      </span>
+    </div>
+    
+    <nav class="tdc">
+      <h2>Table of Content</h6>
+      <ul>
+        
+        <li><a href="#scraping-de-datos-para-mas-de-2000-peliculas">Scraping de datos para más de 2000 películas</a>
+          
+        </li>
+        
+        <li><a href="#determinando-que-paginas-vamos-a-scrapear">Determinando qué páginas vamos a scrapear</a>
+          
+        </li>
+        
+        <li><a href="#identificando-la-estructura-de-la-url">Identificando la estructura de la URL</a>
+          
+        </li>
+        
+        <li><a href="#comprendiendo-la-estructura-html-de-una-sola-pagina">Comprendiendo la estructura HTML de una sola página</a>
+          
+        </li>
+        
+        <li><a href="#usando-beautifulsoup-para-analizar-el-contenido-html">Usando BeautifulSoup para analizar el contenido HTML</a>
+          
+        </li>
+        
+        <li><a href="#extraer-los-datos-de-una-sola-pelicula">Extraer los datos de una sola película</a>
+          
+          <ul>
+        <li><a href="#el-nombre-de-la-pelicula">El nombre de la pelicula</a>
+          
+        </li>
+        
+        <li><a href="#el-ano-del-estreno-de-la-pelicula">El año del estreno de la película</a>
+          
+        </li>
+        
+        <li><a href="#la-calificacion-de-imdb">La calificación de IMDB</a>
+          
+        </li>
+        
+        <li><a href="#el-metascore">El Metascore</a>
+          
+        </li>
+        
+        <li><a href="#el-numero-de-votos">El número de votos</a>
+          
+        </li>
+        </ul>
+          
+        </li>
+        
+        <li><a href="#el-script-para-una-sola-pagina">El script para una sola página.</a>
+          
+        </li>
+        
+        <li><a href="#el-script-de-varias-paginas">El script de varias páginas.</a>
+          
+          <ul>
+        <li><a href="#cambiando-los-parametros-de-las-urls">Cambiando los parámetros de las URLs</a>
+          
+        </li>
+        
+        <li><a href="#controlando-la-tasa-de-rastreo-crawl-rate">Controlando la tasa de rastreo (crawl-rate)</a>
+          
+        </li>
+        
+        <li><a href="#monitoreando-el-bucle-mientras-continua">Monitoreando el bucle mientras continúa</a>
+          
+        </li>
+        
+        <li><a href="#juntando-todo">Juntando todo</a>
+          
+        </li>
+        </ul>
+          
+        </li>
+        
+        <li><a href="#examinando-los-datos-scrapeados">Examinando los datos scrapeados</a>
+          
+        </li>
+        
+        <li><a href="#limpiando-los-datos-scrapeados">Limpiando los datos scrapeados</a>
+          
+        </li>
+        
+        <li><a href="#graficando-y-analizando-las-distribuciones">Graficando y analizando las distribuciones</a>
+          
+        </li>
+        
+        <li><a href="#siguientes-pasos">Siguientes pasos</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    <div id="body-content" class="blog-post-body">
+        <p>Siempre tuve en mis favoritos del navegador el tutorial de dataquest sobre web scraping con beautifulsoup por Alex Olteanu, pero desde hace un tiempo para acá, bajaron dicho artículo de su página web. El propósito de este artículo es rescatar ese contenido y, de paso, traducirlo al español 💪.</p>
+<p>¡Empecemos!</p>
+<p>Para obtener datos para proyectos de ciencia de datos, a menudo confiará en bases de datos <a href="https://es.wikipedia.org/wiki/SQL">SQL</a> y <a href="https://es.wikipedia.org/wiki/NoSQL">NoSQL</a>, <a href="https://es.wikipedia.org/wiki/API">API</a> o conjuntos de datos en formato CSV listos para usar.</p>
+<p>El problema es que no siempre puede encontrar un conjunto de datos sobre un tema específico, las bases de datos no se mantienen actualizadas y las API son costosas o tienen límites de uso.</p>
+<p>Sin embargo, si los datos que está buscando están en una página web, entonces la solución a todos estos problemas es el <strong>web scraping.</strong></p>
+<p>En este tutorial, aprenderemos a raspar varias páginas web con Python usando <a href="https://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> y <a href="https://docs.python-requests.org/en/latest/">requests</a>. Luego realizaremos un análisis simple usando <a href="https://pandas.pydata.org/pandas-docs/stable/index.html">pandas</a> y <a href="https://matplotlib.org/">matplotlib</a>.</p>
+<p>Para seguir este artículo necesitas tener:</p>
+<ul>
+<li>Una comprensión básica de HTML.</li>
+<li>Una buena comprensión de los conceptos básicos de Python.</li>
+<li>Una idea aproximada de qué es el web scraping.</li>
+</ul>
+<h2 id="scraping-de-datos-para-mas-de-2000-peliculas">Scraping de datos para más de 2000 películas</h2><p>Queremos analizar las distribuciones de las clasificaciones de películas de <a href="https://www.imdb.com/">IMDB</a> y <a href="https://www.metacritic.com/">Metacritic</a> para ver si encontramos algo interesante. Para hacer esto, primero recopilaremos datos de más de 2000 películas.</p>
+<p><span style="display: block;font-weight: 800;font-size: 1.7rem;font-style: italic;margin: 2rem 0;">
+    Es fundamental identificar el objetivo de nuestro scraping desde el principio.
+</span></p>
+<p>Escribir un script de scraping puede llevar mucho tiempo, especialmente si queremos scrapear más de una página web. Queremos evitar pasar horas escribiendo un script que extrae datos que en realidad no necesitaremos.</p>
+<h2 id="determinando-que-paginas-vamos-a-scrapear">Determinando qué páginas vamos a scrapear</h2><p>Una vez que hemos establecido nuestro objetivo, debemos identificar un conjunto eficiente de páginas para scrapear.</p>
+<p>Queremos encontrar una combinación de páginas que requiera un número relativamente pequeño de solicitudes. Una solicitud (<em>request</em> en inglés) es lo que sucede cada vez que accedemos a una página web. Nosotros 'solicitamos' el contenido de una página del servidor. Cuantas más solicitudes hagamos, más tiempo necesitará ejecutarse nuestro script y mayor será la sobrecarga en el servidor.</p>
+<p>Una forma de obtener todos los datos que necesitamos es compilar una lista de nombres de películas y usarla para acceder a la página web de cada película en los sitios web de IMDB y Metacritic.</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/busqueda_pelicula.gif" alt="Busqueda pelicula"></p>
+<p>Como queremos obtener más de 2000 calificaciones tanto de IMDB como de Metacritic, tendremos que realizar al menos 4000 solicitudes. Si hacemos una solicitud por segundo, nuestro script necesitará un poco más de una hora para realizar 4000 solicitudes. Por ello, merece la pena intentar identificar formas más eficientes de obtener nuestros datos.</p>
+<p>Si exploramos el sitio web de IMDB, podemos descubrir una forma de reducir a la mitad el número de solicitudes. Las puntuaciones de Metacritic se muestran en la página de películas de IMDB, por lo que podemos eliminar ambas clasificaciones con una sola solicitud:</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/oppenheimer_puntuaciones.png" alt="película Oppenheimer"></p>
+<p>Si investigamos más a fondo el sitio de IMDB, podemos descubrir la página que se muestra a continuación. Contiene todos los datos que necesitamos para cierto número de películas (Por defecto 50, pero podemos escoger 250). Dado nuestro objetivo, esto significa que solo tendremos que hacer un número limitado de solicitudes (alrededor de 46), lo que es 100 veces menos que nuestra primera opción. Exploremos más esta última opción.</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/2023_puntuaciones.png" alt="Puntuaciones peliculas 2003"></p>
+<h2 id="identificando-la-estructura-de-la-url">Identificando la estructura de la URL</h2><p>Nuestro desafío ahora es asegurarnos de que entendemos la lógica de la URL a medida que cambian las páginas que queremos scrapear. Si no podemos entender esta lógica lo suficiente como para poder implementarla en el código, llegaremos a un callejón sin salida.</p>
+<p>Si accede a la página de <a href="https://www.imdb.com/search/">búsqueda avanzada</a> de IMDB, y selecciona <code>advance title search</code> puede buscar películas por <a href="https://www.imdb.com/search/title/#releasedate">año</a>:</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/busqueda_avanzada.png" alt="Búsqueda avanzada"></p>
+<p>En el campo "Release Date", busquemos por fechas de 2022-01-01 a 2022-12-31. Luego, al final de la página le damos click al botón de buscar. En la siguiente página ordenamos las películas por número de votos y le damos click al botón de siguiente, al final de la página final. Así llegaremos a esta página web, que tiene esta URL:</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/estructura_url.png" alt="Estructura URL"></p>
+<p>En la imagen de arriba, puedes ver que la URL tiene varios parámetros después del signo de interrogación:</p>
+<ul>
+<li><code>release_date</code>: muestra solo las películas estrenadas en un año específico.</li>
+<li><code>sort</code>: Ordena las películas en la página. `sort=num_votes,desc se traduce en ordenar por número de votos en orden descendente.</li>
+<li><code>start</code>: especifica el número de inicio de las páginas a listar.</li>
+<li><code>ref_</code>: Nos lleva a la página siguiente o anterior. La referencia es la página en la que nos encontramos actualmente. <code>adv_nxt</code> y <code>adv_prv</code> son dos valores posibles. Se traducen para avanzar a la página siguiente y avanzar a la página anterior, respectivamente.</li>
+</ul>
+<p>Si navega por esas páginas y observa la URL, notará que solo cambian los valores de los parámetros. Esto significa que podemos escribir un script para que coincida con la lógica de los cambios y hacer muchas menos solicitudes para escrapear nuestros datos.</p>
+<p>Comencemos a escribir el script solicitando el contenido de esta única página web:</p>
+<div class="hll"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.imdb.com/search/title/?release_date=2023&amp;count=250&quot;</span>
+</pre></div>
+<p>En el primer bloque de código vamos a:</p>
+<ul>
+<li>Instalar <code>requests</code></li>
+</ul>
+<div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>requests
+</pre></div>
+<ul>
+<li>Importar la función <code>get()</code> desde el módulo de <code>requests</code>.</li>
+<li>Asignar la dirección de la página web a una variable llamada <code>url</code>.</li>
+<li>Solicitar al servidor el contenido de la página web utilizando <code>get()</code> y almacenar la respuesta del servidor en la variable <code>respuesta</code>.</li>
+<li>Imprima una pequeña parte del contenido de la <code>respuesta</code> accediendo a su atributo <code>.text</code> (<code>respuesta</code> ahora es un objeto <code>Response</code>).</li>
+</ul>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">get</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.imdb.com/search/title/?release_date=2023&amp;count=250&#39;</span>
+
+<span class="n">respuesta</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">respuesta</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">500</span><span class="p">])</span>
+</pre></div>
+<p>La respuesta que se obtiene:</p>
+<div class="hll"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span>
+    <span class="na">xmlns:og</span><span class="o">=</span><span class="s">&quot;http://ogp.me/ns#&quot;</span>
+    <span class="na">xmlns:fb</span><span class="o">=</span><span class="s">&quot;http://www.facebook.com/2008/fbml&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="kd">var</span><span class="w"> </span><span class="nx">IMDbTimer</span><span class="o">=</span><span class="p">{</span><span class="nx">starttime</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span><span class="nx">pt</span><span class="o">:</span><span class="s1">&#39;java&#39;</span><span class="p">};&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">uet</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">uet</span><span class="p">(</span><span class="s2">&quot;bb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;LoadTitle&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">wb</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="w"> </span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">events</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{})[</span><span class="s2">&quot;csm_head_pre_title&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span><span class="w"> </span><span class="p">})(</span><span class="nx">IMDbTimer</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+<h2 id="comprendiendo-la-estructura-html-de-una-sola-pagina">Comprendiendo la estructura HTML de una sola página</h2><p>Como puede ver en la primera línea de <code>respuesta.text</code>, el servidor nos envió un documento HTML. Este documento describe la estructura general de esa página web, junto con su contenido específico (que es lo que hace que esa página en particular sea única).</p>
+<p>Todas las páginas que queremos escrapear tienen la misma estructura general. Esto implica que también tienen la misma estructura general de HTML. Entonces, para escribir nuestro script, bastará con comprender la estructura HTML de una sola página. Para hacer eso, usaremos <strong>las herramientas de desarrollo del navegador</strong> (Developer Tools en inglés).</p>
+<p>Si usa <a href="https://developer.chrome.com/devtools">Chrome</a> o Brave, haga clic con el botón derecho en un elemento de la página web que le interese y luego haga clic en <em>Inspeccionar</em>. Esto lo llevará directamente a la línea HTML que corresponde a ese elemento:</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/inspeccionar_elementos.png" alt="Inspeccionar elementos"></p>
+<p>También puede hacer esto con <a href="https://developer.mozilla.org/es/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools">Firefox</a> o <a href="https://developer.apple.com/safari/tools/">Safari</a> DevTools.</p>
+<p>Tenga en cuenta que toda la información de cada película, incluido el póster, está contenida en una etiqueta <code>div</code>.</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/div.png" alt="Etiqueta div"></p>
+<p>Hay muchas líneas HTML anidadas dentro de cada etiqueta <code>div</code>. Puede explorarlos haciendo clic en esas pequeñas flechas grises a la izquierda de las líneas HTML correspondientes a cada <code>div</code>. Dentro de estas etiquetas anidadas encontraremos la información que necesitamos, como la calificación de una película.</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/puntuacion.png" alt="Puntuación"></p>
+<p>Se muestran 50 películas por página, por lo que debe haber un contenedor <code>div</code> para cada una. Extraigamos todos estos 50 contenedores mediante el análisis gramatical (<em>parsing</em> en inglés)del documento HTML de nuestra solicitud anterior.</p>
+<h2 id="usando-beautifulsoup-para-analizar-el-contenido-html">Usando BeautifulSoup para analizar el contenido HTML</h2><p>Para analizar nuestro documento HTML y extraer los contenedores de 50 `div, usaremos un módulo de Python llamado <a href="https://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>, el módulo de web scraping más común para Python.</p>
+<p>En el siguiente bloque de código vamos a:</p>
+<ul>
+<li>Instalar <code>BeautifulSoup</code>.</li>
+<li>Importar el creador de la clase <code>BeautifulSoup</code> del paquete <code>bs4</code>.</li>
+<li><em>Parsear</em> <code>respuesta.text</code> al crear un objeto <code>BeautifulSoup</code> y asignar este objeto a <code>sopa_html</code>. El argumento <code>'html.parser'</code> indica que queremos realizar el análisis utilizando el <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#specifying-the-parser-to-use">analizador HTML integrado de Python</a>.</li>
+</ul>
+<div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
+</pre></div>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="n">sopa_html</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">sopa_html</span><span class="p">)</span>
+</pre></div>
+<p>Esto imprime que nuestra sopa es un objeto de tipo:</p>
+<div class="hll"><pre><span></span>&lt;class<span class="w"> </span><span class="s1">&#39;bs4.BeautifulSoup&#39;</span>&gt;
+</pre></div>
+<p>Antes de extraer los 50 contenedores <code>div</code>, debemos averiguar qué los distingue de otros elementos <code>div</code> en esa página. A menudo, la marca distintiva reside en el <a href="https://www.w3schools.com/Tags/att_global_class.asp">atributo</a> de <code>class</code>. Si inspecciona las líneas HTML de los contenedores de interés, notará que el atributo de <code>class</code> tiene dos valores:</p>
+<ul>
+<li><code>lister-item</code></li>
+<li><code>mode-advanced</code>.</li>
+</ul>
+<p>Esta combinación es exclusiva de estos contenedores <code>div</code>. Podemos ver que es cierto haciendo una búsqueda rápida con <code>(Ctrl + F)</code>. Tenemos 50 contenedores de este tipo, por lo que esperamos ver solo 50 coincidencias:</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/div_50.png" alt="50 coincidencias" title="50 coincidencias" style="width:60%;margin: auto;display: block;" /></p>
+<p>Ahora usemos el método <code>find_all()</code> para extraer todos los contenedores <code>div</code> que tienen un atributo de clase de tipo <code>lister-item mode-advanced</code>:</p>
+<div class="hll"><pre><span></span><span class="n">contenedores_pelicula</span> <span class="o">=</span> <span class="n">sopa_html</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;lister-item mode-advanced&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Contenedores de la película:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">contenedores_pelicula</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Longitud:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contenedores_pelicula</span><span class="p">))</span>
+</pre></div>
+<p>Lo cual imprime</p>
+<div class="hll"><pre><span></span>Contenedores<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>película:<span class="w"> </span>&lt;class<span class="w"> </span><span class="s1">&#39;bs4.element.ResultSet&#39;</span>&gt;
+Longitud:<span class="w"> </span><span class="m">250</span>
+</pre></div>
+<p><code>find_all</code> devolvió un objeto tipo <code>ResultSet</code> que contiene una lista de los 250 divs que nos interesan.</p>
+<p>Ahora solo seleccionaremos el primer contenedor y, por turno, extraeremos cada elemento que nos interesa:</p>
+<ul>
+<li>El nombre de la pelicula</li>
+<li>El año del estreno de la película</li>
+<li>La calificación de IMDB</li>
+<li>El Metascore</li>
+<li>El número de votos</li>
+</ul>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/detalle_pelicula.png" alt="Detalle película"></p>
+<h2 id="extraer-los-datos-de-una-sola-pelicula">Extraer los datos de una sola película</h2><p>Podemos acceder al primer contenedor, que contiene información sobre una sola película, usando la notación de lista en <code>contenedores_pelicula</code>.</p>
+<div class="hll"><pre><span></span><span class="n">primera_pelicula</span> <span class="o">=</span> <span class="n">contenedores_pelicula</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primera_pelicula</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item mode-advanced&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-top-right&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ribbonize&quot;</span> <span class="na">data-caller</span><span class="o">=</span><span class="s">&quot;filmosearch&quot;</span> <span class="na">data-tconst</span><span class="o">=</span><span class="s">&quot;tt15398776&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-image float-left&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/title/tt15398776/&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Oppenheimer&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;loadlate&quot;</span> <span class="na">data-tconst</span><span class="o">=</span><span class="s">&quot;tt15398776&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;98&quot;</span> <span class="na">loadlate</span><span class="o">=</span><span class="s">&quot;https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_UX67_CR0,0,67,98_AL_.jpg&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://m.media-amazon.com/images/S/sash/4FyxwxECzL-U1J8.png&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;67&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-content&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-header&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-index unbold text-primary&quot;</span><span class="p">&gt;</span>1.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/title/tt15398776/&quot;</span><span class="p">&gt;</span>Oppenheimer<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-year text-muted unbold&quot;</span><span class="p">&gt;</span>(2023)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;certificate&quot;</span><span class="p">&gt;</span>R<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ghost&quot;</span><span class="p">&gt;</span>|<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;runtime&quot;</span><span class="p">&gt;</span>180 min<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ghost&quot;</span><span class="p">&gt;</span>|<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;genre&quot;</span><span class="p">&gt;</span>
+Biography, Drama, History            <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ratings-bar&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inline-block ratings-imdb-rating&quot;</span> <span class="na">data-value</span><span class="o">=</span><span class="s">&quot;8.6&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ir&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;global-sprite rating-star imdb-rating&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>8.6<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inline-block ratings-user-rating&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;userRatingValue&quot;</span> <span class="na">data-tconst</span><span class="o">=</span><span class="s">&quot;tt15398776&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;urv_tt15398776&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;global-sprite rating-star no-rating&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rate&quot;</span> <span class="na">data-no-rating</span><span class="o">=</span><span class="s">&quot;Rate this&quot;</span> <span class="na">data-value</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ur&quot;</span><span class="p">&gt;</span>Rate this<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;starBarWidget&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sb_tt15398776&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating rating-list&quot;</span> <span class="na">data-csrf-token</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">data-ga-identifier</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">data-starbar-class</span><span class="o">=</span><span class="s">&quot;rating-list&quot;</span> <span class="na">data-user</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tt15398776|imdb|8.6|8.6|adv_li_tt||advsearch|title&quot;</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&quot;aggregateRating&quot;</span> <span class="na">itemscope</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype</span><span class="o">=</span><span class="s">&quot;http://schema.org/AggregateRating&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Users rated this 8.6/10 (380,436 votes) - click stars to rate&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;8.6&quot;</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&quot;ratingValue&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&quot;bestRating&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;380436&quot;</span> <span class="na">itemprop</span><span class="o">=</span><span class="s">&quot;ratingCount&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating-bg&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating-imdb&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 120.4px&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating-stars&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>6<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>7<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>8<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/register/login?why=vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Register or login to rate this title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>10<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating-rating&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;value&quot;</span><span class="p">&gt;</span>8.6<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grey&quot;</span><span class="p">&gt;</span>/<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grey&quot;</span><span class="p">&gt;</span>10<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating-cancel&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/title/tt15398776/vote&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;nofollow&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Delete&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inline-block ratings-metascore&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metascore favorable&quot;</span><span class="p">&gt;</span>88        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        Metascore
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>
+The story of American scientist, <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/name/nm0649185&quot;</span><span class="p">&gt;</span>J. Robert Oppenheimer<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>, and his role in the development of the atomic bomb.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+    Director:
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/name/nm0634240/&quot;</span><span class="p">&gt;</span>Christopher Nolan<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ghost&quot;</span><span class="p">&gt;</span>|<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> 
+    Stars:
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/name/nm0614165/&quot;</span><span class="p">&gt;</span>Cillian Murphy<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>, 
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/name/nm1289434/&quot;</span><span class="p">&gt;</span>Emily Blunt<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>, 
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/name/nm0000354/&quot;</span><span class="p">&gt;</span>Matt Damon<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>, 
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/name/nm0000375/&quot;</span><span class="p">&gt;</span>Robert Downey Jr.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sort-num_votes-visible&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>Votes:<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-value</span><span class="o">=</span><span class="s">&quot;380436&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nv&quot;</span><span class="p">&gt;</span>380,436<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+<p>Esto nos regresa un HTML bastante largo, por lo que para hayar cada elemento, necesitaremos usar el inspector de elementos del navegador.</p>
+<h3 id="el-nombre-de-la-pelicula">El nombre de la pelicula</h3><p>Comenzamos con el nombre de la película y localizamos su línea HTML correspondiente usando el inspector de elementos. Puede ver que el nombre está contenido dentro de una etiqueta de anclaje (<code>&lt;a&gt;</code>). Esta etiqueta está anidada dentro de una etiqueta de encabezado (<code>&lt;h3&gt;</code>). La etiqueta <code>&lt;h3&gt;</code> está anidada dentro de una etiqueta <code>&lt;div&gt;</code>. Este <code>&lt;div&gt;</code> es el tercero de los divs anidados en el contenedor de la primera película. Nosotros ya almacenamos el contenido de este contenedor en la variable <code>primera_pelicula</code>.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/html_div_pelicula.png" alt="inspeccion html titulo" title="inspeccion html titulo" style="width:70%;margin: auto;display: block;" /></p>
+<p><code>primera_pelicula</code> es un objeto <code>Tag</code> y las diversas etiquetas HTML que contiene se almacenan como sus atributos. Podemos acceder a ellos tal como accederíamos a cualquier atributo de un objeto Python. Sin embargo, usar un nombre de etiqueta como atributo solo seleccionará la primera etiqueta con ese nombre. Si ejecutamos <code>primera_pelicula.div</code>, solo obtenemos el contenido de la primera etiqueta <code>div</code>:</p>
+<div class="hll"><pre><span></span>print<span class="o">(</span>primera_pelicula.div<span class="o">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-top-right&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ribbonize&quot;</span> <span class="na">data-caller</span><span class="o">=</span><span class="s">&quot;filmosearch&quot;</span> <span class="na">data-tconst</span><span class="o">=</span><span class="s">&quot;tt15398776&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+<p>Accediendo a la primera etiqueta de anclaje (<code>&lt;a&gt;</code>) no nos lleva al nombre de la película. El primer <code>&lt;a&gt;</code> está en algún lugar dentro del segundo div:</p>
+<div class="hll"><pre><span></span>print<span class="o">(</span>primera_pelicula.a<span class="o">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/title/tt15398776/&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Oppenheimer&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;loadlate&quot;</span> <span class="na">data-tconst</span><span class="o">=</span><span class="s">&quot;tt15398776&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;98&quot;</span> <span class="na">loadlate</span><span class="o">=</span><span class="s">&quot;https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_UX67_CR0,0,67,98_AL_.jpg&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://m.media-amazon.com/images/S/sash/4FyxwxECzL-U1J8.png&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;67&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+<p>Sin embargo, accediendo a la primera etiqueta <code>&lt;h3&gt;</code> nos acerca mucho:</p>
+<div class="hll"><pre><span></span>print<span class="o">(</span>primera_pelicula.h3<span class="o">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-header&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-index unbold text-primary&quot;</span><span class="p">&gt;</span>1.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/title/tt15398776/&quot;</span><span class="p">&gt;</span>Oppenheimer<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-year text-muted unbold&quot;</span><span class="p">&gt;</span>(2023)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</pre></div>
+<p>Desde aquí, podemos usar la notación de atributos para acceder al primer <code>&lt;a&gt;</code> dentro de la etiqueta <code>&lt;h3&gt;</code>:</p>
+<div class="hll"><pre><span></span>print<span class="o">(</span>primera_pelicula.h3.a<span class="o">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/title/tt15398776/&quot;</span><span class="p">&gt;</span>Oppenheimer<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+<p>Ahora es sólo cuestión de acceder al texto desde esa etiqueta `<a>:</p>
+<div class="hll"><pre><span></span><span class="n">primer_nombre</span> <span class="o">=</span> <span class="n">primera_pelicula</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primer_nombre</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span>Oppenheimer
+</pre></div>
+<h3 id="el-ano-del-estreno-de-la-pelicula">El año del estreno de la película</h3><p>Este dato está en una etiqueta <code>&lt;span&gt;</code> que se encuentra debajo de la etiqueta <code>&lt;a&gt;</code> que contiene el nombre.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/h3_pelicula.png" alt="inspeccion h3 título" title="inspeccion h3 título" style="width:70%;margin: auto;display: block;" /></p>
+<p>La notación de puntos solo accederá al primer elemento <code>span</code>. Buscaremos por la marca distintiva del segundo <code>&lt;span&gt;</code>. Usaremos el método <code>find()</code> que es casi igual que <code>find_all()</code>, excepto que solo devuelve la primera coincidencia. De hecho, <code>find()</code> es equivalente a <code>find_all(limit = 1)</code>. El argumento <code>limit</code> limita la salida a la primera coincidencia.</p>
+<p>La marca distintiva consiste en los valores <code>lister-item-year text-muted unbold</code> asignados al atributo <code>class</code>. Entonces buscamos el primer <code>&lt;span&gt;</code> con estos valores dentro de la etiqueta <code>&lt;h3&gt;</code>:</p>
+<div class="hll"><pre><span></span><span class="n">primer_año</span> <span class="o">=</span> <span class="n">primera_pelicula</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;lister-item-year text-muted unbold&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primer_año</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lister-item-year text-muted unbold&quot;</span><span class="p">&gt;</span>(2023)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+<p>Desde aquí, simplemente accedemos al texto usando notación de atributos:</p>
+<div class="hll"><pre><span></span><span class="n">primer_año</span> <span class="o">=</span> <span class="n">primer_año</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primer_año</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="o">(</span><span class="m">2023</span><span class="o">)</span>
+</pre></div>
+<p>Podríamos limpiar fácilmente esa salida y convertirla a un número entero. Pero si exploras más páginas, notarás que para algunas películas el año toma valores impredecibles como (2017)(I) o (2015)(V). Es más eficiente hacer la limpieza después del scrapeado, cuando conoceremos todos los valores del año.</p>
+<h3 id="la-calificacion-de-imdb">La calificación de IMDB</h3><p>Ahora nos centramos en extraer la calificación IMDB de la primera película.</p>
+<p>Hay un par de formas de hacerlo, pero primero probaremos la más sencilla. Si inspecciona la calificación de IMDB usando DevTools, notará que la calificación está contenida dentro de una etiqueta <code>&lt;strong&gt;</code>.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/puntuacion_imdb.png" alt="puntuacion imdb" title="puntuacion imdb" style="width:70%;margin: auto;display: block;" /></p>
+<p>Usemos notación de atributos y esperemos que el primer <code>&lt;strong&gt;</code> también sea el que contenga la calificación.</p>
+<div class="hll"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primera_pelicula</span><span class="o">.</span><span class="n">strong</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>8.6<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</pre></div>
+<p>¡Excelente! Accederemos al texto, lo convertiremos al tipo <code>float</code> y lo asignaremos a la variable <code>primer_imdb</code>:</p>
+<div class="hll"><pre><span></span><span class="n">primer_imdb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">primera_pelicula</span><span class="o">.</span><span class="n">strong</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primer_imdb</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="m">8</span>.6
+</pre></div>
+<h3 id="el-metascore">El Metascore</h3><p>Si inspeccionamos el Metascore usando inspectod de elementos, notaremos que podemos encontrarlo dentro de una etiqueta <code>span</code>.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/span_metascore.png" alt="span metascore" title="span metascore" style="width:70%;margin: auto;display: block;" /></p>
+<p>La notación de atributos claramente no es una solución. Hay muchas etiquetas <code>&lt;span&gt;</code> antes de eso. Puedes ver una justo encima de la etiqueta <code>&lt;strong&gt;</code>. Será mejor que utilicemos los valores distintivos del atributo <code>class</code> (<code>metascore favorable</code>).</p>
+<p><em>Tenga en cuenta que si copia y pega esos valores de la pestaña del inspector de elemebtos, habrá dos caracteres de espacio en blanco entre <code>metascore</code> y <code>favorable</code>. Asegúrese de que solo haya un carácter de espacio en blanco cuando pase los valores como argumentos al parámetro <code>class_</code>. De lo contrario, <code>find()</code> no encontrará nada.</em></p>
+<div class="hll"><pre><span></span><span class="n">primer_mscore</span> <span class="o">=</span> <span class="n">primera_pelicula</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;metascore favorable&#39;</span><span class="p">)</span>
+<span class="n">primer_mscore</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">primer_mscore</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primer_mscore</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="m">88</span>
+</pre></div>
+<p>No todas las películas tienen puntuación. Más adelante abordaremos ese asunto.</p>
+<p>Por ahora veamos que el valor <code>favorable</code> indica un Metascore alto y establece el color de fondo de la calificación en verde. Los otros dos valores posibles son <code>unfavorable</code> y mixed<code>. Sin embargo, lo que es específico de todas las calificaciones de Metascore es solo el valor de</code>metascore`. Este es el que usaremos cuando escribamos el script para toda la página.</p>
+<h3 id="el-numero-de-votos">El número de votos</h3><p>El número de votos está contenido en una etiqueta <code>&lt;span&gt;</code>. Su signo distintivo es un atributo del <code>name</code> con el valor <code>nv</code>.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/votos_peliculas.png" alt="número de votos peliculas" title="número de votos peliculas" style="width:70%;margin: auto;display: block;" /></p>
+<p>El atributo de <code>name</code> es diferente del atributo de <code>class</code>. Usando BeautifulSoup podemos acceder a elementos por cualquier atributo. Las funciones <code>find()</code> y <code>find_all()</code> tienen un parámetro llamado <code>attrs</code>. A esto podemos pasarle los atributos y valores que estamos buscando como diccionario:</p>
+<div class="hll"><pre><span></span><span class="n">primeros_votos</span> <span class="o">=</span> <span class="n">primera_pelicula</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;nv&#39;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primeros_votos</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-value</span><span class="o">=</span><span class="s">&quot;380436&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nv&quot;</span><span class="p">&gt;</span>38,0436<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+<p>Podríamos usar la notación <code>.text</code> para acceder al contenido de la etiqueta <code>&lt;span&gt;</code>. Sin embargo, sería mejor si accediéramos al valor del atributo de <code>data-value</code>. De esta manera podemos convertir el dato extraído a un <code>int</code> sin tener que eliminar una coma.</p>
+<p>Puedes tratar un objeto <code>Tag</code> como un diccionario. Los atributos HTML son las claves del diccionario. Los valores de los atributos HTML son los valores de las claves del diccionario. Así es como podemos acceder al valor del atributo <code>data-value</code>:</p>
+<div class="hll"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primeros_votos</span><span class="p">[</span><span class="s1">&#39;data-value&#39;</span><span class="p">])</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="m">380436</span>
+</pre></div>
+<p>Convirtamos ese valor a un número entero y asignémoslo a <code>primeros_votos</code>:</p>
+<div class="hll"><pre><span></span><span class="n">primeros_votos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">primeros_votos</span><span class="p">[</span><span class="s1">&#39;data-value&#39;</span><span class="p">])</span>
+</pre></div>
+<p>¡Eso es todo! Ahora estamos en condiciones de escribir fácilmente un script para extraer una sola página.</p>
+<h2 id="el-script-para-una-sola-pagina">El script para una sola página.</h2><p>Antes de reconstruir lo que hemos hecho hasta ahora, debemos asegurarnos de extraer los datos solo de los contenedores que tienen Metascore.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/sin_metascore.png" alt="sin metascore" title="sin metascore" style="width:70%;margin: auto;display: block;" /></p>
+<p>Necesitamos agregar una condición para omitir películas sin Metascore.</p>
+<p>Usando el inspector de elementos nuevamente, vemos que la sección Metascore está contenida dentro de una etiqueta <code>&lt;div&gt;</code>. El atributo <code>class</code> tiene dos valores:</p>
+<ul>
+<li><code>inline-block</code></li>
+<li><code>ratings-metascore</code>. </li>
+</ul>
+<p>El distintivo es claramente el <code>ratings-metascore</code>.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/rating_metascore.png" alt="rating metascore" title="rating metascore" style="width:70%;margin: auto;display: block;" /></p>
+<p>Podemos usar <code>find()</code> para buscar en cada contenedor de película un div que tenga esa marca distintiva. Cuando <code>find()</code> no encuentra nada, devuelve un objeto <code>None</code>. Podemos usar este resultado en una declaración <code>if</code> para controlar si una película se scrapea.</p>
+<p>Busquemos en la página web un contenedor de películas que no tenga Metascore y veamos qué devuelve <code>find()</code>.</p>
+<p><em>Importante: cuando ejecuté el siguiente código, el séptimo contenedor no tenía Metascore. Sin embargo, este es un objetivo cambiante, porque el número de votos cambia constantemente para cada película. Para obtener los mismos resultados que obtuve en la siguiente celda de código demostrativo, debe buscar un contenedor que no tenga un Metascore en el momento en que ejecuta el código.</em></p>
+<div class="hll"><pre><span></span><span class="n">puntaje_mscore_septimo</span> <span class="o">=</span> <span class="n">contenedores_pelicula</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;ratings-metascore&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">puntaje_mscore_septimo</span><span class="p">))</span>
+</pre></div>
+<div class="hll"><pre><span></span>&lt;class<span class="w"> </span><span class="s1">&#39;NoneType&#39;</span>&gt;
+</pre></div>
+<p>Ahora juntemos el código anterior y comprimámoslo tanto como sea posible, pero sólo en la medida en que sea fácilmente legible. En el siguiente bloque de código:</p>
+<ul>
+<li>Declare algunas variables de <code>lista</code> para tener algo en qué almacenar los datos extraídos.</li>
+<li>Recorra cada contenedor en <code>contenedores_pelicula</code> (la variable que contiene los 50 contenedores de películas).</li>
+<li>Extraiga los  datos de interés solo si el contenedor tiene un Metascore.</li>
+<li>Instalar el paquete de Python <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas</a></li>
+</ul>
+<div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pandas
+</pre></div>
+<div class="hll"><pre><span></span><span class="c1"># Listas para guardar los datos scrapeados</span>
+<span class="n">nombres</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">años</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">calificaciones_imdb</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">metascores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">votos</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Extraer dato de un contenedor de pelicula individual</span>
+<span class="k">for</span> <span class="n">contenedor</span> <span class="ow">in</span> <span class="n">contenedores_pelicula</span><span class="p">:</span>
+<span class="c1"># Si la película tiene Metascore, entonces extrae:</span>
+    <span class="k">if</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;ratings-metascore&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># El nombre</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">nombres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+        <span class="c1"># El año</span>
+        <span class="n">año</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;lister-item-year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">años</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">año</span><span class="p">)</span>
+        <span class="c1"># La calificación IMDB</span>
+        <span class="n">imdb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">contenedor</span><span class="o">.</span><span class="n">strong</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">calificaciones_imdb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imdb</span><span class="p">)</span>
+        <span class="c1"># El Metascore</span>
+        <span class="n">m_score</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;metascore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">metascores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m_score</span><span class="p">))</span>
+        <span class="c1"># El número de votos</span>
+        <span class="n">voto</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;nv&#39;</span><span class="p">})[</span><span class="s1">&#39;data-value&#39;</span><span class="p">]</span>
+        <span class="n">votos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">voto</span><span class="p">))</span>
+</pre></div>
+<p>Revisemos los datos recopilados hasta ahora. Pandas nos facilitará ver si hemos recopilado nuestros datos correctamente.</p>
+<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;película&#39;</span><span class="p">:</span> <span class="n">nombres</span><span class="p">,</span>
+    <span class="s1">&#39;año&#39;</span><span class="p">:</span> <span class="n">año</span><span class="p">,</span>
+    <span class="s1">&#39;imdb&#39;</span><span class="p">:</span> <span class="n">calificaciones_imdb</span><span class="p">,</span>
+    <span class="s1">&#39;metascore&#39;</span><span class="p">:</span> <span class="n">metascores</span><span class="p">,</span>
+    <span class="s1">&#39;votos&#39;</span><span class="p">:</span> <span class="n">votos</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+<div class="hll"><pre><span></span>&lt;class<span class="w"> </span><span class="s1">&#39;pandas.core.frame.DataFrame&#39;</span>&gt;
+RangeIndex:<span class="w"> </span><span class="m">93</span><span class="w"> </span>entries,<span class="w"> </span><span class="m">0</span><span class="w"> </span>to<span class="w"> </span><span class="m">92</span>
+Data<span class="w"> </span>columns<span class="w"> </span><span class="o">(</span>total<span class="w"> </span><span class="m">5</span><span class="w"> </span>columns<span class="o">)</span>:
+<span class="w"> </span><span class="c1">#   Column     Non-Null Count  Dtype  </span>
+---<span class="w">  </span>------<span class="w">     </span>--------------<span class="w">  </span>-----<span class="w">  </span>
+<span class="w"> </span><span class="m">0</span><span class="w">   </span>película<span class="w">   </span><span class="m">93</span><span class="w"> </span>non-null<span class="w">     </span>object<span class="w"> </span>
+<span class="w"> </span><span class="m">1</span><span class="w">   </span>año<span class="w">        </span><span class="m">93</span><span class="w"> </span>non-null<span class="w">     </span>object<span class="w"> </span>
+<span class="w"> </span><span class="m">2</span><span class="w">   </span>imdb<span class="w">       </span><span class="m">93</span><span class="w"> </span>non-null<span class="w">     </span>float64
+<span class="w"> </span><span class="m">3</span><span class="w">   </span>metascore<span class="w">  </span><span class="m">93</span><span class="w"> </span>non-null<span class="w">     </span>int64<span class="w">  </span>
+<span class="w"> </span><span class="m">4</span><span class="w">   </span>votos<span class="w">      </span><span class="m">93</span><span class="w"> </span>non-null<span class="w">     </span>int64<span class="w">  </span>
+dtypes:<span class="w"> </span>float64<span class="o">(</span><span class="m">1</span><span class="o">)</span>,<span class="w"> </span>int64<span class="o">(</span><span class="m">2</span><span class="o">)</span>,<span class="w"> </span>object<span class="o">(</span><span class="m">2</span><span class="o">)</span>
+memory<span class="w"> </span>usage:<span class="w"> </span><span class="m">3</span>.8+<span class="w"> </span>KB
+None
+</pre></div>
+<p>y ahora si reviso los primeros 5 elementos del DataFrame</p>
+<div class="hll"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">test_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="w">                                        </span>película<span class="w">         </span>año<span class="w">  </span>imdb<span class="w">  </span>metascore<span class="w">   </span>votos
+<span class="m">0</span><span class="w">                                    </span>Oppenheimer<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.6<span class="w">         </span><span class="m">88</span><span class="w">  </span><span class="m">380436</span>
+<span class="m">1</span><span class="w">                                         </span>Barbie<span class="w">  </span><span class="o">(</span>I<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.4<span class="w">         </span><span class="m">80</span><span class="w">  </span><span class="m">254911</span>
+<span class="m">2</span><span class="w">                                 </span>Heart<span class="w"> </span>of<span class="w"> </span>Stone<span class="w">  </span><span class="o">(</span>I<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">5</span>.7<span class="w">         </span><span class="m">44</span><span class="w">   </span><span class="m">34073</span>
+<span class="m">3</span><span class="w">                        </span>Red,<span class="w"> </span>White<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Royal<span class="w"> </span>Blue<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.1<span class="w">         </span><span class="m">62</span><span class="w">   </span><span class="m">26037</span>
+<span class="m">4</span><span class="w">                                    </span>Blue<span class="w"> </span>Beetle<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.8<span class="w">         </span><span class="m">61</span><span class="w">   </span><span class="m">17039</span>
+<span class="m">5</span><span class="w">                                 </span>Hazme<span class="w"> </span>el<span class="w"> </span>favor<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.5<span class="w">         </span><span class="m">59</span><span class="w">   </span><span class="m">51102</span>
+<span class="m">6</span><span class="w">                </span>Guardianes<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>Galaxia<span class="w"> </span>vol.<span class="w"> </span><span class="m">3</span><span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.0<span class="w">         </span><span class="m">64</span><span class="w">  </span><span class="m">294910</span>
+<span class="m">7</span><span class="w">                         </span>Dracula:<span class="w"> </span>Mar<span class="w"> </span>de<span class="w"> </span>Sangre<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.4<span class="w">         </span><span class="m">52</span><span class="w">    </span><span class="m">6454</span>
+<span class="m">8</span><span class="w">          </span>Spider-Man:<span class="w"> </span>A<span class="w"> </span>través<span class="w"> </span>del<span class="w"> </span>spider-verso<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.8<span class="w">         </span><span class="m">86</span><span class="w">  </span><span class="m">237098</span>
+<span class="m">9</span><span class="w">                   </span>Tortugas<span class="w"> </span>Ninja:<span class="w"> </span>Caos<span class="w"> </span>Mutante<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.5<span class="w">         </span><span class="m">74</span><span class="w">   </span><span class="m">18899</span>
+<span class="m">10</span><span class="w">                   </span>Megalodón<span class="w"> </span><span class="m">2</span>:<span class="w"> </span>el<span class="w"> </span>gran<span class="w"> </span>abismo<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">5</span>.5<span class="w">         </span><span class="m">40</span><span class="w">   </span><span class="m">20273</span>
+<span class="m">11</span><span class="w">                                 </span>Asteroid<span class="w"> </span>City<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.7<span class="w">         </span><span class="m">74</span><span class="w">   </span><span class="m">64478</span>
+<span class="m">12</span><span class="w">                </span>Toc<span class="w"> </span>Toc<span class="w"> </span>Toc:<span class="w"> </span>El<span class="w"> </span>sonido<span class="w"> </span>del<span class="w"> </span>mal<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">5</span>.9<span class="w">         </span><span class="m">50</span><span class="w">    </span><span class="m">9029</span>
+<span class="m">13</span><span class="w">  </span>Misión:<span class="w"> </span>Imposible<span class="w"> </span>-<span class="w"> </span>Sentencia<span class="w"> </span>Mortal<span class="w"> </span>Parte<span class="w"> </span><span class="m">1</span><span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.0<span class="w">         </span><span class="m">81</span><span class="w">  </span><span class="m">130816</span>
+<span class="m">14</span><span class="w">                                  </span>Gran<span class="w"> </span>Turismo<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.3<span class="w">         </span><span class="m">46</span><span class="w">   </span><span class="m">10179</span>
+<span class="m">15</span><span class="w">                </span>Super<span class="w"> </span>Mario<span class="w"> </span>Bros.:<span class="w"> </span>La<span class="w"> </span>película<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.1<span class="w">         </span><span class="m">46</span><span class="w">  </span><span class="m">183453</span>
+<span class="m">16</span><span class="w">                                     </span>Elementos<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.0<span class="w">         </span><span class="m">58</span><span class="w">   </span><span class="m">41212</span>
+<span class="m">17</span><span class="w">                            </span>Sonido<span class="w"> </span>de<span class="w"> </span>Libertad<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.8<span class="w">         </span><span class="m">43</span><span class="w">   </span><span class="m">49273</span>
+<span class="m">18</span><span class="w">                                        </span>Strays<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.4<span class="w">         </span><span class="m">54</span><span class="w">    </span><span class="m">3157</span>
+<span class="m">19</span><span class="w">                             </span>Mansión<span class="w"> </span>Encantada<span class="w">      </span><span class="o">(</span><span class="m">2023</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.2<span class="w">         </span><span class="m">47</span><span class="w">   </span><span class="m">10812</span>
+</pre></div>
+<p>¡Todo salió como se esperaba!</p>
+<p>Como nota al margen, si ejecuta el código desde un país donde el inglés no es el idioma principal, es muy probable que obtenga algunos de los nombres de las películas traducidos al idioma principal de ese país.</p>
+<p>Lo más probable es que esto suceda porque el servidor deduce su ubicación a partir de su dirección IP. Incluso si se encuentra en un país donde el inglés es el idioma principal, es posible que aún reciba contenido traducido. Esto puede suceder si estás usando una VPN mientras realizas las solicitudes <code>GET</code>.</p>
+<p>Si lo tuyo es el inglés, pasa los siguientes valores al parámetro de <code>headers</code> de la función <code>get()</code>:</p>
+<div class="hll"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept-Language&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US, en;q=0.5&quot;</span><span class="p">}</span>
+</pre></div>
+<p>Esto comunicará al servidor algo como:</p>
+<p><em>“Quiero el contenido lingüístico en inglés americano (en-US). Si en-US no está disponible, entonces otros tipos de inglés (en) también estarían bien (pero no tanto como en-US)”.</em></p>
+<p>El parámetro <code>q</code> indica el grado en que preferimos un determinado idioma. Si no se especifica, el valor se establece en 1 de forma predeterminada, como en el caso de en-US. Puedes <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-accept-language">leer más sobre esto aquí</a>.</p>
+<p>Ahora comencemos a crear el script para todas las páginas que queremos eliminar.</p>
+<h2 id="el-script-de-varias-paginas">El script de varias páginas.</h2><p>Hacer el scraping para varias páginas es un poco más desafiante. Desarrollaremos nuestro script de una página haciendo tres cosas más:</p>
+<ol>
+<li>Haciendo todas las peticiones que queramos desde dentro del bucle.</li>
+<li>Controlar la velocidad del bucle para evitar bombardear el servidor con peticiones.</li>
+<li>Supervisar el bucle mientras se ejecuta.</li>
+</ol>
+<p>Scrapearemos las primeras 2 páginas de cada año en el intervalo 2000-2022. 2 páginas para cada uno de los 23 años hacen un total de 46 páginas. Cada página tiene 250 películas, por lo que extraeremos datos de 11500 películas como máximo. Pero no todas las películas tienen un Metascore, por lo que el número será menor. Aun así, es muy probable que obtengamos datos de más de 2000 películas.</p>
+<h3 id="cambiando-los-parametros-de-las-urls">Cambiando los parámetros de las URLs</h3><p>Como se mostró anteriormente, las URL siguen una cierta lógica a medida que cambian las páginas web.</p>
+<p><img src="/img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/variables_url.png" alt="variables url script" title="variables url script" style="width:100%;margin: auto;display: block;" /></p>
+<p>Mientras vamos realizando las peticiones, solo tendremos que variar los valores de solo dos parámetros de la URL: <code>release_date</code> y <code>start</code>. Preparemos los valores que necesitaremos para bucle. En nuestro código haremos:</p>
+<ul>
+<li>Una lista llamada <code>paginas</code> y la rellenaremos con los números correspondientes al inicio de cada página.</li>
+<li>Una lista llamada <code>url_años</code> y se completará con las cadenas correspondientes a los años 2000-2022.</li>
+</ul>
+<div class="hll"><pre><span></span><span class="n">paginas</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">251</span><span class="p">)</span>
+<span class="n">url_años</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)]</span>
+</pre></div>
+<h3 id="controlando-la-tasa-de-rastreo-crawl-rate">Controlando la tasa de rastreo (crawl-rate)</h3><p>Controlar la velocidad de rastreo es beneficioso para nosotros y para el sitio web que estamos scrapeando. Si evitamos sobrecargar el servidor con decenas de peticiones por segundo, es mucho menos probable que prohíban nuestra dirección IP. También evitamos interrumpir la actividad del sitio web que scrapeamos al permitir que el servidor también responda a las solicitudes de otros usuarios.</p>
+<p>Controlaremos la velocidad del bucle usando la <a href="https://docs.python.org/3/library/time.html?highlight=time%20module#time.sleep">función</a> <code>sleep()</code> del <a href="https://docs.python.org/3/library/time.html?highlight=time%20module#module-time">módulo</a> de <code>time</code> de Python. <code>sleep()</code> pausará la ejecución del bucle durante una cantidad específica de segundos.</p>
+<p>Para imitar el comportamiento humano, variaremos la cantidad de tiempo de espera entre solicitudes usando la <a href="https://docs.python.org/3/library/random.html?highlight=random%20module#random.randint">función</a> <code>randint()</code> del <a href="https://docs.python.org/3/library/random.html?highlight=random%20module#module-random">módulo</a> <code>random</code> de Python. <code>randint()</code> genera aleatoriamente números enteros dentro de un intervalo específico.</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pin pra&#39;</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+<p>Por lo pronto, solo importemos estas dos funciones en nuestro código para evitar la saturación en el siguiente bloque de código que contiene nuestro bucle principal de sueño.</p>
+<h3 id="monitoreando-el-bucle-mientras-continua">Monitoreando el bucle mientras continúa</h3><p>Dado que estamos scrapeando 46 páginas, sería bueno si pudiéramos encontrar una manera de monitorear el proceso de scrapeo mientras aún continúa. Esta característica es definitivamente opcional, pero puede resultar muy útil en el proceso de prueba y depuración. Además, cuanto mayor sea el número de páginas, más útil será el seguimiento. Si va a scrapear cientos o miles de páginas web en una sola ejecución de código, diría que esta característica se vuelve imprescindible.</p>
+<p>Para nuestro script, usaremos esta función y monitorearemos los siguientes parámetros:</p>
+<ul>
+<li>La <strong>frecuencia (velocidad) de las peticiones</strong>, por lo que nos aseguramos de que nuestro programa no sobrecargue el servidor.</li>
+<li>La <strong>cantidad de peticiones</strong>, para que podamos detener el ciclo en caso de que se exceda la cantidad de solicitudes esperadas.</li>
+<li>El <strong><a href="https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP">código de estado HTTP</a></strong> de nuestras solicitudes, para asegurarnos de que el servidor envíe las respuestas adecuadas.</li>
+</ul>
+<p>Para obtener un valor de frecuencia, dividiremos la cantidad de solicitudes por el tiempo transcurrido desde la primera solicitud. Esto es similar a calcular la velocidad de un automóvil: dividimos la distancia por el tiempo necesario para recorrerla. Primero experimentemos con esta técnica de monitoreo a pequeña escala. Lo siguiente que haremos será:</p>
+<ul>
+<li>Establecer una hora de inicio utilizando la función <code>time()</code> del módulo <code>time</code> y asignar el valor a <code>tiempo_inicio</code>.</li>
+<li>Asignar 0 a la variable <code>peticiones</code> que usaremos para contar el número de solicitudes.</li>
+<li>Iniciar un bucle y luego con cada iteración:<ul>
+<li>Simular una solicitud.</li>
+<li>Incrementar el número de peticiones en 1.</li>
+<li>Pausae el bucle durante un intervalo de tiempo de entre 8 y 15 segundos.</li>
+<li>Calcule el tiempo transcurrido desde la primera solicitud y asignar el valor a <code>tiempo_transcurrido</code>.</li>
+<li>Imprimir el número de solicitudes y la frecuencia.</li>
+</ul>
+</li>
+</ul>
+<p>Así lucirá nuestra prueba de concepto:</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">tiempo_inicio</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">peticiones</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">peticiones</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">tiempo_transcurrido</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tiempo_inicio</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Petición: </span><span class="si">{</span><span class="n">peticiones</span><span class="si">}</span><span class="s1">; Frecuencia: </span><span class="si">{</span><span class="n">peticiones</span><span class="o">/</span><span class="n">tiempo_transcurrido</span><span class="si">}</span><span class="s1"> peticiones/s&#39;</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span>Petición:<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span>Frecuencia:<span class="w"> </span><span class="m">0</span>.49947650463238624<span class="w"> </span>peticiones/s
+Petición:<span class="w"> </span><span class="m">2</span><span class="p">;</span><span class="w"> </span>Frecuencia:<span class="w"> </span><span class="m">0</span>.4996998027377252<span class="w"> </span>peticiones/s
+Petición:<span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span>Frecuencia:<span class="w"> </span><span class="m">0</span>.5995400143227362<span class="w"> </span>peticiones/s
+Petición:<span class="w"> </span><span class="m">4</span><span class="p">;</span><span class="w"> </span>Frecuencia:<span class="w"> </span><span class="m">0</span>.4997272043465967<span class="w"> </span>peticiones/s
+Petición:<span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span>Frecuencia:<span class="w"> </span><span class="m">0</span>.4543451628627026<span class="w"> </span>peticiones/s
+</pre></div>
+<p>Dado que vamos a realizar 46 solicitudes, nuestro trabajo se verá un poco desordenado a medida que se acumule el resultado. Para evitarlo, borraremos el resultado después de cada iteración y lo reemplazaremos con información sobre la solicitud más reciente.</p>
+<p>Este paso solo sirve si estás probando desde un Jupyter notebook, sino, puedes ignorarlo.</p>
+<p>Para hacer eso usaremos la función <code>clear_output()</code> del <a href="https://ipython.readthedocs.io/en/stable/api/generated/IPython.display.html#IPython.display.clear_output">módulo</a> <code>display</code> de IPython. Estableceremos el parámetro de espera de <code>clear_output()</code> en True para esperar y reemplazar la salida actual hasta que aparezca alguna salida nueva.</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+
+<span class="n">tiempo_inicio</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">peticiones</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">peticiones</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">tiempo_transcurrido</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tiempo_inicio</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Petición: </span><span class="si">{</span><span class="n">peticiones</span><span class="si">}</span><span class="s1">; Frecuencia: </span><span class="si">{</span><span class="n">peticiones</span><span class="o">/</span><span class="n">tiempo_transcurrido</span><span class="si">}</span><span class="s1"> peticiones/s&#39;</span><span class="p">)</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+<pre><code>Petición: 5; Frecuencia: 0.6240351700607663 peticiones/s
+</code></pre>
+<p>El resultado anterior es el que verá una vez que se haya ejecutado el ciclo. Así es como se ve mientras está funcionando</p>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/clear_output.gif" alt="funcionalidad clear output"></p>
+<p>Para monitorear el código de estado, configuraremos el programa para que nos avise si hay algo mal. Una solicitud exitosa se indica mediante un código de estado de 200. Usaremos la función <code>warn()</code> del módulo de <code>warnings</code> para generar una advertencia si el código de estado no es 200.</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
+<span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Simulación de una advertencia&quot;</span><span class="p">)</span>
+</pre></div>
+<p>Y como resultado, veremos:</p>
+<div class="hll"><pre><span></span>&lt;stdin&gt;:1:<span class="w"> </span>UserWarning:<span class="w"> </span>Simulación<span class="w"> </span>de<span class="w"> </span>una<span class="w"> </span>advertencia
+</pre></div>
+<p>Elegimos una advertencia en lugar de romper el ciclo porque existe una buena posibilidad de que extraigamos suficientes datos, incluso si algunas de las solicitudes fallan. Solo romperemos el ciclo si el número de solicitudes es mayor de lo esperado.</p>
+<p><em>Nota:</em> Adicionalmente a lo que sugiere el tutorial original sobre el monitoreo, instalé <a href="https://pypi.org/project/ipython-autotime/">ipython-autotime</a> para ver el tiempo de ejecución de cada celda en mi jupyter notebook.</p>
+<div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ipython-autotime
+</pre></div>
+<p>Luego de esto, solo es colocar <code>%load_ext autotime</code> en la primera celda del cuaderno y listo.</p>
+<h3 id="juntando-todo">Juntando todo</h3><p>¡Ahora reconstruyamos todo lo que hemos hecho hasta ahora! Luego de los import que ya hicimos de los módulos <code>time</code>, <code>warn</code>y <code>random</code>, continuaremos con:</p>
+<ul>
+<li>Iterar sobre la lista <code>url_años</code> para variar el parámetro <code>release_date</code> de la URL.</li>
+<li>Para cada elemento en <code>url_años</code>, recorra la lista de páginas para variar el parámetro de <code>start</code> de la URL.</li>
+<li>Realice las solicitudes <code>GET</code> dentro del bucle de páginas.</li>
+<li>Pause el bucle durante un intervalo de tiempo de entre 8 y 15 segundos.</li>
+<li>Supervise cada solicitud como se analizó anteriormente.</li>
+<li>Lanze una advertencia para códigos de estado distintos de 200.</li>
+<li>Rompa el ciclo si el número de solicitudes es mayor de lo esperado.</li>
+<li>Convierta el contenido HTML de la <code>respuesta</code> en un objeto <code>BeautifulSoup</code>.</li>
+<li>Extraiga todos los contenedores de películas de este objeto <code>BeautifulSoup</code>.</li>
+<li>Recorra todos estos contenedores.</li>
+<li>Extraiga los datos si un contenedor tiene un Metascore.</li>
+</ul>
+<div class="hll"><pre><span></span><span class="c1"># Listas para guardar los datos scrapeados</span>
+<span class="n">nombres</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">años</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">calificaciones_imdb</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">metascores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">votos</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Preparacion para monitorear las iteraciones</span>
+<span class="n">tiempo_inicio</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">peticiones</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<span class="k">for</span> <span class="n">año</span> <span class="ow">in</span> <span class="n">url_años</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">pagina</span> <span class="ow">in</span> <span class="n">paginas</span><span class="p">:</span>
+
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://www.imdb.com/search/title/?release_date=</span><span class="si">{</span><span class="n">año</span><span class="si">}</span><span class="s1">-01-01,</span><span class="si">{</span><span class="n">año</span><span class="si">}</span><span class="s1">-12-31&#39;</span>
+        <span class="n">url</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;&amp;sort=num_votes,desc&amp;count=250&amp;start=</span><span class="si">{</span><span class="n">pagina</span><span class="si">}</span><span class="s1">&amp;ref_=adv_nxt&#39;</span>
+
+        <span class="c1"># Hacer la peticion</span>
+        <span class="n">respuesta</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="c1"># Pausar el ciclo</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+
+        <span class="c1"># Monitorear las peticiones</span>
+        <span class="n">peticiones</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">tiempo_transcurrido</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tiempo_inicio</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Petición: </span><span class="si">{</span><span class="n">peticiones</span><span class="si">}</span><span class="s1">; Frecuencia: </span><span class="si">{</span><span class="n">peticiones</span><span class="o">/</span><span class="n">tiempo_transcurrido</span><span class="si">}</span><span class="s1"> peticiones/s&#39;</span><span class="p">)</span>
+        <span class="c1"># clear_output(wait = True)</span>
+
+        <span class="c1"># Throw a warning for non-200 status codes</span>
+        <span class="k">if</span> <span class="n">respuesta</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Año: </span><span class="si">{</span><span class="n">año</span><span class="si">}</span><span class="s1">;   Petición: </span><span class="si">{</span><span class="n">peticiones</span><span class="si">}</span><span class="s1">; Status code: </span><span class="si">{</span><span class="n">respuesta</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Rompe el ciclo si el número de peticiones es muy mayor que el esperado</span>
+        <span class="k">if</span> <span class="n">peticiones</span> <span class="o">&gt;</span> <span class="mi">47</span><span class="p">:</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Número de peticiones fue mayor al esperado.&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="c1"># Parsea el contenido de la petición con BeautifulSoup</span>
+        <span class="n">sopa_html</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Selecciona todos los 250 contenedores de películas de una sola página</span>
+        <span class="n">contenedores_pelicula</span> <span class="o">=</span> <span class="n">sopa_html</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;lister-item mode-advanced&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Por cada película de estas 250</span>
+        <span class="k">for</span> <span class="n">contenedor</span> <span class="ow">in</span> <span class="n">contenedores_pelicula</span><span class="p">:</span>
+            <span class="c1"># Si la película tiene Metascore, entonces extrae:</span>
+            <span class="k">if</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;ratings-metascore&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+                <span class="c1"># El nombre</span>
+                <span class="n">nombre</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">text</span>
+                <span class="n">nombres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+
+                <span class="c1"># El año</span>
+                <span class="n">año</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">h3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;lister-item-year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+                <span class="n">años</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">año</span><span class="p">)</span>
+
+                <span class="c1"># La calificación IMDB</span>
+                <span class="n">imdb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">contenedor</span><span class="o">.</span><span class="n">strong</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                <span class="n">calificaciones_imdb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imdb</span><span class="p">)</span>
+
+                <span class="c1"># El Metascore</span>
+                <span class="n">m_score</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;metascore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+                <span class="n">metascores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m_score</span><span class="p">))</span>
+
+                <span class="c1"># El número de votos</span>
+                <span class="n">voto</span> <span class="o">=</span> <span class="n">contenedor</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;nv&#39;</span><span class="p">})[</span><span class="s1">&#39;data-value&#39;</span><span class="p">]</span>
+                <span class="n">votos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">voto</span><span class="p">))</span>
+</pre></div>
+<div class="hll"><pre><span></span>Petición:<span class="w"> </span><span class="m">44</span><span class="p">;</span><span class="w"> </span>Frecuencia:<span class="w"> </span><span class="m">0</span>.06678366415302274<span class="w"> </span>peticiones/s
+</pre></div>
+<p>¡Que bien! El scrapeado parece haber funcionado perfectamente. El script duró 10min 35s.</p>
+<p>Ahora combinemos los datos en un <code>DataFrame</code> de pandas para examinar lo que hemos logrado extraer. Si todo es como se esperaba, podemos continuar con la limpieza de los datos para dejarlos listos para el análisis.</p>
+<h2 id="examinando-los-datos-scrapeados">Examinando los datos scrapeados</h2><p>Ahora lo siguiente será:</p>
+<ul>
+<li>Fusionar los datos en un <code>DataFrame</code> de pandas.</li>
+<li>Descargar los datos en un archivo con formato <code>.csv</code> (¡por si la moscas!)</li>
+<li>Imprimir información sobre el <code>DataFrame</code> recién creado.</li>
+<li>Mostrar las primeras entradas.</li>
+</ul>
+<div class="hll"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;película&#39;</span><span class="p">:</span> <span class="n">nombres</span><span class="p">,</span>
+    <span class="s1">&#39;año&#39;</span><span class="p">:</span> <span class="n">años</span><span class="p">,</span>
+    <span class="s1">&#39;imdb&#39;</span><span class="p">:</span> <span class="n">calificaciones_imdb</span><span class="p">,</span>
+    <span class="s1">&#39;metascore&#39;</span><span class="p">:</span> <span class="n">metascores</span><span class="p">,</span>
+    <span class="s1">&#39;votos&#39;</span><span class="p">:</span> <span class="n">votos</span>
+<span class="p">})</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;calificaciones_peliculas_raw.csv&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+<div class="hll"><pre><span></span>&lt;class<span class="w"> </span><span class="s1">&#39;pandas.core.frame.DataFrame&#39;</span>&gt;
+RangeIndex:<span class="w"> </span><span class="m">3980</span><span class="w"> </span>entries,<span class="w"> </span><span class="m">0</span><span class="w"> </span>to<span class="w"> </span><span class="m">3979</span>
+Data<span class="w"> </span>columns<span class="w"> </span><span class="o">(</span>total<span class="w"> </span><span class="m">6</span><span class="w"> </span>columns<span class="o">)</span>:
+<span class="w"> </span><span class="c1">#   Column      Non-Null Count  Dtype  </span>
+---<span class="w">  </span>------<span class="w">      </span>--------------<span class="w">  </span>-----<span class="w">  </span>
+<span class="w"> </span><span class="m">0</span><span class="w">   </span>Unnamed:<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="m">3980</span><span class="w"> </span>non-null<span class="w">   </span>int64<span class="w">  </span>
+<span class="w"> </span><span class="m">1</span><span class="w">   </span>película<span class="w">    </span><span class="m">3980</span><span class="w"> </span>non-null<span class="w">   </span>object<span class="w"> </span>
+<span class="w"> </span><span class="m">2</span><span class="w">   </span>año<span class="w">         </span><span class="m">3980</span><span class="w"> </span>non-null<span class="w">   </span>object<span class="w"> </span>
+<span class="w"> </span><span class="m">3</span><span class="w">   </span>imdb<span class="w">        </span><span class="m">3980</span><span class="w"> </span>non-null<span class="w">   </span>float64
+<span class="w"> </span><span class="m">4</span><span class="w">   </span>metascore<span class="w">   </span><span class="m">3980</span><span class="w"> </span>non-null<span class="w">   </span>int64<span class="w">  </span>
+<span class="w"> </span><span class="m">5</span><span class="w">   </span>votos<span class="w">       </span><span class="m">3980</span><span class="w"> </span>non-null<span class="w">   </span>int64<span class="w">  </span>
+dtypes:<span class="w"> </span>float64<span class="o">(</span><span class="m">1</span><span class="o">)</span>,<span class="w"> </span>int64<span class="o">(</span><span class="m">3</span><span class="o">)</span>,<span class="w"> </span>object<span class="o">(</span><span class="m">2</span><span class="o">)</span>
+memory<span class="w"> </span>usage:<span class="w"> </span><span class="m">186</span>.7+<span class="w"> </span>KB
+None
+</pre></div>
+<div class="hll"><pre><span></span><span class="w">    </span>Unnamed:<span class="w"> </span><span class="m">0</span><span class="w">                    </span>película<span class="w">     </span>año<span class="w">  </span>imdb<span class="w">  </span>metascore<span class="w">    </span>votos
+<span class="m">0</span><span class="w">            </span><span class="m">0</span><span class="w">                   </span>Gladiator<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.5<span class="w">         </span><span class="m">67</span><span class="w">  </span><span class="m">1555914</span>
+<span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">                     </span>Memento<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.4<span class="w">         </span><span class="m">83</span><span class="w">  </span><span class="m">1282227</span>
+<span class="m">2</span><span class="w">            </span><span class="m">2</span><span class="w">          </span>Cerdos<span class="w"> </span>y<span class="w"> </span>diamantes<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.2<span class="w">         </span><span class="m">55</span><span class="w">   </span><span class="m">883470</span>
+<span class="m">3</span><span class="w">            </span><span class="m">3</span><span class="w">         </span>Requiem<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>Dream<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">8</span>.3<span class="w">         </span><span class="m">71</span><span class="w">   </span><span class="m">871723</span>
+<span class="m">4</span><span class="w">            </span><span class="m">4</span><span class="w">             </span>American<span class="w"> </span>Psycho<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.6<span class="w">         </span><span class="m">64</span><span class="w">   </span><span class="m">672128</span>
+<span class="m">5</span><span class="w">            </span><span class="m">5</span><span class="w">                       </span>X-Men<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.3<span class="w">         </span><span class="m">64</span><span class="w">   </span><span class="m">632513</span>
+<span class="m">6</span><span class="w">            </span><span class="m">6</span><span class="w">                   </span>Cast<span class="w"> </span>Away<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.8<span class="w">         </span><span class="m">73</span><span class="w">   </span><span class="m">617566</span>
+<span class="m">7</span><span class="w">            </span><span class="m">7</span><span class="w">                 </span>Unbreakable<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.3<span class="w">         </span><span class="m">62</span><span class="w">   </span><span class="m">431171</span>
+<span class="m">8</span><span class="w">            </span><span class="m">8</span><span class="w">      </span>Mission:<span class="w"> </span>Impossible<span class="w"> </span>II<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.1<span class="w">         </span><span class="m">59</span><span class="w">   </span><span class="m">365811</span>
+<span class="m">9</span><span class="w">            </span><span class="m">9</span><span class="w">            </span>Meet<span class="w"> </span>the<span class="w"> </span>Parents<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.0<span class="w">         </span><span class="m">73</span><span class="w">   </span><span class="m">346377</span>
+<span class="m">10</span><span class="w">          </span><span class="m">10</span><span class="w">  </span>O<span class="w"> </span>Brother,<span class="w"> </span>Where<span class="w"> </span>Art<span class="w"> </span>Thou?<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.7<span class="w">         </span><span class="m">69</span><span class="w">   </span><span class="m">322841</span>
+<span class="m">11</span><span class="w">          </span><span class="m">11</span><span class="w">       </span>Gone<span class="w"> </span><span class="k">in</span><span class="w"> </span>Sixty<span class="w"> </span>Seconds<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">6</span>.5<span class="w">         </span><span class="m">35</span><span class="w">   </span><span class="m">288235</span>
+<span class="m">12</span><span class="w">          </span><span class="m">12</span><span class="w">               </span>Almost<span class="w"> </span>Famous<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.9<span class="w">         </span><span class="m">90</span><span class="w">   </span><span class="m">286334</span>
+<span class="m">13</span><span class="w">          </span><span class="m">13</span><span class="w">                 </span>The<span class="w"> </span>Patriot<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.2<span class="w">         </span><span class="m">63</span><span class="w">   </span><span class="m">286082</span>
+<span class="m">14</span><span class="w">          </span><span class="m">14</span><span class="w">             </span>Wo<span class="w"> </span>hu<span class="w"> </span>cang<span class="w"> </span>long<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">   </span><span class="m">7</span>.9<span class="w">         </span><span class="m">94</span><span class="w">   </span><span class="m">277167</span>
+</pre></div>
+<p>El resultado de <code>info()</code> muestra que recopilamos datos de más de 2000 películas. También podemos ver que no hay ningún valor <code>null</code> en nuestro conjunto de datos.</p>
+<p>He verificado las calificaciones de estas primeras 10 películas en el sitio web de IMDB. Todos estaban en lo cierto. Quizás quieras hacer tú lo mismo.</p>
+<p>Podemos proceder con seguridad a limpiar los datos.</p>
+<h2 id="limpiando-los-datos-scrapeados">Limpiando los datos scrapeados</h2><p>Limpiaremos los datos extraídos con dos objetivos en mente:</p>
+<ol>
+<li>Dibujar la distribución de las calificaciones de IMDB y Metascore</li>
+<li>Compartir el conjunto de datos. </li>
+</ol>
+<p>En consecuencia, nuestra limpieza de datos consistirá en:</p>
+<ul>
+<li>Reordenar las columnas.</li>
+<li>Limpiar la columna de <code>año</code> y convertir los valores a números enteros.</li>
+<li>Verificar los valores de calificación extremos para determinar si todas las calificaciones están dentro de los intervalos esperados.</li>
+<li>Normalizar uno de los tipos de calificaciones (o ambos) para generar un histograma comparativo.</li>
+</ul>
+<p>Ya que en este punto es necesario graficar y analizar los datos, te recomiendo instalar jupyter notebook en caso de que no lo hayas hecho.</p>
+<div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>notebook
+</pre></div>
+<p>Comencemos reordenando las columnas:</p>
+<div class="hll"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;película&#39;</span><span class="p">,</span> <span class="s1">&#39;año&#39;</span><span class="p">,</span> <span class="s1">&#39;imdb&#39;</span><span class="p">,</span> <span class="s1">&#39;metascore&#39;</span><span class="p">,</span> <span class="s1">&#39;votos&#39;</span><span class="p">]]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="w">    </span>película<span class="w">    </span>año<span class="w"> </span>imdb<span class="w">    </span>metascore<span class="w">   </span>votos
+<span class="m">0</span><span class="w">   </span>Gladiator<span class="w">   </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">  </span><span class="m">8</span>.5<span class="w"> </span><span class="m">67</span><span class="w">  </span><span class="m">1555914</span>
+<span class="m">1</span><span class="w">   </span>Memento<span class="w"> </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">  </span><span class="m">8</span>.4<span class="w"> </span><span class="m">83</span><span class="w">  </span><span class="m">1282227</span>
+<span class="m">2</span><span class="w">   </span>Cerdos<span class="w"> </span>y<span class="w"> </span>diamantes<span class="w">  </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">  </span><span class="m">8</span>.2<span class="w"> </span><span class="m">55</span><span class="w">  </span><span class="m">883470</span>
+<span class="m">3</span><span class="w">   </span>Requiem<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>Dream<span class="w"> </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">  </span><span class="m">8</span>.3<span class="w"> </span><span class="m">71</span><span class="w">  </span><span class="m">871723</span>
+<span class="m">4</span><span class="w">   </span>American<span class="w"> </span>Psycho<span class="w"> </span><span class="o">(</span><span class="m">2000</span><span class="o">)</span><span class="w">  </span><span class="m">7</span>.6<span class="w"> </span><span class="m">64</span><span class="w">  </span><span class="m">672128</span>
+</pre></div>
+<p>Ahora convirtamos todos los valores de la columna de año a números enteros.</p>
+<p>En este momento todos los valores son del tipo de <code>object</code>. Para evitar <code>ValueErrors</code> durante la conversión, queremos que los valores estén compuestos únicamente por números del 0 al 9.</p>
+<p>Examinemos los valores únicos de la columna de año. Esto nos ayuda a hacernos una idea de lo que podríamos hacer para realizar las conversiones que queremos. Para ver todos los valores únicos, usaremos el método <code>unique()</code>:</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+<div class="hll"><pre><span></span>array<span class="o">([</span><span class="s1">&#39;(2000)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2000)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2001)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2001)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2002)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(I) (2002)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2002 Video)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2003)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2003)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2004)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(I) (2004)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2005)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2005)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2006)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2006)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(III) (2006)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2006)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2007)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2007)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(II) (2007)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2008)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2008)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2009)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2009)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(II) (2009)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2010)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2010)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2010)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2011)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(I) (2011)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(IV) (2011)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2012)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2012)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2012)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(2013)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2013)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2013)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2014)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2014)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(II) (2014)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(III) (2014)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2015)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2015)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(II) (2015)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(VI) (2015)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(III) (2015)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2016)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(2016)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2016)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(IX) (2016)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(V) (2016)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2017)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(I) (2017)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2017)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(III) (2017)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2018)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(I) (2018)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(III) (2018)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2018)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2019)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(2019)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(II) (2019)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(III) (2019)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2020)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2020)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(II) (2020)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(IV) (2020)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(V) (2020)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(2021)&#39;</span>,<span class="w"> </span><span class="s1">&#39;(I) (2021)&#39;</span>,
+<span class="w">       </span><span class="s1">&#39;(II) (2021)&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>object<span class="o">)</span>
+</pre></div>
+<p>Contando desde el final hacia el principio, podemos ver que los años siempre se ubican del quinto carácter al segundo. Usaremos el método <code>.str()</code> para seleccionar solo ese intervalo. También convertiremos el resultado a un número entero usando el método <code>astype()</code>.</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;año&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+<p>Si hacemos esto tal cual, encontraremos un error en la conversión de los datos, ya que hay registros con la palabra <code>Video</code> dentro de ellas. Para ello, lo primero que tenemos que hacer es remover esa cadena de texto. Aprovecharé para quitar también el paréntesis, por lo que ahora mi rebanada llegará hasta el cuarto caracter de derecha a izquierda.</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;año&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; Video)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+<p>Como vemos ahora, los datos ya no tienen el texto <code>Video)</code> dentro de ellos.</p>
+<div class="hll"><pre><span></span>array<span class="o">([</span><span class="m">2000</span>,<span class="w"> </span><span class="m">2001</span>,<span class="w"> </span><span class="m">2002</span>,<span class="w"> </span><span class="m">2003</span>,<span class="w"> </span><span class="m">2004</span>,<span class="w"> </span><span class="m">2005</span>,<span class="w"> </span><span class="m">2006</span>,<span class="w"> </span><span class="m">2007</span>,<span class="w"> </span><span class="m">2008</span>,<span class="w"> </span><span class="m">2009</span>,<span class="w"> </span><span class="m">2010</span>,
+<span class="w">       </span><span class="m">2011</span>,<span class="w"> </span><span class="m">2012</span>,<span class="w"> </span><span class="m">2013</span>,<span class="w"> </span><span class="m">2014</span>,<span class="w"> </span><span class="m">2015</span>,<span class="w"> </span><span class="m">2016</span>,<span class="w"> </span><span class="m">2017</span>,<span class="w"> </span><span class="m">2018</span>,<span class="w"> </span><span class="m">2019</span>,<span class="w"> </span><span class="m">2020</span>,<span class="w"> </span><span class="m">2021</span><span class="o">]</span>,
+<span class="w">      </span><span class="nv">dtype</span><span class="o">=</span>object<span class="o">)</span>
+</pre></div>
+<p>Ahora si, convirtamos a números enteros:</p>
+<div class="hll"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;año&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">})</span>
+</pre></div>
+<p>Visualicemos los primeros 5 valores de la columna del año para una verificación rápida. También podemos ver el tipo de valores en la última línea de la salida:</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;año&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="m">0</span><span class="w">    </span><span class="m">2000</span>
+<span class="m">1</span><span class="w">    </span><span class="m">2000</span>
+<span class="m">2</span><span class="w">    </span><span class="m">2000</span>
+<span class="m">3</span><span class="w">    </span><span class="m">2000</span>
+<span class="m">4</span><span class="w">    </span><span class="m">2000</span>
+Name:<span class="w"> </span>año,<span class="w"> </span>dtype:<span class="w"> </span>int64
+</pre></div>
+<p>Ahora comprobaremos los valores mínimos y máximos de cada tipo de calificación. Podemos hacer esto muy rápidamente usando el <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">método</a> <code>describe()</code> de pandas. Cuando se aplica en un <code>DataFrame</code>, este método devuelve varias estadísticas descriptivas para cada columna numérica del `DataFrame. En la siguiente línea de código seleccionamos solo aquellas filas que describen los valores mínimo y máximo, y solo aquellas columnas que describen calificaciones de IMDB y Metascores.</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;imdb&#39;</span><span class="p">,</span> <span class="s1">&#39;metascore&#39;</span><span class="p">]]</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="w">    </span>imdb<span class="w">    </span>metascore
+min<span class="w">  </span><span class="m">1</span>.5<span class="w">    </span><span class="m">7</span>.0
+max<span class="w">  </span><span class="m">9</span>.0<span class="w">    </span><span class="m">100</span>.0
+</pre></div>
+<p>No hay valores atípicos inesperados.</p>
+<p>De los valores anteriores, puede ver que las dos calificaciones tienen escalas diferentes. Para poder trazar las dos distribuciones en un solo gráfico, tendremos que llevarlas a la misma escala. Normalicemos la columna <code>imdb</code> a una escala de 100 puntos.</p>
+<p>Multiplicaremos cada calificación de IMDB por 10 y luego haremos una verificación rápida mirando las primeras 3 filas:</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;n_imdb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;imdb&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+<div class="hll"><pre><span></span><span class="w">    </span>Unnamed:<span class="w"> </span><span class="m">0</span><span class="w">  </span>película<span class="w">    </span>año<span class="w"> </span>imdb<span class="w">    </span>metascore<span class="w">   </span>votos<span class="w">   </span>n_imdb
+<span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span>Gladiator<span class="w">   </span><span class="m">2000</span><span class="w">    </span><span class="m">8</span>.5<span class="w"> </span><span class="m">67</span><span class="w">  </span><span class="m">1555914</span><span class="w"> </span><span class="m">85</span>.0
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">   </span>Memento<span class="w"> </span><span class="m">2000</span><span class="w">    </span><span class="m">8</span>.4<span class="w"> </span><span class="m">83</span><span class="w">  </span><span class="m">1282227</span><span class="w"> </span><span class="m">84</span>.0
+<span class="m">2</span><span class="w">   </span><span class="m">2</span><span class="w">   </span>Cerdos<span class="w"> </span>y<span class="w"> </span>diamantes<span class="w">  </span><span class="m">2000</span><span class="w">    </span><span class="m">8</span>.2<span class="w"> </span><span class="m">55</span><span class="w">  </span><span class="m">883470</span><span class="w">  </span><span class="m">82</span>.0
+</pre></div>
+<p>¡Genial! Ahora estamos en condiciones de guardar este conjunto de datos localmente, para poder compartirlo con otros más fácilmente. Ya lo compartí públicamente en este repositorio de GitHub de <a href="https://github.com/PyBAQ/Notebooks/tree/master/tutorial_web_scraping_beautifulsoup">notebooks de Python Barranquilla</a>. Hay otros lugares donde puedes compartir un conjunto de datos, como Kaggle o Dataworld.</p>
+<p>Así que guardémoslo:</p>
+<div class="hll"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;calificaciones_peliculas.csv&#39;</span><span class="p">)</span>
+</pre></div>
+<p>Finalmente, grafiquemos las distribuciones!</p>
+<h2 id="graficando-y-analizando-las-distribuciones">Graficando y analizando las distribuciones</h2><p>En la siguiente celda de código dentro de jupyter notebook vamos a:</p>
+<ul>
+<li>Instalar <code>matplotlib</code></li>
+</ul>
+<div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
+</pre></div>
+<ul>
+<li>Importar el submódulo <code>matplotlib.pyplot</code>.</li>
+<li>Correr la magia de Jupyter <code>%matplotlib</code> para activar el modo matplotlib de Jupyter y luego agregar <code>inline</code> para que nuestros gráficos se muestren dentro del cuaderno.</li>
+<li>Crea un objeto <code>figure</code> con 3 ejes.</li>
+<li>Dibujar la distribución de cada calificación no normalizada en un eje individual <code>ax</code>.</li>
+<li>Dibujar las distribuciones normalizadas de las dos calificaciones en el mismo eje <code>ax</code>.</li>
+</ul>
+<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">axes</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;imdb&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># bin range = 1</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;IMDB rating&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metascore&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span> <span class="c1"># bin range = 10</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Metascore&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;n_imdb&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;n_imdb&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metascore&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;metascore&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The Two Normalized Distributions&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/distribuciones.png" alt="Distribuciones películas"></p>
+<p>Comenzando con el <a href="https://datavizcatalogue.com/methods/histogram.html">histograma</a> de IMDB, podemos ver que la mayoría de calificaciones están entre 6 y 8. Hay pocas películas con una calificación mayor a 8, y menos aún con una calificación menor a 4. Esto indica que es raro observar tanto películas muy buenas como películas muy malas.</p>
+<p>La distribución de las calificaciones de Metascore se asemeja a una <a href="https://www.mathsisfun.com/data/standard-normal-distribution.html">distribución normal</a>: la mayoría de las calificaciones son promedio y alcanzan un máximo de aproximadamente 50. A partir de este pico, las frecuencias disminuyen gradualmente hacia valores de calificación extremos. Según esta distribución, efectivamente hay menos películas muy buenas y muy malas, pero no tan pocas como indican las valoraciones de IMDB.</p>
+<p>En el gráfico comparativo, queda más claro que la distribución de IMDB está muy sesgada hacia la parte más alta de las calificaciones promedio, mientras que las calificaciones de Metascore parecen tener una distribución mucho más equilibrada.</p>
+<p><em>¿Cuál podría ser la razón de ese sesgo en la distribución de IMDB?</em></p>
+<p>Una hipótesis es que muchos usuarios tienden a utilizar un método binario para evaluar películas. Si les gusta la película, le dan un 10. Si no les gusta, le dan una calificación muy pequeña o no se molestan en calificarla. Este es un problema interesante que vale la pena explorar con más detalle.</p>
+<h2 id="siguientes-pasos">Siguientes pasos</h2><p>Hemos recorrido un largo camino desde solicitar el contenido de una sola página web hasta analizar las calificaciones de más de 2000 películas. Ahora debería saber cómo raspar muchas páginas web con la misma estructura HTML y URL.</p>
+<p>Para aprovechar lo que hemos aprendido, estos son algunos de los siguientes pasos a considerar:</p>
+<ul>
+<li>Extraiga datos para diferentes intervalos de tiempo y página.</li>
+<li>Raspe datos adicionales sobre las películas.</li>
+<li>Encuentre un sitio web diferente para raspar algo que le interese. <ul>
+<li>Por ejemplo, podría recopilar datos sobre <a href="https://listado.mercadolibre.com.co/port%C3%A1tiles#D[A:port%C3%A1tiles]">computadoras portátiles</a> para ver cómo varían los precios con el tiempo.</li>
+</ul>
+</li>
+</ul>
+
+        <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/tutorial-de-web-scraping-y-beautifulsoup"; this.page.url = "https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//python-barranquilla.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="share-buttons">
+    
+    
+      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/"
+        class="facebook"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share in facebook" >
+        <i class="fa fa-facebook-official share-button"></i>
+      </a>
+    
+      <a  href="https://twitter.com/intent/tweet?text=Tutorial:%20Web%20Scraping%20y%20BeautifulSoup&amp;url=https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/"
+        class="twitter"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share in twitter" >
+        <i class="fa fa-twitter share-button"></i>
+      </a>
+    
+      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/&amp;title=Tutorial:%20Web%20Scraping%20y%20BeautifulSoup"
+        class="linkedin"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share in linkedin" >
+        <i class="fa fa-linkedin share-button"></i>
+      </a>
+    
+  </div>
+
+
+
+  <footer class="dq-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>About Us</h4>
+        <p>Python Barranquilla is a community for all those interested in developing Python applications within the city of Barranquilla (Atlántico).</p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Channels</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://discord.gg/46N5dPm9Zk" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://youtube.com/playlist?list=PL1GXDqy0kMh_FC2DnDnWb4MBlHAvdLn0T" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://t.me/+yH4gst5h7DBjODYx" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://bit.ly/pyBAQ-whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+        </p>
+        <h4>Social Networks</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://meetup.com/pythonbaq/" target="_blank" rel="noopener"><i class="fa-brands fa-meetup"></i></a>
+          <a href="http://twitter.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/python-barranquilla/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://facebook.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://instagram.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/PyBAQ" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Our guidelines</h4>
+        <p>
+          The data collection of this site is guided by the
+          <a href="../../cookies/">Cookies Policy</a>
+
+        </p>
+        <p>
+          This is our
+          <a href="../../codigo-de-conducta/">Code of conduct</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="../../../js/bootstrap.min.js"></script>
+<script
+  src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+  crossorigin="anonymous"
+></script>
+<script src="../../../js/custom.js"></script>
+
+<!--[if lt IE 9
+  ]><script src="../../assets/js/ie8-responsive-file-warning.js"></script
+><![endif]-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>

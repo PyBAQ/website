@@ -126,6 +126,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/tutorial-de-web-scraping-y-beautifulsoup/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/tutorial-de-web-scraping-y-beautifulsoup/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/una-guia-completa-de-django-para-principiantes-parte-1/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/una-guia-completa-de-django-para-principiantes-parte-1/"/>
