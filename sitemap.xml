@@ -261,6 +261,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/nosotros/rashel-carey/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/rashel-carey/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/rashel-carey/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/nosotros/sara-galvan/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/sara-galvan/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/sara-galvan/"/>
