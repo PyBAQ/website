@@ -255,6 +255,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/nosotros/m-camila-arciniegas-pua/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/m-camila-arciniegas-pua/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/m-camila-arciniegas-pua/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/nosotros/paula-aragon/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/paula-aragon/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/paula-aragon/"/>
