@@ -305,36 +305,43 @@
     <url>
       <loc>https://pybaq.co/proyectos/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/proyectos/django-girls-barranquilla/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/django-girls-barranquilla/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/django-girls-barranquilla/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/proyectos/formacion-emprendedora/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/formacion-emprendedora/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/formacion-emprendedora/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/proyectos/katsu/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/katsu/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/katsu/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/proyectos/mercadeo-digital/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/mercadeo-digital/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/mercadeo-digital/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/proyectos/pagina-web/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/pagina-web/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/pagina-web/"/>
       <priority>0.64</priority>
     </url>
     <url>
       <loc>https://pybaq.co/proyectos/temii/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/temii/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/temii/"/>
       <priority>0.64</priority>
     </url>
 </urlset>
