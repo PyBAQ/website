@@ -7,6 +7,31 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/aliados/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/aliados/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/aliados/empanada-fund/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/aliados/empanada-fund/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/aliados/koombea/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/aliados/koombea/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/aliados/psf/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/aliados/psf/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/aliados/python-colombia/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/aliados/python-colombia/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/"/>
       <priority>0.64</priority>
