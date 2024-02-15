@@ -67,6 +67,13 @@
         bag('nosotros', alt, 'projects_collaborator')
       )}}
     </div>
+
+    <h3>Eventos</h3>
+    {% for event in site.query('/eventos', alt) | speakerevents(this._id) %}
+      <div>
+        <a href="{{event|url}}">{{event.title}}</a>
+      </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

@@ -1,0 +1,64 @@
+title: Serverless + Devcontainers en localhost + automatizando tareas repetitivas
+---
+date_start: 2023-09-21 19:00
+---
+link: https://www.meetup.com/pythonbaq/events/295962620/
+---
+information:
+
+ 🏃‍♂️🏃‍♀️ Solo las primeras 50 personas podrán tener su cupo asegurado debido al aforo máximo del lugar
+---
+featured_photo: https://secure.meetupstatic.com/photos/event/b/9/f/6/600_515867606.jpeg
+---
+venue: Koombea
+---
+address_1: Calle 85 #53-14
+---
+talks:
+
+#### talk ####
+title: Una mirada al desarrollo de proyectos con Serverless con Python y AWS
+----
+details: Esta charla se dio por zoom, por lo que no se encuentra grabada
+----
+speaker: 
+----
+speaker_name: Juan de la Cruz
+----
+speaker_bio: Trabaja en koombea
+----
+attach: 
+#### talk ####
+title: Devcontainers en localhost
+----
+details:
+
+ La charla busca mostrar algunos ejemplos de implementación de devcontainers con Github codespaces que facilitan la ejecución de proyectos con Django y Lektor.
+----
+speaker: sergio-orozco
+----
+speaker_name: 
+----
+speaker_bio: Ingeniero de sistemas de la Corporación Universitaria Americana originario de Barranquilla con 11 años de experiencia en desarrollo de software, Co-Organizador de Python Barranquilla, Trabajo actualmente en Perficient como software developer
+----
+attach: <a href="https://docs.google.com/presentation/d/1sbATjk1bKXDp61DYvHrmiL6aXe3h5Fte/edit?usp=sharing&ouid=102956723374392876682&rtpof=true&sd=true">Diapositivas devcontainers</a>
+#### talk ####
+title: Automatización de tareas repetitivas con Python: deja que los Scripts trabajen por tí.
+----
+details:
+
+Se busca mostrar cómo Python puede ser utilizado para automatizar tareas repetitivas en el ámbito laboral o personal. Presenta ejemplos de automatización de procesos como:
+
+* La descarga de archivos
+* El procesamiento de datos
+* El envío de correos electrónicos.
+----
+speaker: 
+----
+speaker_name: Pedro Bonilla
+----
+speaker_bio: Estudiante de física, en doble programa de lic. en matemáticas de la universidad del Atlántico, desarrollador web, hacker ético con experiencia en Cyberseguridad, seguridad en dispositivos IoT, backend. Investigo acerca de cómo combinar la estenografía con el álgebra abstracta.
+----
+attach: 
+---
+youtube: jnZatfMc6rM

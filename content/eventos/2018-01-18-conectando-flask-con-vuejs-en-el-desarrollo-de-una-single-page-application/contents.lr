@@ -1,0 +1,20 @@
+title: Conectando Flask con VueJS en el desarrollo de una Single-Page Application
+---
+date_start: 2018-01-18 19:00
+---
+link: https://www.meetup.com/pythonbaq/events/246657629/
+---
+information: <p>Vamos a visualizar una experiencia en el desarrollo web al ver como una aplicación que permite obtener un control de cuentas usando flask para desarrollar un web service conectado con vuejs.<br/>El evento es gratuito y los cupos son limitados. Te esperamos!!!</p> <p>Tallerista:<br/>• Sergio Orozco. Ingeniero de sistemas, desarrollador front-end en Joonik</p> <p>Requisitos:<br/>• Diligenciar el siguiente formulario (<a href="https://goo.gl/forms/K0w3Ok2lO3IP9b792" class="linkified">https://goo.gl/forms/K0w3Ok2lO3IP9b792</a>) (obligatorio para ingresar al lugar)<br/>• Laptop (opcional)</p> <p>Agenda<br/>• 7:00-7:20pm - Llegada, networking</p> <p>• 7:20-8:15pm - Charla</p> <p>• 8:15-8:30pm - Comida y networking</p> <p>• 8:30-9:00pm - Continúa Charla</p> <p>Observaciones<br/>• Como siempre pediremos pizza para comer, así que por favor traigan algo de dinero para hacer "la vaca" jeje.</p> <p>• El lugar tiene una capacidad limitada, por lo que le pedimos a los que no puedan asistir que se den de baja de la lista de confirmados, para que otras personas tengan la oportunidad de participar.</p> 
+---
+featured_photo: https://secure.meetupstatic.com/photos/event/3/b/6/3/600_467475203.jpeg
+---
+venue: Koombea
+---
+address_1: Calle 85 # 53-14
+---
+talks: 
+
+#### talk ####
+title: Conectando Flask con VueJS en el desarrollo de una Single-Page Application
+----
+attach: <a href="https://github.com/Scot3004/meetup_vue_back">Código Back-end</a> / <a href="https://github.com/Scot3004/meetup_vue_front">Código Front-end</a>

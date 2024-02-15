@@ -1,0 +1,466 @@
+_model: page
+---
+title: Eventos
+---
+body:
+
+#### section-block ####
+title: Próximos Eventos
+----
+body:
+
+##### meetup-events #####
+source: future_events
+-----
+empty_message:
+
+Estamos planificando nuestro proximo evento
+
+**Postula una charla** para nuestros meetups mensuales, [registrate aquí](https://forms.gle/tCsALqG2aQ9A1GqD8)
+
+o puedes contactarnos a nuestro email [djangoquilla@gmail.com](mailto:djangoquilla@gmail.com)
+-----
+anexos: 
+----
+class: default
+----
+body_class: 
+#### section-block ####
+title: Anteriores Eventos
+----
+body:
+
+##### meetup-events #####
+source: past_events
+-----
+empty_message: 
+-----
+anexos:
+
+###### event-attach ######
+title: 1er meetup Django Barranquilla
+------
+attach: <a href="http://slides.com/javidazac/bienvenidos-a-django-barranquilla-1">Presentación1</a> / <a href="https://docs.google.com/presentation/d/1qW4VIlzwQuGIVyTtOFA-qwI1GFGYD4YhyIHwZ7PClGQ/edit">Presentación2</a>
+###### event-attach ######
+title: 2ndo meetup Django Barranquilla
+------
+attach: <a href="https://drive.google.com/file/d/0B2a5TeZyq4RZOUVGYjFZVkZLYzg/view">Presentación</a> / <a href="https://www.meetup.com/pythonbaq/photos/26134119/#437661975">Galería Fotos</a>
+###### event-attach ######
+title: 3er Meetup Django Barranquilla
+------
+attach: <a href="http://slides.com/javidazac/bienvenidos-a-django-barranquilla#/">Presentación</a>
+###### event-attach ######
+title: 4to Meetup Django Barranquilla
+------
+attach: <a href="https://github.com/PyBAQ/proyectopaulwalker">GitHub</a> / <a href="https://www.meetup.com/pythonbaq/photos/26167990/#438233642">Galería Fotos</a>
+###### event-attach ######
+title: 5to Meetup Django Barranquilla
+------
+attach: <a href="https://secure.meetupstatic.com/photos/event/9/9/8/highres_436922456.jpeg">Poster</a>
+###### event-attach ######
+title: 11vo Meetup Django Barranquilla
+------
+attach: Marketing para ingenieros <a href="https://secure.meetupstatic.com/photos/event/b/0/8/6/highres_442065190.jpeg">Poster</a>
+###### event-attach ######
+title: 12vo Meetup Django Barranquilla
+------
+attach: Como usar GeoDjango <a href="https://github.com/ingenieroariel/loco">GitHub</a> / <a href="https://secure.meetupstatic.com/photos/event/5/e/4/e/highres_442764142.jpeg">Foto</a>
+###### event-attach ######
+title: 13vo Meetup Django Barranquilla
+------
+attach: Buenas practicas en Python y el uso de métodos mágicos <a href="http://slides.com/leonardofabioorozcopadilla/buenas-practicas#/">Presentación</a>
+###### event-attach ######
+title: Taller de Co-creación #1
+------
+attach: <a href="https://docs.google.com/document/d/1qw0X4cegrbEtWMlGp81Lu2rX6hTYv7NL9_ZtojlCAhw/edit#heading=h.ksbuleho9b2p">Documento</a>
+###### event-attach ######
+title: 14vo Meetup Django Barranquilla
+------
+attach: Code like a pythonista <a href="https://docs.google.com/presentation/d/1Tt_2Oe5c9jjuVMwv3_8wMo2S2dwX6p-5YXv7y6Pc_68/edit#slide=id.p">Presentación</a>
+###### event-attach ######
+title: 15vo Meetup Django Barranquilla
+------
+attach: Como hacer API Rest en Django y como integrarlo con AngularJS <a href="https://github.com/cristiangrojas/meetup-barranquilla">GitHub</a> / <a href="https://github.com/johnpapa/angular-styleguide">Guía estilos Angular</a>
+###### event-attach ######
+title: Taller de Co-creación #2
+------
+attach: <a href="https://github.com/PyBAQ/temii">GitHub</a>
+###### event-attach ######
+title: Taller de Co-creación #3
+------
+attach: <a href="https://trello.com/b/pKAeEDBT/temii">Trello</a>
+###### event-attach ######
+title: Bienvenida de Año 2016 Django Barranquilla
+------
+attach: <a href="https://secure.meetupstatic.com/photos/event/f/7/d/highres_462963965.jpeg">Foto</a>
+###### event-attach ######
+title: Taller de Co-creación #4
+------
+attach: <a href="https://secure.meetupstatic.com/photos/event/1/9/9/4/highres_462966548.jpeg">Foto</a>
+###### event-attach ######
+title: Cómo usar Django smart selects
+------
+attach: <a href="https://drive.google.com/file/d/0B4hMNhBB6brgWVVVSldCT0l2bjg/view?usp=sharing">Presentación</a>
+###### event-attach ######
+title: Introducción a la Visión por Computadora
+------
+attach: <a href="https://github.com/JorgeMartinezG/django_meetup">GitHub</a>
+###### event-attach ######
+title: Como desplegar django apps en producción
+------
+attach: AWS <a href="https://github.com/PyBAQ/dq">GitHub</a> / <a href="https://gist.github.com/panchicore/39d6e5395850f4c5e264e4a07ba89aa1">Anotaciones</a>
+###### event-attach ######
+title: Como crear sitios web estáticos con Lektor
+------
+attach: <a href="https://github.com/PyBAQ/django-quilla-web">GitHub</a>
+###### event-attach ######
+title: Análisis de sentimientos y cómo obtuve datos de un avión
+------
+attach: <a href="https://github.com/waybarrios/Django_Meetup">Análisis de sentiemientos</a> / <a href="https://github.com/piensa/gigi">GiGi</a>
+###### event-attach ######
+title: Integrando una aplicacion en Django con otros servicios
+------
+attach: <a href="http://slides.com/leonardofabioorozcopadilla/integrando-aplicaciones#/">Presentación</a>
+###### event-attach ######
+title: Python desde 0
+------
+attach: <a href="https://1drv.ms/f/s!AkrCjEwFpMNbarRjm4ADSBm9pEE">Recursos</a> / <a href="https://pybaq.co/blog/primeros-pasos-en-python/">Artículo</a>
+###### event-attach ######
+title: Aprendamos a hacer testing con Mock
+------
+attach: <a href="https://scot3004.github.io/pymock/#/">Presentación</a>
+###### event-attach ######
+title: PyCon Colombia 2017
+------
+attach: <a href="https://medium.com/pycon-colombia-2017/pycon-colombia-2017-pasando-del-sue%C3%B1o-a-la-realidad-cf1f7808447e">Reseña</a>
+###### event-attach ######
+title: Celery y tareas asíncronas
+------
+attach: <a href="http://slides.com/leonardofabioorozcopadilla/celery#/">Presentación</a> / <a href="https://secure.meetupstatic.com/photos/event/6/0/b/3/highres_459324755.jpeg">Foto</a>
+###### event-attach ######
+title: Pimpeando tu antigua versión de Django
+------
+attach: <a href="http://slides.com/javidazac/migrando-de-django-1-5-a-1-11#/">Presentación</a>
+###### event-attach ######
+title: Aprende Machine Learning básico jugando con Python y Flappy Bird
+------
+attach: <a href="https://github.com/waybarrios/meetup_pythonbq_deeplearning/tree/solution">GitHub</a> / <a href="https://secure.meetupstatic.com/photos/event/a/c/b/9/highres_460664217.jpeg">Foto</a>
+###### event-attach ######
+title: Cómo crear un teclado virtual con técnicas de Visión por Computadora
+------
+attach: <a href="https://drive.google.com/file/d/0ByBWRK2LX_-CMkNRMXhSYWMyODA/view">Presentación</a> / <a href="https://github.com/jorgemartinezg/virtual_keyboard">GitHub</a>
+###### event-attach ######
+title: Post-evento Django Girls
+------
+attach: <a href="https://secure.meetupstatic.com/photos/event/8/f/9/7/highres_462876759.jpeg">Foto</a>
+###### event-attach ######
+title: Construyamos un software de reconocimiento de rostros en una Microcomputadora
+------
+attach: <a href="https://github.com/efflorez/facerecognition">GitHub</a> / <a href="https://docs.google.com/presentation/d/1MR92AgvipBkpqThc8PE30TGKpJQNZj22c1-A-9iYr-E/edit#slide=id.g23336596a2_0_55">Presentación</a> / <a href="https://pybaq.co/blog/reconocimiento-de-rostros-en-una-microcomputadora/">Artículo</a>
+###### event-attach ######
+title: Programadores! Vamos a comer
+------
+attach: <a href="https://secure.meetupstatic.com/photos/event/e/3/e/f/highres_464158351.jpeg">Foto</a>
+###### event-attach ######
+title: Beneficios tributarios para freelancers, emprendedores y empresas TIC
+------
+attach: <a href="https://pybaq.co/blog/beneficios-tributarios-para-el-sector-tic/">Artículo</a>
+###### event-attach ######
+title: Traducción automática usando redes neuronales
+------
+attach: <a href="https://github.com/waybarrios/meetup_translation">GitHub</a>
+###### event-attach ######
+title: Herramientas para hacer ciencia con Python
+------
+attach: <a href="https://www.meetup.com/pythonbaq/photos/28345278/466396879/">Fotos</a> / <a href="https://github.com/PyBAQ/Notebooks/blob/master/HerramientasCiencia/HerramientasCiencia.ipynb">GitHub</a>
+###### event-attach ######
+title: Reconocimiento facial con redes neuronales usando TensorFlow y Python
+------
+attach: <a href="https://drive.google.com/open?id=1tC4elGmYVWl5gb0HoG0Wlw3AFgD6Iy00f-PAvHrEXEw">Presentación</a> / <a href="https://github.com/GudarJs/Facial-Recognition-Tensorflow">GitHub</a>
+###### event-attach ######
+title: Conectando Flask con VueJS en el desarrollo de una Single-Page Application
+------
+attach: <a href="https://github.com/Scot3004/meetup_vue_back">Código Back-end</a> / <a href="https://github.com/Scot3004/meetup_vue_front">Código Front-end</a>
+###### event-attach ######
+title: Cómo crear una empresa en USA sin morir en el intento + Pasarelas de Pago
+------
+attach: <a href="https://medium.com/@joseguzmanlopez404/c%C3%B3mo-cobrar-en-internet-265acf3e9b6f">Post Pasarelas</a> / <a href="http://slides.com/rafaelvillarreal/deck-3#/">Slides Empresas</a> / <a href="https://www.meetup.com/pythonbaq/photos/28650493/469001617/#469001617">Fotos</a>
+###### event-attach ######
+title: Segmentación y caracterización de imágenes de células tomadas por microscopio
+------
+attach: <a href="https://drive.google.com/file/d/1-OYPDWkpSIkVYVleryihpjjtB5z4fbPc/view?usp=sharing">Slides</a> / <a href="https://www.meetup.com/pythonbaq/photos/28720332/469598936/">Fotos</a>
+###### event-attach ######
+title: Zen de Python + Saca el mejor provecho a Redis
+------
+attach: <a href="https://slides.com/javidazac/zen-de-python/fullscreen">Slides Charla Zen</a> / <a href="https://drive.google.com/file/d/1TATNvBekIoPe8dCsW3O9cyWcj22Rmb_r/view?usp=sharing">Slides Charla Redis</a>
+###### event-attach ######
+title: Carros autónomos + Creación de APIs para tus apps
+------
+attach: <a href="https://www.instagram.com/p/BlGG5-egLdp/?taken-by=pybaq">Video 1</a> / <a href="https://www.instagram.com/p/BlGHPi_hzEW/?taken-by=pybaq">Video 2</a>
+###### event-attach ######
+title: Emprender con Inteligencia Artficial + Intro Análisis de Datos con Jupyter
+------
+attach: <a href="https://docs.google.com/presentation/d/1um9BTCwfbLw1Ccm-V-2ZlbhdAXFDwHrtLV-w17nlsR0/edit?usp=sharing">Slides Emprender</a> / <a href="https://github.com/Xaraxx/meetup-python-Quilla">Jupyter</a>
+###### event-attach ######
+title: Integrar GraphQL a Django + Entiende el poder de los datos con Spark
+------
+attach: <a href="https://www.meetup.com/pythonbaq/photos/29170444/473804369/">Fotos</a>
+###### event-attach ######
+title: Diseña tu proyecto de Machine Learning + Patrones de automatización de pruebas
+------
+attach: <a href="https://docs.google.com/presentation/d/12DPuf1-uGa-j_xZfAQtJAx9Et_w2i8VjpTzShH6k0jk/edit?usp=sharing">Slides ML</a> / <a href="https://docs.google.com/presentation/d/157LQAGm-UV3xAX7qRnaeHOSa4OBZ6MtnX8zDpWG-488/edit?usp=drivesdk">Slides Selenium</a> / <a href="https://www.meetup.com/pythonbaq/photos/29267016/474690179/">Fotos</a>
+###### event-attach ######
+title: Ciencia de datos para dummies + Define y estructura un proyecto personal
+------
+attach: <a href="https://docs.google.com/presentation/d/1ehJK1l0gNC81J1fB_p4Z3Ud4hHbgHD0Bxj5oixk3M70/edit?usp=sharing">Slides ciencia de datos</a> / <a href="https://andresperezcera.xyz/presentaciones/pybaq20181023/#1">Ppts Proyectos personales</a>
+###### event-attach ######
+title: Seguridad informática en la web + Aprender inglés: ahora es mejor que nunca
+------
+attach: <a href="https://drive.google.com/open?id=11L8uOcmRJPKujCB6G1Ugw9zb1mhOG6RI">Slides seguridad</a> / <a href="https://drive.google.com/open?id=1zw9ISDz9IoViS56HM8m_kTpTPYq5qRNv">Slides Aprender inglés</a>
+###### event-attach ######
+title: PowerBI y Python: Inteligencia de Negocios + Introducción a servicios de AWS
+------
+attach: <a href="https://drive.google.com/open?id=18lNOfFPZOPGn0yoLimruIOGEQ61_wFqq">Ppts powerBI</a> / <a href="https://drive.google.com/open?id=1M6TqDKhrBCqv_A8Y5ILjVp2vy5Zh-0CU">Ppts AWS</a>
+###### event-attach ######
+title: Finanzas cuantitativas para análisis de mercados + App del manto de la Tierra
+------
+attach: <a href="https://github.com/PyBAQ/Notebooks/blob/master/finanzasCuantitativasAnalisisMercado/haufgabe_y_criptocurrencies.ipynb">GitHub Finanzas cuantitativas para análisis de mercados</a>
+###### event-attach ######
+title: Crea un sitio web en tiempo real tipo Google doc  + Creando comunidades exitosas
+------
+attach: <a href="https://github.com/GudarJs/paint_backend">GitHub Backend</a> / <a href="https://github.com/GudarJs/paint_frontend">GitHub Frontend</a> / <a href="https://drive.google.com/file/d/1KTpy7l9CZSsa-uUACkXA-fr1l5ayNuEF/view?usp=sharing">Diapositivas Crea un sitio web en tiempo real tipo Google doc</a> / <a href="https://docs.google.com/presentation/d/1Nk4lRdtKiGHHSQYnAJSeOso_vN0T1hP3Qg1BwtWM544/edit?usp=sharing">Diapositivas Creando comunidades exitosas</a>
+###### event-attach ######
+title: Un algoritmo artístico de estilo neural  + PyBAQ: Detrás del escenario
+------
+attach: <a href="https://drive.google.com/file/d/1YlhbZevyfYqTc0lzacIgeShqT7n4LRjF/view?usp=sharing">Diapositivas Un algoritmo artístico de estilo neural</a> / <a href="https://drive.google.com/file/d/1Ot6W_wCsk8R4eSPIhVnp-9Q6SaPwI3Wl/view?usp=sharing">Diapositivas PyBAQ: Detrás del escenario</a>
+###### event-attach ######
+title: Estudiar Machine Learning en el Exterior+ Intro a la Visión por Computador
+------
+attach: <a href="https://drive.google.com/file/d/1cXumlUM4gmbVbSYEG3z1PUgowVVzt5_5/view?usp=sharing">Diapositivas Estudiar Machine Learning en el Exterior</a> / <a href="https://drive.google.com/file/d/1XmMDzjxphOHgZUDM348Cyl0xTmfXplka/view?usp=sharing">Diapositivas Intro a la Visión por Computador</a>
+###### event-attach ######
+title: App serverless y auto escalable con AWS Lambda + Consigue un trabajo en dólares
+------
+attach: <a href="https://drive.google.com/file/d/1paeQ69ycefeRzdFJrPBqZiFN5MJgP6Ar/view?usp=sharing">Diapositivas App serverless</a> / <a href="https://drive.google.com/file/d/1vEDU9LV8XD_dWcEN8GopGVEKfssfhPHS/view?usp=sharing">Diapositivas Consigue un trabajo en dólares</a>
+###### event-attach ######
+title: Inteligencia Artificial y sus Aplicaciones + Ciberseguridad: Vectores de Ataque
+------
+attach: <a href="https://drive.google.com/file/d/1Mk99-prLjBfmpF9CDpnw_xIhftfv3k4a/view?usp=sharing">Diapositivas Inteligencia Artificial y sus Aplicaciones</a> / <a href="https://drive.google.com/file/d/1BA4cowactgoOEvaMWeqzkHAH1HSKnoGo/view?usp=sharing">Diapositivas Ciberseguridad: Vectores de Ataque</a>
+###### event-attach ######
+title: Capturando credenciales en Google Chrome con DRF & DRF + ElasticSearch
+------
+attach: <a href="https://drive.google.com/file/d/1Ul6RinnwuHrss5MlnNiTAsz6hAL0Jbtj/view?usp=sharing">Diapositivas DRF + ElasticSearch</a>
+###### event-attach ######
+title: Procesamiento de imágenes de tejido con Python + Project Management 101
+------
+attach: <a href="https://drive.google.com/file/d/1B3tUl68eJCa19B9SA99UuFi_H4opJZQ6/view?usp=sharing">Diapositivas Project Management 101</a>
+###### event-attach ######
+title: Conociendo Oauth2 + Python para principiantes: Dónde empezar
+------
+attach: <a href="https://drive.google.com/file/d/1_UQB0yA2ndhcxW-1hu1JPyBElNESuOLV/view?usp=sharing">Diapositivas Conociendo Oauth2</a> / <a href="https://drive.google.com/file/d/1VmlqnFNISuCRsboedaep5RBs02_yZNBV/view?usp=sharing">Diapositivas Python para principiantes</a>
+###### event-attach ######
+title: Piloteando Docker usando Python + Saca provecho a eventos internacionales
+------
+attach: <a href="https://drive.google.com/open?id=11X_jPQiwZizm0CwhtmjhAuk3DzDF0DKc">Diapositivas Docker usando Python</a> / <a href="https://slides.com/javidazac/saca-maximo-provecho-eventos">Diapositivas saca provecho a eventos</a>
+###### event-attach ######
+title: Bienvenida 2020 y despedida Python 2
+------
+attach: <a href="https://www.meetup.com/pythonbaq/photos/30756208/488997608/">Foto grupal</a>
+###### event-attach ######
+title: 📣 [ONLINE] 👨‍💻👩‍💻The Best of Both worlds: R meets Python 🎂 PyBAQ 5 años 🎉
+------
+attach: <a href="https://www.facebook.com/watch/?v=274039276919040">Video Facebook</a>
+###### event-attach ######
+title: 📣 [ONLINE] 👨‍💻👩‍💻¿Por qué Kubernetes? & Implementa Scrum en organizaciones
+------
+attach: <a href="https://drive.google.com/file/d/1Srd91Y-nAwU_RV3IY0ZWnN4SAa4Sn7ed/view?usp=sharing">Diapositivas SCRUM</a> / <a href="https://slides.com/jesusdaviddiaz/por-que-todo-el-mundo-quiere-usar-kubernetes/fullscreen">Diapositivas Kubernetes</a> / <a href="https://www.facebook.com/watch/?v=2919451251483961">Video Facebook</a>
+###### event-attach ######
+title: Intro python & django + Breaking the enigma: what if Turing had python?
+------
+attach: <a href="https://drive.google.com/open?id=1pJ0-viy9ZVbfAo4e9FJ1kJ5PB3w4_Ohg">Diapositivas intro Python & Django</a> / <a href="https://www.youtube.com/watch?v=Ibwp5Ny46fk&feature=emb_logo">Video Enigma</a> / <a href="https://www.slideshare.net/MariaCamilaRemolinaG/breaking-the-enigma-what-if-turing-had-python">Diapositivas Enigma</a>
+###### event-attach ######
+title: Aprende Machine Learning con Flappy Bird/ Despliegue a Heroku con GitHub Actions
+------
+attach: <a href="https://github.com/waybarrios/meetup_pythonbq_deeplearning">GitHub Flappy Bird</a> / <a href="https://slides.com/sjdonado/deploy-to-heroku-with-github-actions">Diapositivas Github Actions</a> / <a href="github.com/sjdonado/pybaq-heroku-meetup">Repositorio Github Actions / <a href="https://www.facebook.com/watch/?v=653172022193087">Video Facebook</a>
+###### event-attach ######
+title: 7 técnicas para sacarle el máximo potencial a Django REST Framework
+------
+attach: <a href="https://drive.google.com/file/d/1u09Vh_QUNP9Je6vrpDHNK6SFOpb5zYa5/view?usp=sharing">Diapositivas</a> / <a href="https://youtu.be/T90qyrcHvqM">Video Youtube</a>
+###### event-attach ######
+title: Python y DevNet: Aplicabilidad en la programabilidad de redes
+------
+attach: <a href="https://drive.google.com/file/d/15pBxVLMz0ntGsRnSqn7PDIrq4YsLJGUp/view?usp=sharing">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=NW7_U_wljic">Video Youtube</a>
+###### event-attach ######
+title: Geodjango: Aprovechando las funciones geográficas para tus aplicaciones
+------
+attach: <a href="https://www.youtube.com/watch?v=piSDhPAswHs">Video Youtube</a>
+###### event-attach ######
+title: Manejo de archivos grandes con una Django app & DRF
+------
+attach: <a href="https://drive.google.com/file/d/1HJTkMmzHf0hc6gDeAo2FDdP07qon69ve/view?usp=sharing">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=xFbdytRPK9Q">Video Youtube</a>
+###### event-attach ######
+title: Edición Hacktoberfest: "Únete a traducir la documentación de Python"
+------
+attach: <a href="http://maureira.xyz/python-docs-es/index.html#/">Slides</a> / <a href="https://youtu.be/YmwSdVVF8BM">Video Youtube</a>
+###### event-attach ######
+title: Automatización de Redes con Python
+------
+attach: <a href="https://drive.google.com/file/d/1RuamS46QNQggeiZdVfGk0dbMbvn6bxUn/view?usp=sharing">Diapositivas</a> / <a href="https://drive.google.com/file/d/1roE-5BppgmpcAOOSZaxAve1bCBHQ70R1/view?usp=sharing">Recursos</a> / <a href="https://youtu.be/XUiIGJNdqlo">Video Youtube</a>
+###### event-attach ######
+title: ¿Cómo escalar tu infraestructura?
+------
+attach:
+
+<a href="https://slides.com/jesusdaviddiaz/deck/fullscreen">Diapositivas</a> /
+<a href="https://youtu.be/jXjchEAOhgA">Video Youtube</a>
+###### event-attach ######
+title: Lightning Talks 2020
+------
+attach: <a href="https://drive.google.com/drive/folders/12k-k47aD2YI5FSVf1rbcOrCLAWU4XQrz?usp=sharing">Diapositivas</a> / <a href="https://youtu.be/8wAWzRrLF8A">Video Youtube</a>
+###### event-attach ######
+title: Minería de Textos para Monitorear Impacto de Covid-19 en América Latina
+------
+attach: <a href="https://github.com/jecs89/Charlas_2021">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=oJ_cpUUguaI">Video Youtube</a>
+###### event-attach ######
+title: Extendiendo la Monitorizacion de Infraestructura TI con Nagios + Python
+------
+attach: <a href="https://drive.google.com/file/d/1_QDtVVC7cZwNQTH5j2mBzYeeXx-vZzlc/view?usp=sharing">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=yP1AhZJeZOc">Video Youtube</a>
+###### event-attach ######
+title: Aspectos Básicos del Derecho de Autor para Programadores
+------
+attach: <a href="https://youtu.be/3aBd1oeLq94">Video Youtube</a>
+###### event-attach ######
+title: Los datos son el camino: de administración de empresas a programación
+------
+attach: <a href="https://docs.google.com/presentation/d/1K9I4fFG5Vc-HoMXS9PBoW63rDocxHEIiG7e3Ea3mZQA/edit?usp=sharing">Diapositivas</a> / <a href="https://youtu.be/5KKyVDrbmIw">Video Youtube</a>
+###### event-attach ######
+title: Usando Selenium Python en el sitio de PyBAQ
+------
+attach: <a href="https://drive.google.com/file/d/1tqIzY5ddLt1NnBujZVr9Xy0gRxqxCCBV/view?usp=sharing">Diapositivas</a> / <a href="https://youtu.be/u1wK27M0G_0">Video Youtube</a>
+###### event-attach ######
+title: Liga Python: Semifinales Grupo 1
+------
+attach: <a href="https://www.youtube.com/watch?v=9fvHu0WceO0">Video Youtube</a>
+###### event-attach ######
+title: Liga Python: Semifinales Grupo 2
+------
+attach: <a href="https://www.youtube.com/watch?v=YIv-PrGLoQ4">Video Youtube</a>
+###### event-attach ######
+title: Liga Python: Final
+------
+attach: <a href="https://www.youtube.com/watch?v=YibzuncI8AI">Video Youtube</a>
+###### event-attach ######
+title: Roadmap de la seguridad informática sin morir
+------
+attach: <a href="https://docs.google.com/presentation/d/1yqkTBLlb8z0FmugXrnoKRaOwxbUYm64O/edit?usp=sharing&ouid=102875902266955155312&rtpof=true&sd=true">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=CYMsDz14f5Q">Video Youtube</a>
+###### event-attach ######
+title: NLP con HuggingFace 🤗
+------
+attach: <a href="https://www.youtube.com/watch?v=qQEBoAVkvmk">Video Youtube</a>
+###### event-attach ######
+title: Uso empresarial de Python
+------
+attach: <a href="https://drive.google.com/file/d/1elenlrR_oytRtdWc78URE1Y9os21MdlG/view?usp=sharing">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=Ld52Wz_K8XQ">Video Youtube</a>
+###### event-attach ######
+title: Detección de Cáncer Pulmonar usando Procesamiento de Imágenes
+------
+attach: <a href="https://youtu.be/fAG3_nMPpjU">Video Youtube</a>
+###### event-attach ######
+title: Cross Modal: Conectando el mundo de NLP con el de Computer Vision
+------
+attach: <a href="https://youtu.be/hLOxurqMOkQ">Video Youtube</a>
+###### event-attach ######
+title: Conversatorio de junior a senior: Conmemorando 7 años de comunidad
+------
+attach: <a href="https://youtu.be/M5-witzXkDk">Video Youtube</a>
+###### event-attach ######
+title: SymPy como herramienta de aprendizaje en matemáticas y programación
+------
+attach: <a href="https://youtu.be/L7PsaOu0bSQ">Video Youtube</a> / <a href="https://docs.google.com/presentation/d/1-651PmUg0vtHeAPZdi5ieuokoVrLJ5x0/edit?usp=sharing&ouid=102956723374392876682&rtpof=true&sd=true">Diapositivas</a> / <a href="https://colab.research.google.com/drive/1iIknZcj1TEfKTEKGHvdTJCBBmNrsoIw6?usp=sharing">Google Colab</a>
+###### event-attach ######
+title: Principios SOLID en Python
+------
+attach: <a href="https://youtu.be/ZjQyjDWyLCc">Video Youtube</a> / <a href="https://github.com/emimartin26/solid_python/tree/master/practices">Github</a>
+###### event-attach ######
+title: Automatización de UI en Python aplicando el patrón Screenplay
+------
+attach: <a href="https://youtu.be/s_h5uAZB8yU">Video Youtube</a> / <a href="https://github.com/Scot3004/web2021/blob/master/content/blog/2022-08-14-screenpy.mdx">Github</a>
+###### event-attach ######
+title: Fomentando la programación desde la infancia
+------
+attach: <a href="https://youtu.be/RIx-Wf1dZ6U">Video Youtube</a>
+###### event-attach ######
+title: Consiguiendo trabajo como programador a los 45 años
+------
+attach: <a href="https://youtu.be/kOSqcrgTlhI">Video Youtube</a> / <a href="https://drive.google.com/file/d/1vTU5p44bn4mrOBzt5q6araKo0Rx0wm5O/view?usp=sharing">Diapositivas</a>
+###### event-attach ######
+title: Introducción al Pentesting
+------
+attach: <a href="https://youtu.be/pDu87a3lr78">Video Youtube</a> / <a href="https://drive.google.com/file/d/1sgH0tlUf-eJJWp4isNgLiT7mZPfkUEQW/view?usp=sharing">Diapositivas</a>
+###### event-attach ######
+title: Crea tus propias videollamadas con Python y WebRTC
+------
+attach: <a href="https://youtu.be/XtJncjNegvQ">Video Youtube</a> / <a href="https://drive.google.com/file/d/1WYbWcpyNCRr-D914ifhtQYG7l7NPHjMA/view?usp=sharing">Diapositivas</a>
+###### event-attach ######
+title: De psicólogo a programador ¿cambio o complemento de carrera?
+------
+attach: <a href="https://youtu.be/Dzi89oXcRUg">Video Youtube</a> / <a href="https://drive.google.com/file/d/1d6CbU_B0RvFyjJzwPQ9jkmmUC0X0vBs5/view?usp=share_link">Diapositivas</a>
+###### event-attach ######
+title: DeepDream: Visualizando que aprende una red neuronal convolucional
+------
+attach: <a href="https://www.youtube.com/live/t3B0ENK7Ktk">Video Youtube</a> / <a href="https://github.com/PyBAQ/Notebooks/blob/master/DeepDream/DeepDream.ipynb">Notebook</a> / <a href="https://drive.google.com/file/d/1P2o3Ma_Vmkc1dGhQnmYA0-hrjw4zbEd1/view?usp=share_link">Diapositivas</a>
+###### event-attach ######
+title: Linux Amigable
+------
+attach: <a href="https://www.youtube.com/live/tZuATaA3Bjc">Video Youtube</a>
+
+###### event-attach ######
+title: CaribeDev: Encuentro de comunidades Tech
+------
+attach: <a href="https://drive.google.com/drive/folders/1HnLoaYxpS_6ek_rtaXx4q8viw6zMAd4c?usp=sharing">Las 3 diapositivas</a>
+
+###### event-attach ######
+title: Del LLM al ChatBot: Cómo funcionan, su entrenamiento y produccion sin usar GPU
+------
+attach: <a href="https://docs.google.com/presentation/d/15a3RMm9d_1h9BuQAJUxYHSbzAUPyJxQ8OBwUfYT7ldE/edit?usp=sharing">Diapositivas</a> / <a href="https://www.youtube.com/watch?v=5AeNWW25YiM">Video Youtube</a>
+
+###### event-attach ######
+title: Modelado de Data Warehouses con DBT
+------
+attach: <a href="https://docs.google.com/presentation/d/15f8xRC-ArOWBwZzl_7crgqMF1V9c2lte/edit?usp=sharing&ouid=102956723374392876682&rtpof=true&sd=true">Diapositivas</a> / <a href="https://www.youtube.com/live/CPxE3aC9xdQ">Video Youtube</a> / <a href="https://github.com/jdaguilar/data-warehouse-modeling-with-dbt-pybaq">Repositorio</a>
+###### event-attach ######
+title: Pentesting con Jupyter Notebook
+------
+attach: <a href="https://www.youtube.com/live/SuJOOqAL8yk">Video Youtube</a>
+###### event-attach ######
+title: Serverless + Devcontainers en localhost + automatizando tareas repetitivas
+------
+attach: <a href="https://docs.google.com/presentation/d/1sbATjk1bKXDp61DYvHrmiL6aXe3h5Fte/edit?usp=sharing&ouid=102956723374392876682&rtpof=true&sd=true">Diapositivas devcontainers</a> / <a href="https://www.youtube.com/live/jnZatfMc6rM">Video Devcontainers y automatización de tareas</a>
+----
+class: default
+----
+body_class: 
+#### section-block ####
+title: Otros Eventos
+----
+body:
+
+##### custom-event #####
+title: Django Girls Barranquilla
+-----
+date: 2017-07-01 08:00:00 America/Bogota
+-----
+attach: <a href="https://argentinaenpython.com/galeria/django-girls-barranquilla/">Galería Fotos</a> / <a href="https://pybaq.co/blog/como-fue-organizar-primer-django-girls-barranquilla/">Artículo</a>
+-----
+venue: 
+-----
+address: 
+-----
+url: https://argentinaenpython.com/django-girls/2017/07/barranquilla
+-----
+image: 
+----
+class: default
+----
+body_class: 
+---
+seo_description: Eventos de la comunidad Python Barranquilla

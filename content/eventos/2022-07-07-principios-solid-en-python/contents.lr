@@ -1,0 +1,16 @@
+title: Principios SOLID en Python
+---
+date_start: 2022-07-07 19:00
+---
+link: https://www.meetup.com/pythonbaq/events/286559607/
+---
+information: <p>Muchas veces cuando construimos software productivo pasamos por alto que nuestro código probablemente en el futuro necesitemos que se adapte a nuevos cambios o es muy común deba ser comprendido por algún integrante de nuestro equipo. Es aquí en donde los principios SOLID nos van a ayudar a escribir código más limpio, mantenible y escalable<br/>En esta charla los conoceremos y veremos como aplicarlos en Python para escribir programas de mayor calidad.</p> <p>Ponente: Emiliano Martin</p> <p>¡Hola! Mi nombre es Emiliano Martín, tengo 30 años y vivo en Córdoba, Argentina. Estudié Ingeniería en Sistemas de Información en la [UTN](<a href="https://www.frvm.utn.edu.ar/" class="linkified">https://www.frvm.utn.edu.ar/</a>) y actualmente trabajo en [Mercadolibre](<a href="https://www.mercadolibre.com.ar/" class="linkified">https://www.mercadolibre.com.ar/</a>) como Technical Leader.<br/>Me apasiona el desarrollo de software en general, me gusta estar en un constante aprendizaje de nuevas tecnologías y buenas prácticas de programación.Puedes encontrarme en [Github](<a href="https://github.com/emimartin26" class="linkified">https://github.com/emimartin26</a>), [Linkedin](<a href="https://www.linkedin.com/in/emimartin26/" class="linkified">https://www.linkedin.com/in/emimartin26/</a>) y [Twitter](<a href="https://twitter.com/emimartin26" class="linkified">https://twitter.com/emimartin26</a>) o si prefieres, puedes enviarme un [correo electrónico](mailto:[masked]).</p> <p>***</p> <p>Adicionales:</p> <p>Transmitiremos por el canal del YouTube de Python Colombia. Suscríbete y dale click a la campanita para estar pendiente de eventos en otras comunidades xD</p> 
+---
+featured_photo: https://secure.meetupstatic.com/photos/event/2/4/3/0/600_505329264.jpeg
+---
+talks: 
+
+#### talk ####
+title: Principios SOLID en Python
+----
+attach: <a href="https://youtu.be/ZjQyjDWyLCc">Video Youtube</a> / <a href="https://github.com/emimartin26/solid_python/tree/master/practices">Github</a>
