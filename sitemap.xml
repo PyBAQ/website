@@ -97,6 +97,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/experiencia-taller-sed/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/experiencia-taller-sed/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/first-post/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/first-post/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/first-post/"/>
