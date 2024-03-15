@@ -99,6 +99,7 @@
     <url>
       <loc>https://pybaq.co/blog/experiencia-taller-sed/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/experiencia-taller-sed/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/experiencia-taller-sed/"/>
       <priority>0.64</priority>
     </url>
     <url>
@@ -258,6 +259,12 @@
       <loc>https://pybaq.co/nosotros/javier-fonseca/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/javier-fonseca/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/javier-fonseca/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/nosotros/jorge-aguilar/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/jorge-aguilar/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/jorge-aguilar/"/>
       <priority>0.64</priority>
     </url>
     <url>
