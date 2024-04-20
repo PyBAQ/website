@@ -1,5 +1,5 @@
 Flask==2.3.3
 Lektor==3.3.10
 requests==2.31.0
-Werkzeug==2.3.7
+Werkzeug==2.3.8
 pytz==2023.3.post1
