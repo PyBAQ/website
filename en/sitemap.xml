@@ -195,7 +195,632 @@
     <url>
       <loc>https://pybaq.co/eventos/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/eventos/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-03-31-1er-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-03-31-1er-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-05-04-2ndo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-05-04-2ndo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-05-19-3er-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-05-19-3er-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-06-01-4to-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-06-01-4to-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-06-16-5to-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-06-16-5to-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-06-30-6to-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-06-30-6to-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-07-13-7mo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-07-13-7mo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-08-03-8vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-08-03-8vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-08-18-9vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-08-18-9vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-09-07-10mo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-09-07-10mo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-09-21-11vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-09-21-11vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-10-05-12vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-10-05-12vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-10-19-13vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-10-19-13vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-10-26-taller-de-co-creacion-1/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-10-26-taller-de-co-creacion-1/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-11-03-14vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-11-03-14vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-11-17-15vo-meetup-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-11-17-15vo-meetup-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-11-28-taller-de-co-creacion-2/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-11-28-taller-de-co-creacion-2/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2015-12-14-taller-de-co-creacion-3/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2015-12-14-taller-de-co-creacion-3/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-01-07-bienvenida-de-ano-2016-django-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-01-07-bienvenida-de-ano-2016-django-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-01-18-taller-de-co-creacion-4/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-01-18-taller-de-co-creacion-4/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-02-01-familiarizate-con-git/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-02-01-familiarizate-con-git/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-02-15-como-usar-django-smart-selects/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-02-15-como-usar-django-smart-selects/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-03-15-introduccion-a-la-vision-por-computadora/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-03-15-introduccion-a-la-vision-por-computadora/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-04-18-como-desplegar-django-apps-en-produccion/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-04-18-como-desplegar-django-apps-en-produccion/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-05-02-como-crear-sitios-web-estaticos-con-lektor/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-05-02-como-crear-sitios-web-estaticos-con-lektor/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-06-13-como-crear-sitios-web-estaticos-con-lektor/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-06-13-como-crear-sitios-web-estaticos-con-lektor/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-07-05-analisis-de-sentimientos-y-como-obtuve-datos-de-un-avion/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-07-05-analisis-de-sentimientos-y-como-obtuve-datos-de-un-avion/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-08-08-integrando-una-aplicacion-en-django-con-otros-servicios/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-08-08-integrando-una-aplicacion-en-django-con-otros-servicios/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-09-05-django-smart-select-y-flask-microframework/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-09-05-django-smart-select-y-flask-microframework/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-10-10-reactjs-y-django-rest-framework/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-10-10-reactjs-y-django-rest-framework/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2016-11-21-python-desde-0/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2016-11-21-python-desde-0/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-01-30-aprendamos-a-hacer-testing-con-mock/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-01-30-aprendamos-a-hacer-testing-con-mock/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-02-10-pycon-colombia-2017/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-02-10-pycon-colombia-2017/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-03-14-celery-y-tareas-asincronas/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-03-14-celery-y-tareas-asincronas/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-04-17-pimpeando-tu-antigua-version-de-django/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-04-17-pimpeando-tu-antigua-version-de-django/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-05-04-aprende-machine-learning-basico-jugando-con-python-y-flappy-bird/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-05-04-aprende-machine-learning-basico-jugando-con-python-y-flappy-bird/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-06-01-como-crear-un-teclado-virtual-con-tecnicas-de-vision-por-computadora/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-06-01-como-crear-un-teclado-virtual-con-tecnicas-de-vision-por-computadora/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-07-13-campo-de-juego-para-emprendedores/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-07-13-campo-de-juego-para-emprendedores/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-07-15-post-evento-django-girls/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-07-15-post-evento-django-girls/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-07-17-construyamos-un-software-de-reconocimiento-de-rostros-en-una-microcomputadora/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-07-17-construyamos-un-software-de-reconocimiento-de-rostros-en-una-microcomputadora/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-08-22-aprendamos-las-bases-de-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-08-22-aprendamos-las-bases-de-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-08-30-programadores-vamos-a-comer/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-08-30-programadores-vamos-a-comer/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-09-18-beneficios-tributarios-para-freelancers-emprendedores-y-empresas-tic/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-09-18-beneficios-tributarios-para-freelancers-emprendedores-y-empresas-tic/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-10-19-traduccion-automatica-usando-redes-neuronales/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-10-19-traduccion-automatica-usando-redes-neuronales/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-11-23-herramientas-para-hacer-ciencia-con-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-11-23-herramientas-para-hacer-ciencia-con-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2017-12-19-reconocimiento-facial-con-redes-neuronales-usando-tensorflow-y-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2017-12-19-reconocimiento-facial-con-redes-neuronales-usando-tensorflow-y-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-01-18-conectando-flask-con-vuejs-en-el-desarrollo-de-una-single-page-application/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-01-18-conectando-flask-con-vuejs-en-el-desarrollo-de-una-single-page-application/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-02-26-como-crear-una-empresa-en-usa-sin-morir-en-el-intento-pasarelas-de-pago/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-02-26-como-crear-una-empresa-en-usa-sin-morir-en-el-intento-pasarelas-de-pago/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-03-22-segmentacion-y-caracterizacion-de-imagenes-de-celulas-tomadas-por-microscopio/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-03-22-segmentacion-y-caracterizacion-de-imagenes-de-celulas-tomadas-por-microscopio/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-04-19-introduccion-a-django-cms-y-creacion-de-plugins-personalizados/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-04-19-introduccion-a-django-cms-y-creacion-de-plugins-personalizados/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-05-24-zen-de-python-saca-el-mejor-provecho-a-redis/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-05-24-zen-de-python-saca-el-mejor-provecho-a-redis/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-06-14-carros-autonomos-creacion-de-apis-para-tus-apps/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-06-14-carros-autonomos-creacion-de-apis-para-tus-apps/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-07-17-emprender-con-inteligencia-artficial-intro-analisis-de-datos-con-jupyter/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-07-17-emprender-con-inteligencia-artficial-intro-analisis-de-datos-con-jupyter/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-08-16-integrar-graphql-a-django-entiende-el-poder-de-los-datos-con-spark/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-08-16-integrar-graphql-a-django-entiende-el-poder-de-los-datos-con-spark/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-09-17-disena-tu-proyecto-de-machine-learning-patrones-de-automatizacion-de-pruebas/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-09-17-disena-tu-proyecto-de-machine-learning-patrones-de-automatizacion-de-pruebas/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-10-20-meetup-hacktoberfest-baq/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-10-20-meetup-hacktoberfest-baq/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-10-23-ciencia-de-datos-para-dummies-define-y-estructura-un-proyecto-personal/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-10-23-ciencia-de-datos-para-dummies-define-y-estructura-un-proyecto-personal/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-11-19-seguridad-informatica-en-la-web-aprender-ingles-ahora-es-mejor-que-nunca/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-11-19-seguridad-informatica-en-la-web-aprender-ingles-ahora-es-mejor-que-nunca/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2018-12-11-powerbi-y-python-inteligencia-de-negocios-introduccion-a-servicios-de-aws/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2018-12-11-powerbi-y-python-inteligencia-de-negocios-introduccion-a-servicios-de-aws/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-01-18-bienvenida-2019-y-reunion-abierta-equipo-pybaq/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-01-18-bienvenida-2019-y-reunion-abierta-equipo-pybaq/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-01-29-finanzas-cuantitativas-para-analisis-de-mercados-app-del-manto-de-la-tierra/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-01-29-finanzas-cuantitativas-para-analisis-de-mercados-app-del-manto-de-la-tierra/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-02-26-crea-un-sitio-web-en-tiempo-real-tipo-google-doc-creando-comunidades-exitosas/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-02-26-crea-un-sitio-web-en-tiempo-real-tipo-google-doc-creando-comunidades-exitosas/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-03-28-un-algoritmo-artistico-de-estilo-neural-pybaq-detras-del-escenario/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-03-28-un-algoritmo-artistico-de-estilo-neural-pybaq-detras-del-escenario/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-04-25-estudiar-machine-learning-en-el-exterior-intro-a-la-vision-por-computador/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-04-25-estudiar-machine-learning-en-el-exterior-intro-a-la-vision-por-computador/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-05-30-app-serverless-y-auto-escalable-con-aws-lambda-consigue-un-trabajo-en-dolares/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-05-30-app-serverless-y-auto-escalable-con-aws-lambda-consigue-un-trabajo-en-dolares/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-06-06-inteligencia-artificial-y-sus-aplicaciones-ciberseguridad-vectores-de-ataque/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-06-06-inteligencia-artificial-y-sus-aplicaciones-ciberseguridad-vectores-de-ataque/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-07-06-taller-de-programacion-para-mujeres-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-07-06-taller-de-programacion-para-mujeres-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-07-30-webrtc-y-si-hacemos-un-skype-primeros-pasos-en-numpy/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-07-30-webrtc-y-si-hacemos-un-skype-primeros-pasos-en-numpy/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-08-29-multimodal-video-analytics-data-science-the-new-age-revolution/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-08-29-multimodal-video-analytics-data-science-the-new-age-revolution/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-09-26-capturando-credenciales-en-google-chrome-con-drf-drf-elasticsearch/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-09-26-capturando-credenciales-en-google-chrome-con-drf-drf-elasticsearch/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-10-24-procesamiento-de-imagenes-de-tejido-con-python-project-management-101/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-10-24-procesamiento-de-imagenes-de-tejido-con-python-project-management-101/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-11-28-conociendo-oauth2-python-para-principiantes-donde-empezar/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-11-28-conociendo-oauth2-python-para-principiantes-donde-empezar/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2019-12-19-piloteando-docker-usando-python-saca-provecho-a-eventos-internacionales/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2019-12-19-piloteando-docker-usando-python-saca-provecho-a-eventos-internacionales/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-01-30-bienvenida-2020-y-despedida-python-2/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-01-30-bienvenida-2020-y-despedida-python-2/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-02-27-intro-python-django-breaking-the-enigma-what-if-turing-had-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-02-27-intro-python-django-breaking-the-enigma-what-if-turing-had-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-03-31-online-the-best-of-both-worlds-r-meets-python-pybaq-5-anos/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-03-31-online-the-best-of-both-worlds-r-meets-python-pybaq-5-anos/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-04-30-online-por-que-kubernetes-implementa-scrum-en-organizaciones/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-04-30-online-por-que-kubernetes-implementa-scrum-en-organizaciones/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-06-26-7-tecnicas-para-sacarle-el-maximo-potencial-a-django-rest-framework/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-06-26-7-tecnicas-para-sacarle-el-maximo-potencial-a-django-rest-framework/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-07-02-python-y-devnet-aplicabilidad-en-la-programabilidad-de-redes/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-07-02-python-y-devnet-aplicabilidad-en-la-programabilidad-de-redes/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-08-13-manejo-de-archivos-grandes-con-una-django-app-drf/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-08-13-manejo-de-archivos-grandes-con-una-django-app-drf/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-09-29-geodjango-aprovechando-las-funciones-geograficas-para-tus-aplicaciones/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-09-29-geodjango-aprovechando-las-funciones-geograficas-para-tus-aplicaciones/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-10-21-edicion-hacktoberfest-unete-a-traducir-la-documentacion-de-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-10-21-edicion-hacktoberfest-unete-a-traducir-la-documentacion-de-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-10-29-automatizacion-de-redes-con-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-10-29-automatizacion-de-redes-con-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-11-19-como-escalar-tu-infraestructura/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-11-19-como-escalar-tu-infraestructura/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2020-12-10-lightning-talks-2020/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2020-12-10-lightning-talks-2020/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-01-28-reunion-de-bienvenida-de-ano-2021-virtual/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-01-28-reunion-de-bienvenida-de-ano-2021-virtual/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-02-25-mineria-de-textos-para-monitorear-impacto-de-covid-19-en-america-latina/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-02-25-mineria-de-textos-para-monitorear-impacto-de-covid-19-en-america-latina/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-03-25-extendiendo-la-monitorizacion-de-infraestructura-ti-con-nagios-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-03-25-extendiendo-la-monitorizacion-de-infraestructura-ti-con-nagios-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-04-29-aspectos-basicos-del-derecho-de-autor-para-programadores/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-04-29-aspectos-basicos-del-derecho-de-autor-para-programadores/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-05-27-los-datos-son-el-camino-de-administracion-de-empresas-a-programacion/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-05-27-los-datos-son-el-camino-de-administracion-de-empresas-a-programacion/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-06-30-usando-selenium-python-en-el-sitio-de-pybaq/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-06-30-usando-selenium-python-en-el-sitio-de-pybaq/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-07-29-uso-empresarial-de-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-07-29-uso-empresarial-de-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-08-18-hablemos-sobre-python-reunion-por-zoom/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-08-18-hablemos-sobre-python-reunion-por-zoom/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-08-28-liga-python-semifinales-grupo-1/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-08-28-liga-python-semifinales-grupo-1/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-09-30-nlp-con-huggingface/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-09-30-nlp-con-huggingface/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-10-23-liga-python-semifinales-grupo-2/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-10-23-liga-python-semifinales-grupo-2/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-11-25-roadmap-de-la-seguridad-informatica-sin-morir/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-11-25-roadmap-de-la-seguridad-informatica-sin-morir/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2021-12-04-liga-python-final/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2021-12-04-liga-python-final/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-01-26-reunion-de-bienvenida-de-ano-2022-virtual/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-01-26-reunion-de-bienvenida-de-ano-2022-virtual/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-02-02-free-open-passes-to-developerweek-2022-feb-2-9/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-02-02-free-open-passes-to-developerweek-2022-feb-2-9/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-02-24-deteccion-de-cancer-pulmonar-usando-procesamiento-de-imagenes/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-02-24-deteccion-de-cancer-pulmonar-usando-procesamiento-de-imagenes/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-03-17-cross-modal-conectando-el-mundo-de-nlp-con-el-de-computer-vision/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-03-17-cross-modal-conectando-el-mundo-de-nlp-con-el-de-computer-vision/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-04-28-conversatorio-de-junior-a-senior-conmemorando-7-anos-de-comunidad/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-04-28-conversatorio-de-junior-a-senior-conmemorando-7-anos-de-comunidad/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-05-26-sympy-como-herramienta-de-aprendizaje-en-matematicas-y-programacion/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-05-26-sympy-como-herramienta-de-aprendizaje-en-matematicas-y-programacion/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-07-07-principios-solid-en-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-07-07-principios-solid-en-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-07-28-automatizacion-de-ui-en-python-aplicando-el-patron-screenplay/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-07-28-automatizacion-de-ui-en-python-aplicando-el-patron-screenplay/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-08-25-fomentando-la-programacion-desde-la-infancia/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-08-25-fomentando-la-programacion-desde-la-infancia/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-09-29-consiguiendo-trabajo-como-programador-a-los-45-anos/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-09-29-consiguiendo-trabajo-como-programador-a-los-45-anos/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-10-27-introduccion-al-pentesting/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-10-27-introduccion-al-pentesting/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-11-30-crea-tus-propias-videollamadas-con-python-y-webrtc/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-11-30-crea-tus-propias-videollamadas-con-python-y-webrtc/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2022-12-22-de-psicologo-a-programador-cambio-o-complemento-de-carrera/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2022-12-22-de-psicologo-a-programador-cambio-o-complemento-de-carrera/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-01-18-reunion-de-bienvenida-de-ano-2023-presencial/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-01-18-reunion-de-bienvenida-de-ano-2023-presencial/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-02-21-free-open-passes-to-developerweek-2023/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-02-21-free-open-passes-to-developerweek-2023/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-03-02-deepdream-visualizando-que-aprende-una-red-neuronal-convolucional/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-03-02-deepdream-visualizando-que-aprende-una-red-neuronal-convolucional/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-04-27-linux-amigable/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-04-27-linux-amigable/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-05-27-caribedev-encuentro-de-comunidades-tech/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-05-27-caribedev-encuentro-de-comunidades-tech/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-06-22-del-llm-al-chatbot-como-funcionan-su-entrenamiento-y-produccion-sin-usar-gpu/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-06-22-del-llm-al-chatbot-como-funcionan-su-entrenamiento-y-produccion-sin-usar-gpu/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-07-27-modelado-de-data-warehouses-con-dbt/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-07-27-modelado-de-data-warehouses-con-dbt/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-08-24-pentesting-con-jupyter-notebook/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-08-24-pentesting-con-jupyter-notebook/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-09-21-serverless-devcontainers-en-localhost-automatizando-tareas-repetitivas/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-09-21-serverless-devcontainers-en-localhost-automatizando-tareas-repetitivas/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2023-11-30-analisis-y-estadistica-de-fifa-24/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2023-11-30-analisis-y-estadistica-de-fifa-24/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2024-02-28-primera-reunion-de-2024/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-02-28-primera-reunion-de-2024/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2024-03-21-analisis-geoespacial-con-python-y-qgis/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-03-21-analisis-geoespacial-con-python-y-qgis/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2024-04-11-crea-tu-propio-gpt-local-basado-en-llama2-usando-python-y-langchain/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-04-11-crea-tu-propio-gpt-local-basado-en-llama2-usando-python-y-langchain/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos1/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos1/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/eventos1/"/>
       <priority>0.64</priority>
     </url>
     <url>
