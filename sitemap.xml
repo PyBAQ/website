@@ -982,12 +982,6 @@
       <priority>0.64</priority>
     </url>
     <url>
-      <loc>https://pybaq.co/proyectos/formacion-emprendedora/</loc>
-      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/formacion-emprendedora/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/formacion-emprendedora/"/>
-      <priority>0.64</priority>
-    </url>
-    <url>
       <loc>https://pybaq.co/proyectos/katsu/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/katsu/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/katsu/"/>
@@ -1009,6 +1003,12 @@
       <loc>https://pybaq.co/proyectos/temii/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/temii/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/temii/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/proyectos/voluntariado/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/voluntariado/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/voluntariado/"/>
       <priority>0.64</priority>
     </url>
 </urlset>
