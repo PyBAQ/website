@@ -133,6 +133,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/primera-pycon-colombia/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/primera-pycon-colombia/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/primera-pycon-colombia/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/primeros-pasos-en-python/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/primeros-pasos-en-python/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/primeros-pasos-en-python/"/>
