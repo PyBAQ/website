@@ -10,4 +10,4 @@ selenium==4.11.2
 screenpy==4.2.1
 screenpy-selenium==4.0.4
 Online-W3C-Validator==0.3.21
-urllib3==1.26.18
+urllib3==1.26.19
