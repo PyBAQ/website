@@ -7,9 +7,3 @@ services:
       - 4444:4444 # Selenium service
       - 5900:5900 # VNC server
       - 7900:7900 # VNC browser client
-  webapp:
-    build: ./
-    ports:
-      - 5000:5000 # Lektor
-    volumes:
-      - .:/app

@@ -9,9 +9,13 @@
   "workspaceFolder": "/workspace/",
   "forwardPorts": [4444, 5000, 7900],
   "onCreateCommand": "pip install -r test-requirements.txt",
-  "postAttachCommand": "python -m pytest",
+  "postAttachCommand": {
+    "server": "lektor server",
+    "css": "npm run watch"
+  },
   "remoteEnv": {
-    "TEST_COMMAND_EXECUTOR": "http://browser:4444/wd/hub"
+    "TEST_COMMAND_EXECUTOR": "http://browser:4444/wd/hub",
+    "PYTEST_BASE_URL": "http://testing:5000"
   },
   "customizations": {
     "codespaces": {
