@@ -1,122 +1,50 @@
 # Página Web comunidad Python Barranquilla
 
-[![Build Status](https://www.travis-ci.com/PyBAQ/django-quilla-web.svg?branch=master)](https://www.travis-ci.com/PyBAQ/django-quilla-web)
+![Desplegar pagina](https://github.com/pybaq/website/actions/workflows/deploy.yml/badge.svg)
+![Probar páginas](https://github.com/pybaq/website/actions/workflows/test-e2e.yml/badge.svg)
+![Actualizar eventos meetup](https://github.com/pybaq/website/actions/workflows/actualizar-eventos-meetup.yml/badge.svg)
 
-## Instalación
-
-Primero haz un Fork del proyecto en GitHub y luego clonalo en tu computador así:
-
-  SSH: git clone git@github.com:PyBAQ/django-quilla-web.git
-
-  HTTPS: git clone https://github.com/PyBAQ/django-quilla-web.git
-
-Para poder ejecutar el proyecto localmente se requieren las siguientes dependencias:
-
-- Python 3
-- ImageMagick
-- [Lektor](https://www.getlektor.com/docs/installation/)
-
-A continuación siga la guía de instalación según su sistema operativo
-
-### Windows
-
-Para Windows puedes descargar Python desde el siguiente enlace: https://www.python.org/downloads/windows/
-
-Puedes instalar ImageMagick desde el siguiente enlace: <https://imagemagick.org/>
-
-o usar [chocolatey](https://chocolatey.org/) y ejecutar
-
-    choco install imagemagick
-
-Para instalar Lektor puedes usar el siguiente comando:
-
-    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://getlektor.com/install.ps1'))" && SET PATH=%PATH%;%LocalAppData%\lektor-cli
-
-Pero también puede ser ejecutado directamente en powershell:
-
-    iex ((new-object net.webclient).DownloadString('https://getlektor.com/install.ps1'))
-
-### Windows 10: Windows Subsystem for Linux
-
-Si quieres/debes mantener Windows instalado, pero prefieres mantener este proyecto en Linux, puedes usar el "Windows Subsystem for Linux" (subsistema de Windows para Linux).  La forma rápida de habilitarlo es por powershell en modo de Administrador, ten presente que necesitas reinicar tu PC:
-
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-
-Luego, en la tienda de Microsoft encontrarás distintas distribuciones de Ubuntu que podrás instalar, ten presente que esto solo te da acceso por linea de comandos. Podrás encontrar mas detalles en el siguiente vínculo: [https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-
-De allí continua los pasos según el instructivo para Linux.
-
-### Linux
-
-En Ubuntu se pueden instalar las dependencias de Lektor usando el comando:
-
-    sudo apt install python3-dev libssl-dev libffi-dev imagemagick
-
-Luego puedes instalar Lektor usando el siguiente comando:
-
-    curl -sf https://www.getlektor.com/installer.py | python3
-
-### MacOS
-
-En Mac OS si se tiene instalado [homebrew](https://brew.sh/) se pueden instalar las dependencias de Lektor usando el comando:
-
-    brew install imagemagick
-
-Luego puede instalar Lektor usando el siguiente comando:
-
-    curl -sf https://www.getlektor.com/installer.py | python3
-
-Verificar que las variables de entorno del formato UTF-8 en sus respectivos idiomas esten definidas en el
-archivo ~/.bash_profile de su sistema y en caso de no estar definidas agregarlas.
-
-    export LC_ALL=en_US.UTF-8
-    export LANG=en_US.UTF-8
-
-### Docker
-
-Si tienes Docker instalado (https://docs.docker.com/get-docker/) puedes hacer uso del Dockerfile en el directorio principal para crear una imagen y posteriormente ejecutar un contenedor con todas las dependencias necesarias. Desde el directorio principal del repositorio ejecuta:
-
-    # Bash o Powershell
-    docker build -t pybaq . # Tener presente el "."
-    docker run --rm -p 5000:5000 -v ${PWD}:/app --name pybaq-local pybaq
-
-    # Windows Command Line
-    docker build -t pybaq . # Tener presente el "."
-    docker run --rm -p 5000:5000 -v %cd%:/app --name pybaq-local pybaq
-
-Al montar la carpeta con el código fuente (`-v ${PWD}:/app` o `-v %cd%:/app`) los cambios que se hagan al código se propagaran al contenedor y se veran reflejados immediatamente.
-
-**Nota:** Verifica que el directorio donde tienes el código fuente puede ser montado como un Docker volume. En Linux no se requiere configuración extra, pero hay diferentes métodos para [MacOS](https://docs.docker.com/docker-for-mac/#file-sharing) y [Windows](https://blogs.msdn.microsoft.com/wael-kdouh/2017/06/26/enabling-drive-sharing-with-docker-for-windows/) dependiendo del modo de instalación.
-
-## Ejecución del proyecto durante desarrollo
-
-Para la ejecución del proyecto se debe ejecutar el comando:
-
-    lektor server
-
-Al ejecutar Lektor, verás una lista de procesos que tienen lugar antes de generar la página estática. Si en tu edición cometes algún error, aparecerá escrito en la consola. Si se genera con éxito la página, ésta estará disponible en [http://localhost:5000/](http://localhost:5000/).
+Bienvenido al repositorio del sitio web de la comunidad python Barranquilla
 
 ## Código de conducta
 
 Los invitamos a leer el siguiente [repositorio con el código de conducta](https://github.com/PyBAQ/codigo-de-conducta) de la comunidad.
 
-### Contribuciones
+## Contribuciones
 
 Necesitamos de tu ayuda para terminar este proyecto! **¿Cómo puedes contribuir?** Mira las normas que hemos redactado en el archivo [CONTRIBUTING.md] para organizarnos mejor en el desarrollo. Esperamos tus Pull Requests e Issues. Gracias por tu apoyo.
 
 [CONTRIBUTING.md]: https://github.com/PyBAQ/django-quilla-web/blob/master/CONTRIBUTING.md
 
-## Actualizar eventos
+Para este proyecto tenemos 2 guías en nuestro blog, y te invitamos a leerlas
 
-En un terminal bash ejecuta el siguiente script Python (debes instalar el paquete requests con pip)
+- [Contribuir blog](https://pybaq.co/blog/contribuir-blog-python-barranquilla/)
+- [Contribuir modo facil](https://pybaq.co/blog/contribuir-modo-facil/)
 
-    python scripts/events.py
+## Ejecución del proyecto
 
-Se genera el archivo databags/meetup.json con los eventos actualizados. Recuerda adicionarlo al Pull Request con un commit.
+> Puedes dar esto por completado si estas usando Github CodeSpaces
 
-> Por favor actualiza los eventos solo si lo consideras estrictamente necesario, entre los metadatos incluidos incluye la fecha de actualización en un timestamp (propenso a conflictos)
+Para poder visualizar este proyecto en tu maquina se requiere iniciar la ejecución de lektor y opcionalmente compilar los css
 
-## Compilar CSS
+### Instalación de dependencias
+
+Este proyecto requiere tener instalado python y nodejs
+para hacerlo en tu maquina puedes usar esta [Guía](./install.md)
+
+Para instalar las dependencias del proyecto ejecuta
+
+    pipx install lektor
+
+### Ejecucion de lektor server
+
+Para la ejecución de lektor se debe ejecutar el comando:
+
+    lektor server
+
+Al ejecutar Lektor, verás una lista de procesos que tienen lugar antes de generar la página estática. Si en tu edición cometes algún error, aparecerá escrito en la consola. Si se genera con éxito la página, ésta estará disponible en [http://localhost:5000/](http://localhost:5000/).
+
+### Compilar CSS
 
 El proyecto actualmente usa Sass para los estilos en cascada si deseas modificarlos es necesario que tengas instalado Node.js.
 
@@ -129,6 +57,8 @@ Luego cada vez que actualices un estilo ejecuta:
     npm run build
 
 ## Tests
+
+> Dependiendo de la configuración de CodeSpaces que escojas deberás ejecutar esta instalación
 
 Instala los paquetes de pruebas con el comando
 
@@ -149,7 +79,7 @@ luego ejecuta el validador w3c_validator usando los comandos:
 
 Para usar selenium se requiere tener ejecutándose un webdriver [instala el webdriver correspondiente a tu plataforma](https://selenium-python.readthedocs.io/installation.html#drivers)
 
-Usando [docker compose](https://docs.docker.com/compose/install/) nos podemos ahorrar algo del tiempo de configuración de los distintos servicios
+Usando [docker compose](https://docs.docker.com/compose/install/) nos podemos ahorrar algo del tiempo de configuración de selenium hub e instalación de los diferentes drivers
 
 para ejecutar los test ejecuta los siguientes comandos
 
@@ -160,3 +90,23 @@ Por defecto los test corren en chrome, si deseas escoger el navegador que quiere
 La forma mas fácil de hacer esto es creando un archivo  `.env` con el siguiente contenido
 
     TEST_BROWSER=firefox
+
+## Actualizar eventos
+
+Para este proceso tenemos un [workflow](https://github.com/PyBAQ/website/actions/workflows/actualizar-eventos-meetup.yml) que nos crea un pull request con la actualización de los eventos
+
+La actualización de eventos se hace a traves de 2 scripts, `scripts/events.py` que extrae la información de meetup y `scripts/create_events.py` que se encarga de crear los eventos
+
+Para ejecutar localmente el script que extrae la información de meetup debes instalar el paquete requests con pip
+
+    python scripts/events.py
+
+El script crea o actualiza el archivo databags/meetup.json con los eventos actualizados. Recuerda adicionarlo al Pull Request con un commit.
+
+> Por favor actualiza los eventos solo si lo consideras estrictamente necesario, entre los metadatos incluidos incluye la fecha de actualización en un timestamp (propenso a conflictos)
+
+Para ejecutar localmente el script que genera los content.lr para cada uno de los eventos
+
+    python scripts/create_events.py
+
+Luego de esto puedes ir a los eventos creados con el admin de lektor y proceder con el respectivo pull request una vez finalices tus cambios
