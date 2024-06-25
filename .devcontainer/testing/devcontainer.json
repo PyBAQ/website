@@ -1,17 +1,23 @@
 {
   "name": "Selenium Tests",
-  "dockerComposeFile": [
-      "../../compose.yaml",
-      "docker-compose.extend.yml"
-  ],
-  "service": "testing",
-  "shutdownAction": "stopCompose",
-  "workspaceFolder": "/workspace/",
+  "image": "mcr.microsoft.com/vscode/devcontainers/universal",
+  "hostRequirements": { "cpus": 2 },
+  "waitFor": "onCreateCommand",
+  "onCreateCommand": "pipx install lektor && pip install -r test-requirements.txt && npm install",
+  "postAttachCommand": {
+    "server": "lektor server",
+    "css": "npm run watch"
+  },
+  "portsAttributes": {
+      "5000": {
+      "label": "Lektor Server",
+      "onAutoForward": "openPreview"
+    }
+  },
   "forwardPorts": [4444, 5000, 7900],
-  "onCreateCommand": "pip install -r test-requirements.txt",
-  "postAttachCommand": "python -m pytest",
   "remoteEnv": {
-    "TEST_COMMAND_EXECUTOR": "http://browser:4444/wd/hub"
+    "TEST_COMMAND_EXECUTOR": "http://localhost:4444/wd/hub",
+    "PYTEST_BASE_URL": "http://localhost:5000"
   },
   "customizations": {
     "codespaces": {

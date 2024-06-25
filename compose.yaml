@@ -1,15 +1,5 @@
-version: '3'
 services:
   browser:
     image: selenium/standalone-${TEST_BROWSER:-chrome}
     shm_size: '2gb'
-    ports:
-      - 4444:4444 # Selenium service
-      - 5900:5900 # VNC server
-      - 7900:7900 # VNC browser client
-  webapp:
-    build: ./
-    ports:
-      - 5000:5000 # Lektor
-    volumes:
-      - .:/app
+    network_mode: "host"
