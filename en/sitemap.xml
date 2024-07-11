@@ -829,6 +829,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/eventos/2024-07-06-app-de-transcripcion-medica-en-una-hackathon-de-ia-intro-a-prompt-engineering/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-07-06-app-de-transcripcion-medica-en-una-hackathon-de-ia-intro-a-prompt-engineering/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/eventos1/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos1/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/eventos1/"/>
