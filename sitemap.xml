@@ -879,6 +879,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/nosotros/daniela-charris/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/daniela-charris/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/daniela-charris/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/nosotros/dario-guzman/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/dario-guzman/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/dario-guzman/"/>
@@ -906,6 +912,12 @@
       <loc>https://pybaq.co/nosotros/jorge-aguilar/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/jorge-aguilar/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/jorge-aguilar/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/nosotros/jorge-martinez/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/jorge-martinez/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/jorge-martinez/"/>
       <priority>0.64</priority>
     </url>
     <url>
@@ -939,6 +951,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/nosotros/oswaldo-rodriguez/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/oswaldo-rodriguez/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/oswaldo-rodriguez/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/nosotros/paula-aragon/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/paula-aragon/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/paula-aragon/"/>
@@ -966,6 +984,12 @@
       <loc>https://pybaq.co/nosotros/sergio-orozco/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/sergio-orozco/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/sergio-orozco/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/nosotros/wayner-barrios/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/nosotros/wayner-barrios/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/nosotros/wayner-barrios/"/>
       <priority>0.64</priority>
     </url>
     <url>
