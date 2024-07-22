@@ -23,12 +23,15 @@ La charla "Deep Dream: Visualizando qué aprende una red neuronal convolucional"
 
 Patrocinador: **Birdiefy**<br/>En Birdiefy estamos construyendo una plataforma que permite a todos los golfistas obtener feedbacks instantáneos, precisos y accesibles sobre su swing de golf. Solo basta subir un video. Nuestra experiencia y profundo conocimiento de un juego tan complejo nos ha enseñado que hay algunos aportes en la experiencia de aprendizaje del golfista que solo los humanos pueden brindar (es decir, hoja de ruta a largo plazo, objetivos, confianza, etc.). Por lo tanto, nuestro objetivo es combinar tanto la inteligencia humana como la artificial para que nuestros usuarios puedan tener una experiencia de aprendizaje instantánea y personalizada. Si estás interesado (ya sea como jugador, entrenador o inversor), ¡no dudes en comunicarte con nosotros en [hello@birdiefy.ai](mailto:hello@birdiefy.ai)
 ----
-speaker: 
+speaker: daniela-charris
 ----
-speaker_name: Daniela Charris
+speaker_name: 
 ----
 speaker_bio: Soy Ingeniera Electrónica y Magíster de la Universidad del Norte. Tengo más de 4 años de experiencia en investigación y desarrollo de algoritmos de inteligencia artificial, procesamiento de imágenes y visión por computadora. También soy profesora catedrática del dpto de Ingenierías Eléctrica y Electrónica de la Universidad del Norte.
 ----
-attach: <a href="https://github.com/PyBAQ/Notebooks/blob/master/DeepDream/DeepDream.ipynb">Notebook</a> / <a href="https://drive.google.com/file/d/1P2o3Ma_Vmkc1dGhQnmYA0-hrjw4zbEd1/view?usp=share_link">Diapositivas</a>
+attach:
+
+- [Notebook](https://github.com/PyBAQ/Notebooks/blob/master/DeepDream/DeepDream.ipynb)
+- [Diapositivas](https://drive.google.com/file/d/1P2o3Ma_Vmkc1dGhQnmYA0-hrjw4zbEd1/view?usp=share_link)
 ---
 youtube: t3B0ENK7Ktk

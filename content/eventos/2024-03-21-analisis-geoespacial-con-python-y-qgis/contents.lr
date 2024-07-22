@@ -19,9 +19,9 @@ title: Análisis Geoespacial con Python y QGIS
 ----
 details: Esta charla busca aprovechar el runtime de Python dentro de QGIS para desarrollar algoritmos que automaticen procesos utilizados generalmente en el contexto de emergencias y desastres. Mediante cortos scripts, se mostrarán como manejar los datos geoespaciales para obtener un resultado y la integración de estos dentro de procesos más complejos.
 ----
-speaker: 
+speaker: jorge-martinez
 ----
-speaker_name: Jorge Martinez
+speaker_name: 
 ----
 speaker_bio: Ingeniero electronico de la universidad del norte. Actualmente laboro en la division de emergencias del Programa Mundial de Alimentos (WFP).
 ----

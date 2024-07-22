@@ -17,10 +17,8 @@ title: GiGi: Cómo obtuve datos de un avión
 ----
 details:
 
-
-
-<p>En esta noche tendremos 2 charlas en una noche, cortesía de la gente de <a href="http://piensa.co/">Piensa Labs</a>. Veremos 2 charlas diferentes que usaran <a href="http://jupyter.org/">jupyter (antes ipython)</a> para presentar sus desarrollos e investigaciones.</p> 
-<p>La primera charla sera un hack llamado <b>GiGi</b> el cual nos mostrará como se obtuvieron datos geográficos de un avión en pleno vuelo de Colombia a USA.<br/>
+En esta noche tendremos 2 charlas en una noche, cortesía de la gente de [Piensa Labs](http://piensa.co/). Veremos 2 charlas diferentes que usaran [jupyter](http://jupyter.org/) (antes ipython) para presentar sus desarrollos e investigaciones.
+La primera charla sera un hack llamado **GiGi** el cual nos mostrará como se obtuvieron datos geográficos de un avión en pleno vuelo de Colombia a USA.
 ----
 speaker: 
 ----
@@ -38,9 +36,9 @@ La segunda sera sobre un algoritmo llamado **Daisy**, el cual usando machine lea
 
 Las charlas estarán bastante interesantes, ¡¡les esperamos!!
 ----
-speaker: 
+speaker: wayner-barrios
 ----
-speaker_name: Wayner Barrios
+speaker_name: 
 ----
 speaker_bio: 
 ----
