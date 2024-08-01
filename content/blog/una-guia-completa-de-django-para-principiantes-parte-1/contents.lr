@@ -86,8 +86,15 @@ Python 3.6.3
 Genial, Python está instalado y ejecutándose. Siguiente paso: ¡Entornos Virtuales!
 
 ## Instalando Virtualenv
-
 Para el siguiente paso, vamos a usar pip, una herramienta que administra e instala paquetes de Python, para instalar virtualenv.
+
+#### Máquina del tiempo.
+
+Hola! Este tutorial es del 2017 y tiene algunas desactualizaciones, estaré viajando desde Febrero 2024 hasta ti para advertirte de los cambios que han surgido en la historia de Python y Django. Aquí va mi primera advertencia:
+
+Desde la versión 3.3 Python trae en su core *venv* para crear entornos virtuales así que no es necesario instalar virtualenv, paquete que hoy en día se considera legacy.
+
+#### Fin de la advertencia
 
 En la ventana de comandos, ejecuta el siguiente comando:
 
@@ -115,6 +122,15 @@ La carpeta es el directorio de nivel más alto que almacena todos los archivos r
 Así que comencemos por crear nuestro primer entorno virtual e instalar Django
 Dentro de la carpeta myproject:
 
+#### Advertencia temporal
+Si seguiste mi primera advertencia no habrás instalado virtualenv, te felicito.
+Para crear tu entorno virtual con *venv* debes usar:
+```python
+python3 -m venv venv
+```
+El siguiente comando que aparece en el tutorial es probable que no funcione si no has instalado virtualenv, simplemente puedes omitirlo.
+#### Fin de la advertencia
+
 ```python
 virtualenv venv
 ```
@@ -122,6 +138,16 @@ virtualenv venv
 ![Creando virtualenv](/img/posts/2017/guia-django-principiantes-1/creando-virtualenv.png)
 
 Nuestro ambiente virtual fue creado, ahora antes de empezar a usarlo debemos activar: venv\Scripts\activate
+
+#### Máquina del tiempo
+
+Para activar un entorno virtual con venv debes ingresar el siguiente comando:
+
+```python
+source venv/bin/activate
+```
+#### Fin de viaje temporal
+
 Sabrás que funcionó si puedes ver *(venv)* al inicio de la línea de comandos, así:
 
 ![Activar virtualenv](/img/posts/2017/guia-django-principiantes-1/activar-virtualenv.png)
@@ -135,6 +161,13 @@ Por cierto, para desactivar la ejecución de venv, ejecuta el siguiente comando:
 ```python
 venv\Scripts\deactivate.bat
 ```
+
+#### Advertencia temporal
+Para desactivar tu entorno virtual de venv utiliza:
+```python
+deactivate
+```
+#### Nos veremos luego
 
 Pero mantengámoslo activo para los siguientes pasos.
 
@@ -181,6 +214,13 @@ Nuestra estructura inicial del proyecto está compuesta por 5 archivos:
 * **urls.py:** Este archivo es el responsable de mapear las rutas y caminos (paths) en nuestro proyecto. Por ejemplo, si quieres mostrar algo en la URL /about/, tienes que mapearlo aquí primero.
 * **wsgi.py:** Este archivo es simplemente una interfaz de puerta de enlace usada para despliegues. No debes preocuparte por él, déjalo así por ahora.
 
+#### Viaje temporal
+Si estás en el 2024 es probable que haya instalado Django 5 y al ver el proyecto notarás que hay un archivo más.
+* **asgi.py:** Al igual que wsgi.py sirve como una interfaz de puerta de enlace para servidores compatibles con WSGI, asgi.py cumple un papel similar, pero para servidores que admiten ASGI. No te preocupes por él tampoco.
+
+#### Fin del viaje temporal
+
+
 Django viene con un servidor web simple instalado, lo que es muy conveniente durante el desarrollo porque no debemos instalar nada más para ejecutar el proyecto localmente. Podemos probarlo ejecutando el comando: python manage.py runserver
 
 Por ahora, puedes ignorar los errores de migración, llegaremos a eso luego.
@@ -188,6 +228,10 @@ Por ahora, puedes ignorar los errores de migración, llegaremos a eso luego.
 Ahora ve a la siguiente URL en un navegador Web: http://127.0.0.1:8000 y deberías ver la siguiente página:
 
 ![img16](/img/posts/2017/guia-django-principiantes-1/django-instalado.png)
+
+####Maquina del tiempo
+La página puede verse un poco diferente, pero lo importante es que diga que tu servidor está funcionando.
+#### Fin del comunicado temporal
 
 Presiona **CTRL + C** para detener el servidor de desarrollo.
 
@@ -315,6 +359,22 @@ Como mencionaba, exploraremos esos conceptos en gran detalle más adelante,
 
 Pero por ahora, Django funiciona con expresiones regulares (regex) para identificar la URL solicitada. Para nuestra vista home, estoy usando el regex ^$ , el cual identificará una ruta vacía que es nuestra página principal (esta url: http://127.0.0.1:8000). Si quisiera identificar la URL [http://127.0.0.1:8000/homepage/], mi url seria: url(r'^homepage/$', views.home, name='home')
 
+#### Advertencia temporal
+
+Seguro estarás viendo en tu proyecto líneas distintas a las ya mencionadas, esto es porque Django ya puede recibir el nombre de las URLs sin la necesidad de regex, además estará utilizando la función *path* en vez de *url*. Así es cómo debería lucir el archivo urls.py:
+```python
+from django.contrib import admin
+from django.urls import path
+
+from boards import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home')
+]
+```
+Para nuestra vista home, usarás un string vacío , el cual identificará una ruta vacía que es nuestra página principal (esta url: http://127.0.0.1:8000). Si quisiera identificar la URL [http://127.0.0.1:8000/homepage/], mi url seria: path('homepage/', views.home, name='home')
+#### Fin de la advertencia futuristica
 Veamos que pasa:
 
 ```python
