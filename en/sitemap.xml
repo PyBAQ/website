@@ -1006,6 +1006,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/procedimiento-codigo-de-conducta/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/procedimiento-codigo-de-conducta/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/procedimiento-codigo-de-conducta/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/proyectos/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/proyectos/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/proyectos/"/>
