@@ -1006,6 +1006,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/politica-de-salud-y-seguridad/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/politica-de-salud-y-seguridad/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/politica-de-salud-y-seguridad/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/procedimiento-codigo-de-conducta/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/procedimiento-codigo-de-conducta/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/procedimiento-codigo-de-conducta/"/>
