@@ -137,6 +137,22 @@
           
         </li>
         
+        <li><a href="#maquina-del-tiempo">Máquina del tiempo.</a>
+          
+        </li>
+        
+        <li><a href="#advertencia-temporal">Advertencia temporal</a>
+          
+        </li>
+        
+        <li><a href="#maquina-del-tiempo">Máquina del tiempo</a>
+          
+        </li>
+        
+        <li><a href="#advertencia-temporal">Advertencia temporal</a>
+          
+        </li>
+        
         <li><a href="#instalando-django-1.11.4">Instalando Django 1.11.4</a>
           
         </li>
@@ -145,11 +161,23 @@
           
         </li>
         
+        <li><a href="#viaje-temporal">Viaje temporal</a>
+          
+        </li>
+        
+        <li><a href="#maquina-del-tiempo">Maquina del tiempo</a>
+          
+        </li>
+        
         <li><a href="#django-apps">Django Apps</a>
           
         </li>
         
         <li><a href="#hola-mundo">Hola Mundo</a>
+          
+        </li>
+        
+        <li><a href="#advertencia-temporal">Advertencia temporal</a>
           
         </li>
         
@@ -201,6 +229,9 @@ Como respuesta deberías ver:</p>
 <p><img src="../../img/posts/2017/guia-django-principiantes-1/consola.png" alt="consola"></p>
 <p>Genial, Python está instalado y ejecutándose. Siguiente paso: ¡Entornos Virtuales!</p>
 <h2 id="instalando-virtualenv">Instalando Virtualenv</h2><p>Para el siguiente paso, vamos a usar pip, una herramienta que administra e instala paquetes de Python, para instalar virtualenv.</p>
+<blockquote><h4 id="maquina-del-tiempo">Máquina del tiempo.</h4><p>Hola! Este tutorial es del 2017 y tiene algunas desactualizaciones, estaré viajando desde Febrero 2024 hasta ti para advertirte de los cambios que han surgido  en la historia de Python y Django. Aquí va mi primera advertencia:</p>
+<p>Desde la versión 3.3 Python trae en su core <em>venv</em> para crear entornos virtuales así que no es necesario instalar virtualenv, paquete que hoy en día se  considera legacy.</p>
+</blockquote>
 <p>En la ventana de comandos, ejecuta el siguiente comando:</p>
 <div class="hll"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
 </pre></div>
@@ -216,16 +247,31 @@ Como respuesta deberías ver:</p>
 <p>La carpeta es el directorio de nivel más alto que almacena todos los archivos relacionados con nuestro proyecto Django, incluyendo el entorno virtual.</p>
 <p>Así que comencemos por crear nuestro primer entorno virtual e instalar Django
 Dentro de la carpeta myproject:</p>
+<blockquote><h4 id="advertencia-temporal">Advertencia temporal</h4><p>Si seguiste mi primera advertencia no habrás instalado virtualenv, te felicito.
+Para crear tu entorno virtual con <em>venv</em> debes usar:</p>
+<div class="hll"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
+</pre></div>
+<p>El siguiente comando que aparece en el tutorial es probable que no funcione si no has instalado virtualenv, simplemente puedes omitirlo.</p>
+</blockquote>
 <div class="hll"><pre><span></span><span class="n">virtualenv</span> <span class="n">venv</span>
 </pre></div>
 <p><img src="../../img/posts/2017/guia-django-principiantes-1/creando-virtualenv.png" alt="Creando virtualenv"></p>
-<p>Nuestro ambiente virtual fue creado, ahora antes de empezar a usarlo debemos activar: venv\Scripts\activate
-Sabrás que funcionó si puedes ver <em>(venv)</em> al inicio de la línea de comandos, así:</p>
+<p>Nuestro ambiente virtual fue creado, ahora antes de empezar a usarlo debemos activar: venv\Scripts\activate</p>
+<blockquote><h4 id="maquina-del-tiempo">Máquina del tiempo</h4><p>Para activar un entorno virtual con venv debes ingresar el siguiente comando:</p>
+<div class="hll"><pre><span></span><span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</blockquote>
+<p>Sabrás que funcionó si puedes ver <em>(venv)</em> al inicio de la línea de comandos, así:</p>
 <p><img src="../../img/posts/2017/guia-django-principiantes-1/activar-virtualenv.png" alt="Activar virtualenv"></p>
 <p>Comencemos a entender que pasó: Creamos una carpeta especial llamada venv, esta contiene una copia de Python. Luego activamos el entorno venv y ejecutamos el comando Python, este usará</p>
 <p>Otra cosa muy importante es que el programa pip ya está instalado también, y cuando lo usemos para instalar un paquete de Python, como Django, este será instalado dentro del entorno</p>
 <p>Por cierto, para desactivar la ejecución de venv, ejecuta el siguiente comando:</p>
 <div class="hll"><pre><span></span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">deactivate</span><span class="o">.</span><span class="n">bat</span>
+</pre></div>
+<blockquote><h4 id="advertencia-temporal">Advertencia temporal</h4><p>A este post se adicionan las instrucciones para desactivar el virtualenv en mac o linux</p>
+</blockquote>
+<p>Para desactivar tu entorno virtual de venv utiliza:</p>
+<div class="hll"><pre><span></span><span class="n">deactivate</span>
 </pre></div>
 <p>Pero mantengámoslo activo para los siguientes pasos.</p>
 <h2 id="instalando-django-1.11.4">Instalando Django 1.11.4</h2><p>Ahora que tenemos venv activado, ejecuta el siguiente comando para instalar Django:</p>
@@ -256,10 +302,17 @@ Ahora mismo, nuestro directorio myproject se ve así:</p>
 <li><strong>urls.py:</strong> Este archivo es el responsable de mapear las rutas y caminos (paths) en nuestro proyecto. Por ejemplo, si quieres mostrar algo en la URL /about/, tienes que mapearlo aquí primero.</li>
 <li><strong>wsgi.py:</strong> Este archivo es simplemente una interfaz de puerta de enlace usada para despliegues. No debes preocuparte por él, déjalo así por ahora.</li>
 </ul>
+<blockquote><h4 id="viaje-temporal">Viaje temporal</h4><p>Si estás en el 2024 es probable que haya instalado Django 5 y al ver el proyecto notarás que hay un archivo más.</p>
+<ul>
+<li><strong>asgi.py:</strong> Al igual que wsgi.py sirve como una interfaz de puerta de enlace para servidores compatibles con WSGI, asgi.py cumple un papel similar, pero para servidores que admiten ASGI. No te preocupes por él tampoco.</li>
+</ul>
+</blockquote>
 <p>Django viene con un servidor web simple instalado, lo que es muy conveniente durante el desarrollo porque no debemos instalar nada más para ejecutar el proyecto localmente. Podemos probarlo ejecutando el comando: python manage.py runserver</p>
 <p>Por ahora, puedes ignorar los errores de migración, llegaremos a eso luego.</p>
 <p>Ahora ve a la siguiente URL en un navegador Web: <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> y deberías ver la siguiente página:</p>
 <p><img src="../../img/posts/2017/guia-django-principiantes-1/django-instalado.png" alt="img16"></p>
+<blockquote><h4 id="maquina-del-tiempo">Maquina del tiempo</h4><p>La página puede verse un poco diferente, pero lo importante es que diga que tu servidor está funcionando.</p>
+</blockquote>
 <p>Presiona <strong>CTRL + C</strong> para detener el servidor de desarrollo.</p>
 <h2 id="django-apps">Django Apps</h2><p>En la filosofía Django tenemos dos conceptos importantes:</p>
 <ul>
@@ -352,6 +405,19 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
 <p>Si comparas el código de arriba con tu archivo urls.py, notarás que añadí la siguiente línea: url(r'^$', views.home, name='home') e importé el módulos de vistas desde nuestra aplicación boards usando: from boards import views</p>
 <p>Como mencionaba, exploraremos esos conceptos en gran detalle más adelante,</p>
 <p>Pero por ahora, Django funiciona con expresiones regulares (regex) para identificar la URL solicitada. Para nuestra vista home, estoy usando el regex ^$ , el cual identificará una ruta vacía que es nuestra página principal (esta url: <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>). Si quisiera identificar la URL [<a href="http://127.0.0.1:8000/homepage/">http://127.0.0.1:8000/homepage/</a>], mi url seria: url(r'^homepage/$', views.home, name='home')</p>
+<blockquote><h4 id="advertencia-temporal">Advertencia temporal</h4><p>Seguro estarás viendo en tu proyecto líneas distintas a las ya mencionadas, esto es porque Django ya puede recibir el nombre de las URLs sin la necesidad de regex, además estará utilizando la función <em>path</em> en vez de <em>url</em>. Así es cómo debería lucir el archivo urls.py:</p>
+<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">boards</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">home</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+<p>Para nuestra vista home, usarás un string vacío , el cual identificará una ruta vacía que es nuestra página principal (esta url: <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>). Si quisiera identificar la URL [<a href="http://127.0.0.1:8000/homepage/">http://127.0.0.1:8000/homepage/</a>], mi url seria: path('homepage/', views.home, name='home')</p>
+</blockquote>
 <p>Veamos que pasa:</p>
 <div class="hll"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
