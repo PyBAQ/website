@@ -7,7 +7,7 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="shortcut icon" href="../../../ico/favicon.png">
   <link rel="stylesheet" href="../../../static/pygments.css">
-  <title>Contribuir en Modo Facil </title>
+  <title>Contribute in Easy-Mode </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -31,7 +31,7 @@
     <meta property="og:site_name" content="https://pybaq.co/en/" />
   
   
-  <meta property="og:title" content="Contribuir en Modo Facil" />
+  <meta property="og:title" content="Contribute in Easy-Mode" />
   
     
     <meta name="twitter:creator" content="@" />
@@ -97,7 +97,7 @@
   <div class="blog-post">
     <div class="post-meta blog_post-post_meta">
 
-      <h1 class="ctitle">Contribuir en Modo Facil</h1>
+      <h1 class="ctitle">Contribute in Easy-Mode</h1>
       <span class="post-date">Posted: 2023-04-10.</span> |
       <span class="post-author">
         
@@ -110,42 +110,29 @@
     </div>
     
     <div id="body-content" class="blog-post-body">
-        <h2 id="flujo-de-contribuir">Flujo de Contribuir</h2><p>El flujo de trabajo para contribuir a PyBAQ es el mismo de casi todos los proyectos de software: <a href="https://docs.github.com/en/get-started/quickstart/github-flow">pull request</a>.</p>
-<ol>
-<li>Pull/Fork: <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects">Crea una copia</a> del repositorio en tu cuenta de GitHub.</li>
-<li>Branch: Crea una rama con un nombre relacionado a la contribución que harás.
-<img src="../../../img/posts/2023/contribuir-modo-facil/flow-branch.png" alt="Branch"></li>
-<li>Commit: Realiza los cambios en el código. Por ejemplo: redacta un nuevo articulo. Guarda los cambios en esa rama (branch) y guardalos haciendo un commit.</li>
-<li>Push: Envía los cambios que has vinculado a la rama a tu repositorio.
-<img src="../../../img/posts/2023/contribuir-modo-facil/flow-commits.png" alt="Commit &amp; Push"></li>
-<li>Pull Request: Has una solicitud de inclusión de tu código en la pagina.
-<img src="../../../img/posts/2023/contribuir-modo-facil/flow-pullreq.png" alt="Pull Request"></li>
-<li>Discuss: Discute los cambios que has introducido con los dueños del repositorio original. Si hay cambios solo debes realizarlos repitiendo los pasos 3 y 4; el pull request abarcará los commits que hagas a esa rama hasta que sea aceptado.
-<img src="../../../img/posts/2023/contribuir-modo-facil/flow-discuss.png" alt="Discuss"></li>
-<li>Rebase + Merge: Ver en <a href="https://docs.github.com/en/get-started/quickstart/github-flow">articulo original</a>.
-<img src="../../../img/posts/2023/contribuir-modo-facil/flow-merge.png" alt="Rebase &amp; Merge"></li>
-</ol>
-<h2 id="modo-facil">Modo Fácil</h2><p>La facilidad de este artículo consiste en el uso de Codespaces. Codespaces es un entorno de trabajo virtual provisto por Github. Una cuenta gratis cuenta con 60 horas-nucleo de ejecución. Allí puedes realizar los pasos 3 y 4 sin necesidad de descargar el repositorio y configurar Lektor.</p>
-<h3 id="editar">Editar</h3><p>Tras crear una rama, podemos abrir un codespace, gracias al archivo .devcontainer.json se creará un codespace con todo lo necesario.</p>
+        <p>There is already an article called <a href="../contribuir-blog-python-barranquilla/">How to contribute to the Python Barranquilla blog</a>. This article highlights how you can facilitate contributions using a self-configuring virtual workspace – you won't need to install anything; everything is online.</p>
+<p><a href="https://docs.github.com/en/codespaces/overview">Codespaces</a> is a virtual workspace that can be automatically configured, provided by GitHub. A free account comes with 60 core-hours of runtime. That's more than enough time to work on contributing to our site or other projects. The Python Barranquilla page repository has a .devcontainer folder with the necessary configurations to start working immediately on any contribution you want to make.</p>
+<h2 id="edit">Edit</h2><p>After creating a branch, we can open a codespace. Thanks to the .devcontainer.json file, a codespace will be created with everything you need. If your first question is, what is a branch and why is it necessary to create one? I recommend you go to <a href="../../../blog/contribuir-blog-python-barranquilla/#anexo-2-ciclo-de-trabajo-de-contribucion-en-github">Annex 2</a> of the article mentioned at the beginning.</p>
 <p><img src="../../../img/posts/2023/contribuir-modo-facil/csflow-opencodespace.png" alt="Open Codespace"></p>
-<p>El proceso de creación puede tardar un poco la primera vez que lo abres.</p>
+<p>The creation process may take a while the first time you open it.</p>
 <p><img src="../../../img/posts/2023/contribuir-modo-facil/csflow-createcodespace.png" alt="Create Codespace"></p>
-<p>Una vez abre el editor verás 3 partes:</p>
+<p>Once the editor opens, you'll see 3 parts:</p>
 <ol>
-<li>El navegador de archivos</li>
-<li>Una consola con lektor server en Ejecución</li>
-<li>Una ventana de navegador simple mostrando la pagina generada.<br>
-La página puede abrirse en una pestaña aparte usando el botón en la esquina superior derecha (ver flecha).</li>
+<li>The file browser</li>
+<li>A console with the lektor server running</li>
+<li>A simple browser window showing the generated page.<br>
+The page can be opened in a separate tab using the button in the top-right corner (see arrow).</li>
 </ol>
-<p><img src="../../../img/posts/2023/contribuir-modo-facil/csflow-editorcodespace.png" alt="Create Codespace"></p>
-<p>Por ultimo, puedes usar el editor para realizar tanto commits como push, pero lo mas facil hacerlo tras cerrar la ventana del codespace:</p>
+<p><img src="../../../img/posts/2023/contribuir-modo-facil/csflow-editorcodespace.png" alt="Editor Codespace"></p>
+<p>Finally, you can use the editor to perform both commits and pushes, but it's easiest to do this after closing the codespace window:</p>
 <ol>
-<li>Exportar cambios a la rama.</li>
-<li>Cerrar el codespace<br>
-Es importante cerrar el codespace para evitar que consuma mas tiempo de ejecución.</li>
+<li>Export changes to the branch.</li>
+<li>Close the codespace<br>
+It’s important to close the codespace to prevent it from consuming more runtime.</li>
 </ol>
-<p><img src="../../../img/posts/2023/contribuir-modo-facil/csflow-push-closecodespace.png" alt="Create Codespace"></p>
-<p>Ante las dudas, no dudes en preguntar.</p>
+<p><img src="../../../img/posts/2023/contribuir-modo-facil/csflow-push-closecodespace.png" alt="Close Codespace"></p>
+<h2 id="how-do-i-create-a-post">How do I create a post?</h2><p>To create a blog post, follow the instructions in the article "How to contribute to the Python Barranquilla blog" starting from the title <a href="../contribuir-blog-python-barranquilla/#creating-an-entry-in-lektor">Creating an entry in Lektor</a>.</p>
+<p>If you have any questions, don't hesitate to ask in <a href="https://discord.gg/46N5dPm9Zk">our Discord</a>.</p>
 
         <div class="comments">
 <div id="disqus_thread"></div>
@@ -178,14 +165,14 @@ Es importante cerrar el codespace para evitar que consuma mas tiempo de ejecuci�
         <i class="fa fa-facebook-official share-button"></i>
       </a>
     
-      <a  href="https://twitter.com/intent/tweet?text=Contribuir%20en%20Modo%20Facil&amp;url=https://pybaq.co/en/blog/contribuir-modo-facil/"
+      <a  href="https://twitter.com/intent/tweet?text=Contribute%20in%20Easy-Mode&amp;url=https://pybaq.co/en/blog/contribuir-modo-facil/"
         class="twitter"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share in twitter" >
         <i class="fa fa-twitter share-button"></i>
       </a>
     
-      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/en/blog/contribuir-modo-facil/&amp;title=Contribuir%20en%20Modo%20Facil"
+      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/en/blog/contribuir-modo-facil/&amp;title=Contribute%20in%20Easy-Mode"
         class="linkedin"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share in linkedin" >
