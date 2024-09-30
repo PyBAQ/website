@@ -72,11 +72,11 @@
     {% if eventos %}
       <h3>Charlas</h3>
       <div class="events-user row"></div>
+      <ul>
         {% for event in eventos %}
-          <div>
-            <a href="{{event|url}}">{{event.title}}</a>
-          </div>
+  	  <li><a href="{{event|url}}">{{event.title}}</a></li>
         {% endfor %}
+      </ul>
       </div>
     {% endif %}
   </div>
