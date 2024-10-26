@@ -1,6 +1,7 @@
 """Descarga eventos usando Meetup api"""
 
 import json
+
 import requests
 
 # NOTE: This endpoint no requires authentication, but this API is deprecated

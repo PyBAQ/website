@@ -1,7 +1,8 @@
-from collections import OrderedDict
 import json
 import os
-from lektor.project import Project
+from collections import OrderedDict
+
+
 from lektor.utils import slugify
 
 HERE = os.path.abspath(os.path.dirname(__file__))
@@ -15,7 +16,7 @@ def extract_meetup_json(file):
 def transform_event(event: dict):
     content = OrderedDict()
     content["title"] = event["name"]
-    content["date_start"] = "{} {}".format(event["local_date"], event["local_time"])
+    content["date_start"] = f"{event['local_date']} {event['local_time']}"
     content["link"] = event["link"]
     content["information"] = event["description"]
     try:
@@ -34,10 +35,10 @@ def write_content(slug, fields):
     if not os.path.isdir(folderpath):
         os.makedirs(folderpath)
     filepath = os.path.join(folderpath, 'contents.lr')
-    items = ['{}: {}\n'.format(key, value) for key, value in fields.items()]
+    items = [f"{key}: {value}\n" for key, value in fields.items()]
 
     if os.path.isfile(filepath):
-        print("File for slug {} already exists, skipping".format(slug))
+        print(f"File for slug {slug} already exists, skipping")
     else:
         with open(filepath, 'w') as fh:
             fh.write('---\n'.join(items))
@@ -50,4 +51,3 @@ if __name__ == '__main__':
     events = extract_meetup_json("databags/meetup.json")
     transformed_events = [transform_event(event) for event in events["past_events"]]
     load_events(transformed_events)
-
