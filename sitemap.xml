@@ -138,6 +138,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/pipreqs-optimiza-tus-dependencias-python-de-manera-inteligente/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/pipreqs-optimiza-tus-dependencias-python-de-manera-inteligente/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/primera-pycon-colombia/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/primera-pycon-colombia/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/primera-pycon-colombia/"/>
