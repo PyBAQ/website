@@ -865,6 +865,16 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/eventos/2024-11-23-django-girls-barranquilla-2024/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-11-23-django-girls-barranquilla-2024/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2024-11-30-continuemos-el-taller-django-girls-y-explorando-el-ecosistema-python/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-11-30-continuemos-el-taller-django-girls-y-explorando-el-ecosistema-python/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/eventos1/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos1/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/eventos1/"/>
