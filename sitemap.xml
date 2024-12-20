@@ -173,6 +173,12 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/blog/transformadores-desde-cero/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/transformadores-desde-cero/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/transformadores-desde-cero/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/blog/tutorial-de-web-scraping-y-beautifulsoup/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/blog/tutorial-de-web-scraping-y-beautifulsoup/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/blog/tutorial-de-web-scraping-y-beautifulsoup/"/>

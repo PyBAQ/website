@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="shortcut icon" href="../../ico/favicon.png">
+  <link rel="stylesheet" href="../../static/pygments.css">
+  <title>Transformadores desde Cero </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;700;900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="../../static/gen/styles.css?h=5eb7d7b9" />
+<link rel="stylesheet" href="" />
+
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@pybaq" />
+    <meta name="twitter:creator" content="@pybaq" />
+    <meta name="author" content="Python Barranquilla">
+    
+      <meta property="og:image" content="https://pybaq.co/blog/transformadores-desde-cero/transformadores-desde-cero.png" />
+      <meta property="og:image:width" content="800" />
+      <meta property="og:image:height" content="400" />
+    
+    <meta property="og:url" content="https://pybaq.co/blog/transformadores-desde-cero/" />
+    <meta property="og:site_name" content="https://pybaq.co/" />
+  
+  
+  <meta property="og:title" content="Transformadores desde Cero" />
+  
+  <meta name="description" content="El primero de 2 artículos explicando el mecanismo de atención en LLM&#39;s llamado Transformadores. Incluye las bases de como se codifican las entradas y salidas de una LLM, así como explicaciones bastante claras de como muchas de estas operaciones suceden dentro de modelos modernos..">
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="El primero de 2 artículos explicando el mecanismo de atención en LLM&#39;s llamado Transformadores. Incluye las bases de como se codifican las entradas y salidas de una LLM, así como explicaciones bastante claras de como muchas de estas operaciones suceden dentro de modelos modernos." />
+
+  <script src="https://cmp.osano.com/16BZ1oRxDcinM3Poo/3ac8836f-cc6e-4294-a589-749716e8a383/osano.js"></script>
+</head>
+
+<body>
+  </div><nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../../">
+      <img src="../../img/python.png" alt="Python" width="70" height="70">
+      <img src="../../img/pybaq.svg" alt="Python Barranquilla" width="170" height="70">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../">INICIO</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../nosotros/">NOSOTROS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  active" href="../">BLOG</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../eventos/">EVENTOS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../proyectos/">PROYECTOS</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link  " href="../../contacto/">CONTACTO</a>
+          </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../en/blog/transformadores-desde-cero/">EN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div style="height: 95px"></div>
+  
+
+  <div class="d-flex justify-content-center">
+    <p><img class="center-block img-fluid" src="transformadores-desde-cero.png" alt=""></p>
+  </div>
+
+<div class="d-flex justify-content-center">
+  <div class="blog-post">
+    <div class="post-meta blog_post-post_meta">
+
+      <h1 class="ctitle">Transformadores desde Cero</h1>
+      <span class="post-date">Escrito: 2024-12-20.</span> |
+      <span class="post-author">
+        
+  
+    Anónimo
+  
+
+      </span>
+    </div>
+    
+    <nav class="toc">
+      <h2>Tabla de Contenido</h6>
+      <ul>
+        
+        <li><a href="#codificacion-en-caliente-one-hot">Codificación en-caliente (one-hot)</a>
+          
+        </li>
+        
+        <li><a href="#producto-punto">Producto punto</a>
+          
+        </li>
+        
+        <li><a href="#multiplicacion-de-matrices">Multiplicación de matrices</a>
+          
+          <ul>
+        <li><a href="#multiplicacion-de-matrices-como-una-consulta-de-tabla">Multiplicación de matrices como una consulta de tabla</a>
+          
+        </li>
+        </ul>
+          
+        </li>
+        
+        <li><a href="#modelo-de-secuencia-de-primer-orden">Modelo de secuencia de primer orden</a>
+          
+        </li>
+        
+        <li><a href="#modelo-de-secuencia-de-segundo-orden">Modelo de secuencia de segundo orden</a>
+          
+        </li>
+        
+        <li><a href="#modelo-de-secuencia-de-segundo-orden-con-saltos">Modelo de secuencia de segundo orden con saltos</a>
+          
+        </li>
+        
+        <li><a href="#enmascaramiento">Enmascaramiento</a>
+          
+        </li>
+        
+        <li><a href="#parada-y-una-salida">Parada y una salida</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    <div id="body-content" class="blog-post-body">
+        <blockquote><p>Este artículo fue escrito originalmente en inglés por <a href="https://www.brandonrohrer.com/blog.html">Brandon Rohrer</a>. Puede encontrar <a href="https://e2eml.school/transformers.html">aquí el artículo original</a>.</p>
+</blockquote>
+<p>Pospuse una inmersión profunda en los transformadores durante unos años. Finalmente, la incomodidad de no saber qué los hace funcionar creció demasiado para mí. Aquí está esa inmersión.</p>
+<p>Los transformadores se introdujeron en este <a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">artículo</a> de 2017 como una herramienta para la transducción de secuencias, es decir, convertir una secuencia de símbolos en otra. Los ejemplos más populares de esto son la traducción, como de inglés a alemán. También se ha modificado para completar secuencias: dado un inicio, continuar en el mismo tono y estilo. Rápidamente se han convertido en una herramienta indispensable para la investigación y el desarrollo de productos en el procesamiento del lenguaje natural.</p>
+<p>Antes de comenzar, un aviso. Vamos a hablar mucho sobre multiplicaciones de matrices y ligeramente sobre retropropagación (el algoritmo para entrenar el modelo), pero no necesitas saber nada de esto de antemano. Añadiremos los conceptos que necesitamos uno a uno, con su respectiva explicación.</p>
+<p>No es un viaje corto, pero espero que te alegres de haber venido.</p>
+<h3 id="codificacion-en-caliente-one-hot">Codificación en-caliente (one-hot)</h3><p>Al principio estaban las palabras. Tantas palabras. Nuestro primer paso es convertir todas las palabras en números para poder hacer cálculos con ellas.</p>
+<p>Imagina que nuestro objetivo es crear la computadora que responde a nuestros comandos de voz. Es nuestro trabajo construir el transformador que convierte (o <strong>transduce</strong>) una secuencia de sonidos en una secuencia de palabras.</p>
+<p>Comenzamos eligiendo nuestro <strong>vocabulario</strong>, la colección de símbolos con la que vamos a trabajar en cada secuencia. En nuestro caso, habrá dos conjuntos diferentes de símbolos, uno para la secuencia de entrada que representa los sonidos vocales y otro para la secuencia de salida que representa palabras.</p>
+<p>Por ahora, asumamos que estamos trabajando con inglés. Hay decenas de miles de palabras en el idioma inglés, y quizás algunos miles más para cubrir la terminología específica de computadoras. Eso nos daría un tamaño de vocabulario que es casi cien mil. Una forma de convertir palabras en números es comenzar a contar desde uno y asignar a cada palabra su propio número. Luego, una secuencia de palabras puede representarse como una lista de números.</p>
+<p>Por ejemplo, considera un lenguaje pequeño con un tamaño de vocabulario de tres palabras: <em>files</em>, <em>find</em> y <em>my</em>. Cada palabra podría intercambiarse por un número, quizás <em>files</em> = 1, <em>find</em> = 2 y <em>my</em> = 3. Entonces, la frase "Find my files", que consiste en la secuencia de palabras [<em>find</em>, <em>my</em>, <em>files</em>] podría representarse en su lugar como la secuencia de números [2, 3, 1].</p>
+<p>Esta es una forma perfectamente válida de convertir símbolos en números, pero resulta que hay otro formato que es aún más fácil para las computadoras, la <strong>codificación en-caliente</strong>. En la codificación en-caliente, un símbolo se representa mediante una matriz de ceros en su mayoría, de la misma longitud que el vocabulario, con un solo elemento que tiene un valor de uno. Cada elemento de la matriz corresponde a un símbolo diferente.</p>
+<p>Otra forma de pensar en la codificación en-caliente es que cada palabra todavía recibe su propio número, pero ahora ese número es un índice en una matriz. Aquí está nuestro ejemplo anterior, en notación en-caliente.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/one_hot_vocabulary.png" alt="Un vocabulario codificado en-caliente"></p>
+<p>Así que la frase "Find my files" se convierte en una secuencia de matrices unidimensionales que, después de juntarlas, comienza a parecer una matriz bidimensional.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/one_hot_sentence.png" alt="Una frase codificada en-caliente"></p>
+<p>Aviso, usaré los términos "matriz unidimensional" y "<strong>vector</strong>" indistintamente. De igual manera con "matriz bidimensional" y "<strong>matriz</strong>".</p>
+<h3 id="producto-punto">Producto punto</h3><p>Una cosa realmente útil sobre la representación en-caliente es que nos permite calcular <a href="https://es.wikipedia.org/wiki/Producto_punto">productos punto</a>. Estos también se conocen por otros nombres intimidantes como producto interior y producto escalar. Para obtener el producto punto de dos vectores, multiplica sus elementos correspondientes y luego suma los resultados.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/dot_product.png" alt="Ilustración del producto punto"></p>
+<p>Los productos punto son especialmente útiles cuando estamos trabajando con nuestras representaciones de palabras en-caliente. El producto punto de cualquier vector en-caliente consigo mismo es uno.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/match.png" alt="Producto punto de vectores coincidentes"></p>
+<p>Y el producto punto de cualquier vector en-caliente con cualquier otro vector en-caliente es cero.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/non_match.png" alt="Producto punto de vectores no coincidentes"></p>
+<p>Los dos ejemplos anteriores muestran cómo los productos punto pueden usarse para medir la similitud. Como otro ejemplo, considera un vector de valores que representa una combinación de palabras con diferentes pesos. Una palabra codificada en-caliente puede compararse contra él con el producto punto para mostrar cuán fuertemente está representada esa palabra.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/similarity.png" alt="El producto punto da la similitud entre dos vectores"></p>
+<h3 id="multiplicacion-de-matrices">Multiplicación de matrices</h3><p>El producto punto es el bloque de construcción de la multiplicación de matrices, una forma muy particular de combinar un par de matrices bidimensionales. Llamaremos a la primera de estas matrices <em>A</em> y a la segunda <em>B</em>. En el caso más simple, cuando <em>A</em> tiene solo una fila y <em>B</em> tiene solo una columna, el resultado de la multiplicación de matrices es el producto punto de los dos.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/matrix_mult_one_row_one_col.png" alt="Multiplicación de una matriz de una sola fila y una matriz de una sola columna"></p>
+<p>Observa cómo el número de columnas en <em>A</em> y el número de filas en <em>B</em> deben ser el mismo para que las dos matrices se alineen y el producto punto funcione.</p>
+<p>Cuando <em>A</em> y <em>B</em> comienzan a crecer, la multiplicación de matrices se vuelve alucinante. Para manejar más de una fila en <em>A</em>, toma el producto punto de <em>B</em> con cada fila por separado. La respuesta tendrá tantas filas como tenga <em>A</em>.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/matrix_mult_two_row_one_col.png" alt="Multiplicación de una matriz de dos filas y una matriz de una sola columna"></p>
+<p>Cuando <em>B</em> toma más columnas, toma el producto punto de cada columna con <em>A</em> y apila los resultados en columnas sucesivas.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/matrix_mult_one_row_two_col.png" alt="Multiplicación de una matriz de una fila y una matriz de dos columnas"></p>
+<p>Ahora podemos extender esto a la multiplicación de cualquier par de matrices, siempre y cuando el número de columnas en <em>A</em> sea el mismo que el número de filas en <em>B</em>. El resultado tendrá el mismo número de filas que <em>A</em> y el mismo número de columnas que <em>B</em>.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/matrix_mult_three_row_two_col.png" alt="Multiplicación de una matriz de tres filas y una matriz de dos columnas"></p>
+<p>Si es la primera vez que ves esto, puede parecer innecesariamente complejo, pero te prometo que vale la pena más adelante.</p>
+<h4 id="multiplicacion-de-matrices-como-una-consulta-de-tabla">Multiplicación de matrices como una consulta de tabla</h4><p>Observa cómo la multiplicación de matrices actúa como una consulta de tabla aquí. Nuestra matriz <em>A</em> está compuesta de una pila de vectores one-hot. Tienen unos en la primera columna, la cuarta columna y la tercera columna, respectivamente. Cuando trabajamos a través de la multiplicación de matrices, esto sirve para extraer la primera fila, la cuarta fila y la tercera fila de la matriz <em>B</em>, en ese orden. Este truco de usar un vector one-hot para extraer una fila particular de una matriz es el núcleo de cómo funcionan los transformadores.</p>
+<h3 id="modelo-de-secuencia-de-primer-orden">Modelo de secuencia de primer orden</h3><p>Podemos dejar de lado las matrices por un minuto y volver a lo que realmente nos importa, las secuencias de palabras. Imagina que al comenzar a desarrollar nuestra interfaz de computadora de lenguaje natural queremos manejar solo tres comandos posibles:</p>
+<ul>
+<li><em>Muéstrame mis directorios por favor</em> (<em>Show me my directories please</em>).</li>
+<li><em>Muéstrame mis archivos por favor</em> (<em>Show me my files please</em>).</li>
+<li><em>Muéstrame mis fotos por favor</em>(<em>Show me my photos please</em>).</li>
+</ul>
+<p>Nuestro tamaño de vocabulario ahora es siete:
+{<em>directorios, archivos, me, mis, fotos, por favor, muestra</em>}({<em>directories, files, me, my, photos, please, show</em>}).</p>
+<p>Una forma útil de representar secuencias es con un modelo de transición. Para cada palabra en el vocabulario, muestra cuál es la siguiente palabra probable. Si los usuarios preguntan sobre fotos la mitad del tiempo, archivos el 30% del tiempo y directorios el resto del tiempo, el modelo de transición se verá así. La suma de las transiciones desde cualquier palabra siempre sumará uno.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/markov_chain.png" alt="Modelo de transición de cadena de Markov"></p>
+<p>Este modelo de transición en particular se llama <strong>cadena de Markov</strong>, porque satisface la <a href="https://es.wikipedia.org/wiki/Propiedad_de_Markov">propiedad de Markov</a> de que las probabilidades para la siguiente palabra dependen solo de las palabras recientes. Más específicamente, es un modelo de Markov de primer orden porque solo observa la única palabra más reciente. Si considerara las dos palabras más recientes, sería un modelo de Markov de segundo orden.</p>
+<p>Nuestro descanso de las matrices ha terminado. Resulta que las cadenas de Markov se pueden expresar convenientemente en forma de matriz. Usando el mismo esquema de indexación que utilizamos al crear vectores en-caliente, cada fila representa una de las palabras en nuestro vocabulario. Lo mismo ocurre con cada columna. El modelo de transición de matriz trata una matriz como una tabla de consulta. Encuentra la fila que corresponde a la palabra que te interesa. El valor en cada columna muestra la probabilidad de que esa palabra venga después. Dado que el valor de cada elemento en la matriz representa una probabilidad, todos caerán entre cero y uno. Debido a que las probabilidades siempre suman uno, los valores en cada fila siempre sumarán uno.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/transition_matrix.png" alt="Matriz de transición"></p>
+<p>En la matriz de transición aquí podemos ver claramente la estructura de nuestras tres frases. Casi todas las probabilidades de transición son cero o uno. Hay solo un lugar en la cadena de Markov donde ocurre una ramificación. Después de <em>my</em>, las palabras <em>directorios</em>, <em>archivos</em> o <em>fotos</em> podrían aparecer, cada una con una probabilidad diferente. Aparte de eso, no hay incertidumbre sobre qué palabra vendrá después. Esa certeza se refleja en la matriz de transición, que tiene principalmente unos y ceros.</p>
+<p>Podemos volver a nuestro truco de usar la multiplicación de matrices con un vector en-caliente para extraer las probabilidades de transición asociadas con cualquier palabra dada. Por ejemplo, si solo queremos aislar las probabilidades de qué palabra viene después de <em>my</em>, podemos crear un vector en-caliente representando la palabra <em>my</em> y multiplicarlo por nuestra matriz de transición. Esto extrae la fila relevante y nos muestra la distribución de probabilidad de cuál será la siguiente palabra.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/transition_lookups.png" alt="Consulta de probabilidad de transición"></p>
+<h3 id="modelo-de-secuencia-de-segundo-orden">Modelo de secuencia de segundo orden</h3><p>Predecir la siguiente palabra basándose solo en la palabra actual es difícil. Es como predecir el resto de una melodía después de recibir solo la primera nota. Nuestras posibilidades mejoran mucho si al menos podemos obtener dos notas para seguir.</p>
+<p>Podemos ver cómo funciona esto en otro modelo de lenguaje de juguete para nuestros comandos de computadora. Esperamos que este solo vea dos frases, en una proporción de 40/60.</p>
+<ul>
+<li><em>Verifica si la batería se agotó por favor</em>(<em>Check whether the battery ran down please</em>).</li>
+<li><em>Verifica si el programa se ejecutó por favor</em>(<em>Check whether the program ran please</em>).</li>
+</ul>
+<p>Una cadena de Markov ilustra un modelo de primer orden para esto.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/markov_chain_2.png" alt="Otro modelo de transición de cadena de Markov de primer orden"></p>
+<p>Aquí podemos ver que si nuestro modelo observara las dos palabras más recientes, en lugar de solo una, podría hacerlo mejor. Cuando encuentra <em>batería se agotó</em>, sabe que la siguiente palabra será <em>abajo</em>, y cuando ve <em>programa se ejecutó</em> la siguiente palabra será <em>por favor</em>. Esto elimina una de las ramificaciones en el modelo, reduciendo la incertidumbre y aumentando la confianza. Mirar hacia atrás dos palabras convierte esto en un modelo de Markov de segundo orden. Da más contexto sobre el que basar las predicciones de la siguiente palabra. Las cadenas de Markov de segundo orden son más desafiantes de dibujar, pero aquí están las conexiones que demuestran su valor.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/markov_chain_second_order.png" alt="Cadena de Markov de segundo orden"></p>
+<p>Para resaltar la diferencia entre los dos, aquí está la matriz de transición de primer orden,</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/transition_matrix_first_order_2.png" alt="Otra matriz de transición de primer orden"></p>
+<p>y aquí está la matriz de transición de segundo orden.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/transition_matrix_second_order.png" alt="Matriz de transición de segundo orden"></p>
+<p>Observa cómo la matriz de segundo orden tiene una fila separada para cada combinación de palabras (la mayoría de las cuales no se muestran aquí). Eso significa que si comenzamos con un tamaño de vocabulario de <em>N</em>, entonces la matriz de transición tiene <em>N</em>^2 filas.</p>
+<p>Lo que esto nos da es más confianza. Hay más unos y menos fracciones en el modelo de segundo orden. Solo hay una fila con fracciones en ella, una ramificación en nuestro modelo. Intuitivamente, observar dos palabras en lugar de solo una proporciona más contexto, más información sobre la que basar una adivinanza de la siguiente palabra.</p>
+<h3 id="modelo-de-secuencia-de-segundo-orden-con-saltos">Modelo de secuencia de segundo orden con saltos</h3><p>Un modelo de segundo orden funciona bien cuando solo tenemos que mirar hacia atrás dos palabras para decidir qué palabra viene a continuación. ¿Qué pasa cuando tenemos que mirar más atrás? Imagina que estamos construyendo otro modelo de lenguaje. Este solo tiene que representar dos frases, cada una igualmente probable.</p>
+<ul>
+<li><em>Verifica el registro del programa y averigua si se ejecutó por favor</em> (<em>Check the program log and find out whether it ran please</em>).</li>
+<li><em>Verifica el registro de la batería y averigua si se agotó por favor</em> (<em>Check the battery log and find out whether it ran down please</em>).</li>
+</ul>
+<p>En este ejemplo, para determinar qué palabra debería venir después de <em>se ejecutó</em>, tendríamos que mirar hacia atrás 8 palabras en el pasado. Si queremos mejorar nuestro modelo de lenguaje de segundo orden, podemos considerar modelos de tercer orden y superiores. Sin embargo, con un tamaño de vocabulario significativo, esto requiere una combinación de creatividad y fuerza bruta para ejecutarlo. Una implementación ingenua de un modelo de octavo orden tendría <em>N</em>^8 filas, un número ridículo para cualquier vocabulario razonable.</p>
+<p>En cambio, podemos hacer algo astuto y crear un modelo de segundo orden, pero considerar las combinaciones de la palabra más reciente con cada una de las palabras que vinieron antes. Sigue siendo de segundo orden, porque solo estamos considerando dos palabras a la vez, pero nos permite retroceder más y capturar <strong>dependencias a largo plazo</strong>. La diferencia entre este segundo orden con saltos y un modelo de orden superior completo es que descartamos la mayor parte de la información del orden de las palabras y las combinaciones de palabras anteriores. Lo que queda todavía es bastante poderoso.</p>
+<p>Las cadenas de Markov nos fallan completamente ahora, pero aún podemos representar el enlace entre cada par de palabras anteriores y las palabras que siguen. Aquí hemos prescindido de pesos numéricos, y en su lugar estamos mostrando solo las flechas asociadas con pesos no cero. Los pesos mayores se muestran con líneas más gruesas.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/feature_voting.png" alt="Segunda orden con saltos votación de características"></p>
+<p>Así es como podría verse en una matriz de transición.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/transition_matrix_second_order_skips.png" alt="Matriz de transición de segundo orden con saltos"></p>
+<p>Esta vista solo muestra las filas relevantes para predecir la palabra que viene después de <em>se ejecutó</em>. Muestra instancias donde la palabra más reciente (<em>se ejecutó</em>) está precedida por cada una de las otras palabras en el vocabulario. Solo se muestran los valores relevantes. Todas las celdas vacías son ceros.</p>
+<p>Lo primero que se hace evidente es que, al tratar de predecir la palabra que viene después de <em>se ejecutó</em>, ya no miramos solo una línea, sino un conjunto entero de ellas. Hemos salido del ámbito de Markov ahora. Cada fila ya no representa el estado de la secuencia en un punto particular. En cambio, cada fila representa una de muchas <strong>características</strong> que pueden describir la secuencia en un punto particular. La combinación de la palabra más reciente con cada una de las palabras anteriores constituye una colección de filas aplicables, tal vez una gran colección. Debido a este cambio en el significado, cada valor en la matriz ya no representa una probabilidad, sino un voto. Los votos se sumarán y compararán para determinar las predicciones de la siguiente palabra.</p>
+<p>Lo siguiente que se hace evidente es que la mayoría de las características no importan. La mayoría de las palabras aparecen en ambas frases, por lo que el hecho de que se hayan visto no ayuda en la predicción de qué viene a continuación. Todas tienen un valor de .5. Las únicas dos excepciones son <em>batería</em> y <em>programa</em>. Tienen algunos pesos de 1 y 0 asociados con los dos casos que estamos tratando de distinguir. La característica <em>batería, se ejecutó</em> indica que <em>se ejecutó</em> era la palabra más reciente y que <em>batería</em> ocurrió en algún lugar antes en la frase. Esta característica tiene un peso de 1 asociado con <em>abajo</em> y un peso de 0 asociado con <em>por favor</em>. De manera similar, la característica <em>programa, se ejecutó</em> tiene el conjunto opuesto de pesos. Esta estructura muestra que es la presencia de estas dos palabras antes en la frase lo que es decisivo para predecir qué palabra viene a continuación.</p>
+<p>Para convertir este conjunto de características de pares de palabras en una estimación de la siguiente palabra, se deben sumar los valores de todas las filas relevantes. Sumando hacia abajo en la columna, la secuencia <em>Verifica el registro del programa y averigua si se ejecutó</em> genera sumas de 0 para todas las palabras, excepto un 4 para <em>abajo</em> y un 5 para <em>por favor</em>. La secuencia <em>Verifica el registro de la batería y averigua si se agotó</em> hace lo mismo, excepto con un 4 para <em>por favor</em> y un 5 para <em>abajo</em>. Al comparar los totales, podemos ver que las secuencias con <em>batería</em> en el pasado suelen terminar con <em>abajo</em> y las secuencias con <em>programa</em> en el pasado suelen terminar con <em>por favor</em>. Al elegir la palabra con el total de votos más alto como la predicción de la siguiente palabra, este modelo nos da la respuesta correcta, a pesar de tener una dependencia de ocho palabras de profundidad.</p>
+<h3 id="enmascaramiento">Enmascaramiento</h3><p>Tras una consideración más cuidadosa, esto resulta insatisfactorio. La diferencia entre un total de votos de 4 y 5 es relativamente pequeña. Esto sugiere que el modelo no está tan seguro como podría estarlo. Y en un modelo de lenguaje más grande y orgánico, es fácil imaginar que una diferencia tan pequeña podría perderse en el ruido estadístico.</p>
+<p>Podemos afinar la predicción eliminando todos los votos de características no informativas. Con la excepción de <em>battery, ran</em> y <em>program, ran</em>. Es útil recordar en este punto que sacamos las <a href="#multiplicacion-de-matrices-como-una-consulta-de-tabla">filas relevantes</a> de la matriz de transición multiplicándola con un vector que muestra qué características están actualmente activas. Para este ejemplo hasta ahora, hemos estado utilizando el vector de características implícito que se muestra aquí.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/feature_selection.png" alt="Vector de selección de características"></p>
+<p>Incluye un uno para cada característica que es una combinación de <em>ran</em> con cada una de las palabras que vienen antes de ella. Las palabras que vienen después no se incluyen en el conjunto de características. (En el problema de predicción de la siguiente palabra, estas aún no se han visto, por lo que no es justo usarlas para predecir qué viene después). Y esto no incluye todas las demás combinaciones posibles de palabras. Podemos ignorarlas de manera segura para este ejemplo porque todas serán cero.</p>
+<p>Para mejorar nuestros resultados, podemos además forzar las características no útiles a cero creando una <strong>máscara</strong>. Es un vector lleno de unos excepto para las posiciones que deseas ocultar o enmascarar, y esas se establecen en cero. En nuestro caso, nos gustaría enmascarar todo excepto <em>battery, ran</em> y <em>program, ran</em>, las únicas dos características que han sido de alguna ayuda.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/masked_feature_activities.png" alt="Actividades de características enmascaradas"></p>
+<p>Para aplicar la máscara, multiplicamos los dos vectores elemento por elemento. Cualquier valor de actividad de característica en una posición no enmascarada se multiplicará por uno y se dejará sin cambios. Cualquier valor de actividad de característica en una posición enmascarada se multiplicará por cero y, por lo tanto, se forzará a cero.</p>
+<p>La máscara tiene el efecto de ocultar gran parte de la matriz de transición. Oculta la combinación de <em>ran</em> con todo excepto <em>battery</em> y <em>program</em>, dejando solo las características que importan.</p>
+<p><img src="../../img/posts/2024/transformadores-desde-cero/masked_transition_matrix.png" alt="Matriz de transición enmascarada"></p>
+<p>Después de enmascarar las características no útiles, las predicciones de la siguiente palabra se vuelven mucho más fuertes. Cuando la palabra <em>battery</em> ocurre antes en la oración, la palabra después de <em>ran</em> se predice como <em>down</em> con un peso de 1 y <em>please</em> con un peso de 0. Lo que era una diferencia de peso del 25 por ciento se ha convertido en una diferencia del infinito por ciento. No hay duda de qué palabra viene después. La misma predicción fuerte ocurre para <em>please</em> cuando <em>program</em> ocurre temprano.</p>
+<p>Este proceso de enmascaramiento selectivo es la <strong>atención</strong> mencionada en el título del <a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">artículo</a> original sobre transformers. Hasta ahora, lo que hemos descrito es solo una aproximación de cómo se implementa la atención en el artículo. Captura los conceptos importantes, pero los detalles son diferentes. Cerraremos esa brecha más adelante.</p>
+<h3 id="parada-y-una-salida">Parada y una salida</h3><p>Felicitaciones por haber llegado hasta aquí. Puedes detenerte si quieres. El modelo de <strong>segunda orden selectiva con omisiones</strong> es una forma útil de pensar en lo que hacen los transformers, al menos en el lado del decodificador. Captura, a una primera aproximación, lo que hacen los modelos de lenguaje generativos como el <a href="https://en.wikipedia.org/wiki/GPT-3">GPT-3</a> de OpenAI. No cuenta la historia completa, pero representa el impulso central de ella.</p>
+<p>Las siguientes secciones cubren más de la brecha entre esta explicación intuitiva y cómo se implementan los transformers. Estas se basan en tres consideraciones prácticas.</p>
+<ol>
+<li><strong>Las computadoras son especialmente buenas en multiplicaciones de matrices.</strong> Existe toda una industria en torno a la construcción de hardware informático específicamente para multiplicaciones rápidas de matrices. Cualquier cálculo que pueda expresarse como una multiplicación de matrices puede hacerse sorprendentemente eficiente. Es un tren bala. Si puedes meter tu equipaje en él, te llevará a donde quieras ir muy rápido.</li>
+<li><strong>Cada paso debe ser diferenciable.</strong> Hasta ahora solo hemos trabajado con ejemplos simplificados y hemos tenido el lujo de seleccionar manualmente todas las probabilidades de transición y valores de máscara: los <strong>parámetros</strong> del modelo. En la práctica, estos deben aprenderse mediante <strong>retropropagación</strong>, lo que depende de que cada paso de cálculo sea diferenciable. Esto significa que para cualquier cambio pequeño en un parámetro, podemos calcular el cambio correspondiente en el error del modelo o <strong>pérdida</strong>.</li>
+<li><strong>El gradiente debe ser suave y bien condicionado.</strong> La combinación de todas las derivadas para todos los parámetros es el <strong>gradiente</strong> de la pérdida. En la práctica, hacer que la retropropagación se comporte bien requiere gradientes que sean suaves, es decir, que la pendiente no cambie muy rápidamente a medida que haces pequeños pasos en cualquier dirección. También se comportan mucho mejor cuando el gradiente está bien condicionado, es decir, no es radicalmente más grande en una dirección que en otra. Si imaginas una función de pérdida como un paisaje, el Gran Cañón sería uno mal condicionado. Dependiendo de si viajas por el fondo o por el costado, tendrás pendientes muy diferentes que recorrer. Por el contrario, las colinas onduladas del clásico salvapantallas de Windows tendrían un gradiente bien condicionado. Si la ciencia de arquitectar redes neuronales es crear bloques de construcción diferenciables, el arte de ellas es apilar las piezas de tal manera que el gradiente no cambie demasiado rápido y sea aproximadamente del mismo tamaño en cada dirección.</li>
+</ol>
+
+        <div class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/transformadores-desde-cero"; this.page.url = "https://pybaq.co/blog/transformadores-desde-cero/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//python-barranquilla.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="share-buttons">
+    
+    
+      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://pybaq.co/blog/transformadores-desde-cero/"
+        class="facebook"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Compartir en facebook" >
+        <i class="fa fa-facebook-official share-button"></i>
+      </a>
+    
+      <a  href="https://twitter.com/intent/tweet?text=Transformadores%20desde%20Cero&amp;url=https://pybaq.co/blog/transformadores-desde-cero/"
+        class="twitter"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Compartir en twitter" >
+        <i class="fa fa-twitter share-button"></i>
+      </a>
+    
+      <a  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pybaq.co/blog/transformadores-desde-cero/&amp;title=Transformadores%20desde%20Cero"
+        class="linkedin"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Compartir en linkedin" >
+        <i class="fa fa-linkedin share-button"></i>
+      </a>
+    
+  </div>
+
+
+
+  <footer class="dq-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>Sobre Nosotros</h4>
+        <p>Python Barranquilla es una comunidad para todos los interesados en desarrollar aplicaciones en Python dentro de la ciudad de Barranquilla (Atlántico).</p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Canales</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://discord.gg/46N5dPm9Zk" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://youtube.com/playlist?list=PL1GXDqy0kMh_FC2DnDnWb4MBlHAvdLn0T" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://t.me/+yH4gst5h7DBjODYx" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://whatsapp.com/channel/0029Va0qa3A6hENtyhQuhH2Q" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+        </p>
+        <h4>Redes sociales</h4>
+        <div class="hline-w"></div>
+        <p>
+          <a href="https://meetup.com/pythonbaq/" target="_blank" rel="noopener"><i class="fa-brands fa-meetup"></i></a>
+          <a href="http://twitter.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/python-barranquilla/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://facebook.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://instagram.com/pybaq" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/PyBAQ" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Nuestros lineamientos</h4>
+        <p>
+          La recolección de datos del presente sitio web se rige por la
+          <a href="../../cookies/">Política de cookies</a>
+
+        </p>
+        <p>
+          En nuestra comunidad seguimos este
+          <a href="../../codigo-de-conducta/">Código de conducta</a>
+					y usamos este <a href="../../procedimiento-codigo-de-conducta/">Procedimiento de Aplicación.</a>
+        </p>
+        <p>
+          Además, seguimos esta
+          <a href="../../politica-de-salud-y-seguridad/">Política de salud y seguridad.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="../../js/bootstrap.min.js"></script>
+<script
+  src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+  crossorigin="anonymous"
+></script>
+<script src="../../js/custom.js"></script>
+
+<!--[if lt IE 9
+  ]><script src="../../assets/js/ie8-responsive-file-warning.js"></script
+><![endif]-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>
