@@ -258,7 +258,7 @@ No<span class="w"> </span>more<span class="w"> </span>bottles<span class="w"> </
 <li><a href="https://sourceforge.net/p/pynum2word/wiki/Home/">pynum2words</a> (técnicamente funciona, pero su página no me dice nada de como hacerlo).</li>
 </ul>
 <p>Tras escoger num2words e instalarlo en mi PC (usando el comando <code>pip install num2words</code>), puedo modificar el código de la siguiente manera:</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">num2words</span> <span class="kn">import</span> <span class="n">num2words</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">num2words</span><span class="w"> </span><span class="kn">import</span> <span class="n">num2words</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">bottle_num</span><span class="o">=</span> <span class="n">num2words</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>

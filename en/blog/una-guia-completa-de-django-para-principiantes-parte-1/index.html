@@ -384,19 +384,19 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
 <h2 id="hola-mundo">Hola Mundo</h2><p>Vamos a escribir nuestra primera vista, las exploraremos en detalle en el próximo tutorial, pero por ahora experimentemos como es crear una nueva página con Django.</p>
 <p>Abre el archivo views.py dentro de la aplicación boards, y añade el siguiente código:</p>
 <p><strong>Views.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">HttpResponse</span>
 
-<span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
 </pre></div>
 <p>Las vistas son funciones Python que reciben un objeto HttpRequest y retornan un objeto HttpResponse, siendo el flujo que debes tener en mente siempre es recibir una solicitud como parámetro y retornar una respuesta como resultado.</p>
 <p>Aquí definimos una vista simple llamada home, la que simplemente retorna un mensaje diciendo Hello, World!</p>
 <p>Ahora tenemos que decirle a Django cuando servir esta vista, esto se hace dentro del archivo urls.py:</p>
 <p><strong>Urls.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
-<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.conf.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
 
-<span class="kn">from</span> <span class="nn">boards</span> <span class="kn">import</span> <span class="n">views</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">boards</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^$&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">home</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
@@ -407,10 +407,10 @@ Exploraremos estas aplicaciones a medida que progresemos en esta serie de tutori
 <p>Como mencionaba, exploraremos esos conceptos en gran detalle más adelante,</p>
 <p>Pero por ahora, Django funiciona con expresiones regulares (regex) para identificar la URL solicitada. Para nuestra vista home, estoy usando el regex ^$ , el cual identificará una ruta vacía que es nuestra página principal (esta url: <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>). Si quisiera identificar la URL [<a href="http://127.0.0.1:8000/homepage/">http://127.0.0.1:8000/homepage/</a>], mi url seria: url(r'^homepage/$', views.home, name='home')</p>
 <blockquote><h4 id="advertencia-temporal">Advertencia temporal</h4><p>Seguro estarás viendo en tu proyecto líneas distintas a las ya mencionadas, esto es porque Django ya puede recibir el nombre de las URLs sin la necesidad de regex, además estará utilizando la función <em>path</em> en vez de <em>url</em>. Así es cómo debería lucir el archivo urls.py:</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span>
 
-<span class="kn">from</span> <span class="nn">boards</span> <span class="kn">import</span> <span class="n">views</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">boards</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>

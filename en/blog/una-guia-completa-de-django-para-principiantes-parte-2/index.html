@@ -241,20 +241,20 @@ Lo primero que necesitamos es mostrar todos los tableros en la página principal
 <p>Para dibujar tus wireframes puedes usar la herramienta draw.io, es gratis.</p>
 <h2 id="modelos">Modelos</h2><p>Los modelos son básicamente una representación de la base de datos de tu aplicación. Lo que vamos a hacer en esta sección es crear la representación en Django de las clases que modelamos en la sección anterior: Tablero, Tema y Entrada. El modelo Usuario ya está definido en la aplicación incorporada llamada auth, la cual es listada en nuestra configuración INSTALLED_APPS bajo el nombre de django.contrib.auth.</p>
 <p>Haremos todo el trabajo dentro de tableros/models.py. Esta es una representación de nuestro diagrama de clases en una aplicación Django:</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
 
-<span class="k">class</span> <span class="nc">Board</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Board</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
 <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">Topic</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Topic</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
 <span class="n">subject</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
 <span class="n">last_updated</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Board</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;topics&#39;</span><span class="p">)</span>
 <span class="n">starter</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;topics&#39;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
 <span class="n">message</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">4000</span><span class="p">)</span>
 <span class="n">topic</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Topic</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;posts&#39;</span><span class="p">)</span>
 <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -329,7 +329,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 </code></pre>
 <p>Esto es muy similar a llamar a la consola interactiva con sólo teclear python, excepto que cuando usamos python manage.py shell, estamos añadiendo nuestro proyecto al sys.path y cargando Django. Eso significa que podemos importar nuestros modelos y cualquier otro recurso dentro del proyecto y jugar con él.
 Empecemos por importar la clase Board:</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">boards.models</span> <span class="kn">import</span> <span class="n">Board</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">boards.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Board</span>
 </pre></div>
 <p>Para crear un nuevo objeto Board, podemos hacer lo siguiente:</p>
 <div class="hll"><pre><span></span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Django&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;This is a board about Django.&#39;</span><span class="p">)</span>
@@ -371,17 +371,17 @@ El método <strong>str</strong> es una representación String de un objeto. Pode
 <pre><code>exit()
 </code></pre>
 <p>Ahora edita el archivo models.py dentro de la aplicación:</p>
-<div class="hll"><pre><span></span><span class="k">class</span> <span class="nc">Board</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="hll"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Board</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 <p>Intentemos de nuevo la consulta. Abre la consola interactiva de nuevo:</p>
 <pre><code>python manage.py shell
 </code></pre>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">boards.models</span> <span class="kn">import</span> <span class="n">Board</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">boards.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Board</span>
 
 <span class="n">Board</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Board</span><span class="p">:</span> <span class="n">Django</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Board</span><span class="p">:</span> <span class="n">Python</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
@@ -448,10 +448,10 @@ General discussion about Python.
 <p>En la siguiente sección, vamos a empezar a escribir vistas y a mostrar nuestros tableros en páginas HTML.</p>
 <h2 id="vistas-plantillas-y-archivos-estaticos">Vistas, plantillas y archivos estáticos</h2><p>Por el momento ya tenemos una vista llamada Home que muestra "¡Hola, Mundo!" en la página principal de nuestra aplicación.</p>
 <p><strong>myproject/urls.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
-<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.conf.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
 
-<span class="kn">from</span> <span class="nn">boards</span> <span class="kn">import</span> <span class="n">views</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">boards</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^$&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">home</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
@@ -459,18 +459,18 @@ General discussion about Python.
 <span class="p">]</span>
 </pre></div>
 <p><strong>boards/views.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">HttpResponse</span>
 
-<span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
 </pre></div>
 <p>Podemos usar esto como punto de partida. Si recuerdan nuestros wireframes, la figura 5 mostraba cómo debería ser la página de inicio. Lo que queremos hacer es mostrar una lista de tableros en una tabla junto con alguna otra información.</p>
 <p>Lo primero que hay que hacer es importar el modelo Board y hacer una lista de todos los tableros existentes:</p>
 <p><strong>boards/views.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
-<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Board</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Board</span>
 
-<span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">boards</span> <span class="o">=</span> <span class="n">Board</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="n">boards_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
@@ -538,12 +538,12 @@ General discussion about Python.
 <p>¿Lo ves? Estamos apuntando a la carpeta templates que creamos en pasos anteriores.
 Ahora podemos actualizar nuestra vista Home.</p>
 <p><strong>boards/views.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.conf</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
 
 <span class="n">settings</span><span class="o">.</span><span class="n">BASE_DIR</span>
 <span class="s1">&#39;/Users/vitorfs/Development/myproject&#39;</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)</span>
 <span class="s1">&#39;/Users/vitorfs/Development/myproject/templates&#39;</span>
@@ -591,11 +591,11 @@ Ahora podemos actualizar nuestra vista Home.</p>
 Este va a ser un tema recurrente, y vamos a explorar juntos diferentes conceptos y estrategias a lo largo de toda la serie de tutoriales.</p>
 <p>Vamos a escribir nuestro primer test. Por ahora, trabajaremos en el archivo tests.py dentro de la aplicación de tableros:</p>
 <p><strong>boards/tests.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
-<span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.core.urlresolvers</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestCase</span>
 
-<span class="k">class</span> <span class="nc">HomeTests</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_home_view_status_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HomeTests</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_home_view_status_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
@@ -619,18 +619,18 @@ Destroying test database for alias 'default'...
 <p>Ahora podemos probar si Django devolvió la función de vista correcta para la URL solicitada. Esta también es una prueba útil porque a medida que avanzamos en el desarrollo, verán que el módulo urls.py puede llegar a ser muy grande y complejo. La configuración de las URL se basa la resolución de expresiones regulares (regex). Hay algunos casos en los que tenemos una URL muy permisiva, por lo que Django puede terminar devolviendo la función de visualización errónea.</p>
 <p>Así es como lo hacemos:</p>
 <p><strong>boards/tests.py</strong></p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
-<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">resolve</span>
-<span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
-<span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">home</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.core.urlresolvers</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">resolve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">home</span>
 
-<span class="k">class</span> <span class="nc">HomeTests</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_home_view_status_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HomeTests</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_home_view_status_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">test_home_url_resolves_home_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_home_url_resolves_home_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">view</span> <span class="o">=</span> <span class="n">resolve</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="n">home</span><span class="p">)</span>
 </pre></div>
@@ -806,8 +806,8 @@ Superuser created successfully.
 <p>Ya viene con algunas funciones configuradas. Aquí podemos agregar Usuarios y Grupos para gestionar permisos. Exploraremos esos conceptos luego.</p>
 <p>Para añadir el modelo Tablero es muy sencillo. Abre el archivo Admin.py en la dirección tableros, y agrega el siguiente código:</p>
 <p>boards/Admin.py</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Board</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Board</span>
 
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Board</span><span class="p">)</span>
 </pre></div>

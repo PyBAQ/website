@@ -262,7 +262,7 @@
 <li>Solicitar al servidor el contenido de la página web utilizando <code>get()</code> y almacenar la respuesta del servidor en la variable <code>respuesta</code>.</li>
 <li>Imprima una pequeña parte del contenido de la <code>respuesta</code> accediendo a su atributo <code>.text</code> (<code>respuesta</code> ahora es un objeto <code>Response</code>).</li>
 </ul>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">get</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">get</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.imdb.com/search/title/?release_date=2023&amp;count=250&#39;</span>
 
@@ -305,7 +305,7 @@
 </ul>
 <div class="hll"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
 </pre></div>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="n">sopa_html</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">sopa_html</span><span class="p">)</span>
 </pre></div>
@@ -572,7 +572,7 @@ The story of American scientist, <span class="p">&lt;</span><span class="nt">a</
         <span class="n">votos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">voto</span><span class="p">))</span>
 </pre></div>
 <p>Revisemos los datos recopilados hasta ahora. Pandas nos facilitará ver si hemos recopilado nuestros datos correctamente.</p>
-<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="hll"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;película&#39;</span><span class="p">:</span> <span class="n">nombres</span><span class="p">,</span>
     <span class="s1">&#39;año&#39;</span><span class="p">:</span> <span class="n">año</span><span class="p">,</span>
     <span class="s1">&#39;imdb&#39;</span><span class="p">:</span> <span class="n">calificaciones_imdb</span><span class="p">,</span>
@@ -650,8 +650,8 @@ None
 <h3 id="controlando-la-tasa-de-rastreo-crawl-rate">Controlando la tasa de rastreo (crawl-rate)</h3><p>Controlar la velocidad de rastreo es beneficioso para nosotros y para el sitio web que estamos scrapeando. Si evitamos sobrecargar el servidor con decenas de peticiones por segundo, es mucho menos probable que prohíban nuestra dirección IP. También evitamos interrumpir la actividad del sitio web que scrapeamos al permitir que el servidor también responda a las solicitudes de otros usuarios.</p>
 <p>Controlaremos la velocidad del bucle usando la <a href="https://docs.python.org/3/library/time.html?highlight=time%20module#time.sleep">función</a> <code>sleep()</code> del <a href="https://docs.python.org/3/library/time.html?highlight=time%20module#module-time">módulo</a> de <code>time</code> de Python. <code>sleep()</code> pausará la ejecución del bucle durante una cantidad específica de segundos.</p>
 <p>Para imitar el comportamiento humano, variaremos la cantidad de tiempo de espera entre solicitudes usando la <a href="https://docs.python.org/3/library/random.html?highlight=random%20module#random.randint">función</a> <code>randint()</code> del <a href="https://docs.python.org/3/library/random.html?highlight=random%20module#module-random">módulo</a> <code>random</code> de Python. <code>randint()</code> genera aleatoriamente números enteros dentro de un intervalo específico.</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pin pra&#39;</span><span class="p">)</span>
@@ -679,8 +679,8 @@ None
 </li>
 </ul>
 <p>Así lucirá nuestra prueba de concepto:</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
 
 <span class="n">tiempo_inicio</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">peticiones</span> <span class="o">=</span> <span class="mi">0</span>
@@ -700,10 +700,10 @@ Petición:<span class="w"> </span><span class="m">5</span><span class="p">;</spa
 <p>Dado que vamos a realizar 46 solicitudes, nuestro trabajo se verá un poco desordenado a medida que se acumule el resultado. Para evitarlo, borraremos el resultado después de cada iteración y lo reemplazaremos con información sobre la solicitud más reciente.</p>
 <p>Este paso solo sirve si estás probando desde un Jupyter notebook, sino, puedes ignorarlo.</p>
 <p>Para hacer eso usaremos la función <code>clear_output()</code> del <a href="https://ipython.readthedocs.io/en/stable/api/generated/IPython.display.html#IPython.display.clear_output">módulo</a> <code>display</code> de IPython. Estableceremos el parámetro de espera de <code>clear_output()</code> en True para esperar y reemplazar la salida actual hasta que aparezca alguna salida nueva.</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">sleep</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">sleep</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
 
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">clear_output</span>
 
 <span class="n">tiempo_inicio</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">peticiones</span> <span class="o">=</span> <span class="mi">0</span>
@@ -720,7 +720,7 @@ Petición:<span class="w"> </span><span class="m">5</span><span class="p">;</spa
 <p>El resultado anterior es el que verá una vez que se haya ejecutado el ciclo. Así es como se ve mientras está funcionando</p>
 <p><img src="../../../img/posts/2023/tutorial-de-web-scraping-y-beautifulsoup/clear_output.gif" alt="funcionalidad clear output"></p>
 <p>Para monitorear el código de estado, configuraremos el programa para que nos avise si hay algo mal. Una solicitud exitosa se indica mediante un código de estado de 200. Usaremos la función <code>warn()</code> del módulo de <code>warnings</code> para generar una advertencia si el código de estado no es 200.</p>
-<div class="hll"><pre><span></span><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
+<div class="hll"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">warn</span>
 <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Simulación de una advertencia&quot;</span><span class="p">)</span>
 </pre></div>
 <p>Y como resultado, veremos:</p>
@@ -982,7 +982,7 @@ max<span class="w">  </span><span class="m">9</span>.0<span class="w">    </span
 <li>Dibujar la distribución de cada calificación no normalizada en un eje individual <code>ax</code>.</li>
 <li>Dibujar las distribuciones normalizadas de las dos calificaciones en el mismo eje <code>ax</code>.</li>
 </ul>
-<div class="hll"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="hll"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>

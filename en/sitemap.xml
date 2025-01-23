@@ -881,6 +881,11 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/eventos/2024-12-19-ven-y-conoce-a-la-comunidad-despide-el-2024-con-python-barranquilla/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2024-12-19-ven-y-conoce-a-la-comunidad-despide-el-2024-con-python-barranquilla/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/eventos1/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos1/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/eventos1/"/>
