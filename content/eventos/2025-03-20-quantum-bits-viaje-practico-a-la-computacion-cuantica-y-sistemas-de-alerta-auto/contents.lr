@@ -1,0 +1,51 @@
+title: Quantum Bits: Viaje Práctico a la Computación Cuántica y Sistemas de Alerta Auto
+---
+date_start: 2025-03-20T16:45:00-05:00
+---
+link: https://www.meetup.com/pythonbaq/events/306686046/
+---
+information: **\*\*\* Recordatorio:\*\*\*** Para el ingreso a la Universidad del Norte será obligatorio diligenciar el siguiente formulario:
+[https://forms.office.com/r/hKtCtt1yzi](https://forms.office.com/r/hKtCtt1yzi)
+
+**Quantum Bits & Python Scripts: Un Viaje Práctico a la Computación Cuántica**
+Nivel: Principiante
+
+¿Alguna vez te has preguntado cómo funcionan las computadoras cuánticas? Acompáñame en una sesión interactiva donde programaremos utilizando computación cuántica en Python y Qiskit, el framework de código abierto de IBM para QC. En este viaje práctico, construiremos un lanzador de moneda cuántico mientras hablamos de superposición y crearemos un generador de números aleatorios verdadero usando propiedades cuánticas, exploraremos conceptos de algo así como una memoria cuántica a través de ejemplos prácticos, jugaremos el juego CHSH demostrando las ventajas del entrelazamiento cuántico, e incluso simularemos la teletransportación cuántica (si el tiempo lo permite). ¡No se requiere un título en física cuántica! Solo trae tu curiosidad y conocimientos básicos de Python. Escribiremos algoritmos cuánticos reales, lo ejecutaremos en simuladores cuánticos y entenderemos los conceptos fundamentales que hacen revolucionaria la computación cuántica.
+¿Quién debería asistir: Desarrolladores de software curiosos por la computación cuántica, entusiastas de Python que buscan explorar nuevas fronteras y cualquier persona interesada en el futuro de la computación.
+Requisitos previos: Conocimientos básicos de programación en Python, familiaridad con interfaces de línea de comandos. ¡No se necesitan conocimientos previos de física cuántica!
+
+**Ponente:** Cristian Marquez
+
+Cristian es un estudiante de doctorado de segundo año de la Universidad de los Andes, cuyo tema de investigación se centra en la integración de sistemas cuánticos dentro de infraestructura clásica. Al mismo tiempo, cuenta con más de 15 años de experiencia como desarrollador FullStack para la empresa Godaddy.
+
+**Sistemas de alerta automatizados para desastres naturales**
+Nivel: Principiante
+
+Los desastres naturales y las emergencias pueden ocurrir inesperadamente, poniendo a prueba la preparación y la capacidad de respuesta de las comunidades de todo el mundo. En momentos críticos, la tecnología desempeña un papel crucial para ayudar en las tareas de respuesta y salvar vidas.
+Python, un lenguaje de programación versátil y potente, ha surgido como una herramienta valiosa en la respuesta a desastres y la gestión de emergencias debido a su flexibilidad, facilidad de uso y amplias bibliotecas.
+En esta presentación, se mostrará el sistema de alertas desarrollado dentro de WFP para notificar a sus suscriptores diferentes tipos de desastres, como tormentas tropicales y terremotos. Se presentarán ejemplos de reportes anteriores en diferentes paises
+
+**Ponente:** Jorge Martinez
+
+Ingeniero y master en electronica de la universidad del Norte. Anteriormente visitante investigador en ciencias de la computación en la universidad de Stanford. Actualmente laboro como ingeniero en la unidad geoespacial y teledetección remota en el Programa Mundial de Alimentos de las Naciones Unidas (UNWFP) donde me encargo de recolectar analizar y visualizar datos geográficos
+
+**Agenda:**
+
+* 4:30pm Ingreso al salón
+* 4:45-5:20 - Charla 1
+* 5:25-6:05 - Charla 2
+* 6:05-6:30 - Networking
+
+**Adicionales:**
+
+* El evento será presencial en la Universidad del Norte. Salón lab de matematicas, 43J.
+* Para el ingreso a la Universidad del Norte será obligatorio diligenciar el siguiente formulario: [https://forms.office.com/r/hKtCtt1yzi](https://forms.office.com/r/hKtCtt1yzi)
+* El formulario cierra el dían antes del evento a las 2:00pm.
+* Favor ser puntuales
+* Se transmitirá por el canal de youtube de Python Colombia
+---
+featured_photo: https://secure.meetupstatic.com/photos/event/4/a/6/600_526741190.jpeg
+---
+venue: Universidad Del Norte
+---
+address_1: Política de privacidad de datos personales Buzón de sugerenciasKm.5 Vía Puerto Colombia
