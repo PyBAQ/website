@@ -10,8 +10,8 @@
     "post_usuario": "Blog posts",
     "member_description": "{name} {role} de Python Barranquilla",
     "projects_organizer": "Proyectos que organiza",
-    "projects_collaborator": "Proyectos en los que colabora"
-
+    "projects_collaborator": "Proyectos en los que colabora",
+    "adjuntos": "Adjuntos"
   },
   "en":{
     "organizador": "Organizer",
@@ -24,6 +24,7 @@
     "post_usuario": "Blog posts",
     "member_description": "{name}, Python Barranquilla {role}",
     "projects_organizer": "Projects organizer",
-    "projects_collaborator": "Projects collaborator"
+    "projects_collaborator": "Projects collaborator",
+    "adjuntos": "Attachments"
   }
 }

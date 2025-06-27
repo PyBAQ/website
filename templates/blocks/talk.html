@@ -15,6 +15,9 @@
     {{this.details}}
   </div>
   <div class="attachments">
-    {{this.attach}}
+    {% if this.attach %}
+      <h4>{{bag('nosotros', alt, 'adjuntos') }}</h4>
+      {{this.attach}}
+    {% endif %}
   </div>
 </div>
