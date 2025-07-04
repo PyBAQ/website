@@ -891,6 +891,21 @@
       <priority>0.64</priority>
     </url>
     <url>
+      <loc>https://pybaq.co/eventos/2025-03-20-quantum-bits-viaje-practico-a-la-computacion-cuantica-y-sistemas-de-alerta-auto/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2025-03-20-quantum-bits-viaje-practico-a-la-computacion-cuantica-y-sistemas-de-alerta-auto/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2025-04-23-creando-cli-s-con-typer-con-uv-y-utilizando-ia-para-medir-la-biodiversidad/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2025-04-23-creando-cli-s-con-typer-con-uv-y-utilizando-ia-para-medir-la-biodiversidad/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
+      <loc>https://pybaq.co/eventos/2025-06-05-generando-material-educativo-con-ia-generativa-testing-en-backend-call-of-duty/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos/2025-06-05-generando-material-educativo-con-ia-generativa-testing-en-backend-call-of-duty/"/>
+      <priority>0.64</priority>
+    </url>
+    <url>
       <loc>https://pybaq.co/eventos1/</loc>
       <xhtml:link rel="alternate" hreflang="es" href="https://pybaq.co/eventos1/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://pybaq.co/en/eventos1/"/>
