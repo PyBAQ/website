@@ -8,6 +8,7 @@ import os
 from collections import OrderedDict
 
 from lektor.utils import slugify
+from datetime import datetime
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT_PATH = os.path.dirname(HERE)
@@ -41,7 +42,8 @@ def transform_event(event_node: dict):
     event = event_node['node']
     content = OrderedDict()
     content["title"] = event["title"]
-    content["date_start"] = event['dateTime']
+    dt = datetime.fromisoformat(event['dateTime'].replace('Z', '+00:00'))
+    content["date_start"] = dt.strftime('%Y-%m-%d %H:%M')
     content["link"] = event["eventUrl"]
     content["information"] = event["description"]
     if event["featuredEventPhoto"]:
