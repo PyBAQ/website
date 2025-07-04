@@ -1,0 +1,48 @@
+title: Creando CLI's con Typer (con UV) y Utilizando IA para medir la biodiversidad
+---
+date_start: 2025-04-23 16:00
+---
+link: https://www.meetup.com/pythonbaq/events/307336641/
+---
+information: **\*\*\* Recordatorio:\*\*\*** Para el ingreso a la Universidad Simón Bolivar será obligatorio diligenciar el siguiente formulario:
+[https://forms.gle/21FMucg2sxEFDnDV9](https://forms.gle/21FMucg2sxEFDnDV9)
+
+**Creando CLI's con Typer (y un poco de UV)**
+
+Nivel: Principiante
+
+En esta charla práctica aprenderás a construir interfaces de línea de comandos (CLI) elegantes y fáciles de usar con Typer, la librería de Python que simplifica drásticamente el desarrollo de aplicaciones CLI. Además, le daremos un toque extra de rendimiento y velocidad con UV, el administrador de paquetes ultrarrápido que está revolucionando el ecosistema Python.
+
+**Ponente:** Andrés Perez
+
+Especialista en soporte técnico con amplia experiencia en Customer Success, dedicado a proporcionar soluciones efectivas y acompañamiento al cliente. Poseo habilidades avanzadas en documentación técnica usando Jira y Confluence, además de ser un apasionado por Python y su ecosistema.
+
+**Sistemas de alerta automatizados para desastres naturales**
+Nivel: Principiante
+
+La actividad humana ha tenido un impacto dramático sobre el planeta Tierra resultando en una serie de retos que amenzan la continuidad de la vida misma. Uno de estos retos es la pérdida acelerada de especies de todo tipo, que se refleja en una drástica disminución de la biodiversidad, desequilibrando ecosistemas a nivel global. Detener y, de ser posible, revertir esta tendencia es un problema que inquieta ya no sólo a los ambientalistas, sino a cada vez más grupos económicos, políticos y sociales, que están entendiendo que la degradación de la naturaleza es también una amenza para la economía y el orden social. En esta charla se ilustra, con un caso de estudio real, cómo los ingenieros y científicos que trabajan en el campo de la inteligencia artificial pueden ayudar a resolver problemas cruciales relacionados con esta crisis de biodiversidad. En particular, nos concentraremos en como el deep learning puede usarse para analizar gran cantidad de datos visuales y acústicos capturados en el campo, con el fin de proveer los insumos necesarios para realizar un monitoreo fiable y escalable de la biodiversidad. Veremos cómo realizar esta tarea no sólo puede tener un impacto positivo en el planeta, sino que además es un reto muy interesante desde el punto de vista técnico, requiriendo del desarrollo y utilización de modelos de IA en el estado del arte.
+
+**Ponente:** Winston Percybrooks
+
+Ing. Electrónico de la Universidad del Norte, Maestría y Doctorado en Ing. Eléctrica y de Computación del Georgia Institute of Technology, Atlanta, USA. Más de 12 años de experiencia docente y de investigación, particularmente en Machine Learning, procesamiento de señales y robótica, como miembro del departamento de Ing. Eléctrica y Electrónica de la Universidad del Norte. Experiencia en la industria participando en el diseño, entrenamiento y despligue de modelos de deep learning para la identificación de patrones en señales de audio, imágenes 2D y nubes de puntos. He sido líder de Machine Learning en la startup de biodiversidad Pivotal Future de Cambridge, UK, co-fundador de la consultora de IA Dattain en Barranquilla, y actualmente soy además CTO de la compañía Clevertwin.
+
+**Agenda:**
+
+* 4:00 pm Ingreso al salón
+* 4:05-5:05 - Charla 1
+* 5:05-5:45 - Charla 2
+* 5:45-6:00 - Networking
+
+**Adicionales:**
+
+* El evento será presencial en la Universidad Simón Bolivar. Salón: Sede 1, salón B406
+* Para el ingreso a la universidad será obligatorio diligenciar el siguiente formulario: [https://forms.gle/21FMucg2sxEFDnDV9](https://forms.gle/21FMucg2sxEFDnDV9)
+* El formulario cierra el dían antes del evento a las 4:00pm.
+* Favor ser puntuales
+* Se transmitirá por el canal de youtube de Python Colombia
+---
+featured_photo: https://secure.meetupstatic.com/photos/event/5/6/a/f/600_527422191.jpeg
+---
+venue: Universidad Simón Bolivar
+---
+address_1: Universidad Simón Bolivar
