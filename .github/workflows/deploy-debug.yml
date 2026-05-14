@@ -1,4 +1,4 @@
-name: "Desplegar pagina"
+name: "Prueba despliegue roto"
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - "*"
   push:
     branches:
-      - "master"
+      - "deploy-debug"
   workflow_dispatch:
     # Allow manually running workflow
   # schedule:
@@ -17,7 +17,7 @@ env:
     ${{
     github.event_name != 'pull_request'
     &&
-    github.ref == 'refs/heads/master'
+    github.ref == 'refs/heads/deploy-debug'
     }}
   OUTPUT: _html
   TZ: America/Bogota
@@ -46,9 +46,3 @@ jobs:
       - name: Construir pagina pybaq
         run: lektor build -O '${{ env.OUTPUT }}'
 
-      - name: Desplegar pagina pybaq
-        if: env.DEPLOY == 'true'
-        run: lektor deploy -O '${{ env.OUTPUT }}' ghpages-https
-        env:
-          LEKTOR_DEPLOY_USERNAME: pybaq
-          LEKTOR_DEPLOY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
