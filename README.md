@@ -34,13 +34,13 @@ para hacerlo en tu maquina puedes usar esta [Guía](./install.md)
 
 Para instalar las dependencias del proyecto ejecuta
 
-    pipx install lektor
+    uv sync
 
 ### Ejecucion de lektor server
 
 Para la ejecución de lektor se debe ejecutar el comando:
 
-    lektor server
+    uv run lektor server
 
 Al ejecutar Lektor, verás una lista de procesos que tienen lugar antes de generar la página estática. Si en tu edición cometes algún error, aparecerá escrito en la consola. Si se genera con éxito la página, ésta estará disponible en [http://localhost:5000/](http://localhost:5000/).
 
@@ -60,9 +60,9 @@ Luego cada vez que actualices un estilo ejecuta:
 
 > Dependiendo de la configuración de CodeSpaces que escojas deberás ejecutar esta instalación
 
-Instala los paquetes de pruebas con el comando
+Los paquetes de pruebas ya están incluidos en `uv sync`.
 
-    pip install -r test-requirements.txt
+Puedes verificar que todo esté listo ejecutando
 
 ### Validar HTML usando W3C validator
 
@@ -71,9 +71,9 @@ w3c se usa para validar la estructura de los archivos [HTML](https://validator.w
 para validar los archivos html primero compila los fuentes en la carpeta build,
 luego ejecuta el validador w3c_validator usando los comandos:
 
-    lektor build --output-path ./build
+    uv run lektor build --output-path ./build
     cd build
-    w3c_validator $(find . -type f -name \*.html)
+    uv run w3c_validator $(find . -type f -name \*.html)
 
 ### Selenium
 
@@ -84,22 +84,26 @@ Usando [docker compose](https://docs.docker.com/compose/install/) nos podemos ah
 para ejecutar los test ejecuta los siguientes comandos
 
     docker compose up
-    python -m pytest
+    uv run pytest
 
 Por defecto los test corren en chrome, si deseas escoger el navegador que quieres ejecutar, crea una variable de entorno llamada `TEST_BROWSER` con el navegador que deseas usar, en estos momentos soportamos firefox y chrome.
 La forma mas fácil de hacer esto es creando un archivo  `.env` con el siguiente contenido
 
     TEST_BROWSER=firefox
 
+o ejecutar con:
+
+    TEST_BROWSER=firefox uv run pytest
+
 ## Actualizar eventos
 
 Para este proceso tenemos un [workflow](https://github.com/PyBAQ/website/actions/workflows/actualizar-eventos-meetup.yml) que nos crea un pull request con la actualización de los eventos
 
-La actualización de eventos se hace a traves de 2 scripts, `scripts/events.py` que extrae la información de meetup y `scripts/create_events.py` que se encarga de crear los eventos
+La actualización de eventos se hace a traves de 2 scripts, `scripts/graphql_api.py` que extrae la información de meetup y `scripts/create_events.py` que se encarga de crear los eventos
 
-Para ejecutar localmente el script que extrae la información de meetup debes instalar el paquete requests con pip
+Para ejecutar localmente el script que extrae la información de meetup
 
-    python scripts/events.py
+    uv run scripts/graphql_api.py
 
 El script crea o actualiza el archivo databags/meetup.json con los eventos actualizados. Recuerda adicionarlo al Pull Request con un commit.
 
@@ -107,6 +111,6 @@ El script crea o actualiza el archivo databags/meetup.json con los eventos actua
 
 Para ejecutar localmente el script que genera los content.lr para cada uno de los eventos
 
-    python scripts/create_events.py
+    uv run scripts/create_events.py
 
 Luego de esto puedes ir a los eventos creados con el admin de lektor y proceder con el respectivo pull request una vez finalices tus cambios
