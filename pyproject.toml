@@ -16,6 +16,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "cryptography>=50.0.0",
     "online-w3c-validator>=0.3.21",
     "pylint>=4.0.6",
     "pytest>=9.1.1",
