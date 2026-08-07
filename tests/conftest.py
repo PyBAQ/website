@@ -1,3 +1,7 @@
+"""
+Fixtures para los tests de Selenium
+"""
+
 import os
 from typing import Generator
 import pytest
