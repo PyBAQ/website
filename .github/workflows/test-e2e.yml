@@ -30,7 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
-      - run: uv run pip install -r requirements.txt -r test-requirements.txt
+      - name: Instalar dependencias
+        run: uv sync
+
       - run: uv run python -m pytest
       - uses: actions/upload-artifact@v4
         if: always()
