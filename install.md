@@ -8,29 +8,27 @@ Primero haz un Fork del proyecto en GitHub y luego clonalo en tu computador así
 
 Para poder ejecutar el proyecto localmente se requieren las siguientes dependencias:
 
-- Python 3
-- ImageMagick
-- [Lektor](https://www.getlektor.com/docs/installation/)
+- Python 3 (3.12 o superior)
+- ImageMagick (para procesamiento de imágenes)
+- [uv](https://docs.astral.sh/uv/)
+
+Una vez tengas estas dependencias instaladas en tu sistema operativo, ejecuta `uv sync` desde la carpeta del proyecto para instalar todas las dependencias de Python incluyendo Lektor.
 
 A continuación siga la guía de instalación según su sistema operativo
 
 ### Windows
 
-Para Windows puedes descargar Python desde el siguiente enlace: https://www.python.org/downloads/windows/
+Descarga Python desde: https://www.python.org/downloads/windows/
 
-Puedes instalar ImageMagick desde el siguiente enlace: <https://imagemagick.org/>
-
-o usar [chocolatey](https://chocolatey.org/) y ejecutar
+Para ImageMagick puedes descargar desde <https://imagemagick.org/> o usar [chocolatey](https://chocolatey.org/):
 
     choco install imagemagick
 
-Para instalar Lektor puedes usar el siguiente comando:
+Para instalar uv, ejecuta en PowerShell:
 
-    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://getlektor.com/install.ps1'))" && SET PATH=%PATH%;%LocalAppData%\lektor-cli
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-Pero también puede ser ejecutado directamente en powershell:
-
-    iex ((new-object net.webclient).DownloadString('https://getlektor.com/install.ps1'))
+O descarga el instalador desde https://docs.astral.sh/uv/getting-started/installation/
 
 ### Windows 10: Windows Subsystem for Linux
 
@@ -42,28 +40,37 @@ Luego, en la tienda de Microsoft encontrarás distintas distribuciones de Ubuntu
 
 De allí continua los pasos según el instructivo para Linux.
 
+## Después de instalar las dependencias del sistema
+
+Una vez tengas Python, ImageMagick y uv instalados, navega a la carpeta del proyecto y ejecuta:
+
+    uv sync
+
+Esto instalará Lektor y todas las demás dependencias de Python necesarias para el proyecto.
+
 ### Linux
 
-En Ubuntu se pueden instalar las dependencias de Lektor usando el comando:
+En Ubuntu instala las dependencias del sistema:
 
-    sudo apt install python3-dev libssl-dev libffi-dev imagemagick
+    sudo apt install python3 imagemagick
 
-Luego puedes instalar Lektor usando el siguiente comando:
+Luego instala uv:
 
-    curl -sf https://www.getlektor.com/installer.py | python3
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Y sigue las instrucciones para agregar uv a tu PATH si es necesario
 
 ### MacOS
 
-En Mac OS si se tiene instalado [homebrew](https://brew.sh/) se pueden instalar las dependencias de Lektor usando el comando:
+Con [homebrew](https://brew.sh/) instala las dependencias del sistema:
 
-    brew install imagemagick
+    brew install python imagemagick
 
-Luego puede instalar Lektor usando el siguiente comando:
+Luego instala uv:
 
-    curl -sf https://www.getlektor.com/installer.py | python3
+    curl -LsSf https://astral.sh/uv/install.sh | sh
 
-Verificar que las variables de entorno del formato UTF-8 en sus respectivos idiomas esten definidas en el
-archivo ~/.bash_profile de su sistema y en caso de no estar definidas agregarlas.
+(Opcional en macOS) Verifica que las variables de entorno UTF-8 estén definidas en `~/.bash_profile` (o `~/.zprofile` si usas zsh):
 
     export LC_ALL=en_US.UTF-8
     export LANG=en_US.UTF-8
