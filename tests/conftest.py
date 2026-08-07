@@ -34,4 +34,3 @@ def fixture_driver() -> Generator:
             raise ValueError(f"Navegador no soportado localmente: {browser}")
 
     yield driver
-    driver.quit()  # 👈 Es una buena práctica cerrar el navegador al terminar cada test
