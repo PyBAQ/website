@@ -1,11 +1,11 @@
 """
-Configuración de test automatizados
+Fixtures para los tests de Selenium
 """
 
 import os
 from typing import Generator
 import pytest
-from selenium.webdriver import Remote
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from dotenv import load_dotenv
@@ -19,8 +19,22 @@ def fixture_driver() -> Generator:
         "chrome": ChromeOptions(),
         "firefox": FirefoxOptions()
     }
-    browser = os.getenv("TEST_BROWSER", "chrome")
-    command_executor = os.getenv("TEST_COMMAND_EXECUTOR", "http://127.0.0.1:4444/wd/hub")
+
+    browser = os.getenv("TEST_BROWSER", "chrome").lower()
+    # Si no existe la variable, dejamos None para saber que es local
+    command_executor = os.getenv("TEST_COMMAND_EXECUTOR")
     options = posible_options[browser]
-    driver = Remote(command_executor=command_executor, options=options)
+
+    # 🚀 Si hay una URL configurada, usamos Remote. Si no, abrimos navegador local.
+    if command_executor:
+        # Nota: Si usas Selenium 4, quita el '/wd/hub' de tu .env si te da error
+        driver = webdriver.Remote(command_executor=command_executor, options=options)
+    else:
+        if browser == "chrome":
+            driver = webdriver.Chrome(options=options)
+        elif browser == "firefox":
+            driver = webdriver.Firefox(options=options)
+        else:
+            raise ValueError(f"Navegador no soportado localmente: {browser}")
+
     yield driver

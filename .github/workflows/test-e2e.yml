@@ -14,6 +14,7 @@ on:
 
 env:
   TEST_BROWSER: ${{ github.event.inputs.browser }}
+  TEST_COMMAND_EXECUTOR: http://localhost:4444/wd/hub
 
 jobs:
   test:
@@ -28,13 +29,13 @@ jobs:
           - 4444:4444
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-      - run: pip install -r requirements.txt -r test-requirements.txt
-      - run: python -m pytest
-      - uses: actions/upload-artifact@v4
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - name: Instalar dependencias
+        run: uv sync
+
+      - run: uv run python -m pytest
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: screenshots

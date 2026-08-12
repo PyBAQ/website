@@ -1,2 +1,4 @@
 [build]
   environment = { PYTHON_VERSION = "3.13" }
+  command = "curl -LsSf https://astral.sh/uv/install.sh | sh && uv sync --locked && uv run lektor build --output-path public"
+  publish = "public"

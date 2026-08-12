@@ -10,20 +10,11 @@ jobs:
     if: github.repository_owner == 'PyBAQ'
     name: Actualizar eventos meetup
     runs-on: ubuntu-latest
-    environment: meetup-events
     steps:
-      - name: checkout@v4
-        uses: actions/checkout@v4
-
-      - name: setup-python@v5
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Instalar requirements
-        run: |
-          python -m pip install --upgrade pip setuptools
-          pip install -r requirements.txt
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - name: Instalar dependencias
+        run: uv sync
 
       - name: Ejecutar graphql_api.py
         env:
@@ -32,10 +23,10 @@ jobs:
           MEETUP_MEMBER_ID: ${{secrets.MEETUP_MEMBER_ID}}
           MEETUP_PRIVATE_KEY: ${{secrets.MEETUP_PRIVATE_KEY}}
           MEETUP_SIGNING_KEY_ID: ${{secrets.MEETUP_SIGNING_KEY_ID}}
-        run: python scripts/graphql_api.py
+        run: uv run python scripts/graphql_api.py
 
       - name: Ejecutar create_events.py
-        run: python scripts/create_events.py  
+        run: uv run python scripts/create_events.py
 
       - name: Rama actual
         run: git branch
